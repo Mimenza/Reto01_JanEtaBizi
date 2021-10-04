@@ -6,13 +6,64 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/btn_0login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="82dp"
+        android:text="login"
+        app:layout_constraintStart_toStartOf="@+id/btn_0register"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btn_0usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="usuario"
+        app:layout_constraintStart_toStartOf="@+id/btn_0carrito"
+        app:layout_constraintTop_toBottomOf="@+id/btn_0carrito" />
+
+    <Button
+        android:id="@+id/btn_0carrito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="7dp"
+        android:text="carrito"
+        app:layout_constraintEnd_toEndOf="@+id/btn_0producto"
+        app:layout_constraintTop_toBottomOf="@+id/btn_0producto" />
+
+    <Button
+        android:id="@+id/btn_0producto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="producto"
+        app:layout_constraintEnd_toEndOf="@+id/btn_0principal"
+        app:layout_constraintTop_toBottomOf="@+id/btn_0principal" />
+
+    <Button
+        android:id="@+id/btn_0principal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="principal"
+        app:layout_constraintStart_toStartOf="@+id/btn_0register"
+        app:layout_constraintTop_toBottomOf="@+id/btn_0register" />
+
+    <Button
+        android:id="@+id/btn_0register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="registrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_0login" />
+
+    <Button
+        android:id="@+id/btn_0admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="admin"
+        app:layout_constraintEnd_toEndOf="@+id/btn_0usuario"
+        app:layout_constraintTop_toBottomOf="@+id/btn_0usuario" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01/app/src/main/res/layout/activity_1login.xml" value="0.264" />
         <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01/app/src/main/res/layout/activity_main.xml" value="0.264" />
+=======
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01/app/src/main/res/layout/activity_4producto.xml" value="0.264" />
+>>>>>>> a08f992e21a1a8505d45937b0982745aacf94033
       </map>
     </option>
   </component>
