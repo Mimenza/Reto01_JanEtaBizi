@@ -10,6 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Reto01">
         <activity
+            android:name=".activity_7admin"
+            android:exported="true" />
+        <activity
+            android:name=".activity_5carrito"
+            android:exported="true" />
+        <activity
+            android:name=".activity_4producto"
+            android:exported="true" />
+        <activity
+            android:name=".activity_3principal"
+            android:exported="true" />
+        <activity
+            android:name=".activity_2registrar"
+            android:exported="true" />
+        <activity
+            android:name=".Ac_2login"
+            android:exported="true" />
+        <activity
             android:name=".activity_1login"
             android:exported="true" />
         <activity
