@@ -4,16 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?android:attr/textColorHintInverse"
+    android:backgroundTint="#000000"
     tools:context=".activity_2registrar">
 
     <EditText
         android:id="@+id/pText_2inputNombre"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
+        android:backgroundTint="#020202"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/prompt_user_Name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,12 +25,13 @@
 
     <EditText
         android:id="@+id/pText_2inputCorreo"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/promt_user_mail"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,12 +39,13 @@
 
     <EditText
         android:id="@+id/pText_2inputContrasena"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:ems="10"
-        android:inputType="textPassword"
         android:hint="@string/prompt_password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,12 +53,13 @@
 
     <EditText
         android:id="@+id/pText_2inputContrasenaV"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:ems="10"
-        android:inputType="textPassword"
         android:hint="@string/prompt_password_verify"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +67,7 @@
 
     <Button
         android:id="@+id/btn_2Register"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
         android:text="@string/action_register"
