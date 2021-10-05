@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import kotlinx.android.synthetic.main.activity_1login.*
+import kotlinx.android.synthetic.main.activity_6usuario.*
 
 class activity_6usuario : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,11 +14,13 @@ class activity_6usuario : AppCompatActivity() {
         setContentView(R.layout.activity_6usuario)
 
 
-        fun atras() {
-            val atras = Intent(this, MainActivity::class.java)
-            startActivity(atras)
+        imgv6_atras.setOnClickListener(){
 
+            val i = Intent(this@activity_6usuario, MainActivity::class.java)
+            startActivity(i)
         }
+
+
 
         fun navegacion_compra() {
             val navegacion_compra = Intent(this, activity_5carrito::class.java)
