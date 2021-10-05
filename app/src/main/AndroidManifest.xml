@@ -25,9 +25,6 @@
             android:name=".activity_2registrar"
             android:exported="true" />
         <activity
-            android:name=".Ac_2login"
-            android:exported="true" />
-        <activity
             android:name=".activity_1login"
             android:exported="true" />
         <activity
