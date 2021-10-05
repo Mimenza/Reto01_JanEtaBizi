@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_6usuario">
+    tools:context=".activity_6usuario"
+  >
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
@@ -20,9 +21,6 @@
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/navigation" />
 
-
-
-
     <!--Linear layout de Logout-->
     <!--Linear layout de Logout Fin-->
 
@@ -31,45 +29,54 @@
         android:id="@+id/imgv_6perfil"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
+        android:layout_marginLeft="50dp"
         android:src="@drawable/descarga" />
 
+
+    <!--Linear layout de Nombre de Usuario-->
     <TextView
         android:id="@+id/txt_6nombreuser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imgv_6perfil"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="-40dp"
         android:text="Nombre de usuario"
-        android:textStyle="bold"
         android:textColor="#000"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-
-    <!--Linear layout de Nombre de Usuario-->
     <LinearLayout
         android:id="@+id/linlay_1nombreusuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/txt_6nombreuser"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="29dp"
+            android:layout_height="61dp"
             android:layout_marginLeft="70dp"
+            android:layout_marginTop="5dp"
             android:src="@drawable/ic_person" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Nombre de usuario"
-            android:textColor="#000"
-            android:textSize="18sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="254dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/txt1_nombreusuario" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
     </LinearLayout>
     <!--Linear layout de Nombre de usuario Fin-->
 
@@ -80,22 +87,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/linlay_1nombreusuario"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="26dp"
+            android:layout_height="match_parent"
             android:layout_marginLeft="70dp"
             android:src="@drawable/ic_email" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Correo electrónico"
-            android:textColor="#000"
-            android:textSize="18sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="254dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/txt2_correo" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
     </LinearLayout>
     <!--Linear layout de Correo Fin-->
 
@@ -105,22 +119,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/linlay_2correo"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="28dp"
+            android:layout_height="match_parent"
             android:layout_marginLeft="70dp"
             android:src="@drawable/ic_password" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Contraseña"
-            android:textColor="#000"
-            android:textSize="18sp" />
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="254dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/txt3_contraseña" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
     </LinearLayout>
     <!--Linear layout de Ajustes Fin-->
     <ImageView
@@ -133,7 +153,7 @@
 
     <ImageView
         android:id="@+id/imgv6_logout"
-        android:layout_width="40dp"
+        android:layout_width="30dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="330dp"
         android:layout_marginTop="5dp"
@@ -147,12 +167,13 @@
 
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="136dp"
+        android:layout_marginEnd="155dp"
 
-        android:layout_marginBottom="145dp"
+        android:layout_marginBottom="122dp"
+        android:backgroundTint="@android:color/holo_red_dark"
         android:endColor="#20B2AA"
         android:startColor="#76FF7A"
-        android:text="Cambiar datos" />
+        android:text="@string/txt4_guardar" />
 
 
 </RelativeLayout>

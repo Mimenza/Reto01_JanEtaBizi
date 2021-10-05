@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Reto01</string>
+
+
+    <!--Usuario-->
+    <string name="txt1_nombreusuario">Nombre de usuario</string>
+    <string name="txt2_correo">Correo electrónico</string>
+    <string name="txt3_contraseña">Contraseña</string>
+    <string name="txt4_guardar">Guardar</string>
+
 </resources>
