@@ -3,12 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-<<<<<<< HEAD
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01/app/src/main/res/layout/activity_1login.xml" value="0.264" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01/app/src/main/res/layout/activity_main.xml" value="0.264" />
-=======
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01/app/src/main/res/layout/activity_4producto.xml" value="0.264" />
->>>>>>> a08f992e21a1a8505d45937b0982745aacf94033
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01_JanEtaBizi/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01_JanEtaBizi/app/src/main/res/layout/activity_3principal.xml" value="0.2" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01_JanEtaBizi/app/src/main/res/layout/activity_4producto.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01_JanEtaBizi/app/src/main/res/layout/activity_5carrito.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01_JanEtaBizi/app/src/main/res/layout/activity_6usuario.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01_JanEtaBizi/app/src/main/res/menu/navigation.xml" value="0.13020833333333334" />
       </map>
     </option>
   </component>
