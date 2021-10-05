@@ -8,6 +8,7 @@ import android.view.MenuItem
 class activity_5carrito : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        getSupportActionBar()?.hide()
         setContentView(R.layout.activity_5carrito)
         fun navegacion_compra() {
             val navegacion_compra = Intent(this, activity_5carrito::class.java)

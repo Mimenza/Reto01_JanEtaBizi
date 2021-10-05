@@ -6,6 +6,7 @@ import android.os.Bundle
 class activity_2registrar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        getSupportActionBar()?.hide()
         setContentView(R.layout.activity_2registrar)
     }
 }
