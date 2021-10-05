@@ -3,17 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01/app/src/main/res/drawable/my_gradient_drawable.xml" value="0.17395833333333333" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01/app/src/main/res/layout/activity_1login.xml" value="0.264" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01/app/src/main/res/layout/activity_4producto.xml" value="0.2" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01/app/src/main/res/layout/activity_5carrito.xml" value="0.23854166666666668" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01/app/src/main/res/layout/activity_6usuario.xml" value="0.4" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01_JanEtaBizi/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14635416666666667" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01_JanEtaBizi/app/src/main/res/layout/activity_3principal.xml" value="0.2" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01_JanEtaBizi/app/src/main/res/layout/activity_4producto.xml" value="0.13020833333333334" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01_JanEtaBizi/app/src/main/res/layout/activity_5carrito.xml" value="0.13020833333333334" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01_JanEtaBizi/app/src/main/res/layout/activity_6usuario.xml" value="0.13020833333333334" />
-        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01_JanEtaBizi/app/src/main/res/menu/navigation.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01_JanEtaBizi/app/src/main/res/drawable/ic_email.xml" value="0.2703125" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01_JanEtaBizi/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01_JanEtaBizi/app/src/main/res/layout/activity_2registrar.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01_JanEtaBizi/app/src/main/res/layout/activity_3principal.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01_JanEtaBizi/app/src/main/res/layout/activity_4producto.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01_JanEtaBizi/app/src/main/res/layout/activity_5carrito.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01_JanEtaBizi/app/src/main/res/layout/activity_6usuario.xml" value="0.264" />
+        <entry key="..\:/Users/ik_2dm3/AndroidStudioProjects/Reto01_JanEtaBizi/app/src/main/res/layout/activity_7admin.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
