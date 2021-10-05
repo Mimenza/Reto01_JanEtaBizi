@@ -38,9 +38,9 @@
         android:text="Registrate aqui"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintVertical_bias="0.939" />
 
     <EditText
@@ -48,12 +48,13 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:background="#73ffffff"
+        android:paddingLeft="20dp"
         android:ems="10"
         android:hapticFeedbackEnabled="false"
         android:hint="@string/prompt_user_Name"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:paddingLeft="20dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
