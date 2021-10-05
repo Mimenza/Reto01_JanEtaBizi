@@ -1,5 +1,6 @@
 package com.example.reto01
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,7 +14,12 @@ class activity_1login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_1login)
-        println("hola")
+
+        txtv_1Registrar.setOnClickListener(){
+
+            val i = Intent(this@activity_1login, activity_2registrar::class.java)
+            startActivity(i)
+        }
 
     }
 
