@@ -10,6 +10,14 @@ class activity_6usuario : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_6usuario)
+
+
+        fun atras() {
+            val atras = Intent(this, MainActivity::class.java)
+            startActivity(atras)
+
+        }
+
         fun navegacion_compra() {
             val navegacion_compra = Intent(this, activity_5carrito::class.java)
             startActivity(navegacion_compra)
