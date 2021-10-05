@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.reto01">
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,6 +10,9 @@
         android:theme="@style/Theme.Reto01">
         <activity
             android:name=".activity_7admin"
+            android:exported="true" />
+        <activity
+            android:name=".activity_6usuario"
             android:exported="true" />
         <activity
             android:name=".activity_5carrito"
@@ -25,9 +27,6 @@
             android:name=".activity_2registrar"
             android:exported="true" />
         <activity
-            android:name=".Ac_2login"
-            android:exported="true" />
-        <activity
             android:name=".activity_1login"
             android:exported="true" />
         <activity
@@ -35,10 +34,8 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
