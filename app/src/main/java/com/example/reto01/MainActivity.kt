@@ -45,5 +45,9 @@ class MainActivity : AppCompatActivity() {
             val i = Intent(this@MainActivity, activity_7admin::class.java)
             startActivity(i)
         }
+        btn_0likes.setOnClickListener(){
+            val i = Intent(this@MainActivity, activity_8likes::class.java)
+            startActivity(i)
+        }
     }
 }

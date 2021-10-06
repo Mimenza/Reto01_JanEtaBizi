@@ -3,16 +3,14 @@ package com.example.reto01
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_4producto.*
-import kotlinx.android.synthetic.main.activity_5carrito.*
-import kotlinx.android.synthetic.main.activity_6usuario.*
+import kotlinx.android.synthetic.main.activity_8likes.*
 
-class activity_4producto : AppCompatActivity() {
+class activity_8likes : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
-        setContentView(R.layout.activity_4producto)
-        bottomNavV_4bottomMenu.setSelectedItemId(R.id.navigation_invisible)
+        setContentView(R.layout.activity_8likes)
+        bottomNavV_8bottomMenu.setSelectedItemId(R.id.navigation_likes)
 
         fun navegacion_principal() {
             val navegacion_compra = Intent(this, activity_3principal::class.java)
@@ -42,7 +40,7 @@ class activity_4producto : AppCompatActivity() {
 
         }
 
-        bottomNavV_4bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
+        bottomNavV_8bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_principal -> {
                     navegacion_principal()

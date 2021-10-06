@@ -9,16 +9,18 @@
     android:focusable="true"
     android:focusableInTouchMode="true">
 
+
     <ImageView
         android:id="@+id/imgv_1imgLogin"
-        android:layout_width="174dp"
-        android:layout_height="174dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="68dp"
+        android:layout_width="262dp"
+        android:layout_height="190dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/sample" />
-
+        app:layout_constraintVertical_bias="0.16"
+        app:srcCompat="@drawable/logo" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_1login"
@@ -29,13 +31,10 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.852"
-
-
-        />
+        app:layout_constraintVertical_bias="0.777" />
 
     <TextView
         android:id="@+id/txtv_1Registrar"
@@ -44,45 +43,42 @@
         android:text="Registrate aqui"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintVertical_bias="0.939"
-       />
+        app:layout_constraintVertical_bias="0.831" />
 
     <EditText
         android:id="@+id/pText_1inputNombre"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
+        android:background="@drawable/rounded"
         android:ems="10"
         android:hapticFeedbackEnabled="false"
         android:hint="@string/prompt_user_Name"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-
-        android:background="@drawable/rounded"
+        android:paddingLeft="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.512" />
+        app:layout_constraintVertical_bias="0.427" />
 
     <EditText
         android:id="@+id/pText_1inputContrasena"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="52dp"
         android:background="@drawable/rounded"
         android:ems="10"
         android:hint="@string/prompt_password"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:paddingLeft="20dp"
-
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pText_1inputNombre"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />

@@ -4,12 +4,16 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_3principal.*
+import kotlinx.android.synthetic.main.activity_5carrito.*
+import kotlinx.android.synthetic.main.activity_5carrito.bottomNavV_5bottomMenu
+import kotlinx.android.synthetic.main.activity_8likes.*
 
 class activity_3principal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_3principal)
+
 
         fun navegacion_principal() {
             val navegacion_compra = Intent(this, activity_3principal::class.java)
@@ -19,7 +23,7 @@ class activity_3principal : AppCompatActivity() {
         }
 
         fun navegacion_likes() {
-            val navegacion_likes = Intent(this, activity_3principal::class.java)
+            val navegacion_likes = Intent(this, activity_8likes::class.java)
             startActivity(navegacion_likes)
             this.overridePendingTransition(0, 0)
 
