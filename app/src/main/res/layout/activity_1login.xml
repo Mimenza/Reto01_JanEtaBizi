@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity_1login"
-    android:background="@drawable/my_gradient_drawable">
+    android:background="@drawable/my_gradient_drawable"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
     <ImageView
         android:id="@+id/imgv_1imgLogin"
@@ -16,6 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/sample" />
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_1login"
@@ -58,6 +61,7 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
 
+        android:background="@drawable/rounded"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -70,12 +74,13 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
-        android:background="#73ffffff"
+        android:background="@drawable/rounded"
         android:ems="10"
         android:hint="@string/prompt_password"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:paddingLeft="20dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
