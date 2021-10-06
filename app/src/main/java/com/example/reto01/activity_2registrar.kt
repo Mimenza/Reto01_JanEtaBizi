@@ -27,6 +27,9 @@ class activity_2registrar : AppCompatActivity() {
 
         btn_2Register.setOnTouchListener{  v, event ->
             btn_2Register.setBackgroundResource(R.drawable.my_button_border_click);
+            Handler().postDelayed({
+                btn_2Register.setBackgroundResource(R.drawable.my_button_border);
+            }, 100)
             false
         }
     }
