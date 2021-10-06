@@ -11,7 +11,7 @@ class activity_5carrito : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_5carrito)
-        bottomNavV_5bottomMenu.setSelectedItemId(R.id.navigation_carrito);
+        bottomNavV_5bottomMenu.setSelectedItemId(R.id.navigation_carrito)
 
         fun navegacion_principal() {
             val navegacion_compra = Intent(this, activity_3principal::class.java)

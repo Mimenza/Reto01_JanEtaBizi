@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_4producto.*
+import kotlinx.android.synthetic.main.activity_5carrito.*
 import kotlinx.android.synthetic.main.activity_6usuario.*
 
 class activity_4producto : AppCompatActivity() {
@@ -11,7 +12,7 @@ class activity_4producto : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_4producto)
-
+        bottomNavV_4bottomMenu.setSelectedItemId(R.id.navigation_invisible)
 
         fun navegacion_principal() {
             val navegacion_compra = Intent(this, activity_3principal::class.java)
