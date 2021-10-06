@@ -10,8 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Reto01">
         <activity
+<<<<<<< HEAD
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+=======
             android:name=".activity_8likes"
             android:exported="true" />
+>>>>>>> 8fa2c588931a2ab0fdbd1ef80a58d0cb9ee79448
         <activity
             android:name=".activity_7admin"
             android:exported="true" />
