@@ -14,11 +14,6 @@ class activity_4producto : AppCompatActivity() {
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_4producto)
 
-        window.decorView.apply {
-            //esconde el nav inferior
-            systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-
-        }
         bottomNavV_4bottomMenu.setSelectedItemId(R.id.navigation_invisible)
 
         fun navegacion_principal() {

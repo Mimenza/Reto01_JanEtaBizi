@@ -10,10 +10,5 @@ class activity_7admin : AppCompatActivity() {
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_7admin)
 
-        window.decorView.apply {
-            //esconde el nav inferior
-            systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-
-        }
     }
 }

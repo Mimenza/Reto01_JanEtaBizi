@@ -13,11 +13,6 @@ class activity_5carrito : AppCompatActivity() {
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_5carrito)
 
-        window.decorView.apply {
-            //esconde el nav inferior
-            systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-
-        }
         bottomNavV_5bottomMenu.setSelectedItemId(R.id.navigation_carrito)
 
         fun navegacion_principal() {

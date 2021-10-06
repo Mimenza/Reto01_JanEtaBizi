@@ -12,11 +12,6 @@ class activity_6usuario : AppCompatActivity() {
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_6usuario)
 
-        window.decorView.apply {
-            //esconde el nav inferior
-            systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-
-        }
         bottomNavV_6bottomMenu.setSelectedItemId(R.id.navigation_perfil);
 
         imgv6_atras.setOnClickListener(){

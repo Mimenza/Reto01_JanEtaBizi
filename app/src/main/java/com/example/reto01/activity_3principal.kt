@@ -15,13 +15,6 @@ class activity_3principal : AppCompatActivity() {
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_3principal)
 
-        window.decorView.apply {
-            //esconde el nav inferior
-            systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-
-        }
-
-
         fun navegacion_principal() {
             val navegacion_compra = Intent(this, activity_3principal::class.java)
             startActivity(navegacion_compra)
