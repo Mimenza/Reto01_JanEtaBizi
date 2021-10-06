@@ -3,6 +3,8 @@ package com.example.reto01
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import kotlinx.android.synthetic.main.activity_1login.*
 import kotlinx.android.synthetic.main.activity_2registrar.*
 
 class activity_2registrar : AppCompatActivity() {
@@ -15,6 +17,15 @@ class activity_2registrar : AppCompatActivity() {
 
             val i = Intent(this@activity_2registrar, activity_1login::class.java)
             startActivity(i)
+        }
+        btn_2Register.setOnClickListener(){
+
+            btn_2Register.setBackgroundResource(R.drawable.my_button_border_click);
+            Handler().postDelayed({
+                btn_2Register.setBackgroundResource(R.drawable.my_button_border);
+            }, 100)
+
+
         }
     }
 }
