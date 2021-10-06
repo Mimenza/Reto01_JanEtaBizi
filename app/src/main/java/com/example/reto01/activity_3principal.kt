@@ -65,5 +65,10 @@ class activity_3principal : AppCompatActivity() {
             }
         }
 
+
+        //Slider alimentos
+
+
+
     }
 }

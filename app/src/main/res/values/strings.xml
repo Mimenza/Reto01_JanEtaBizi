@@ -30,4 +30,9 @@
     <string name="titulo">Crea tu cuenta</string>
 
 
+    <!--Principal-->
+
+    <string name="filtrobusquedacomida">Busca un alimento</string>
+
+
 </resources>
