@@ -3,6 +3,7 @@ package com.example.reto01
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import kotlinx.android.synthetic.main.activity_3principal.*
 import kotlinx.android.synthetic.main.activity_5carrito.*
 import kotlinx.android.synthetic.main.activity_5carrito.bottomNavV_5bottomMenu
@@ -13,6 +14,12 @@ class activity_3principal : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_3principal)
+
+        window.decorView.apply {
+            //esconde el nav inferior
+            systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+
+        }
 
 
         fun navegacion_principal() {
