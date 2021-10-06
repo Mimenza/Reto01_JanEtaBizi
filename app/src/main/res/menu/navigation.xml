@@ -18,4 +18,9 @@
         android:icon="@drawable/usuario"
         android:title="Perfil"/>
 
+    <item
+        android:id="@+id/navigation_invisible"
+        android:visible="false"
+        android:icon="@drawable/usuario"
+        android:title="Perfil"/>
 </menu>

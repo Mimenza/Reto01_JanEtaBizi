@@ -12,6 +12,7 @@ class activity_4producto : AppCompatActivity() {
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_4producto)
 
+
         fun navegacion_principal() {
             val navegacion_compra = Intent(this, activity_3principal::class.java)
             startActivity(navegacion_compra)
