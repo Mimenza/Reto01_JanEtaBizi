@@ -9,7 +9,7 @@
         android:icon="@drawable/corazon"
         android:title="Likes" />
     <item
-        android:id="@+id/navigation_compra"
+        android:id="@+id/navigation_carrito"
         android:icon="@drawable/carrito"
         android:title="Compra" />
 
