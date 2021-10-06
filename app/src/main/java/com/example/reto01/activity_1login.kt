@@ -9,6 +9,7 @@ import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_1login.*
+import kotlinx.android.synthetic.main.activity_2registrar.*
 import java.util.*
 
 class activity_1login : AppCompatActivity() {
@@ -32,6 +33,11 @@ class activity_1login : AppCompatActivity() {
             Handler().postDelayed({
                 btn_1login.setBackgroundResource(R.drawable.my_button_border);
             }, 100)
+        }
+
+        btn_1login.setOnTouchListener{  v, event ->
+            btn_1login.setBackgroundResource(R.drawable.my_button_border_click);
+            false
         }
 
     }
