@@ -32,7 +32,14 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
         app:layout_constraintVertical_bias="0.718" />
+=======
+        app:layout_constraintVertical_bias="0.852"
+
+
+        />
+>>>>>>> b6645642e777017a4a21680b8c41a357e932e1c1
 
     <TextView
         android:id="@+id/txtv_1Registrar"
@@ -44,7 +51,13 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
         app:layout_constraintVertical_bias="0.891" />
+=======
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintVertical_bias="0.939"
+       />
+>>>>>>> b6645642e777017a4a21680b8c41a357e932e1c1
 
     <EditText
         android:id="@+id/pText_1inputNombre"
