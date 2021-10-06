@@ -21,7 +21,7 @@ class activity_4producto : AppCompatActivity() {
         }
 
         fun navegacion_likes() {
-            val navegacion_likes = Intent(this, activity_3principal::class.java)
+            val navegacion_likes = Intent(this, activity_8likes::class.java)
             startActivity(navegacion_likes)
             this.overridePendingTransition(0, 0)
 
