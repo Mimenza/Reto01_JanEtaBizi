@@ -29,7 +29,10 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.852" />
+        app:layout_constraintVertical_bias="0.852"
+
+
+        />
 
     <TextView
         android:id="@+id/txtv_1Registrar"
@@ -41,13 +44,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintVertical_bias="0.939" />
+        app:layout_constraintVertical_bias="0.939"
+       />
 
     <EditText
         android:id="@+id/pText_1inputNombre"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:background="#73ffffff"
         android:paddingLeft="20dp"
         android:ems="10"
         android:hapticFeedbackEnabled="false"
