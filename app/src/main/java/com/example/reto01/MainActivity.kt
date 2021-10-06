@@ -3,6 +3,7 @@ package com.example.reto01
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -15,12 +16,6 @@ class MainActivity : AppCompatActivity() {
 
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_main)
-
-        window.decorView.apply {
-            //esconde el nav inferior
-            systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-
-        }
 
         btn_0login.setOnClickListener(){
             val i = Intent(this@MainActivity, activity_1login::class.java)
