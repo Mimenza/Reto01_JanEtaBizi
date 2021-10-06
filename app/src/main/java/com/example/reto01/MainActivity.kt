@@ -16,15 +16,12 @@ class MainActivity : AppCompatActivity() {
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_main)
 
-<<<<<<< HEAD
         window.decorView.apply {
             //esconde el nav inferior
             systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
 
         }
-=======
-
->>>>>>> 6925ae535b464dd4491d97df9cedfa6c2106db12
+        
 
         btn_0login.setOnClickListener(){
             val i = Intent(this@MainActivity, activity_1login::class.java)
