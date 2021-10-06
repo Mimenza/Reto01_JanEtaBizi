@@ -21,6 +21,8 @@ class activity_1login : AppCompatActivity() {
             startActivity(i)
         }
 
+
+
     }
 
 }
