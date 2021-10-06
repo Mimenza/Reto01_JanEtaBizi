@@ -25,18 +25,11 @@ class activity_1login : AppCompatActivity() {
             startActivity(i)
         }
 
-
-
-        btn_1login.setOnClickListener(){
-
+        btn_1login.setOnTouchListener{  v, event ->
             btn_1login.setBackgroundResource(R.drawable.my_button_border_click);
             Handler().postDelayed({
                 btn_1login.setBackgroundResource(R.drawable.my_button_border);
             }, 100)
-        }
-
-        btn_1login.setOnTouchListener{  v, event ->
-            btn_1login.setBackgroundResource(R.drawable.my_button_border_click);
             false
         }
 
