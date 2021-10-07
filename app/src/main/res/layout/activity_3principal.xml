@@ -27,7 +27,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="128dp"
                     android:layout_marginEnd="32dp"
                     android:background="@drawable/search_bg"
                     android:drawableStart="@drawable/ic_search"
@@ -39,9 +39,12 @@
                     android:paddingStart="20dp"
                     android:textSize="14sp"
                     android:textStyle="italic"
+                    app:layout_constraintBottom_toTopOf="@+id/sld3_slider"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.196" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/sld3_slider"
