@@ -88,7 +88,7 @@ class activity_4producto : AppCompatActivity() {
         val adapter = MySliderImageAdapter()
         adapter.renewItems(images)
         imageSlider.setSliderAdapter(adapter)
-        imageSlider.isAutoCycle = true
-        imageSlider.startAutoCycle()
+        imageSlider.isAutoCycle = false
+
     }
     }
