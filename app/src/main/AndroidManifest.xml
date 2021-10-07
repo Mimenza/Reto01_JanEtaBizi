@@ -10,8 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Reto01">
-        <activity android:name="com.thesimplycoder.simpleintroslider.IntroSliderActivity"
-            />
+
         <activity
             android:name=".SplashActivity"
             android:exported="true"
