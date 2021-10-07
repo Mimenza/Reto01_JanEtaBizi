@@ -13,8 +13,7 @@
         android:theme="@style/Theme.Reto01">
         <activity
             android:name=".SplashActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
