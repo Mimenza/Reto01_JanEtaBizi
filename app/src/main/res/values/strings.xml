@@ -35,4 +35,16 @@
     <string name="filtrobusquedacomida">Busca un alimento</string>
 
 
+    <!--Intro Slider-->
+
+    <string name="text_intro1">Envíos rápidos</string>
+    <string name="text_intro2">Los mejores alimentos naturales</string>
+    <string name="text_intro3">Alimentos especificos para el cliente </string>
+    <string name="desc_intro1">Servicio rápido y económico</string>
+    <string name="desc_intro2">Trabajamos día a día para que el cliente este satisfecho</string>
+    <string name="desc_intro3">Disponemos de varías categorías de alimentos para una compra rápida y eficaz</string>
+    <string name="saltar">Saltar</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="empezar">Empezar </string>
+
 </resources>
