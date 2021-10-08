@@ -4,13 +4,9 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.TableLayout
 import android.widget.TableRow
 import kotlinx.android.synthetic.main.activity_3principal.*
-import kotlinx.android.synthetic.main.activity_5carrito.*
-import kotlinx.android.synthetic.main.activity_5carrito.bottomNavV_5bottomMenu
-import kotlinx.android.synthetic.main.activity_8likes.*
 import android.widget.TextView
 import android.view.Gravity
 
@@ -78,7 +74,7 @@ class activity_3principal : AppCompatActivity() {
     }
 
     fun init() {
-        val stk = table_main1 as TableLayout
+        val stk = tl_3tabla as TableLayout
         val tbrow0 = TableRow(this)
         val tv0 = TextView(this)
         tv0.text = " Sl.No "

@@ -30,7 +30,7 @@
 
 
     <ScrollView
-        android:id="@+id/scrollView1"
+        android:id="@+id/sv_3tabla"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -45,19 +45,19 @@
         tools:ignore="MissingConstraints">
 
         <HorizontalScrollView
-            android:id="@+id/hscrll1"
+            android:id="@+id/hsv_3tabla"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
 
             <RelativeLayout
-                android:id="@+id/RelativeLayout1"
+                android:id="@+id/rl_3tabla"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
                 android:orientation="vertical">
 
                 <TableLayout
-                    android:id="@+id/table_main1"
+                    android:id="@+id/tl_3tabla"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"></TableLayout>
@@ -73,7 +73,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="42dp"
-        app:layout_constraintBottom_toBottomOf="@+id/scrollView1"
+        app:layout_constraintBottom_toBottomOf="@+id/sv_3tabla"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
