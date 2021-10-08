@@ -93,6 +93,7 @@ class activity_3principal : AppCompatActivity() {
         tv3.setTextColor(Color.WHITE)
         tbrow0.addView(tv3)
         stk.addView(tbrow0)
+
         for (i in 0..24) {
             val tbrow = TableRow(this)
             val t1v = TextView(this)
