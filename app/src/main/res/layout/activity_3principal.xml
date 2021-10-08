@@ -9,11 +9,9 @@
 
     <EditText
         android:id="@+id/txt_3busqueda"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="337dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/search_bg"
         android:drawableStart="@drawable/ic_search"
         android:drawablePadding="10dp"
@@ -25,7 +23,6 @@
         android:textSize="14sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,11 +32,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_marginTop="100dp"
         android:background="#3d455b"
-        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavV_3bottomMenu"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.883"
         tools:ignore="MissingConstraints">
 
         <HorizontalScrollView
@@ -63,6 +63,63 @@
         </HorizontalScrollView>
     </ScrollView>
 
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/cg_3chipgroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="42dp"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_3busqueda"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip1"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fire" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip2"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Water" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip3"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Psychic" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip4"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fire" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip5"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fire" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip6"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fire" />
+    </com.google.android.material.chip.ChipGroup>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavV_3bottomMenu"
         android:layout_width="0dp"
@@ -77,4 +134,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/navigation" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
