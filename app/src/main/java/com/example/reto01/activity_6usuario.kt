@@ -12,7 +12,7 @@ class activity_6usuario : AppCompatActivity() {
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_6usuario)
 
-        bottomNavV_6bottomMenu.setSelectedItemId(R.id.navigation_perfil);
+        bottomNavV_6bottomMenu.setSelectedItemId(R.id.navigation_perfil)
 
         imgv6_atras.setOnClickListener(){
             val i = Intent(this@activity_6usuario, MainActivity::class.java)
