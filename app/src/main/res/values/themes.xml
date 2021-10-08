@@ -16,6 +16,20 @@
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
+    <style name="Theme.Reto01.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="gestionbtn">
+        <item name="background">@drawable/my_gradient_drawable</item>
+
+    </style>
+
+    <style name="Theme.Reto01.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Reto01.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>
 
 
