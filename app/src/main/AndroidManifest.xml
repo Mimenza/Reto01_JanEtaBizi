@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Reto01">
         <activity
-            android:name=".SplashActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,9 +44,7 @@
         <activity
             android:name=".activity_1login"
             android:exported="true" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
+
 
         <meta-data
             android:name="preloaded_fonts"

@@ -3,7 +3,6 @@ package com.example.reto01
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import kotlinx.android.synthetic.main.activity_5carrito.*
 import kotlinx.android.synthetic.main.activity_6usuario.*
 
@@ -64,5 +63,39 @@ class activity_5carrito : AppCompatActivity() {
                 else -> false
             }
         }
+
+        btn_5login.setOnClickListener(){
+            val i = Intent(this@activity_5carrito, activity_1login::class.java)
+            startActivity(i)
+        }
+        btn_5register.setOnClickListener(){
+            val i = Intent(this@activity_5carrito, activity_2registrar::class.java)
+            startActivity(i)
+        }
+        btn_5principal.setOnClickListener(){
+            val i = Intent(this@activity_5carrito, activity_3principal::class.java)
+            startActivity(i)
+        }
+        btn_5producto.setOnClickListener(){
+            val i = Intent(this@activity_5carrito, activity_4producto::class.java)
+            startActivity(i)
+        }
+        btn_5carrito.setOnClickListener(){
+            val i = Intent(this@activity_5carrito, activity_5carrito::class.java)
+            startActivity(i)
+        }
+        btn_5usuario.setOnClickListener(){
+            val i = Intent(this@activity_5carrito, activity_6usuario::class.java)
+            startActivity(i)
+        }
+        btn_5admin.setOnClickListener(){
+            val i = Intent(this@activity_5carrito, activity_7admin::class.java)
+            startActivity(i)
+        }
+        btn_5likes.setOnClickListener(){
+            val i = Intent(this@activity_5carrito, activity_8likes::class.java)
+            startActivity(i)
+        }
+
     }
 }

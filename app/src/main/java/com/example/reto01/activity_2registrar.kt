@@ -26,7 +26,10 @@ class activity_2registrar : AppCompatActivity() {
             Handler().postDelayed({
                 btn_2Register.setBackgroundResource(R.drawable.my_button_border);
             }, 100)
+            val i = Intent(this@activity_2registrar, activity_1login::class.java)
+            startActivity(i)
             false
         }
+
     }
 }

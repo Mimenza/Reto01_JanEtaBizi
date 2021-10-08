@@ -20,4 +20,74 @@
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/navigation" />
 
+    <Button
+        android:id="@+id/btn_5login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="82dp"
+        android:text="login"
+        app:layout_constraintStart_toStartOf="@+id/btn_5register"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_5usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="usuario"
+        app:layout_constraintStart_toStartOf="@+id/btn_5carrito"
+        app:layout_constraintTop_toBottomOf="@+id/btn_5carrito" />
+
+    <Button
+        android:id="@+id/btn_5carrito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="7dp"
+        android:text="carrito"
+        app:layout_constraintEnd_toEndOf="@+id/btn_5producto"
+        app:layout_constraintTop_toBottomOf="@+id/btn_5producto" />
+
+    <Button
+        android:id="@+id/btn_5producto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="producto"
+        app:layout_constraintEnd_toEndOf="@+id/btn_5principal"
+        app:layout_constraintTop_toBottomOf="@+id/btn_5principal" />
+
+    <Button
+        android:id="@+id/btn_5principal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="principal"
+        app:layout_constraintStart_toStartOf="@+id/btn_5register"
+        app:layout_constraintTop_toBottomOf="@+id/btn_5register" />
+
+    <Button
+        android:id="@+id/btn_5register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="registrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_5login" />
+
+    <Button
+        android:id="@+id/btn_5admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="admin"
+        app:layout_constraintEnd_toEndOf="@+id/btn_5usuario"
+        app:layout_constraintTop_toBottomOf="@+id/btn_5usuario" />
+
+    <Button
+        android:id="@+id/btn_5likes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="4dp"
+        android:text="likes"
+        app:layout_constraintEnd_toEndOf="@+id/btn_5usuario"
+        app:layout_constraintTop_toBottomOf="@+id/btn_5usuario" />
 </androidx.constraintlayout.widget.ConstraintLayout>

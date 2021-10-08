@@ -17,37 +17,10 @@ class MainActivity : AppCompatActivity() {
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_main)
 
-        btn_0login.setOnClickListener(){
-            val i = Intent(this@MainActivity, activity_1login::class.java)
-            startActivity(i)
-        }
-        btn_0register.setOnClickListener(){
-            val i = Intent(this@MainActivity, activity_2registrar::class.java)
-            startActivity(i)
-        }
-        btn_0principal.setOnClickListener(){
-            val i = Intent(this@MainActivity, activity_3principal::class.java)
-            startActivity(i)
-        }
-        btn_0producto.setOnClickListener(){
-            val i = Intent(this@MainActivity, activity_4producto::class.java)
-            startActivity(i)
-        }
-        btn_0carrito.setOnClickListener(){
-            val i = Intent(this@MainActivity, activity_5carrito::class.java)
-            startActivity(i)
-        }
-        btn_0usuario.setOnClickListener(){
-            val i = Intent(this@MainActivity, activity_6usuario::class.java)
-            startActivity(i)
-        }
-        btn_0admin.setOnClickListener(){
-            val i = Intent(this@MainActivity, activity_7admin::class.java)
-            startActivity(i)
-        }
-        btn_0likes.setOnClickListener(){
-            val i = Intent(this@MainActivity, activity_8likes::class.java)
-            startActivity(i)
-        }
+        Handler().postDelayed({
+            val intent = Intent(this, activity_1login::class.java)
+            startActivity(intent)
+            finish()
+        }, 2000) // 2000 is the delayed time in milliseconds.
     }
 }
