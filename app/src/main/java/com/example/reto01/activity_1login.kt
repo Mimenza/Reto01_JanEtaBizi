@@ -20,13 +20,16 @@ class activity_1login : AppCompatActivity() {
 
         }
 
+        btn_1login.setOnClickListener(){
+            val i = Intent(this@activity_1login, activity_3principal::class.java)
+            startActivity(i)
+        }
         btn_1login.setOnTouchListener{  v, event ->
             btn_1login.setBackgroundResource(R.drawable.my_button_border_click);
             Handler().postDelayed({
                 btn_1login.setBackgroundResource(R.drawable.my_button_border);
             }, 100)
-            val i = Intent(this@activity_1login, activity_3principal::class.java)
-            startActivity(i)
+
             false
 
         }
