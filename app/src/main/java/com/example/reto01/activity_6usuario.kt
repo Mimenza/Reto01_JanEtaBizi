@@ -3,7 +3,9 @@ package com.example.reto01
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
+import kotlinx.android.synthetic.main.activity_1login.*
 import kotlinx.android.synthetic.main.activity_6usuario.*
 
 class activity_6usuario : AppCompatActivity() {
@@ -67,6 +69,16 @@ class activity_6usuario : AppCompatActivity() {
                 }
                 else -> false
             }
+        }
+
+        btn_6save.setOnTouchListener{  v, event ->
+            btn_6save.setBackgroundResource(R.drawable.my_button_border_clickgreen);
+            Handler().postDelayed({
+                btn_6save.setBackgroundResource(R.drawable.my_button_border);
+            }, 100)
+
+            false
+
         }
     }
 }

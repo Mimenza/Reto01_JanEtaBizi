@@ -155,15 +155,15 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:background="@color/mainGreen"
+        android:radius="20dp"
         android:shape="rectangle"
         android:state_focused="true"
-        android:radius="20dp"
         android:text="@string/finalizar_compra"
-        android:textColor="@color/white"
+        android:textColor="#4A148C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.808" />
+        app:layout_constraintVertical_bias="0.844" />
 </androidx.constraintlayout.widget.ConstraintLayout>

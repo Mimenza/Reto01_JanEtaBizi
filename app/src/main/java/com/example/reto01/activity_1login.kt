@@ -20,13 +20,21 @@ class activity_1login : AppCompatActivity() {
 
         }
 
+<<<<<<< HEAD
         btn_5comprar.setOnTouchListener{ v, event ->
             btn_5comprar.setBackgroundResource(R.drawable.my_button_border_click);
+=======
+        btn_1login.setOnClickListener(){
+            val i = Intent(this@activity_1login, activity_3principal::class.java)
+            startActivity(i)
+        }
+        btn_1login.setOnTouchListener{  v, event ->
+            btn_1login.setBackgroundResource(R.drawable.my_button_border_click);
+>>>>>>> 7d085b2620fda6a3040f8e23676c09efd8739bab
             Handler().postDelayed({
                 btn_5comprar.setBackgroundResource(R.drawable.my_button_border);
             }, 100)
-            val i = Intent(this@activity_1login, activity_3principal::class.java)
-            startActivity(i)
+
             false
 
         }

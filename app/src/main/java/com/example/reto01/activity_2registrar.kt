@@ -20,14 +20,15 @@ class activity_2registrar : AppCompatActivity() {
             val i = Intent(this@activity_2registrar, activity_1login::class.java)
             startActivity(i)
         }
-
+        btn_2Register.setOnClickListener(){
+            val i = Intent(this@activity_2registrar, activity_1login::class.java)
+            startActivity(i)
+        }
         btn_2Register.setOnTouchListener{  v, event ->
             btn_2Register.setBackgroundResource(R.drawable.my_button_border_click);
             Handler().postDelayed({
                 btn_2Register.setBackgroundResource(R.drawable.my_button_border);
             }, 100)
-            val i = Intent(this@activity_2registrar, activity_1login::class.java)
-            startActivity(i)
             false
         }
 
