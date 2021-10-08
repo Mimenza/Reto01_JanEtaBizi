@@ -24,7 +24,7 @@
         app:srcCompat="@drawable/logo" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_1login"
+        android:id="@+id/btn_5comprar"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:background="@drawable/my_button_border"
