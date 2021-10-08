@@ -59,5 +59,7 @@
     <string name="gastos">Gastos de envío:</string>
     <string name="total">Total:</string>
     <string name="finalizar_compra">Finalizar compra</string>
+    <string name="iva">IVA</string>
+    <string name="iva_value">21%</string>
 
 </resources>
