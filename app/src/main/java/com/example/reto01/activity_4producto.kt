@@ -3,10 +3,16 @@ package com.example.reto01
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import com.site_valley.imagesliderexampleinkotlin.MySliderImageAdapter
+
+
+import com.smarteist.autoimageslider.SliderView
 import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_5carrito.*
 import kotlinx.android.synthetic.main.activity_6usuario.*
+
+import java.util.*
+
 
 class activity_4producto : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,5 +71,24 @@ class activity_4producto : AppCompatActivity() {
                 else -> false
             }
         }
+
+
+        //Image slider (Imagenes)
+
+        val imageSlider = findViewById<SliderView>(R.id.imageSlider)
+        val imageList: ArrayList<String> = ArrayList()
+
+        imageList.add("https://s03.s3c.es/imag/_v0/770x420/d/c/5/risitas-operado.jpg")
+        imageList.add("https://www.huelvahoy.com/wp-content/uploads/2020/08/el-risitas-800x400.jpg")
+        imageList.add("https://s1.eestatic.com/2020/09/14/bluper/bluper_520710891_169287780_1024x576.jpg")
+        setImageInSlider(imageList, imageSlider)
     }
-}
+
+    private fun setImageInSlider(images: ArrayList<String>, imageSlider: SliderView) {
+        val adapter = MySliderImageAdapter()
+        adapter.renewItems(images)
+        imageSlider.setSliderAdapter(adapter)
+        imageSlider.isAutoCycle = false
+
+    }
+    }
