@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         Handler().postDelayed({
             val intent = Intent(this, activity_1login::class.java)
             startActivity(intent)
+            this.overridePendingTransition(0, 0)
             finish()
         }, 2000) // 2000 is the delayed time in milliseconds.
     }
