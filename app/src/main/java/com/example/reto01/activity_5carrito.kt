@@ -65,15 +65,13 @@ class activity_5carrito : AppCompatActivity() {
         }
 
 
-        btn_5producto.setOnClickListener(){
-            val i = Intent(this@activity_5carrito, activity_4producto::class.java)
+        imgv6_back.setOnClickListener(){
+            val i = Intent(this@activity_5carrito, activity_3principal::class.java)
             startActivity(i)
         }
 
-        btn_5admin.setOnClickListener(){
-            val i = Intent(this@activity_5carrito, activity_7admin::class.java)
-            startActivity(i)
-        }
+
+
 
 
     }

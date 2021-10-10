@@ -11,7 +11,7 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-40dp"
+        android:layout_marginTop="-50dp"
         android:gravity="center"
         android:text="@string/carrito"
         android:textColor="@color/mainGreen"
@@ -20,11 +20,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/scrollView2"
         app:layout_constraintTop_toTopOf="@+id/scrollView2" />
+    <ImageView
+        android:id="@+id/imgv6_back"
+        android:layout_width="34dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.049"
+        app:srcCompat="@drawable/ic_arrow_back" />
 
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="414dp"
         android:layout_height="613dp"
+        android:layout_marginTop="100dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
