@@ -1,6 +1,6 @@
 package com.example.reto01
 
-import activity_1login
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

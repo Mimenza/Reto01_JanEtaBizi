@@ -1,4 +1,4 @@
-import com.example.reto01.R
+package com.example.reto01
 import com.example.reto01.activity_2registrar
 import com.example.reto01.activity_3principal
 
@@ -6,6 +6,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+
 import kotlinx.android.synthetic.main.activity_1login.*
 import kotlinx.android.synthetic.main.activity_2registrar.*
 import java.util.*
@@ -22,6 +23,10 @@ class activity_1login : AppCompatActivity() {
 
         }
 
+        btn_1login.setOnClickListener(){
+            val i = Intent(this@activity_1login, activity_3principal::class.java)
+            startActivity(i)
+        }
 
             btn_1login.setOnTouchListener { v, event ->
                 btn_1login.setBackgroundResource(R.drawable.my_button_border_click);

@@ -9,6 +9,7 @@ import android.widget.TableRow
 import kotlinx.android.synthetic.main.activity_3principal.*
 import android.widget.TextView
 import android.view.Gravity
+import kotlinx.android.synthetic.main.activity_5carrito.*
 
 
 class activity_3principal : AppCompatActivity() {
@@ -65,6 +66,16 @@ class activity_3principal : AppCompatActivity() {
                 }
                 else -> false
             }
+        }
+
+
+        btn_1admin.setOnClickListener(){
+            val i = Intent(this, activity_7admin::class.java)
+            startActivity(i)
+        }
+        btn_2producto.setOnClickListener(){
+            val i = Intent(this, activity_4producto::class.java)
+            startActivity(i)
         }
 
     }
