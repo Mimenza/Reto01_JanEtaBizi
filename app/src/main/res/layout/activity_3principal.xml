@@ -26,11 +26,6 @@
         tools:ignore="MissingConstraints">
 
 
-        <HorizontalScrollView
-            android:id="@+id/hsv_3tabla"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
 
             <RelativeLayout
                 android:id="@+id/rl_3tabla"
@@ -69,24 +64,6 @@
         app:layout_constraintVertical_bias="0.023" />
 
 
-    <EditText
-        android:id="@+id/txt_3busqueda"
-        android:layout_width="337dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/search_bg"
-        android:drawableStart="@drawable/ic_search"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="@string/filtrobusquedacomida"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:paddingStart="20dp"
-        android:textSize="14sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/cg_3chipgroup"
