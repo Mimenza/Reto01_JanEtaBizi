@@ -79,5 +79,6 @@
     <string name="btnUsuarios"> Usuarios</string>
     <string name="btnPedidos"> Pedidos</string>
     <string name="btnProductos"> Productos</string>
+    <string name="carrito_vacio">Tu carrito está vacío</string>
 
 </resources>

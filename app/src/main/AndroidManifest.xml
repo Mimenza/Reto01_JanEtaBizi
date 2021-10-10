@@ -13,11 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Reto01">
         <activity
-            android:name=".activity_9admin"
-            android:exported="true"
-            android:label="@string/title_activity_activity9admin"
-            android:theme="@style/Theme.Reto01.NoActionBar" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
