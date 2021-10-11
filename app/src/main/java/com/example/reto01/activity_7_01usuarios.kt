@@ -5,7 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_7_01usuarios.*
+
+import kotlinx.android.synthetic.main.activity_7_01usuarios.spinner_usuarios
+
 import kotlinx.android.synthetic.main.activity_7_01usuarios.view.*
+
 
 
 

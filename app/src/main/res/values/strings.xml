@@ -68,6 +68,7 @@
     <string name="finalizar_compra">Finalizar compra</string>
     <string name="iva">IVA</string>
     <string name="iva_value">21%</string>
+    <string name="euro">-€</string>
 
 
     <string name="hello_first_fragment">Hello first fragment</string>
@@ -83,5 +84,6 @@
     <string name="añadir_carrito">Añadir al carrito</string>
     <string name="añadir">Añadir al carrito</string>
     <string name="delete">Borrar</string>
+
 
 </resources>

@@ -19,6 +19,10 @@ class activity_7admin : AppCompatActivity() {
             val i = Intent(this, activity_7_01usuarios::class.java)
             startActivity(i)
         }
+        btn_7productos.setOnClickListener(){
+            val i = Intent(this, activity_7_02productos::class.java)
+            startActivity(i)
+        }
 
         fun navegacion_principal() {
             val navegacion_compra = Intent(this , activity_3principal::class.java)
