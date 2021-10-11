@@ -80,5 +80,6 @@
     <string name="btnPedidos"> Pedidos</string>
     <string name="btnProductos"> Productos</string>
     <string name="carrito_vacio">Tu carrito está vacío</string>
+    <string name="añadir_carrito">Añadir al carrito</string>
 
 </resources>

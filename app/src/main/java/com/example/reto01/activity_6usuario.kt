@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import kotlinx.android.synthetic.main.activity_1login.*
 import kotlinx.android.synthetic.main.activity_6usuario.*
 
 class activity_6usuario : AppCompatActivity() {
@@ -15,7 +14,7 @@ class activity_6usuario : AppCompatActivity() {
 
         bottomNavV_6bottomMenu.setSelectedItemId(R.id.navigation_perfil)
 
-        imgv6_admin.setOnClickListener(){
+        imgv6_atras.setOnClickListener(){
             val i = Intent(this, activity_7admin::class.java)
             startActivity(i)
         }
