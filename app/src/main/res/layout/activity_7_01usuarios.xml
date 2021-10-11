@@ -35,10 +35,11 @@
         android:id="@+id/imgv7_01_atras"
         android:layout_width="34dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner_usuarios"
-        app:layout_constraintTop_toTopOf="@+id/spinner_usuarios"
-        app:srcCompat="@drawable/ic_arrow_back"
-        tools:layout_editor_absoluteX="16dp" />
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgv_7_01perfil"
@@ -185,8 +186,6 @@
 
     <Spinner
         android:id="@+id/spinner_usuarios"
-        android:layout_width="274dp"
-        android:layout_height="51dp"
         android:layout_width="276dp"
         android:layout_height="53dp"
         android:layout_marginStart="8dp"
