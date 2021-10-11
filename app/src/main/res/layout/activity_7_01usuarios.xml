@@ -53,7 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.218" />
+        app:layout_constraintVertical_bias="0.149" />
 
     <ImageView
     android:id="@+id/imageView"
@@ -185,21 +185,20 @@
         app:layout_constraintVertical_bias="0.846" />
 
 
-
     <Spinner
         android:id="@+id/spinner_usuarios"
-        android:layout_width="344dp"
-        android:layout_height="56dp"
+        android:layout_width="276dp"
+        android:layout_height="53dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.086"
+        app:layout_constraintVertical_bias="0.012"
 
 
         tools:ignore="SpeakableTextPresentCheck" />
