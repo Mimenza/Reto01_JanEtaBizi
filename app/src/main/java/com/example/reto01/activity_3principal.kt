@@ -4,12 +4,9 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TableLayout
 import android.widget.TableRow
-import kotlinx.android.synthetic.main.activity_3principal.*
 import android.widget.TextView
-import android.view.Gravity
-import kotlinx.android.synthetic.main.activity_5carrito.*
+import kotlinx.android.synthetic.main.activity_3principal.*
 
 
 class activity_3principal : AppCompatActivity() {
@@ -17,6 +14,39 @@ class activity_3principal : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_3principal)
+
+        var layoutParams = TableRow.LayoutParams(
+            TableRow.LayoutParams.WRAP_CONTENT,
+            TableRow.LayoutParams.WRAP_CONTENT
+        )
+
+        var items = 4
+        var rowsNumber = (((items + 3)-1)/3)-1
+
+        for (i in 0..rowsNumber){
+            var newRow = TableRow(this)
+            var newCol1 = TextView(this)
+            var newCol2 = TextView(this)
+            var newCol3 = TextView(this)
+
+            newCol1.setHeight(200)
+            newCol2.setHeight(200)
+            newCol3.setHeight(200)
+
+            newCol1.setBackgroundColor(Color.parseColor("#e3f14c"))
+            newCol2.setBackgroundColor(Color.parseColor("#e3f1fc"))
+            newCol3.setBackgroundColor(Color.parseColor("#e3f1fc"))
+
+            newCol1.setText("pope")
+            newCol2.setText("pipe")
+            newCol3.setText("pepe")
+
+            newRow.addView(newCol1, layoutParams)
+            newRow.addView(newCol2, layoutParams)
+            newRow.addView(newCol3, layoutParams)
+
+            simpleTableLayout.addView(newRow)
+        }
 
         fun navegacion_principal() {
             val navegacion_compra = Intent(this, activity_3principal::class.java)
@@ -69,11 +99,11 @@ class activity_3principal : AppCompatActivity() {
         }
 
 
-        btn_1admin.setOnClickListener(){
+        btn_1admin.setOnClickListener() {
             val i = Intent(this, activity_7admin::class.java)
             startActivity(i)
         }
-        btn_2producto.setOnClickListener(){
+        btn_2producto.setOnClickListener() {
             val i = Intent(this, activity_4producto::class.java)
             startActivity(i)
         }
