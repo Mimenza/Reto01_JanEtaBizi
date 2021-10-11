@@ -14,7 +14,7 @@ class activity_6usuario : AppCompatActivity() {
 
         bottomNavV_6bottomMenu.setSelectedItemId(R.id.navigation_perfil)
 
-        imgv6_atras.setOnClickListener(){
+        imgv6_admin.setOnClickListener(){
             val i = Intent(this, activity_7admin::class.java)
             startActivity(i)
         }

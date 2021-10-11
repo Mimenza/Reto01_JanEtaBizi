@@ -78,9 +78,9 @@ class activity_4producto : AppCompatActivity() {
         val imageSlider = findViewById<SliderView>(R.id.imageSlider)
         val imageList: ArrayList<String> = ArrayList()
 
-        imageList.add("https://s03.s3c.es/imag/_v0/770x420/d/c/5/risitas-operado.jpg")
-        imageList.add("https://www.huelvahoy.com/wp-content/uploads/2020/08/el-risitas-800x400.jpg")
-        imageList.add("https://s1.eestatic.com/2020/09/14/bluper/bluper_520710891_169287780_1024x576.jpg")
+        imageList.add(R.drawable.pizza.toString())
+        imageList.add(R.drawable.pizza.toString())
+        imageList.add(R.drawable.pizza.toString())
         setImageInSlider(imageList, imageSlider)
     }
 
