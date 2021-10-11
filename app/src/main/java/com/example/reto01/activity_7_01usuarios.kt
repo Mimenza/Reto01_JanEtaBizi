@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_6usuario.*
 import kotlinx.android.synthetic.main.activity_7_01usuarios.*
+import kotlinx.android.synthetic.main.activity_7_01usuarios.spinner_usuarios
+
 
 class activity_7_01usuarios : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
