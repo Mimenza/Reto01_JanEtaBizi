@@ -13,59 +13,55 @@
         android:background="@drawable/my_gradient_drawable"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
 
     <ImageView
         android:id="@+id/imgv7_01_logout"
         android:layout_width="34dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_usuarios"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.957"
+        app:layout_constraintHorizontal_bias="0.946"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
+        app:layout_constraintTop_toTopOf="@+id/spinner_usuarios"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_logout" />
-
 
     <ImageView
         android:id="@+id/imgv7_01_atras"
         android:layout_width="34dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.042"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
-        app:srcCompat="@drawable/ic_arrow_back" />
-
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_usuarios"
+        app:layout_constraintTop_toTopOf="@+id/spinner_usuarios"
+        app:srcCompat="@drawable/ic_arrow_back"
+        tools:layout_editor_absoluteX="16dp" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgv_7_01perfil"
         android:layout_width="155dp"
         android:layout_height="154dp"
-        android:src="@drawable/descarga"
+        android:src="@drawable/admin_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.218" />
+        app:layout_constraintVertical_bias="0.197" />
 
     <ImageView
-    android:id="@+id/imageView"
-    android:layout_width="30dp"
-    android:layout_height="62dp"
-    android:src="@drawable/ic_person"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toStartOf="@+id/textInputLayout1"
-    app:layout_constraintHorizontal_bias="0.73"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.46" />
+        android:id="@+id/imageView"
+        android:layout_width="30dp"
+        android:layout_height="62dp"
+        android:src="@drawable/ic_person"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textInputLayout1"
+        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.46" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout1"
@@ -89,17 +85,17 @@
 
     <ImageView
 
-    android:id="@+id/imageView2"
+        android:id="@+id/imageView2"
 
-    android:layout_width="30dp"
-    android:layout_height="62dp"
-    android:src="@drawable/ic_email"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toStartOf="@+id/textInputLayout2"
-    app:layout_constraintHorizontal_bias="0.73"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.579" />
+        android:layout_width="30dp"
+        android:layout_height="62dp"
+        android:src="@drawable/ic_email"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textInputLayout2"
+        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.579" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout2"
@@ -123,16 +119,16 @@
 
     <ImageView
 
-    android:id="@+id/imageView3"
-    android:layout_width="30dp"
-    android:layout_height="62dp"
-    android:src="@drawable/ic_password"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toStartOf="@+id/textInputLayout3"
-    app:layout_constraintHorizontal_bias="0.73"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.701" />
+        android:id="@+id/imageView3"
+        android:layout_width="30dp"
+        android:layout_height="62dp"
+        android:src="@drawable/ic_password"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textInputLayout3"
+        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.701" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout3"
@@ -185,21 +181,20 @@
         app:layout_constraintVertical_bias="0.846" />
 
 
-
     <Spinner
         android:id="@+id/spinner_usuarios"
-        android:layout_width="344dp"
-        android:layout_height="56dp"
+        android:layout_width="274dp"
+        android:layout_height="51dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.086"
+        app:layout_constraintVertical_bias="0.048"
 
 
         tools:ignore="SpeakableTextPresentCheck" />

@@ -5,30 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity_7_02productos">
+
+
     <ImageView
         android:id="@+id/imgv7_02_logout"
         android:layout_width="34dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_productos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.957"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
+        app:layout_constraintTop_toTopOf="@+id/spinner_productos"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_logout" />
-
 
     <ImageView
         android:id="@+id/imgv7_02_atras"
         android:layout_width="34dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_productos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
+        app:layout_constraintTop_toTopOf="@+id/spinner_productos"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_arrow_back" />
+
     <TextView
         android:id="@+id/txtv_7_02nombreProducto"
         android:layout_width="234dp"
@@ -38,10 +40,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.065" />
+        app:layout_constraintVertical_bias="0.152" />
 
     <TextView
         android:id="@+id/txtv_7_02descripcionproducto"
@@ -87,32 +89,27 @@
         android:layout_marginStart="139dp"
         android:layout_marginBottom="12dp"
         android:orientation="horizontal"
-        android:text="@string/euro"
+        android:text="@string/euros"
         android:textColor="@android:color/black"
         android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="@+id/txtv_7_02descripcionproducto"
         app:layout_constraintBottom_toTopOf="@+id/txtv_7_02descripcionproducto"
-        />
-
-
-
-
+        app:layout_constraintStart_toStartOf="@+id/txtv_7_02descripcionproducto" />
 
 
     <Spinner
         android:id="@+id/spinner_productos"
-        android:layout_width="344dp"
-        android:layout_height="56dp"
+        android:layout_width="288dp"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.086"
+        app:layout_constraintVertical_bias="0.047"
 
 
         tools:ignore="SpeakableTextPresentCheck" />

@@ -103,41 +103,36 @@
             tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
-        android:id="@+id/btn_4añadircarrito"
-        android:layout_width="0dp"
-        android:layout_height="44dp"
-
-        android:layout_marginStart="26dp"
-        android:layout_marginEnd="14dp"
-        android:background="@drawable/my_button_border_clickgreen"
-        android:backgroundTint="#20B2AA"
-        android:text="@string/delete"
-        android:textColor="@color/mainGreen"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_4delete"
-        app:layout_constraintEnd_toStartOf="@+id/btn_4delete"
-        app:layout_constraintHorizontal_bias="0.379"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_4delete"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="DuplicateClickableBoundsCheck,TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/btn_4delete"
-        android:layout_width="209dp"
-        android:layout_height="48dp"
-
-        android:layout_marginTop="594dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="39dp"
-        android:background="@drawable/my_button_border_clickgreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button_border"
         android:backgroundTint="#20B2AA"
-        android:text="@string/añadir"
+        android:text="@string/delete"
         android:textColor="@color/mainGreen"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavV_4bottomMenu"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_4añadircarrito"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.179"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.836" />
+
+    <Button
+        android:id="@+id/btn_4añadircarrito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button_border"
+        android:backgroundTint="#20B2AA"
+        android:text="@string/añadir_carrito"
+        android:textColor="@color/mainGreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.836" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavV_4bottomMenu"
