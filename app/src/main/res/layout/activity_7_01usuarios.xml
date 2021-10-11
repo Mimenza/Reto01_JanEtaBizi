@@ -21,12 +21,15 @@
 
     <ImageView
         android:id="@+id/imgv7_01_atras"
-        android:layout_width="34dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="36dp"
         app:layout_constraintBottom_toBottomOf="@+id/spinner_usuarios"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_usuarios"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/spinner_usuarios"
-        app:srcCompat="@drawable/ic_arrow_back"
-        tools:layout_editor_absoluteX="16dp" />
+        app:srcCompat="@drawable/ic_arrow_back" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgv_7_01perfil"
@@ -144,6 +147,7 @@
         android:id="@+id/btn_7_01save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="105dp"
         android:background="@drawable/my_button_border"
         android:backgroundTint="#20B2AA"
         android:text="@string/txt4_guardar"
@@ -152,7 +156,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.836"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_usuarios"
         app:layout_constraintVertical_bias="0.846" />
 
     <Button
@@ -173,13 +177,18 @@
 
     <Spinner
         android:id="@+id/spinner_usuarios"
-        android:layout_width="275dp"
+
         android:layout_width="276dp"
-        android:layout_height="48dp"
-        android:layout_height="53dp"
-        tools:ignore="SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="86dp"
-        tools:layout_editor_absoluteY="39dp" />
+        android:layout_height="0dp"
+
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="486dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_7_01save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgv7_01_atras"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

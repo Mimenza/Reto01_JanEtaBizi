@@ -25,9 +25,6 @@ class activity_7_01usuarios : AppCompatActivity() {
             val i = Intent(this, activity_7admin::class.java)
             startActivity(i)
         }
-        imgv7_01_logout.setOnClickListener(){
-            val i = Intent(this, activity_1login::class.java)
-            startActivity(i)
-        }
+
     }
 }

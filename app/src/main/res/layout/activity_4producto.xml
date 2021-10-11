@@ -35,7 +35,7 @@
 
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/txt_4cantidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="139dp"
@@ -55,7 +55,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toTopOf="@+id/txtv_4descripcionproducto"
-        app:layout_constraintEnd_toStartOf="@+id/textView4"
+        app:layout_constraintEnd_toStartOf="@+id/txt_4cantidad"
         app:srcCompat="@drawable/ic_minus" />
 
     <ImageView
@@ -64,7 +64,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
         app:layout_constraintBottom_toBottomOf="@+id/imgv_4menos"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/txt_4cantidad"
         app:layout_constraintTop_toTopOf="@+id/imgv_4menos"
         app:srcCompat="@drawable/ic_plus" />
 

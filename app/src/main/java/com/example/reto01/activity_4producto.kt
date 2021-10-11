@@ -12,6 +12,8 @@ import kotlinx.android.synthetic.main.activity_5carrito.*
 import kotlinx.android.synthetic.main.activity_6usuario.*
 
 import java.util.*
+import android.util.Log
+import android.widget.Toast
 
 
 class activity_4producto : AppCompatActivity() {
@@ -82,6 +84,29 @@ class activity_4producto : AppCompatActivity() {
         imageList.add("https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg")
         imageList.add("https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg")
         setImageInSlider(imageList, imageSlider)
+
+        var num = 0
+
+        imgv_4menos.setOnClickListener(){
+
+            if (txt_4cantidad.toString().toInt() < 1){
+
+                txt_4cantidad.text=num.toString()
+            }else{
+                num--
+                txt_4cantidad.text=num.toString()
+            }
+
+        }
+        imgv_4mas.setOnClickListener(){
+
+            num++
+
+            txt_4cantidad.text=num.toString()
+        }
+
+
+
     }
 
     private fun setImageInSlider(images: ArrayList<String>, imageSlider: SliderView) {
@@ -91,6 +116,9 @@ class activity_4producto : AppCompatActivity() {
         imageSlider.isAutoCycle = false
 
     }
+
+
+
 
     }
 
