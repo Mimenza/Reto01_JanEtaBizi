@@ -87,9 +87,9 @@ class activity_4producto : AppCompatActivity() {
 
         imgv_4menos.setOnClickListener(){
 
-            if (txt_4cantidad.toString().toInt() < 1){
+            if(num ==0){
 
-                txt_4cantidad.text=num.toString()
+                txt_4cantidad.text="0"
             }else{
                 num--
                 txt_4cantidad.text=num.toString()
