@@ -33,7 +33,7 @@
         app:srcCompat="@drawable/ic_logout" />
 
     <ImageView
-        android:id="@+id/imgv6_admin"
+        android:id="@+id/imgv6_atras"
         android:layout_width="34dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -97,6 +97,7 @@
         app:layout_constraintVertical_bias="0.46">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtinput_6usuario"
             android:layout_width="275dp"
             android:layout_height="wrap_content"
             android:hint="@string/txt1_nombreusuario" />
@@ -127,6 +128,7 @@
         app:layout_constraintVertical_bias="0.58">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtinput_6correo"
             android:layout_width="275dp"
             android:layout_height="wrap_content"
             android:hint="@string/txt2_correo" />
@@ -157,6 +159,7 @@
         app:layout_constraintVertical_bias="0.70">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtinput_6contraseña"
             android:layout_width="275dp"
             android:layout_height="wrap_content"
             android:hint="@string/txt3_contraseña" />
