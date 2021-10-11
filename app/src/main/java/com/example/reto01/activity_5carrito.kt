@@ -3,6 +3,8 @@ package com.example.reto01
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_5carrito.*
 import kotlinx.android.synthetic.main.activity_6usuario.*
 
@@ -69,7 +71,15 @@ class activity_5carrito : AppCompatActivity() {
             startActivity(i)
         }
 
+        btn_5añadircarrito.setOnTouchListener{ v, event ->
+            btn_4comprar.setBackgroundResource(R.drawable.my_button_border_clickgreen);
+            Handler().postDelayed({
+                btn_6save.setBackgroundResource(R.drawable.my_button_border);
+            }, 100)
 
+            false
+
+        }
 
 
 

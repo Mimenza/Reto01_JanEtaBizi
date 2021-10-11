@@ -190,16 +190,22 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/btn_4añadircarrito"
+                android:id="@+id/btn_5añadircarrito"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginEnd="50dp"
-                android:background="@drawable/my_button_border_clickgreen"
+                android:background="@drawable/my_button_border"
                 android:backgroundTint="#20B2AA"
                 android:text="@string/finalizar_compra"
-                android:textColor="@color/mainGreen" />
+                android:textColor="@color/mainGreen"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.195"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.836" />
 
             <View
                 android:id="@+id/view_5"
