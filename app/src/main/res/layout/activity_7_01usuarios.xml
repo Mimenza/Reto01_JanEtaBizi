@@ -70,7 +70,11 @@
         app:layout_constraintVertical_bias="0.218" />
 
     <ImageView
+<<<<<<< HEAD
+        android:id="@+id/imageView"
+=======
         android:id="@+id/imageView4"
+>>>>>>> 1303e3a7e81a23579a9932c16ac888e0c9aef63d
         android:layout_width="30dp"
         android:layout_height="62dp"
         android:src="@drawable/ic_person"
@@ -80,6 +84,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.46" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/usuarios_spinner"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Customer Name"
+        app:layout_constraintBottom_toTopOf="@+id/Edittxt_7_01nombreuser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/usuarios_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            tools:ignore="KeyboardInaccessibleWidget,SpeakableTextPresentCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout1"
@@ -102,7 +126,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
+<<<<<<< HEAD
+        android:id="@+id/imageView2"
+=======
         android:id="@+id/imageView5"
+>>>>>>> 1303e3a7e81a23579a9932c16ac888e0c9aef63d
         android:layout_width="30dp"
         android:layout_height="62dp"
         android:src="@drawable/ic_email"
@@ -134,7 +162,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
+<<<<<<< HEAD
+        android:id="@+id/imageView3"
+=======
         android:id="@+id/imageView6"
+>>>>>>> 1303e3a7e81a23579a9932c16ac888e0c9aef63d
         android:layout_width="30dp"
         android:layout_height="62dp"
         android:src="@drawable/ic_password"
@@ -196,6 +228,8 @@
         app:layout_constraintVertical_bias="0.846" />
 
 
+<<<<<<< HEAD
+=======
     <Spinner
         android:id="@+id/spinner_usuarios"
         android:layout_width="344dp"
@@ -215,4 +249,5 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
 
+>>>>>>> 1303e3a7e81a23579a9932c16ac888e0c9aef63d
 </androidx.constraintlayout.widget.ConstraintLayout>
