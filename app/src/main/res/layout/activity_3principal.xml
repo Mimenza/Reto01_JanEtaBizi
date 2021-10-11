@@ -9,39 +9,6 @@
     tools:context=".activity_3principal">
 
 
-    <ScrollView
-        android:id="@+id/sv_3tabla"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="100dp"
-        android:background="#3d455b"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavV_3bottomMenu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.883"
-        tools:ignore="MissingConstraints">
-
-
-        <RelativeLayout
-            android:id="@+id/rl_3tabla"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-
-            <TableLayout
-                android:id="@+id/tl_3tabla"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"></TableLayout>
-        </RelativeLayout>
-
-    </ScrollView>
-
-
     <EditText
         android:id="@+id/txt_3busqueda"
         android:layout_width="337dp"
@@ -131,6 +98,38 @@
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/navigation" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:fillViewport="true"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.633">
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/simpleTableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="*">
+        </TableLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_2producto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="428dp"
+        android:layout_marginEnd="19dp"
+        android:text="producto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_1admin"
+        app:layout_constraintTop_toBottomOf="@+id/cg_3chipgroup" />
+
     <Button
         android:id="@+id/btn_1admin"
         android:layout_width="wrap_content"
@@ -139,17 +138,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/btn_2producto"
         app:layout_constraintEnd_toStartOf="@+id/btn_2producto"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_2producto" />
-
-    <Button
-        android:id="@+id/btn_2producto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="19dp"
-        android:text="producto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_1admin"
-        app:layout_constraintTop_toBottomOf="@+id/cg_3chipgroup" />
+        app:layout_constraintTop_toTopOf="@+id/btn_2producto"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
