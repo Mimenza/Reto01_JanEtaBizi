@@ -106,10 +106,10 @@
     <Button
         android:id="@+id/btn_4añadircarrito"
         android:layout_width="0dp"
-        android:layout_height="49dp"
+        android:layout_height="44dp"
 
-        android:layout_marginStart="29dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="14dp"
         android:background="@drawable/my_button_border_clickgreen"
         android:backgroundTint="#20B2AA"
         android:text="@string/delete"
@@ -124,12 +124,12 @@
 
     <Button
         android:id="@+id/btn_4delete"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="209dp"
+        android:layout_height="48dp"
 
-        android:layout_marginTop="593dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="33dp"
+        android:layout_marginTop="594dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="39dp"
         android:background="@drawable/my_button_border_clickgreen"
         android:backgroundTint="#20B2AA"
         android:text="@string/añadir"
