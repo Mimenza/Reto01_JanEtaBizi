@@ -70,6 +70,7 @@
         app:layout_constraintVertical_bias="0.218" />
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="30dp"
         android:layout_height="62dp"
         android:src="@drawable/ic_person"
@@ -79,6 +80,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.46" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/usuarios_spinner"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Customer Name"
+        app:layout_constraintBottom_toTopOf="@+id/Edittxt_7_01nombreuser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/usuarios_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            tools:ignore="KeyboardInaccessibleWidget,SpeakableTextPresentCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout1"
@@ -101,6 +122,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="30dp"
         android:layout_height="62dp"
         android:src="@drawable/ic_email"
@@ -132,6 +154,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
+        android:id="@+id/imageView3"
         android:layout_width="30dp"
         android:layout_height="62dp"
         android:src="@drawable/ic_password"
@@ -191,25 +214,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.846" />
-
-
-
-    <Spinner
-        android:id="@+id/spinner_usuarios"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.096"
-        tools:ignore="SpeakableTextPresentCheck"
-
-
-        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

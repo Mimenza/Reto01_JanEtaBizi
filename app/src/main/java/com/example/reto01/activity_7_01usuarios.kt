@@ -4,8 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import kotlinx.android.synthetic.main.activity_6usuario.*
 import kotlinx.android.synthetic.main.activity_7_01usuarios.*
+import kotlinx.android.synthetic.main.activity_7_01usuarios.view.*
+
+
 
 class activity_7_01usuarios : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,7 +16,7 @@ class activity_7_01usuarios : AppCompatActivity() {
         getSupportActionBar()?.hide()
         val lista = arrayOf("USUARIO1", "USUARIO2", "USUARIO3", "USUARIO4")
         val adaptador = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista)
-        spinner_usuarios.adapter =adaptador
+        usuarios_spinner.adapter =adaptador
 
         imgv7_01_atras.setOnClickListener(){
             val i = Intent(this, activity_7admin::class.java)
