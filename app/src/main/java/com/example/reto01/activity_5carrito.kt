@@ -64,7 +64,6 @@ class activity_5carrito : AppCompatActivity() {
             }
         }
 
-
         imgv6_back.setOnClickListener(){
             val i = Intent(this@activity_5carrito, activity_3principal::class.java)
             startActivity(i)
