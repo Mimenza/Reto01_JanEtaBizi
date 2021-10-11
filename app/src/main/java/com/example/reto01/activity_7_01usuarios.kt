@@ -14,9 +14,6 @@ class activity_7_01usuarios : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_7_01usuarios)
         getSupportActionBar()?.hide()
-        val lista = arrayOf("USUARIO1", "USUARIO2", "USUARIO3", "USUARIO4")
-        val adaptador = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista)
-        usuarios_spinner.adapter =adaptador
 
         imgv7_01_atras.setOnClickListener(){
             val i = Intent(this, activity_7admin::class.java)
