@@ -20,18 +20,6 @@
 
 
     <ImageView
-        android:id="@+id/imgv7_01_logout"
-        android:layout_width="34dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner_usuarios"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.946"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/spinner_usuarios"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_logout" />
-
-    <ImageView
         android:id="@+id/imgv7_01_atras"
         android:layout_width="34dp"
         android:layout_height="wrap_content"
@@ -185,21 +173,13 @@
 
     <Spinner
         android:id="@+id/spinner_usuarios"
-        android:layout_width="274dp"
-        android:layout_height="51dp"
+        android:layout_width="275dp"
         android:layout_width="276dp"
+        android:layout_height="48dp"
         android:layout_height="53dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.048"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="39dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
