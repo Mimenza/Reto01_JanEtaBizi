@@ -15,6 +15,10 @@ class activity_7admin : AppCompatActivity() {
         setContentView(R.layout.activity_7admin)
 
         bottomNavV_7bottomMenu.setSelectedItemId(R.id.navigation_invisible)
+        btn_7usuarios.setOnClickListener(){
+            val i = Intent(this, activity_7_01usuarios::class.java)
+            startActivity(i)
+        }
 
         fun navegacion_principal() {
             val navegacion_compra = Intent(this , activity_3principal::class.java)
