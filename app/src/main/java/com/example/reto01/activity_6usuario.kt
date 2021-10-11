@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import kotlinx.android.synthetic.main.activity_1login.*
 import kotlinx.android.synthetic.main.activity_6usuario.*
 
 class activity_6usuario : AppCompatActivity() {

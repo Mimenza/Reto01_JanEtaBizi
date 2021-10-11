@@ -3,12 +3,12 @@ package com.example.reto01
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import com.site_valley.imagesliderexampleinkotlin.MySliderImageAdapter
 
 
 import com.smarteist.autoimageslider.SliderView
 import kotlinx.android.synthetic.main.activity_4producto.*
-import kotlinx.android.synthetic.main.activity_5carrito.*
 import kotlinx.android.synthetic.main.activity_6usuario.*
 
 import java.util.*
@@ -78,10 +78,54 @@ class activity_4producto : AppCompatActivity() {
         val imageSlider = findViewById<SliderView>(R.id.imageSlider)
         val imageList: ArrayList<String> = ArrayList()
 
-        imageList.add("https://s03.s3c.es/imag/_v0/770x420/d/c/5/risitas-operado.jpg")
-        imageList.add("https://www.huelvahoy.com/wp-content/uploads/2020/08/el-risitas-800x400.jpg")
-        imageList.add("https://s1.eestatic.com/2020/09/14/bluper/bluper_520710891_169287780_1024x576.jpg")
+        imageList.add("https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg")
+        imageList.add("https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg")
+        imageList.add("https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg")
         setImageInSlider(imageList, imageSlider)
+
+        var num = 0
+
+        imgv_4menos.setOnClickListener(){
+
+            if (txt_4cantidad.toString().toInt() < 1){
+
+                txt_4cantidad.text=num.toString()
+            }else{
+                num--
+                txt_4cantidad.text=num.toString()
+            }
+
+        }
+        imgv_4mas.setOnClickListener(){
+
+            num++
+
+            txt_4cantidad.text=num.toString()
+        }
+
+
+        btn_4añadircarrito.setOnTouchListener{ v, event ->
+            btn_4añadircarrito.setBackgroundResource(R.drawable.my_button_border_clickgreen);
+            Handler().postDelayed({
+                btn_6save.setBackgroundResource(R.drawable.my_button_border);
+            }, 100)
+
+            false
+
+        }
+
+        btn_4comprar.setOnTouchListener{ v, event ->
+            btn_4comprar.setBackgroundResource(R.drawable.my_button_border_clickgreen);
+            Handler().postDelayed({
+                btn_6save.setBackgroundResource(R.drawable.my_button_border);
+            }, 100)
+
+            false
+
+        }
+
+
+
     }
 
     private fun setImageInSlider(images: ArrayList<String>, imageSlider: SliderView) {
@@ -91,4 +135,10 @@ class activity_4producto : AppCompatActivity() {
         imageSlider.isAutoCycle = false
 
     }
+
+
+
+
     }
+
+

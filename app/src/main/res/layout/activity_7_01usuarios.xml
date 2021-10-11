@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_6usuario"
-    android:focusable="true"
-    android:focusableInTouchMode="true">
+    tools:context=".activity_7_01usuarios">
+
 
     <TextView
         android:id="@+id/textView"
@@ -15,66 +14,44 @@
         android:background="@drawable/my_gradient_drawable"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/imgv6_logout"
-        android:layout_width="34dp"
+        android:id="@+id/imgv7_01_atras"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.950"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="36dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_usuarios"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_usuarios"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.049"
-        app:srcCompat="@drawable/ic_logout" />
+
+        app:layout_constraintTop_toTopOf="@+id/spinner_usuarios"
 
 
-    <ImageView
-
-        android:id="@+id/imgv6_admin"
-        android:layout_width="35dp"
-        android:layout_height="37dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imgv6_logout"
-        app:layout_constraintHorizontal_bias="0.09"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062"
-        app:srcCompat="@drawable/admin_icon" />
-
-    <TextView
-        android:id="@+id/txt_6nombreuser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nombre de usuario"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.50"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.30" />
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_arrow_back" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imgv_6perfil"
-        android:layout_width="145dp"
-        android:layout_height="145dp"
-        android:src="@drawable/descarga"
+        android:id="@+id/imgv_7_01perfil"
+        android:layout_width="155dp"
+        android:layout_height="154dp"
+        android:src="@drawable/admin_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.09" />
+
+        app:layout_constraintVertical_bias="0.197" />
 
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="30dp"
         android:layout_height="62dp"
         android:src="@drawable/ic_person"
@@ -98,7 +75,7 @@
         app:layout_constraintVertical_bias="0.46">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtinput_6usuario"
+            android:id="@+id/txtinput_7_01usuario"
             android:layout_width="275dp"
             android:layout_height="wrap_content"
             android:hint="@string/txt1_nombreusuario" />
@@ -106,6 +83,9 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
+
+        android:id="@+id/imageView2"
+
         android:layout_width="30dp"
         android:layout_height="62dp"
         android:src="@drawable/ic_email"
@@ -129,7 +109,7 @@
         app:layout_constraintVertical_bias="0.58">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtinput_6correo"
+            android:id="@+id/txtinput_7_01correo"
             android:layout_width="275dp"
             android:layout_height="wrap_content"
             android:hint="@string/txt2_correo" />
@@ -137,6 +117,8 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
+
+        android:id="@+id/imageView3"
         android:layout_width="30dp"
         android:layout_height="62dp"
         android:src="@drawable/ic_password"
@@ -160,7 +142,7 @@
         app:layout_constraintVertical_bias="0.70">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtinput_6contraseña"
+            android:id="@+id/txtinput_7_01contraseña"
             android:layout_width="275dp"
             android:layout_height="wrap_content"
             android:hint="@string/txt3_contraseña" />
@@ -168,32 +150,49 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btn_6save"
+        android:id="@+id/btn_7_01save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="105dp"
         android:background="@drawable/my_button_border"
         android:backgroundTint="#20B2AA"
         android:text="@string/txt4_guardar"
         android:textColor="@color/mainGreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.836"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.828" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_usuarios"
+        app:layout_constraintVertical_bias="0.846" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavV_6bottomMenu"
-        android:layout_width="0dp"
+    <Button
+        android:id="@+id/btn_7_01Eliminar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
+        android:background="@drawable/my_button_border"
+        android:backgroundTint="#20B2AA"
+        android:text="@string/txt5_eliminar"
+        android:textColor="@color/mainGreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.222"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:menu="@menu/navigation">
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+        app:layout_constraintVertical_bias="0.846" />
+
+
+    <Spinner
+        android:id="@+id/spinner_usuarios"
+        android:layout_width="276dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="486dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_7_01save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgv7_01_atras"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

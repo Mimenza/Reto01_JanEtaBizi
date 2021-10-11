@@ -13,6 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Reto01">
         <activity
+            android:name=".activity_7_02productos"
+            android:exported="true" />
+        <activity
+            android:name=".activity_7"
+            android:exported="true" />
+        <activity
+            android:name=".activity_7_01usuarios"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

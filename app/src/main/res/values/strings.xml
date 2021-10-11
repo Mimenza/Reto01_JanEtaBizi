@@ -5,6 +5,7 @@
     <string name="txt2_correo">Correo electrónico</string>
     <string name="txt3_contraseña">Contraseña</string>
     <string name="txt4_guardar">Guardar</string>
+    <string name="txt5_eliminar">Eliminar</string>
     <string name="title_activity_login">Inicio de sesión</string>
 
     <!-- Strings related to login and register -->
@@ -58,7 +59,6 @@
     <string name="previous">Previous</string>
 
 
-
     <!--Carrito-->
     <string name="carrito">Mi carrito</string>
     <string name="items">Mis productos:</string>
@@ -68,6 +68,7 @@
     <string name="finalizar_compra">Finalizar compra</string>
     <string name="iva">IVA</string>
     <string name="iva_value">21%</string>
+    <string name="euro">-€</string>
 
 
     <string name="hello_first_fragment">Hello first fragment</string>
@@ -80,5 +81,9 @@
     <string name="btnPedidos"> Pedidos</string>
     <string name="btnProductos"> Productos</string>
     <string name="carrito_vacio">Tu carrito está vacío</string>
+    <string name="añadir_carrito">Añadir al carrito</string>
+    <string name="añadir">Añadir al carrito</string>
+    <string name="comprar">Comprar</string>
+
 
 </resources>
