@@ -78,9 +78,9 @@ class activity_4producto : AppCompatActivity() {
         val imageSlider = findViewById<SliderView>(R.id.imageSlider)
         val imageList: ArrayList<String> = ArrayList()
 
-        imageList.add(R.drawable.pizza.toString())
-        imageList.add(R.drawable.pizza.toString())
-        imageList.add(R.drawable.pizza.toString())
+        imageList.add("https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg")
+        imageList.add("https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg")
+        imageList.add("https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg")
         setImageInSlider(imageList, imageSlider)
     }
 
@@ -91,4 +91,7 @@ class activity_4producto : AppCompatActivity() {
         imageSlider.isAutoCycle = false
 
     }
+
     }
+
+

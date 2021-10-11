@@ -21,26 +21,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.065" />
 
-    <com.smarteist.autoimageslider.SliderView
-        android:id="@+id/imageSlider"
-        android:layout_width="414dp"
-        android:layout_height="191dp"
-        app:sliderAnimationDuration="600"
-        app:sliderAutoCycleDirection="back_and_forth"
-        app:sliderIndicatorAnimationDuration="600"
-        app:sliderIndicatorEnabled="true"
-        app:sliderIndicatorGravity="center_horizontal|bottom"
-        app:sliderIndicatorMargin="15dp"
-        app:sliderIndicatorOrientation="horizontal"
-        app:sliderIndicatorPadding="3dp"
-        app:sliderIndicatorRadius="2dp"
-        app:sliderIndicatorSelectedColor="#5A5A5A"
-        app:sliderIndicatorUnselectedColor="#FFF"
-        app:sliderScrollTimeInSec="1"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="130dp" />
-
     <TextView
         android:id="@+id/txtv_4descripcionproducto"
         android:layout_width="322dp"
@@ -91,6 +71,7 @@
         app:layout_constraintBottom_toTopOf="@+id/txtv_4descripcionproducto"
         app:layout_constraintStart_toStartOf="@+id/txtv_4descripcionproducto" />
 
+
     <ImageView
         android:id="@+id/imgv_4menos"
         android:layout_width="26dp"
@@ -123,9 +104,45 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
 
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         app:menu="@menu/navigation">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="423dp"
+        android:layout_height="248dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="364dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavV_4bottomMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/imageSlider"
+            android:layout_width="432dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.555"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorEnabled="true"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="15dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="3dp"
+            app:sliderIndicatorRadius="2dp"
+            app:sliderIndicatorSelectedColor="#5A5A5A"
+            app:sliderIndicatorUnselectedColor="#FFF"
+            app:sliderScrollTimeInSec="1"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
