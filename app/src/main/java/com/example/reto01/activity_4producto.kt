@@ -130,7 +130,9 @@ class activity_4producto : AppCompatActivity() {
             startActivity(i)
         }
 
+         imgv4_favorite.setOnClickListener(){
 
+         }
 
 
     }

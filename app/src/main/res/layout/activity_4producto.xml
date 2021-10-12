@@ -47,6 +47,7 @@
 
     <ImageView
         android:id="@+id/imgv4_favorite"
+        style="c"
         android:layout_width="39dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/imgv_4atras"
