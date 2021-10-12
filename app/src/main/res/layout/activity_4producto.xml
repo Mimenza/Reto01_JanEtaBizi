@@ -33,12 +33,35 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.675" />
 
+    <ImageView
+        android:id="@+id/imgv_4atras"
+        android:layout_width="34dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.049"
+        app:srcCompat="@drawable/ic_arrow_back" />
+
+    <ImageView
+        android:id="@+id/imgv4_favorite"
+        android:layout_width="39dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgv_4atras"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgv_4atras"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_favorite" />
 
     <TextView
         android:id="@+id/txt_4cantidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
+        android:layout_marginStart="140dp"
         android:layout_marginBottom="8dp"
         android:orientation="horizontal"
         android:text="@string/zero"
@@ -49,20 +72,22 @@
 
     <ImageView
         android:id="@+id/imgv_4menos"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/txtv_4descripcionproducto"
         app:layout_constraintEnd_toStartOf="@+id/txt_4cantidad"
-        app:layout_constraintHorizontal_bias="0.97"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_4cantidad"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_minus" />
 
     <ImageView
         android:id="@+id/imgv_4mas"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginStart="24dp"
         app:layout_constraintBottom_toBottomOf="@+id/imgv_4menos"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,6 +96,7 @@
         app:layout_constraintTop_toTopOf="@+id/imgv_4menos"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_plus" />
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -81,7 +107,8 @@
         app:layout_constraintBottom_toTopOf="@+id/bottomNavV_4bottomMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <com.smarteist.autoimageslider.SliderView
             android:id="@+id/imageSlider"
@@ -106,7 +133,6 @@
             app:sliderScrollTimeInSec="1"
             tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <Button
         android:id="@+id/btn_4comprar"

@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.site_valley.imagesliderexampleinkotlin.MySliderImageAdapter
+import com.example.reto01.Adapter.MySliderImageAdapter
 
 
 import com.smarteist.autoimageslider.SliderView
@@ -105,9 +105,9 @@ class activity_4producto : AppCompatActivity() {
 
 
         btn_4añadircarrito.setOnTouchListener{ v, event ->
-            btn_4añadircarrito.setBackgroundResource(R.drawable.my_button_border_clickgreen);
+            btn_4añadircarrito.setBackgroundResource(R.drawable.my_button_border_clickgreen)
             Handler().postDelayed({
-                btn_6save.setBackgroundResource(R.drawable.my_button_border);
+                btn_6save.setBackgroundResource(R.drawable.my_button_border)
             }, 100)
 
             false
@@ -115,14 +115,21 @@ class activity_4producto : AppCompatActivity() {
         }
 
         btn_4comprar.setOnTouchListener{ v, event ->
-            btn_4comprar.setBackgroundResource(R.drawable.my_button_border_clickgreen);
+            btn_4comprar.setBackgroundResource(R.drawable.my_button_border_clickgreen)
             Handler().postDelayed({
-                btn_6save.setBackgroundResource(R.drawable.my_button_border);
+                btn_6save.setBackgroundResource(R.drawable.my_button_border)
             }, 100)
 
             false
 
         }
+
+        imgv_4atras.setOnClickListener(){
+
+            val i = Intent(this, activity_3principal::class.java)
+            startActivity(i)
+        }
+
 
 
 

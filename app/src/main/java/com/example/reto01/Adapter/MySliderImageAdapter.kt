@@ -1,6 +1,6 @@
 
 
-package com.site_valley.imagesliderexampleinkotlin
+package com.example.reto01.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
