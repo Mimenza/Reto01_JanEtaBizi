@@ -4,8 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.reto01.Adapter.MyCardsCartAdapter
+import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_5carrito.*
+import kotlinx.android.synthetic.main.activity_5carrito.imgv_4atras
 import kotlinx.android.synthetic.main.activity_6usuario.*
+import kotlinx.android.synthetic.main.viewholder_cart.*
 
 class activity_5carrito : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -79,6 +84,17 @@ class activity_5carrito : AppCompatActivity() {
             false
 
         }
+
+
+      //Adaptador RecyclerView Carrito de la compra
+        val adapter=MyCardsCartAdapter()
+        reciclerView_5.layoutManager= LinearLayoutManager(this)
+
+        reciclerView_5.adapter=adapter
+
+
+
+        //View Holder carrito ids
 
 
 

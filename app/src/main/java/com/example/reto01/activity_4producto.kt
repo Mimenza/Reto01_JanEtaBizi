@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.text.method.ScrollingMovementMethod
 import com.example.reto01.Adapter.MySliderImageAdapter
+import com.google.android.material.snackbar.Snackbar
 
 
 import com.smarteist.autoimageslider.SliderView
@@ -134,12 +135,16 @@ class activity_4producto : AppCompatActivity() {
         }
 
          imgv4_favorite.setOnClickListener(){
+             //Producto Favorito snackbar
 
+             Snackbar.make(imgv4_favorite, "Producto añadido", Snackbar.LENGTH_SHORT)
+                 .show()
          }
 
 
         //Producto  descripción scroll
         txtv_4descripcionproducto.movementMethod = ScrollingMovementMethod()
+
 
     }
 

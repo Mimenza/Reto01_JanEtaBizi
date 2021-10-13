@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,15 +10,16 @@
         android:id="@+id/txtv_5titulocarrito"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-50dp"
         android:gravity="center"
         android:text="@string/carrito"
         android:textColor="@color/mainGreen"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/reciclerView_5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/scrollView2"
-        app:layout_constraintTop_toTopOf="@+id/scrollView2" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imgv_4atras"
         android:layout_width="34dp"
@@ -32,199 +32,21 @@
         app:layout_constraintVertical_bias="0.049"
         app:srcCompat="@drawable/ic_arrow_back" />
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="414dp"
-        android:layout_height="613dp"
-        android:layout_marginTop="100dp"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reciclerView_5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginBottom="38dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:orientation="vertical">
-
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/reciclerView_5"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-            </androidx.recyclerview.widget.RecyclerView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="26sp"
-                android:layout_marginTop="16sp"
-                android:layout_marginEnd="26sp"
-                android:layout_marginBottom="4dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txtv_5misproductos"
-                    android:layout_width="299dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="20dp"
-                    android:text="@string/items"
-                    android:textColor="#373b54"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/txtv_5preciomisproductos"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/euros"
-                    android:paddingEnd="20dp"
-                    android:textColor="#373b54"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="26sp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="16sp"
-                android:layout_marginBottom="4dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txtv_5gastosenvio"
-                    android:layout_width="290dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:paddingStart="20dp"
-                    android:text="@string/gastos"
-                    android:textColor="#373b54"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/txtv_5preciogastosenvio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/euros"
-                    android:paddingEnd="20dp"
-                    android:textColor="#373b54"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="26sp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="16sp"
-                android:layout_marginBottom="4dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txtv_5iva"
-                    android:layout_width="303dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="20dp"
-
-                    android:text="@string/iva"
-
-                    android:textColor="#373b54"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/txtv_5precioiva"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/iva_value"
-                    android:paddingEnd="20dp"
-                    android:textColor="#373b54"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="26sp"
-                android:layout_marginTop="16sp"
-                android:layout_marginEnd="16sp"
-                android:orientation="horizontal"
-                tools:layout_editor_absoluteY="59dp">
-
-                <TextView
-                    android:id="@+id/txtv_5total"
-                    android:layout_width="296dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="20dp"
-                    android:text="@string/total"
-                    android:textColor="#373b54"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/txtv_5preciototal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingEnd="20dp"
-                    android:text="@string/euros"
-                    android:textColor="#373b54"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/btn_5finalizarcompra"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="100dp"
-                android:layout_marginEnd="50dp"
-                android:background="@drawable/my_button_border"
-                android:backgroundTint="#20B2AA"
-                android:text="@string/finalizar_compra"
-                android:textColor="@color/mainGreen"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.195"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.836" />
-
-            <View
-                android:id="@+id/view_5"
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:layout_marginStart="42sp"
-                android:layout_marginTop="-200dp"
-                android:layout_marginEnd="42dp"
-                android:layout_weight="1"
-                android:background="@color/black" />
-
-        </LinearLayout>
-    </ScrollView>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80sp"
         android:text="@string/carrito_vacio"
         android:textAlignment="center"
         android:textColor="@android:color/holo_red_light"
@@ -233,8 +55,183 @@
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavV_5bottomMenu"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="57dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/scrollView2" />
+        app:layout_constraintTop_toBottomOf="@+id/reciclerView_5">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="26sp"
+            android:layout_marginTop="16sp"
+            android:layout_marginEnd="26sp"
+            android:layout_marginBottom="4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtv_5misproductos"
+                android:layout_width="237dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="20dp"
+                android:text="@string/items"
+                android:textColor="#373b54"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtv_5preciomisproductos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingEnd="20dp"
+                android:text="@string/euros"
+                android:textColor="#373b54"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="26sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16sp"
+            android:layout_marginBottom="4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtv_5gastosenvio"
+                android:layout_width="231dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingStart="20dp"
+                android:text="@string/gastos"
+                android:textColor="#373b54"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtv_5preciogastosenvio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingEnd="20dp"
+                android:text="@string/euros"
+                android:textColor="#373b54"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="26sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16sp"
+            android:layout_marginBottom="4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtv_5iva"
+                android:layout_width="248dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="20dp"
+
+                android:text="@string/iva"
+
+                android:textColor="#373b54"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtv_5precioiva"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingEnd="20dp"
+                android:text="@string/iva_value"
+                android:textColor="#373b54"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="26sp"
+            android:layout_marginTop="16sp"
+            android:layout_marginEnd="16sp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteY="59dp">
+
+
+            <TextView
+                android:id="@+id/txtv_5total"
+                android:layout_width="244dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="20dp"
+                android:text="@string/total"
+                android:textColor="#373b54"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtv_5preciototal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingEnd="20dp"
+                android:text="@string/euros"
+                android:textColor="#373b54"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_5finalizarcompra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/my_button_border"
+            android:backgroundTint="#20B2AA"
+            android:text="@string/finalizar_compra"
+            android:textColor="@color/mainGreen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.195"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.836" />
+
+        <View
+            android:id="@+id/view_5"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginStart="42sp"
+            android:layout_marginTop="-126dp"
+            android:layout_marginEnd="70dp"
+            android:layout_weight="1"
+            android:background="@color/black" />
+
+    </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavV_5bottomMenu"
