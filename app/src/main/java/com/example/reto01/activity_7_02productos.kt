@@ -6,8 +6,10 @@ import android.os.Bundle
 import android.os.Handler
 import android.text.method.ScrollingMovementMethod
 import android.widget.ArrayAdapter
+
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_4producto.*
+
 import kotlinx.android.synthetic.main.activity_6usuario.*
 import kotlinx.android.synthetic.main.activity_7_01usuarios.*
 import kotlinx.android.synthetic.main.activity_7_02productos.*
@@ -21,7 +23,6 @@ class activity_7_02productos : AppCompatActivity() {
         val lista = arrayOf("PRODUCTO 1", "PRODUCTO 2", "PRODUCTO 3", "PRODUCTO 4","CREAR NUEVO PRODUCTO")
 
 
-
         val adaptador = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista)
         spinner_productos.adapter = adaptador
 
@@ -31,7 +32,11 @@ class activity_7_02productos : AppCompatActivity() {
         }
 
 
+
+
+
         btn_7_01Eliminar.setOnTouchListener{  v, event ->
+
             btn_7_02save.setBackgroundResource(R.drawable.my_button_border_clickgreen)
             Handler().postDelayed({
                 btn_6save.setBackgroundResource(R.drawable.my_button_border)
@@ -53,7 +58,6 @@ class activity_7_02productos : AppCompatActivity() {
 
         //Producto  descripción scroll
         txtv_7_02descripcionproducto.movementMethod = ScrollingMovementMethod()
-
 
     }
 }

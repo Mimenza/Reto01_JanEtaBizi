@@ -61,7 +61,7 @@ class MyCardsCartAdapter: RecyclerView.Adapter<MyCardsCartAdapter.ViewHolder>(){
           //Inicializar las variables
               init {
                   itemImage = itemView.imgv_cardimg
-                  itemMas = itemView.imgv_cardmenos
+                  itemMas = itemView.imgv_cardmas
                   itemMinus = itemView.imgv_cardmenos
                   itemTitle = itemView.txtv_cardtittle
                   itemPrecioProducto = itemView.txtv_cardeuros
