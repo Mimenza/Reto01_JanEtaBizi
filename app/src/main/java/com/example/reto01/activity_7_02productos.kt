@@ -16,8 +16,12 @@ class activity_7_02productos : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_7_02productos)
         getSupportActionBar()?.hide()
+<<<<<<< HEAD
+        val lista = arrayOf("PRODUCTO 1", "PRODUCTO 2", "PRODUCTO 3", "PRODUCTO 4","CREAR NUEVO PRODUCTO")
+=======
 
         val lista = arrayOf("PRODUCTO 1", "PRODUCTO 2", "PRODUCTO 3", "PRODUCTO 4")
+>>>>>>> c30a93dda4a151a1f0e36a14d603bf29d56d2a74
         val adaptador = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista)
         spinner_productos.adapter = adaptador
 
@@ -26,6 +30,8 @@ class activity_7_02productos : AppCompatActivity() {
             startActivity(i)
         }
 
+<<<<<<< HEAD
+=======
         btn_7_01Eliminar.setOnTouchListener{  v, event ->
             btn_7_02save.setBackgroundResource(R.drawable.my_button_border_clickgreen)
             Handler().postDelayed({
@@ -49,5 +55,6 @@ class activity_7_02productos : AppCompatActivity() {
         //Producto  descripción scroll
         txtv_7_02descripcionproducto.movementMethod = ScrollingMovementMethod()
 
+>>>>>>> c30a93dda4a151a1f0e36a14d603bf29d56d2a74
     }
 }
