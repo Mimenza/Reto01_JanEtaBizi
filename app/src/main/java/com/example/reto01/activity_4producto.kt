@@ -1,9 +1,11 @@
 package com.example.reto01
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.text.method.ScrollingMovementMethod
 import com.example.reto01.Adapter.MySliderImageAdapter
 
 
@@ -15,6 +17,7 @@ import java.util.*
 
 
 class activity_4producto : AppCompatActivity() {
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
@@ -107,7 +110,7 @@ class activity_4producto : AppCompatActivity() {
         btn_4añadircarrito.setOnTouchListener{ v, event ->
             btn_4añadircarrito.setBackgroundResource(R.drawable.my_button_border_clickgreen)
             Handler().postDelayed({
-                btn_6save.setBackgroundResource(R.drawable.my_button_border)
+                btn_4añadircarrito.setBackgroundResource(R.drawable.my_button_border)
             }, 100)
 
             false
@@ -117,7 +120,7 @@ class activity_4producto : AppCompatActivity() {
         btn_4comprar.setOnTouchListener{ v, event ->
             btn_4comprar.setBackgroundResource(R.drawable.my_button_border_clickgreen)
             Handler().postDelayed({
-                btn_6save.setBackgroundResource(R.drawable.my_button_border)
+                btn_4comprar.setBackgroundResource(R.drawable.my_button_border)
             }, 100)
 
             false
@@ -135,6 +138,9 @@ class activity_4producto : AppCompatActivity() {
          }
 
 
+        //Producto  descripción scroll
+        txtv_4descripcionproducto.movementMethod = ScrollingMovementMethod()
+
     }
 
     private fun setImageInSlider(images: ArrayList<String>, imageSlider: SliderView) {
@@ -144,9 +150,6 @@ class activity_4producto : AppCompatActivity() {
         imageSlider.isAutoCycle = false
 
     }
-
-
-
 
     }
 
