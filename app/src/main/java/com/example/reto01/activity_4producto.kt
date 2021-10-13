@@ -107,7 +107,7 @@ class activity_4producto : AppCompatActivity() {
         btn_4añadircarrito.setOnTouchListener{ v, event ->
             btn_4añadircarrito.setBackgroundResource(R.drawable.my_button_border_clickgreen)
             Handler().postDelayed({
-                btn_6save.setBackgroundResource(R.drawable.my_button_border)
+                btn_4añadircarrito.setBackgroundResource(R.drawable.my_button_border)
             }, 100)
 
             false
@@ -117,7 +117,7 @@ class activity_4producto : AppCompatActivity() {
         btn_4comprar.setOnTouchListener{ v, event ->
             btn_4comprar.setBackgroundResource(R.drawable.my_button_border_clickgreen)
             Handler().postDelayed({
-                btn_6save.setBackgroundResource(R.drawable.my_button_border)
+                btn_4comprar.setBackgroundResource(R.drawable.my_button_border)
             }, 100)
 
             false
