@@ -17,6 +17,7 @@ class activity_7_02productos : AppCompatActivity() {
         getSupportActionBar()?.hide()
 
         val lista = arrayOf("PRODUCTO 1", "PRODUCTO 2", "PRODUCTO 3", "PRODUCTO 4","CREAR NUEVO PRODUCTO")
+
         val adaptador = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista)
         spinner_productos.adapter = adaptador
 
@@ -47,6 +48,5 @@ class activity_7_02productos : AppCompatActivity() {
 
         //Producto  descripción scroll
         txtv_7_02descripcionproducto.movementMethod = ScrollingMovementMethod()
-
     }
 }
