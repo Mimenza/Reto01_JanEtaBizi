@@ -23,6 +23,7 @@ class activity_7_02productos : AppCompatActivity() {
             startActivity(i)
         }
 
+
         btn_7_01Eliminar.setOnTouchListener{  v, event ->
             btn_7_02save.setBackgroundResource(R.drawable.my_button_border_clickgreen)
             Handler().postDelayed({
