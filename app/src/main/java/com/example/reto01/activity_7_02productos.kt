@@ -4,7 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.text.method.ScrollingMovementMethod
 import android.widget.ArrayAdapter
+import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_6usuario.*
 import kotlinx.android.synthetic.main.activity_7_01usuarios.*
 import kotlinx.android.synthetic.main.activity_7_02productos.*
@@ -43,6 +45,9 @@ class activity_7_02productos : AppCompatActivity() {
 
         }
 
+
+        //Producto  descripción scroll
+        txtv_7_02descripcionproducto.movementMethod = ScrollingMovementMethod()
 
     }
 }

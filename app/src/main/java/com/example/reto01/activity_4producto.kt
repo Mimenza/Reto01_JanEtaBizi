@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.text.method.ScrollingMovementMethod
 import com.example.reto01.Adapter.MySliderImageAdapter
 
 
@@ -134,6 +135,9 @@ class activity_4producto : AppCompatActivity() {
 
          }
 
+
+        //Producto  descripción scroll
+        txtv_4descripcionproducto.movementMethod = ScrollingMovementMethod()
 
     }
 
