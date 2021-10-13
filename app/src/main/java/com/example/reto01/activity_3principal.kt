@@ -98,9 +98,9 @@ class activity_3principal : AppCompatActivity() {
                 var newCol2 = ImageView(this)
                 var newCol3 = ImageView(this)
 
-                newCol1.setImageResource(R.drawable.pizza)
-                newCol2.setImageResource(R.drawable.pizza)
-                newCol3.setImageResource(R.drawable.pizza)
+                newCol1.setImageResource(R.drawable.prueba)
+                newCol2.setImageResource(R.drawable.prueba)
+                newCol3.setImageResource(R.drawable.prueba)
 
                 layoutParams.setMargins(2, 2, 2, 2)
 
@@ -114,9 +114,9 @@ class activity_3principal : AppCompatActivity() {
                 newCol2.requestLayout()
                 newCol3.requestLayout()
 
-                newCol1.getLayoutParams().height = 300
-                newCol2.getLayoutParams().height = 300
-                newCol3.getLayoutParams().height = 300
+                newCol1.getLayoutParams().height = 262
+                newCol2.getLayoutParams().height = 262
+                newCol3.getLayoutParams().height = 262
 
                 newCol1.getLayoutParams().width = 262
                 newCol2.getLayoutParams().width = 262
@@ -146,8 +146,8 @@ class activity_3principal : AppCompatActivity() {
                 newCol1.requestLayout()
                 newCol2.requestLayout()
 
-                newCol1.getLayoutParams().height = 300
-                newCol2.getLayoutParams().height = 300
+                newCol1.getLayoutParams().height = 262
+                newCol2.getLayoutParams().height = 262
 
                 newCol1.getLayoutParams().width = 262
                 newCol2.getLayoutParams().width = 262
@@ -170,7 +170,7 @@ class activity_3principal : AppCompatActivity() {
 
                 newCol1.requestLayout()
 
-                newCol1.getLayoutParams().height = 300
+                newCol1.getLayoutParams().height = 262
 
                 newCol1.getLayoutParams().width = 262
 
