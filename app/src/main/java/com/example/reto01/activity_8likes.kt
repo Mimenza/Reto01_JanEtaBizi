@@ -3,7 +3,8 @@ package com.example.reto01
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import android.widget.ImageView
+import android.widget.TableRow
 import kotlinx.android.synthetic.main.activity_8likes.*
 
 class activity_8likes : AppCompatActivity() {
@@ -11,6 +12,7 @@ class activity_8likes : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_8likes)
+        loadTable()
 
         bottomNavV_8bottomMenu.setSelectedItemId(R.id.navigation_likes)
 
@@ -61,6 +63,105 @@ class activity_8likes : AppCompatActivity() {
                     true
                 }
                 else -> false
+            }
+        }
+    }
+    fun loadTable() {
+        var items = 2
+        var itemsLength = items
+        var rowsLength = (((items + 3) - 1) / 3) - 1
+        var layoutParams = TableRow.LayoutParams(
+            TableRow.LayoutParams.WRAP_CONTENT,
+            TableRow.LayoutParams.WRAP_CONTENT
+        )
+
+        var i = 0
+        while (i <= rowsLength) {
+            if (itemsLength >= 3) {
+                var newRow = TableRow(this)
+                var newCol1 = ImageView(this)
+                var newCol2 = ImageView(this)
+                var newCol3 = ImageView(this)
+
+                newCol1.setImageResource(R.drawable.prueba)
+                newCol2.setImageResource(R.drawable.prueba)
+                newCol3.setImageResource(R.drawable.prueba)
+
+                layoutParams.setMargins(2, 2, 2, 2)
+
+                newRow.addView(newCol1, layoutParams)
+                newRow.addView(newCol2, layoutParams)
+                newRow.addView(newCol3, layoutParams)
+
+                tb_8tablaProductos.addView(newRow)
+
+                newCol1.requestLayout()
+                newCol2.requestLayout()
+                newCol3.requestLayout()
+
+                newCol1.getLayoutParams().height = 262
+                newCol2.getLayoutParams().height = 262
+                newCol3.getLayoutParams().height = 262
+
+                newCol1.getLayoutParams().width = 262
+                newCol2.getLayoutParams().width = 262
+                newCol3.getLayoutParams().width = 262
+
+                newCol1.setScaleType(ImageView.ScaleType.FIT_XY)
+                newCol2.setScaleType(ImageView.ScaleType.FIT_XY)
+                newCol3.setScaleType(ImageView.ScaleType.FIT_XY)
+
+                i++
+                itemsLength = itemsLength - 3
+            } else if (itemsLength == 2) {
+                var newRow = TableRow(this)
+                var newCol1 = ImageView(this)
+                var newCol2 = ImageView(this)
+
+                newCol1.setImageResource(R.drawable.prueba)
+                newCol2.setImageResource(R.drawable.prueba)
+
+                layoutParams.setMargins(2, 2, 2, 2)
+
+                newRow.addView(newCol1, layoutParams)
+                newRow.addView(newCol2, layoutParams)
+
+                tb_8tablaProductos.addView(newRow)
+
+                newCol1.requestLayout()
+                newCol2.requestLayout()
+
+                newCol1.getLayoutParams().height = 262
+                newCol2.getLayoutParams().height = 262
+
+                newCol1.getLayoutParams().width = 262
+                newCol2.getLayoutParams().width = 262
+
+                newCol1.setScaleType(ImageView.ScaleType.FIT_XY)
+                newCol2.setScaleType(ImageView.ScaleType.FIT_XY)
+
+                i++
+            } else {
+                var newRow = TableRow(this)
+                var newCol1 = ImageView(this)
+
+                newCol1.setImageResource(R.drawable.prueba)
+
+                layoutParams.setMargins(2, 2, 2, 2)
+
+                newRow.addView(newCol1, layoutParams)
+
+                tb_8tablaProductos.addView(newRow)
+
+                newCol1.requestLayout()
+
+                newCol1.getLayoutParams().height = 262
+
+                newCol1.getLayoutParams().width = 262
+
+                newCol1.setScaleType(ImageView.ScaleType.FIT_XY)
+
+                i++
             }
         }
     }

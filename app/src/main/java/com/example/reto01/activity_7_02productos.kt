@@ -35,7 +35,7 @@ class activity_7_02productos : AppCompatActivity() {
 
 
 
-        btn_7_01Eliminar.setOnTouchListener{  v, event ->
+   /*     btn_7_01Eliminar.setOnTouchListener{  v, event ->
 
             btn_7_02save.setBackgroundResource(R.drawable.my_button_border_clickgreen)
             Handler().postDelayed({
@@ -53,7 +53,7 @@ class activity_7_02productos : AppCompatActivity() {
 
             false
 
-        }
+        }*/
 
 
         //Producto  descripción scroll
