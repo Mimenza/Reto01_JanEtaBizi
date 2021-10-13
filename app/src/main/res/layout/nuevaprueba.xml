@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtv_cardcantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="248dp"
+            android:text="1"
+            android:textColor="@color/card_title"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtv_cardtittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="16dp"
+            android:text="Ttitle"
+            android:textColor="@color/card_title"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/txtv_cardmas"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
+            android:src="@drawable/ic_plus" />
+
+        <TextView
+            android:id="@+id/txtv_cardeuros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="356dp"
+            android:text="@string/euros"
+            android:textColor="@color/card_title"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <ImageView
+            android:id="@+id/imgv_cardmenos"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="242dp"
+            android:src="@drawable/ic_minus" />
+
+        <ImageView
+            android:id="@+id/imgv_cardimg"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="53dp"
+            android:src="@drawable/pizza" />
+
+        <TextView
+            android:id="@+id/txtv_cardeurostotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="208dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/euros"
+            android:textColor="@color/card_title"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
+
