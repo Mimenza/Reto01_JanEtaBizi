@@ -1,5 +1,6 @@
 package com.example.reto01
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,6 +17,7 @@ import java.util.*
 
 
 class activity_4producto : AppCompatActivity() {
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
@@ -148,9 +150,6 @@ class activity_4producto : AppCompatActivity() {
         imageSlider.isAutoCycle = false
 
     }
-
-
-
 
     }
 

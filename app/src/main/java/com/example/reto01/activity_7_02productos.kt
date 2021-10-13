@@ -16,6 +16,7 @@ class activity_7_02productos : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_7_02productos)
         getSupportActionBar()?.hide()
+
         val lista = arrayOf("PRODUCTO 1", "PRODUCTO 2", "PRODUCTO 3", "PRODUCTO 4")
         val adaptador = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista)
         spinner_productos.adapter = adaptador
@@ -24,7 +25,6 @@ class activity_7_02productos : AppCompatActivity() {
             val i = Intent(this, activity_7admin::class.java)
             startActivity(i)
         }
-
 
         btn_7_01Eliminar.setOnTouchListener{  v, event ->
             btn_7_02save.setBackgroundResource(R.drawable.my_button_border_clickgreen)
