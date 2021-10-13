@@ -1,12 +1,11 @@
 package com.example.reto01
 
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TableRow
-import android.widget.TextView
+import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_3principal.*
 
 
@@ -18,6 +17,19 @@ class activity_3principal : AppCompatActivity() {
         sv_3scrollView.setVerticalScrollBarEnabled(false)
         loadTable()
 
+        cg_3chipgroup.isVisible=false
+
+        var showFilter = true
+
+        imgv_3filtro.setOnClickListener(){
+            if (showFilter){
+                cg_3chipgroup.isVisible=true
+                showFilter=false
+            }else{
+                cg_3chipgroup.isVisible=false
+                showFilter=true
+            }
+        }
 
         fun navegacion_principal() {
             val navegacion_compra = Intent(this, activity_3principal::class.java)
@@ -69,16 +81,11 @@ class activity_3principal : AppCompatActivity() {
             }
         }
 
-
-        btn_1admin.setOnClickListener() {
-            val i = Intent(this, activity_7admin::class.java)
-            startActivity(i)
+        tb_3tablaProductos.setOnClickListener(){
+            val navegacion_perfil = Intent(this, activity_4producto::class.java)
+            startActivity(navegacion_perfil)
+            this.overridePendingTransition(0, 0)
         }
-        btn_2producto.setOnClickListener() {
-            val i = Intent(this, activity_4producto::class.java)
-            startActivity(i)
-        }
-
     }
 
     fun loadTable() {
@@ -108,7 +115,7 @@ class activity_3principal : AppCompatActivity() {
                 newRow.addView(newCol2, layoutParams)
                 newRow.addView(newCol3, layoutParams)
 
-                simpleTableLayout.addView(newRow)
+                tb_3tablaProductos.addView(newRow)
 
                 newCol1.requestLayout()
                 newCol2.requestLayout()
@@ -141,7 +148,7 @@ class activity_3principal : AppCompatActivity() {
                 newRow.addView(newCol1, layoutParams)
                 newRow.addView(newCol2, layoutParams)
 
-                simpleTableLayout.addView(newRow)
+                tb_3tablaProductos.addView(newRow)
 
                 newCol1.requestLayout()
                 newCol2.requestLayout()
@@ -166,7 +173,7 @@ class activity_3principal : AppCompatActivity() {
 
                 newRow.addView(newCol1, layoutParams)
 
-                simpleTableLayout.addView(newRow)
+                tb_3tablaProductos.addView(newRow)
 
                 newCol1.requestLayout()
 
