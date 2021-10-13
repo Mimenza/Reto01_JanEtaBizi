@@ -29,7 +29,6 @@ class activity_7_01usuarios : AppCompatActivity() {
         }
 
 
-
         btn_7_01Eliminar.setOnTouchListener{  v, event ->
             btn_7_01Eliminar.setBackgroundResource(R.drawable.my_button_border_clickgreen)
             Handler().postDelayed({
@@ -39,6 +38,7 @@ class activity_7_01usuarios : AppCompatActivity() {
             false
 
         }
+
         btn_7_01save.setOnTouchListener{  v, event ->
             btn_7_01save.setBackgroundResource(R.drawable.my_button_border_clickgreen)
             Handler().postDelayed({
