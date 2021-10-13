@@ -78,5 +78,11 @@ class activity_6usuario : AppCompatActivity() {
             false
 
         }
+        imgv6_logout.setOnClickListener(){
+            val LOGOUT = Intent(this, MainActivity::class.java)
+            startActivity(LOGOUT)
+
+
+        }
     }
 }

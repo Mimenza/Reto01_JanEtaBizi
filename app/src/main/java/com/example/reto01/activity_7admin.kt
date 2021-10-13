@@ -15,12 +15,18 @@ class activity_7admin : AppCompatActivity() {
         setContentView(R.layout.activity_7admin)
 
         bottomNavV_7bottomMenu.setSelectedItemId(R.id.navigation_invisible)
+
+
         btn_7usuarios.setOnClickListener(){
             val i = Intent(this, activity_7_01usuarios::class.java)
             startActivity(i)
         }
         btn_7productos.setOnClickListener(){
             val i = Intent(this, activity_7_02productos::class.java)
+            startActivity(i)
+        }
+        btn_7pedidos.setOnClickListener(){
+            val i = Intent(this, activity_7_03pedidos::class.java)
             startActivity(i)
         }
 
@@ -42,8 +48,9 @@ class activity_7admin : AppCompatActivity() {
             val navegacion_perfil = Intent(this, activity_5carrito::class.java)
             startActivity(navegacion_perfil)
             this.overridePendingTransition(0, 0)
-
         }
+
+
 
         fun navegacion_perfil() {
             val navegacion_usuario = Intent(this, activity_6usuario::class.java)

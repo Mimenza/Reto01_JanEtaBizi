@@ -70,10 +70,10 @@ class activity_5carrito : AppCompatActivity() {
             startActivity(i)
         }
 
-        btn_5añadircarrito.setOnTouchListener{ v, event ->
-            btn_5añadircarrito.setBackgroundResource(R.drawable.my_button_border_clickgreen);
+        btn_5finalizarcompra.setOnTouchListener{ v, event ->
+            btn_5finalizarcompra.setBackgroundResource(R.drawable.my_button_border_clickgreen);
             Handler().postDelayed({
-                btn_6save.setBackgroundResource(R.drawable.my_button_border);
+                btn_5finalizarcompra.setBackgroundResource(R.drawable.my_button_border);
             }, 100)
 
             false

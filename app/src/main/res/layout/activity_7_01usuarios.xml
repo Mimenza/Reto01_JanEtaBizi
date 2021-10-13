@@ -38,7 +38,7 @@
         android:id="@+id/imgv_7_01perfil"
         android:layout_width="155dp"
         android:layout_height="154dp"
-        android:src="@drawable/descarga"
+        android:src="@drawable/perfil"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
