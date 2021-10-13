@@ -9,6 +9,18 @@
     tools:context=".activity_3principal">
 
 
+    <ImageView
+        android:id="@+id/imgv_3filtro"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.97"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.060000002"
+        app:srcCompat="@drawable/ic_filter" />
+
     <EditText
         android:id="@+id/txt_3busqueda"
         android:layout_width="337dp"
@@ -25,63 +37,10 @@
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.074" />
-
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/cg_3chipgroup"
-        android:layout_width="318dp"
-        android:layout_height="98dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.157">
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip3_1"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fire" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip3_2"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Water" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip3_3"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Psychic" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip3_4"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fire" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip3_5"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fire" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip3_6"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fire" />
-    </com.google.android.material.chip.ChipGroup>
+        app:layout_constraintVertical_bias="0.060000002" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavV_3bottomMenu"
@@ -101,7 +60,7 @@
     <ScrollView
         android:id="@+id/sv_3scrollView"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
+        android:layout_height="650dp"
         android:fillViewport="true"
         android:scrollbarStyle="insideInset"
         android:scrollbars="vertical"
@@ -110,7 +69,7 @@
         app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.69">
+        app:layout_constraintVertical_bias="0.53">
 
         <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/simpleTableLayout"
@@ -129,6 +88,60 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_1admin"
         app:layout_constraintTop_toBottomOf="@+id/cg_3chipgroup" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/cg_3chipgroup"
+        android:layout_width="375dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.18">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip3_1"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vegan" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip3_2"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vegetarian" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip3_3"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Full of protein" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip3_4"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Free gluten" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip3_5"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Free lactose" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip3_6"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Palm oil free" />
+    </com.google.android.material.chip.ChipGroup>
 
     <Button
         android:id="@+id/btn_1admin"
