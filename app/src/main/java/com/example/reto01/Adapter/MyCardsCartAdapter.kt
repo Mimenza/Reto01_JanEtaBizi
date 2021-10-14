@@ -18,9 +18,9 @@ class MyCardsCartAdapter: RecyclerView.Adapter<MyCardsCartAdapter.ViewHolder>(){
 
 
 
-    val titles= arrayOf("Title", "Title 2", "Title 3", "Title 4")
-    val precioproducto= arrayOf("0€", "12€", "13€", "14€")
-    val precioproductototal= arrayOf("0€", "120€", "130€", "140€")
+    val titles= arrayOf("Pasteles", "Omega", "Fresas", "Arandano")
+    val precioproducto= arrayOf("10€", "12€", "13€", "14€")
+    val precioproductototal= arrayOf("10€", "12€", "13€", "14€")
     val images= intArrayOf(R.drawable.dessert, R.drawable.aceite3, R.drawable.fresa, R.drawable.blueberries)
     val minus= intArrayOf(R.drawable.ic_minus, R.drawable.ic_minus, R.drawable.ic_minus, R.drawable.ic_minus)
     val mas= intArrayOf(R.drawable.ic_plus, R.drawable.ic_plus, R.drawable.ic_plus, R.drawable.ic_plus)
