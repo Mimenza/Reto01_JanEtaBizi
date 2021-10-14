@@ -80,8 +80,10 @@
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/cg_3chipgroup"
-        android:layout_width="375dp"
-        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="163dp"
+        android:background="#9AFFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"

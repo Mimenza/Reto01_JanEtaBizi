@@ -6,13 +6,16 @@ import android.os.Bundle
 import android.os.Handler
 import android.text.method.ScrollingMovementMethod
 import android.widget.ArrayAdapter
+import com.example.reto01.Adapter.MySliderImageAdapter
 
 import com.google.android.material.snackbar.Snackbar
+import com.smarteist.autoimageslider.SliderView
 import kotlinx.android.synthetic.main.activity_4producto.*
 
 import kotlinx.android.synthetic.main.activity_6usuario.*
 import kotlinx.android.synthetic.main.activity_7_01usuarios.*
 import kotlinx.android.synthetic.main.activity_7_02productos.*
+import java.util.ArrayList
 
 class activity_7_02productos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +28,16 @@ class activity_7_02productos : AppCompatActivity() {
 
         val adaptador = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista)
         spinner_productos.adapter = adaptador
+
+        //Image slider (Imagenes)
+
+        val imageSlider = findViewById<SliderView>(R.id.imageSlider)
+        val imageList: ArrayList<String> = ArrayList()
+
+        imageList.add("https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg")
+        imageList.add("https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg")
+        imageList.add("https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg")
+        setImageInSlider(imageList, imageSlider)
 
         imgv7_02_atras.setOnClickListener() {
             val i = Intent(this, activity_7admin::class.java)
@@ -58,6 +71,13 @@ class activity_7_02productos : AppCompatActivity() {
 
         //Producto  descripción scroll
         txtv_7_02descripcionproducto.movementMethod = ScrollingMovementMethod()
+
+    }
+    private fun setImageInSlider(images: ArrayList<String>, imageSlider: SliderView) {
+        val adapter = MySliderImageAdapter()
+        adapter.renewItems(images)
+        imageSlider.setSliderAdapter(adapter)
+        imageSlider.isAutoCycle = false
 
     }
 }
