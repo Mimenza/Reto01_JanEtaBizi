@@ -67,7 +67,7 @@ class activity_8likes : AppCompatActivity() {
         }
     }
     fun loadTable() {
-        var items = 2
+        var items = 3
         var itemsLength = items
         var rowsLength = (((items + 3) - 1) / 3) - 1
         var layoutParams = TableRow.LayoutParams(

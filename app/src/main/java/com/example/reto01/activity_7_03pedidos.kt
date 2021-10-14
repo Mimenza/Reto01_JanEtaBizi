@@ -9,10 +9,11 @@ class activity_7_03pedidos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_7_03pedidos)
+
         getSupportActionBar()?.hide()
-        /*imgv7_02_atras.setOnClickListener() {
+        imgv7_02_atras.setOnClickListener() {
             val i = Intent(this, activity_7admin::class.java)
             startActivity(i)
-        }*/
+        }
     }
-}
+    }

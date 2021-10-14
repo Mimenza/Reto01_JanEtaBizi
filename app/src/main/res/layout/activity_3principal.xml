@@ -23,7 +23,7 @@
 
     <EditText
         android:id="@+id/txt_3busqueda"
-        android:layout_width="337dp"
+        android:layout_width="310dp"
         android:layout_height="48dp"
         android:background="@drawable/search_bg"
         android:drawableStart="@drawable/ic_search"
