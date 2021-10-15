@@ -6,27 +6,18 @@ import android.database.sqlite.SQLiteOpenHelper
 import com.example.reto01.Model.User
 
 
-class DatabaseHelper(context: Context) :
-    SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
-    val dbHelper = DatabaseHelper(context)
+class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
-    companion object{
-        private const val DATABASE_VERSION = 1
-        private const val DATABASE_NAME = "reto1.db"
-        // User table name
-        private const val TBL_USER = "User"
 
-        // User Table Columns names
-        private val COLUMN_USER_ID = "user_id"
-        private val COLUMN_USER_EMAIL = "user_email"
-        private val COLUMN_USER_PASSWORD = "user_password"
-        private val COLUMN_USER_ADMIN = "user_admin"
-    }
 
     // create table sql query
-    private val CREATE_USER_TABLE = ("CREATE TABLE " + TBL_USER + "("
-            + COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_USER_EMAIL
-            + " TEXT," + COLUMN_USER_PASSWORD + " TEXT" +  COLUMN_USER_ADMIN + " INTEGER"+"")
+    private  val CREATE_USER_TABLE =
+        "CREATE TABLE ${TBL_USER} (" +
+                "${COLUMN_USER_ID} INTEGER PRIMARY KEY," +
+                "${COLUMN_USER_NAME} TEXT," +
+                "${COLUMN_USER_EMAIL} TEXT," +
+                "${COLUMN_USER_PASSWORD} TEXT," +
+                "${COLUMN_USER_ADMIN} INTEGER"
 
 
     // drop table sql query
@@ -45,37 +36,32 @@ class DatabaseHelper(context: Context) :
     }
 
     //Insertar usuario
-    fun insertUser(user: User){
-        // Gets the data repository in write mode
-        val db = dbHelper.writableDatabase
-
-        // Create a new map of values, where column names are the keys
-        val values = ContentValues().apply {
-            put("Id", COLUMN_USER_ID)
-            put("Email", COLUMN_USER_EMAIL)
-            put("Password", COLUMN_USER_PASSWORD)
-            put("Admin", COLUMN_USER_ADMIN)
-
-        }
-        // Insert the new row, returning the primary key value of the new row
-        db?.insert(TBL_USER, null, values)
+    fun addUser(user: User) {
+        val db = this.writableDatabase
+        val values = ContentValues()
+        values.put(COLUMN_USER_NAME, user.name)
+        values.put(COLUMN_USER_EMAIL, user.email)
+        values.put(COLUMN_USER_PASSWORD, user.password)
+        values.put(COLUMN_USER_ADMIN,  user.admin)
+        // Inserting Row
+        db.insert(TBL_USER, null, values)
         db.close()
-
     }
 
     //Actualizar usuario
 
-    fun UpdateUser(user: User){
+    fun updateUser(user: User){
 
         // Gets the data repository in write mode
-        val db = dbHelper.writableDatabase
+        val db = this.writableDatabase
 
         // Create a new map of values, where column names are the keys
         val values = ContentValues().apply {
             put("Id", COLUMN_USER_ID)
+            put("Email", COLUMN_USER_NAME)
             put("Email", COLUMN_USER_EMAIL)
             put("Password", COLUMN_USER_PASSWORD)
-            put("Password", COLUMN_USER_ADMIN)
+            put("Admin", COLUMN_USER_ADMIN)
 
         }
         // update según el id de usuario
@@ -98,9 +84,9 @@ class DatabaseHelper(context: Context) :
 
     //Lista que hace return de todos los usuarios
     fun getAllUser() {
-        val db = dbHelper.readableDatabase
+        val db = this.readableDatabase
 
-        val list = arrayOf(COLUMN_USER_ID, COLUMN_USER_EMAIL, COLUMN_USER_PASSWORD, COLUMN_USER_ADMIN)
+        val list = arrayOf(COLUMN_USER_ID, COLUMN_USER_NAME, COLUMN_USER_EMAIL, COLUMN_USER_PASSWORD, COLUMN_USER_ADMIN)
 
         // Ordenar por ID ascendente
         val sortOrder = "${COLUMN_USER_ID} ASC"
@@ -177,11 +163,7 @@ class DatabaseHelper(context: Context) :
         // selection arguments
         val selectionArgs = arrayOf(email, password)
         // query user table with conditions
-        /**
-         * Here query function is used to fetch records from user table this function works like we use sql query.
-         * SQL query equivalent to this query function is
-         * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com' AND user_password = 'qwerty';
-         */
+
         val cursor = db.query(
             TBL_USER, //Table to query
             columns, //columns to return
@@ -199,6 +181,19 @@ class DatabaseHelper(context: Context) :
     }
 
 
+    companion object{
+        private const val DATABASE_VERSION = 1
+        private const val DATABASE_NAME = "janetabizi.db"
+        // User table name
+        private const val TBL_USER = "User"
+
+        // User Table Columns names
+        private val COLUMN_USER_ID = "user_id"
+        private val COLUMN_USER_NAME = "user_name"
+        private val COLUMN_USER_EMAIL = "user_email"
+        private val COLUMN_USER_PASSWORD = "user_password"
+        private val COLUMN_USER_ADMIN = "user_admin"
+    }
 
 
 }

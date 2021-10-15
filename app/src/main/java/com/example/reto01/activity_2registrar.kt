@@ -1,11 +1,10 @@
 package com.example.reto01
 
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -13,7 +12,6 @@ import com.example.reto01.Helpers.InputValidation
 import com.example.reto01.Model.User
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
-import kotlinx.android.synthetic.main.activity_1login.*
 import kotlinx.android.synthetic.main.activity_2registrar.*
 
 class activity_2registrar : AppCompatActivity(), View.OnClickListener {
@@ -42,15 +40,6 @@ class activity_2registrar : AppCompatActivity(), View.OnClickListener {
         initObjects()
 
 
-        txtv_2Login.setOnClickListener(){
-
-            val i = Intent(this@activity_2registrar, activity_1login::class.java)
-            startActivity(i)
-        }
-        btn_2Register.setOnClickListener(){
-            val i = Intent(this@activity_2registrar, activity_1login::class.java)
-            startActivity(i)
-        }
 
         //------ESTILOS BOTONES--------
         btn_2Register.setOnTouchListener{  v, event ->
@@ -114,7 +103,7 @@ class activity_2registrar : AppCompatActivity(), View.OnClickListener {
             return
         }
         //Si el email está bien escrito (Con @...)
-        if (!inputValidation!!.isInputEditTextEmail(textInputEditTextEmail, getString(R.string.error_message_email))) {
+        if (!inputValidation!!.isInputEditTextEmail(textInputEditTextEmail, getString(R.string.error_message_email_correct))) {
             return
         }
         //Si las contraseñas no coinciden
@@ -127,11 +116,11 @@ class activity_2registrar : AppCompatActivity(), View.OnClickListener {
         if (!databaseHelper!!.checkUser(textInputEditTextEmail!!.text.toString().trim())) {
             var user = User(name = textInputEditTextName!!.text.toString().trim(),
                 email = textInputEditTextEmail!!.text.toString().trim(),
-                password = textInputEditTextPassword!!.text.toString().trim(),
-                admin = 0 )
-            databaseHelper!!.insertUser(user)
+                password = textInputEditTextPassword!!.text.toString().trim())
+
             // Snack Bar to show success message that record saved successfully
             Snackbar.make(constraintLayout!!, getString(R.string.success_message), Snackbar.LENGTH_LONG).show()
+            databaseHelper!!.addUser(user)
             emptyInputEditText()
         } else {
             // Snack Bar to show error message that record already exists
@@ -148,6 +137,5 @@ class activity_2registrar : AppCompatActivity(), View.OnClickListener {
         textInputEditTextPassword!!.text = null
         textInputEditTextRepeatPassword!!.text = null
     }
-
 
 }

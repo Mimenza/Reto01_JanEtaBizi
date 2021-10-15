@@ -41,7 +41,7 @@
         android:id="@+id/txtv_1Registrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registrate aquí"
+        android:text="Regístrate aqui"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -49,14 +49,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.831" />
 
-    <androidx.appcompat.widget.AppCompatEditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/pText_1inputNombre"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded"
         android:ems="10"
         android:hapticFeedbackEnabled="false"
-        android:hint="@string/prompt_user_Name"
+        android:hint="@string/promt_user_mail"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:paddingLeft="20dp"
@@ -67,7 +67,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.427" />
 
-    <androidx.appcompat.widget.AppCompatEditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/pText_1inputContrasena"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -75,6 +75,7 @@
         android:background="@drawable/rounded"
         android:ems="10"
         android:hint="@string/prompt_password"
+
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:paddingLeft="20dp"

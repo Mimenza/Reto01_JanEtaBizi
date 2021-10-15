@@ -1,20 +1,18 @@
 package com.example.reto01
 
+
+
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
-
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.widget.ConstraintLayout
-
 import com.example.reto01.Helpers.InputValidation
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
-
-
 import kotlinx.android.synthetic.main.activity_1login.*
 import kotlinx.android.synthetic.main.activity_2registrar.*
 import java.util.*
@@ -25,12 +23,13 @@ class activity_1login : AppCompatActivity(), View.OnClickListener {
     private val activity = this@activity_1login
 
     private lateinit var constraintLayout: ConstraintLayout
-    private lateinit var databaseHelper: DatabaseHelper
-    private  var textInputEditTextEmail: TextInputEditText ?=null
-    private var textInputEditTextPassword: TextInputEditText?=null
+
+    private lateinit var textInputEditTextEmail: TextInputEditText
+    private lateinit var textInputEditTextPassword: TextInputEditText
     private lateinit var appCompatButtonLogin: AppCompatButton
     private lateinit var textViewLinkRegister: AppCompatTextView
-    private lateinit var inputValidation: InputValidation
+    private lateinit var inputValidation:  InputValidation
+    private lateinit var databaseHelper: DatabaseHelper
 
 
 
@@ -66,14 +65,21 @@ class activity_1login : AppCompatActivity(), View.OnClickListener {
 
     private fun initViews() {
 
-        textInputEditTextEmail = pText_2inputCorreo as TextInputEditText ?
-        textInputEditTextPassword = pText_2inputContrasena as TextInputEditText ?
+
+        textInputEditTextPassword  = pText_1inputContrasena as TextInputEditText
         appCompatButtonLogin = btn_1login as AppCompatButton
         textViewLinkRegister = txtv_1Registrar as AppCompatTextView
+
+        textInputEditTextEmail = pText_1inputNombre as TextInputEditText
+
+
+
     }
+
     private fun initListeners() {
         appCompatButtonLogin!!.setOnClickListener(this)
         textViewLinkRegister!!.setOnClickListener(this)
+
     }
     private fun initObjects() {
         databaseHelper = DatabaseHelper(activity)
@@ -105,11 +111,11 @@ class activity_1login : AppCompatActivity(), View.OnClickListener {
             return
         }
         //Si la contraseña está vacía, lanzar mensaje de error
-        if (!inputValidation!!.isInputEditTextFilled(textInputEditTextPassword!!, getString(R.string.error_message_email))) {
+        if (!inputValidation!!.isInputEditTextFilled(textInputEditTextPassword!!, getString(R.string.error_message_password_empty))) {
             return
         }
         //Si el email está bien escrito (Con @...)
-        if (!inputValidation!!.isInputEditTextEmail(textInputEditTextEmail!!, getString(R.string.error_message_email))) {
+        if (!inputValidation!!.isInputEditTextEmail(textInputEditTextEmail!!, getString(R.string.error_message_email_correct))) {
             return
         }
         //En caso de no estar vacías, llama a la base de datos para comprobar si existe o no el usuario

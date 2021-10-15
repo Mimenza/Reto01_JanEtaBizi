@@ -7,6 +7,7 @@ import android.content.Context
 import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
+import androidx.appcompat.widget.AppCompatEditText
 import com.google.android.material.textfield.TextInputEditText
 
 class InputValidation
@@ -24,7 +25,7 @@ class InputValidation
      * @param message
      * @return
      */
-    fun isInputEditTextFilled(textInputEditText: TextInputEditText, message: String): Boolean {
+    fun isInputEditTextFilled(textInputEditText: AppCompatEditText, message: String): Boolean {
         val value = textInputEditText.text.toString().trim()
         if (value.isEmpty()) {
             textInputEditText.error = message
@@ -42,7 +43,7 @@ class InputValidation
      * @param message
      * @return
      */
-    fun isInputEditTextEmail(textInputEditText: TextInputEditText, message: String): Boolean {
+    fun isInputEditTextEmail(textInputEditText: AppCompatEditText, message: String): Boolean {
         val value = textInputEditText.text.toString().trim()
         if (value.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(value).matches()) {
             textInputEditText.error = message

@@ -15,9 +15,11 @@
     <string name="prompt_password_verify">Repite la Contraseña</string>
     <string name="action_sign_in">Iniciar sesión</string>
     <string name="action_register">Registrarte</string>
-    <string name="error_message_email">Ingrese un email válido</string>
+    <string name="error_message_email">Ingrese el email</string>
+    <string name="error_message_email_correct">Ingrese un email válido</string>
     <string name="error_invalid_user_id">Número de identificación inválido</string>
     <string name="error_message_name">Ingrese su nombre completo</string>
+    <string name="error_message_password_empty">Ingrese la contraseña</string>
     <string name="error_message_password">La contraseña es incorrecta</string>
     <string name="success_message"> Registro completado correctamente</string>
     <string name="error_field_required">Este campo es requerido</string>
