@@ -12,6 +12,7 @@ import com.example.reto01.Helpers.InputValidation
 import com.example.reto01.Model.User
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
+import kotlinx.android.synthetic.main.activity_1login.*
 import kotlinx.android.synthetic.main.activity_2registrar.*
 
 class activity_2registrar : AppCompatActivity(), View.OnClickListener {
@@ -26,8 +27,8 @@ class activity_2registrar : AppCompatActivity(), View.OnClickListener {
     private lateinit var appCompatButtonRegister: AppCompatButton
     private lateinit var inputValidation: InputValidation
     private lateinit var databaseHelper: DatabaseHelper
-    override fun onCreate(savedInstanceState: Bundle?) {
 
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_2registrar)
@@ -55,13 +56,13 @@ class activity_2registrar : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun initViews() {
-
         textInputEditTextName = pText_2inputNombre as TextInputEditText
         textInputEditTextEmail = pText_2inputCorreo as TextInputEditText
         textInputEditTextPassword = pText_2inputContrasena as TextInputEditText
         textInputEditTextRepeatPassword = pText_2inputContrasenaV as TextInputEditText
         appCompatButtonRegister = btn_2Register as AppCompatButton
         textViewLinkLogin = txtv_2Login as AppCompatTextView
+        constraintLayout = ctly_2layout as ConstraintLayout
     }
     /**
      * This method is to initialize listeners
@@ -116,7 +117,8 @@ class activity_2registrar : AppCompatActivity(), View.OnClickListener {
         if (!databaseHelper!!.checkUser(textInputEditTextEmail!!.text.toString().trim())) {
             var user = User(name = textInputEditTextName!!.text.toString().trim(),
                 email = textInputEditTextEmail!!.text.toString().trim(),
-                password = textInputEditTextPassword!!.text.toString().trim())
+                password = textInputEditTextPassword!!.text.toString().trim(),
+                admin = 0 )
 
             // Snack Bar to show success message that record saved successfully
             Snackbar.make(constraintLayout!!, getString(R.string.success_message), Snackbar.LENGTH_LONG).show()

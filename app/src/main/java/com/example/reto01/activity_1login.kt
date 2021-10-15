@@ -72,8 +72,6 @@ class activity_1login : AppCompatActivity(), View.OnClickListener {
 
         textInputEditTextEmail = pText_1inputNombre as TextInputEditText
 
-
-
     }
 
     private fun initListeners() {

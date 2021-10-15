@@ -7,6 +7,19 @@ import com.example.reto01.Model.User
 
 
 class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+    companion object{
+        private const val DATABASE_VERSION = 1
+        private const val DATABASE_NAME = "reto1.db"
+        // User table name
+        private const val TBL_USER = "User"
+
+        // User Table Columns names
+        private val COLUMN_USER_ID = "user_id"
+        private val COLUMN_USER_NAME = "user_name"
+        private val COLUMN_USER_EMAIL = "user_email"
+        private val COLUMN_USER_PASSWORD = "user_password"
+        private val COLUMN_USER_ADMIN = "user_admin"
+    }
 
 
 
@@ -17,7 +30,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                 "${COLUMN_USER_NAME} TEXT," +
                 "${COLUMN_USER_EMAIL} TEXT," +
                 "${COLUMN_USER_PASSWORD} TEXT," +
-                "${COLUMN_USER_ADMIN} INTEGER"
+                "${COLUMN_USER_ADMIN} INTEGER)"
 
 
     // drop table sql query
@@ -26,11 +39,12 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(CREATE_USER_TABLE)
     }
-    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
 
+    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         db.execSQL(DROP_USER_TABLE)
         onCreate(db)
     }
+
     override fun onDowngrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         onUpgrade(db, oldVersion, newVersion)
     }
@@ -181,19 +195,6 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     }
 
 
-    companion object{
-        private const val DATABASE_VERSION = 1
-        private const val DATABASE_NAME = "janetabizi.db"
-        // User table name
-        private const val TBL_USER = "User"
-
-        // User Table Columns names
-        private val COLUMN_USER_ID = "user_id"
-        private val COLUMN_USER_NAME = "user_name"
-        private val COLUMN_USER_EMAIL = "user_email"
-        private val COLUMN_USER_PASSWORD = "user_password"
-        private val COLUMN_USER_ADMIN = "user_admin"
-    }
 
 
 }
