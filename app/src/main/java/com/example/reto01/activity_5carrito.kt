@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reto01.Adapter.MyCardsCartAdapter
 import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_5carrito.*
-import kotlinx.android.synthetic.main.activity_5carrito.imgv_4atras
+import kotlinx.android.synthetic.main.activity_5carrito.imgv_5atras
 import kotlinx.android.synthetic.main.activity_6usuario.*
 import kotlinx.android.synthetic.main.viewholder_cart.*
 
@@ -70,22 +70,26 @@ class activity_5carrito : AppCompatActivity() {
             }
         }
 
-        imgv_4atras.setOnClickListener(){
+        imgv_5atras.setOnClickListener(){
             val i = Intent(this@activity_5carrito, activity_3principal::class.java)
             startActivity(i)
         }
 
-        btn_5finalizarcompra.setOnTouchListener{ v, event ->
-            btn_5finalizarcompra.setBackgroundResource(R.drawable.my_button_border_clickgreen);
+        btn_5carrito.setOnTouchListener{ v, event ->
+            btn_5carrito.setBackgroundResource(R.drawable.my_button_border_clickgreen);
             Handler().postDelayed({
-                btn_5finalizarcompra.setBackgroundResource(R.drawable.my_button_border);
+                btn_5carrito.setBackgroundResource(R.drawable.my_button_border);
             }, 100)
 
             false
 
         }
 
+        btn_5carrito.setOnClickListener(){
 
+            val i = Intent(this@activity_5carrito, activity_5_1adress::class.java)
+            startActivity(i)
+        }
       //Adaptador RecyclerView Carrito de la compra
         val adapter=MyCardsCartAdapter()
         reciclerView_5.layoutManager= LinearLayoutManager(this)

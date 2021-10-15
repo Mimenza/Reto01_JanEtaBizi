@@ -39,7 +39,6 @@ class MyCardsCartAdapter: RecyclerView.Adapter<MyCardsCartAdapter.ViewHolder>(){
         ViewHolder.itemTitle.text= titles[i]
         ViewHolder.itemMinus.setImageResource(minus[i])
         ViewHolder.itemMas.setImageResource(mas[i])
-        ViewHolder.itemPrecioProducto.text= precioproducto[i]
         ViewHolder.itemPrecioProductoTotal.text= precioproductototal[i]
 
     }
@@ -48,14 +47,12 @@ class MyCardsCartAdapter: RecyclerView.Adapter<MyCardsCartAdapter.ViewHolder>(){
         return  titles.size
     }
 
-
       inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
            var itemImage: ImageView
            var itemTitle: TextView
            var itemMinus : ImageView
            var itemMas : ImageView
-           var itemPrecioProducto : TextView
            var itemPrecioProductoTotal : TextView
 
           //Inicializar las variables
@@ -64,7 +61,7 @@ class MyCardsCartAdapter: RecyclerView.Adapter<MyCardsCartAdapter.ViewHolder>(){
                   itemMas = itemView.imgv_cardmas
                   itemMinus = itemView.imgv_cardmenos
                   itemTitle = itemView.txtv_cardtittle
-                  itemPrecioProducto = itemView.txtv_cardeuros
+
                   itemPrecioProductoTotal = itemView.txtv_cardeurostotal
 
               }
