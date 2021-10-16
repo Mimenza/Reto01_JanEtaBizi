@@ -188,7 +188,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             null) //The sort order
         val cursorCount = cursor.count
         cursor.close()
-        db.close()
+
         if (cursorCount > 0)
             return true
         return false
