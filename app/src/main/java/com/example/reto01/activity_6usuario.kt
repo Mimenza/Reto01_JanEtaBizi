@@ -1,16 +1,35 @@
 package com.example.reto01
 
+import android.app.Dialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.view.ViewGroup
+import android.view.Window
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_6usuario.*
 
+
 class activity_6usuario : AppCompatActivity() {
+
+    lateinit var bottomsheet: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_6usuario)
+
+        bottomsheet = findViewById(R.id.imgv6_bottomsheet)
+
+        bottomsheet.setOnClickListener {
+
+            showDialog()
+        }
+
+
+
 
         bottomNavV_6bottomMenu.setSelectedItemId(R.id.navigation_perfil)
 
@@ -18,6 +37,7 @@ class activity_6usuario : AppCompatActivity() {
             val i = Intent(this, activity_7admin::class.java)
             startActivity(i)
         }
+
 
         fun navegacion_principal() {
             val navegacion_compra = Intent(this, activity_3principal::class.java)
@@ -78,11 +98,40 @@ class activity_6usuario : AppCompatActivity() {
             false
 
         }
-        imgv6_logout.setOnClickListener(){
-            val LOGOUT = Intent(this, MainActivity::class.java)
-            startActivity(LOGOUT)
 
 
-        }
+
     }
+
+    private fun showDialog() {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.bottom_sheet)
+        val languageLayout = dialog.findViewById<LinearLayout>(R.id.layoutIdiomas)
+        val fondoLayout = dialog.findViewById<LinearLayout>(R.id.layoutFondo)
+        val logoutLayout = dialog.findViewById<LinearLayout>(R.id.logoutLayout)
+
+        languageLayout.setOnClickListener {
+            dialog.dismiss()
+            Toast.makeText(this, "Idioma is Clicked", Toast.LENGTH_SHORT).show()
+        }
+        fondoLayout.setOnClickListener {
+            dialog.dismiss()
+            Toast.makeText(this, "Tema is Clicked", Toast.LENGTH_SHORT).show()
+        }
+        logoutLayout.setOnClickListener {
+            val i = Intent(this, activity_1login::class.java)
+            startActivity(i)
+        }
+
+
+        dialog.show()
+        dialog.window!!.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
+
+
+    }
+
 }
