@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Reto01">
         <activity
+            android:name=".activity_6_2tema"
+            android:exported="true" />
+        <activity
+            android:name=".activity_6_1idiomas"
+            android:exported="true" />
+        <activity
             android:name=".activity_5_3gracias"
             android:exported="true" />
         <activity

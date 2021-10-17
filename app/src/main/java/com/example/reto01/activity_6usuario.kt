@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_6usuario.*
 
@@ -89,10 +88,10 @@ class activity_6usuario : AppCompatActivity() {
             }
         }
 
-        btn_6save.setOnTouchListener{  v, event ->
-            btn_6save.setBackgroundResource(R.drawable.my_button_border_clickgreen);
+        btn_6reset.setOnTouchListener{ v, event ->
+            btn_6reset.setBackgroundResource(R.drawable.my_button_border_clickgreen);
             Handler().postDelayed({
-                btn_6save.setBackgroundResource(R.drawable.my_button_border);
+                btn_6reset.setBackgroundResource(R.drawable.my_button_border);
             }, 100)
 
             false
@@ -112,18 +111,17 @@ class activity_6usuario : AppCompatActivity() {
         val logoutLayout = dialog.findViewById<LinearLayout>(R.id.logoutLayout)
 
         languageLayout.setOnClickListener {
-            dialog.dismiss()
-            Toast.makeText(this, "Idioma is Clicked", Toast.LENGTH_SHORT).show()
+            val i = Intent(this, activity_6_1idiomas::class.java)
+            startActivity(i)
         }
         fondoLayout.setOnClickListener {
-            dialog.dismiss()
-            Toast.makeText(this, "Tema is Clicked", Toast.LENGTH_SHORT).show()
+            val i = Intent(this, activity_6_2tema::class.java)
+            startActivity(i)
         }
         logoutLayout.setOnClickListener {
             val i = Intent(this, activity_1login::class.java)
             startActivity(i)
         }
-
 
         dialog.show()
         dialog.window!!.setLayout(
