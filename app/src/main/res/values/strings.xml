@@ -103,4 +103,6 @@
     <string name="español">Español</string>
     <string name="ingles">Inglés</string>
     <string name="frances">Francés</string>
+    <string name="light">Tema claro</string>
+    <string name="dark">Tema oscuro</string>
 </resources>
