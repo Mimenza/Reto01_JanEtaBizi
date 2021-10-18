@@ -17,20 +17,6 @@ class activity_3principal : AppCompatActivity() {
         sv_3scrollView.setVerticalScrollBarEnabled(false)
         loadTable()
 
-        cg_3chipgroup.isVisible=false
-
-        var showFilter = true
-
-        imgv_3filtro.setOnClickListener(){
-            if (showFilter){
-                cg_3chipgroup.isVisible=true
-                showFilter=false
-            }else{
-                cg_3chipgroup.isVisible=false
-                showFilter=true
-            }
-        }
-
         fun navegacion_principal() {
             val navegacion_compra = Intent(this, activity_3principal::class.java)
             startActivity(navegacion_compra)

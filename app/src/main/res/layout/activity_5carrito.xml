@@ -147,13 +147,13 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="186dp"
         android:layout_height="29dp"
+        android:layout_marginTop="32dp"
+        android:progress="0"
         app:layout_constraintBottom_toBottomOf="@+id/bottomNavV_5bottomMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.060000002"
-        android:progress="0"
-        />
+        app:layout_constraintVertical_bias="0.00999999" />
 
     <View
         android:id="@+id/view_5"

@@ -44,16 +44,15 @@
     <ScrollView
         android:id="@+id/sv_8scrollView"
         android:layout_width="match_parent"
-        android:layout_height="650dp"
+        android:layout_height="632dp"
         android:fillViewport="true"
         android:scrollbarStyle="insideInset"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53">
+        app:layout_constraintVertical_bias="0.515">
 
         <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/tb_8tablaProductos"

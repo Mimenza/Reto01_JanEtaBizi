@@ -22,18 +22,6 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/imgv_3filtro"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.99"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.060000002"
-        app:srcCompat="@drawable/ic_filter" />
-
-    <ImageView
         android:id="@+id/imgv_3Logo"
         android:layout_width="45dp"
         android:layout_height="45dp"
@@ -61,6 +49,7 @@
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.060000002" />
@@ -83,7 +72,7 @@
     <ScrollView
         android:id="@+id/sv_3scrollView"
         android:layout_width="match_parent"
-        android:layout_height="650dp"
+        android:layout_height="632dp"
         android:fillViewport="true"
         android:scrollbarStyle="insideInset"
         android:scrollbars="vertical"
@@ -91,7 +80,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53">
+        app:layout_constraintVertical_bias="0.515">
 
         <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/tb_3tablaProductos"
@@ -99,62 +88,6 @@
             android:layout_height="match_parent"
             android:stretchColumns="*"></TableLayout>
     </ScrollView>
-
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/cg_3chipgroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="163dp"
-        android:background="#9AFFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19">
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip3_1"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Vegan" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip3_2"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Vegetarian" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip3_3"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Full of protein" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip3_4"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Free gluten" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip3_5"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Free lactose" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip3_6"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Palm oil free" />
-    </com.google.android.material.chip.ChipGroup>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

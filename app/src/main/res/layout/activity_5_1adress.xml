@@ -113,7 +113,7 @@
         android:layout_width="186dp"
         android:layout_height="29dp"
         android:layout_marginTop="32dp"
-        android:progress="33"
+        android:progress="0"
         app:layout_constraintBottom_toBottomOf="@+id/bottomNavV_5_1bottomMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -135,7 +135,6 @@
         android:id="@+id/txt_5_1telefono"
         android:layout_width="342dp"
         android:layout_height="wrap_content"
-
         android:ems="10"
         android:hint="telefono"
         android:inputType="textPersonName"
@@ -164,7 +163,6 @@
         android:id="@+id/txt_5_1apellido"
         android:layout_width="171dp"
         android:layout_height="48dp"
-
         android:ems="10"
         android:hint="surname"
         android:inputType="textPersonName"
@@ -192,7 +190,6 @@
         android:layout_width="171dp"
         android:layout_height="48dp"
         android:layout_marginStart="40dp"
-
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
@@ -217,7 +214,6 @@
         android:id="@+id/txt_5_1cp"
         android:layout_width="114dp"
         android:layout_height="48dp"
-
         android:ems="10"
         android:hint="cp"
         android:inputType="textPersonName"
@@ -233,7 +229,6 @@
         android:id="@+id/txt_5_1direccion"
         android:layout_width="342dp"
         android:layout_height="47dp"
-
         android:ems="10"
         android:hint="direccion"
         android:inputType="textPersonName"
@@ -273,7 +268,6 @@
         android:id="@+id/txt_5_1city"
         android:layout_width="114dp"
         android:layout_height="48dp"
-
         android:ems="10"
         android:hint="city"
         android:inputType="textPersonName"
@@ -311,7 +305,6 @@
         android:id="@+id/txt_5_1provincia"
         android:layout_width="114dp"
         android:layout_height="48dp"
-
         android:ems="10"
         android:hint="state"
         android:inputType="textPersonName"
