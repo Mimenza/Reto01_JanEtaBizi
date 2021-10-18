@@ -170,7 +170,7 @@
             android:layout_marginEnd="50dp"
             android:background="@drawable/my_button_border"
             android:backgroundTint="#20B2AA"
-
+            android:drawableRight="@drawable/baseline_keyboard_arrow_right_20"
             android:gravity="left|center_vertical"
             android:text="@string/placeorder"
             android:textColor="@color/mainGreen"
@@ -226,7 +226,7 @@
         android:id="@+id/txt_5_2ccv"
         android:layout_width="171dp"
         android:layout_height="48dp"
-
+        android:background="@drawable/roundedgrey"
         android:ems="10"
         android:hint="ccv"
         android:inputType="textPersonName"
@@ -243,7 +243,7 @@
         android:layout_width="171dp"
         android:layout_height="48dp"
         android:layout_marginStart="28dp"
-
+        android:background="@drawable/roundedgrey"
         android:ems="10"
         android:hint="fecha caducidad"
         android:inputType="textPersonName"
@@ -281,7 +281,7 @@
         android:id="@+id/txt_5_2cardnumber"
         android:layout_width="342dp"
         android:layout_height="47dp"
-
+        android:background="@drawable/roundedgrey"
         android:ems="10"
         android:hint="Numero de la tarjeta"
         android:inputType="textPersonName"
