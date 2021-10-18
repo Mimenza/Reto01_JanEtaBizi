@@ -45,6 +45,13 @@ class activity_3principal : AppCompatActivity() {
 
         }
 
+        fun navegacion_blog() {
+            val navegacion_blog = Intent(this, activity_9blog::class.java)
+            startActivity(navegacion_blog)
+            this.overridePendingTransition(0, 0)
+
+        }
+
         bottomNavV_3bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_principal -> {
@@ -61,6 +68,10 @@ class activity_3principal : AppCompatActivity() {
                 }
                 R.id.navigation_perfil -> {
                     navegacion_perfil()
+                    true
+                }
+                R.id.navigation_blog -> {
+                    navegacion_blog()
                     true
                 }
                 else -> false

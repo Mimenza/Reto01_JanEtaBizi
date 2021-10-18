@@ -42,7 +42,7 @@ class activity_5_1adress : AppCompatActivity() {
                 this.overridePendingTransition(0, 0)
             }
 
-        bottomNavV_5_1bottomMenu.setSelectedItemId(R.id.navigation_invisible)
+        //bottomNavV_5_1bottomMenu.setSelectedItemId(R.id.navigation_invisible)
 
         fun navegacion_principal() {
             val navegacion_compra = Intent(this, activity_3principal::class.java)

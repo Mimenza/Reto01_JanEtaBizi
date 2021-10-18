@@ -24,7 +24,7 @@ class activity_4producto : AppCompatActivity() {
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_4producto)
 
-        bottomNavV_4bottomMenu.setSelectedItemId(R.id.navigation_invisible)
+        //bottomNavV_4bottomMenu.setSelectedItemId(R.id.navigation_invisible)
 
         fun navegacion_principal() {
             val navegacion_compra = Intent(this, activity_3principal::class.java)

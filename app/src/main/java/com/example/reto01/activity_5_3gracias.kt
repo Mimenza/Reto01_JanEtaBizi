@@ -43,7 +43,7 @@ class activity_5_3gracias : AppCompatActivity() {
             startActivity(i)
         }
 
-        bottomNavV_5_3bottomMenu.setSelectedItemId(R.id.navigation_invisible)
+        //bottomNavV_5_3bottomMenu.setSelectedItemId(R.id.navigation_invisible)
 
         fun navegacion_principal() {
             val navegacion_compra = Intent(this, activity_3principal::class.java)

@@ -14,7 +14,7 @@ class activity_7admin : AppCompatActivity() {
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_7admin)
 
-        bottomNavV_7bottomMenu.setSelectedItemId(R.id.navigation_invisible)
+        bottomNavV_7bottomMenu.setSelectedItemId(R.id.navigation_perfil)
 
 
         btn_7usuarios.setOnClickListener(){
