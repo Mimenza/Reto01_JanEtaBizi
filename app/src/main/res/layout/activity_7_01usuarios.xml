@@ -54,14 +54,14 @@
         android:layout_marginBottom="361dp"
         android:src="@drawable/ic_person"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textInputLayout1"
+        app:layout_constraintEnd_toStartOf="@+id/txtlayout_6nombre"
         app:layout_constraintHorizontal_bias="0.73"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgv7_01_atras"
         app:layout_constraintVertical_bias="0.46" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout1"
+        android:id="@+id/txtlayout_6nombre"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="275dp"
         android:layout_height="62dp"
@@ -88,14 +88,14 @@
         android:layout_height="62dp"
         android:src="@drawable/ic_email"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textInputLayout2"
+        app:layout_constraintEnd_toStartOf="@+id/txtlayout_6correo"
         app:layout_constraintHorizontal_bias="0.73"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.579" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+        android:id="@+id/txtlayout_6correo"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="275dp"
         android:layout_height="62dp"
