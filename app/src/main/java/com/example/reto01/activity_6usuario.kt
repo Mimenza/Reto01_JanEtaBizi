@@ -123,6 +123,7 @@ class activity_6usuario : AppCompatActivity() {
             startActivity(i)
         }
 
+
         dialog.show()
         dialog.window!!.setLayout(
             ViewGroup.LayoutParams.MATCH_PARENT,

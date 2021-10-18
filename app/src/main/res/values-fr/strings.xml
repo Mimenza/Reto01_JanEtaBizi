@@ -103,4 +103,11 @@
     <string name="español">Español</string>
     <string name="ingles">Inglés</string>
     <string name="frances">Frances</string>
+    <string name="pedidos">Pedidos y pagos</string>
+    <string name="deleteaccount">Eliminar cuenta</string>
+    <string name="light">Tema claro</string>
+    <string name="cancel">Cancelar</string>
+    <string name="accept">Aceptar</string>
+    <string name="title_dialog">¿Desea eliminar la cuenta?</string>
+    <string name="dark">Tema oscuro</string>
 </resources>
