@@ -69,7 +69,6 @@
             android:orientation="horizontal"
             tools:layout_editor_absoluteY="59dp">
 
-
             <TextView
                 android:id="@+id/txtv_5_2subtotal"
                 android:layout_width="244dp"
@@ -179,7 +178,7 @@
             app:layout_constraintHorizontal_bias="0.195"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.836" />
+            app:layout_constraintVertical_bias="0.836"/>
 
     </LinearLayout>
 
@@ -204,7 +203,7 @@
         android:layout_width="186dp"
         android:layout_height="29dp"
         android:layout_marginTop="32dp"
-        android:progress="66"
+        android:progress="33"
         app:layout_constraintBottom_toBottomOf="@+id/bottomNavV_5_2bottomMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

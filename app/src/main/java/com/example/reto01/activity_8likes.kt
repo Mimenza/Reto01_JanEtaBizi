@@ -12,6 +12,7 @@ class activity_8likes : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_8likes)
+        sv_8scrollView.setVerticalScrollBarEnabled(false)
         loadTable()
 
         bottomNavV_8bottomMenu.setSelectedItemId(R.id.navigation_likes)
@@ -66,8 +67,9 @@ class activity_8likes : AppCompatActivity() {
             }
         }
     }
+
     fun loadTable() {
-        var items = 3
+        var items = 4
         var itemsLength = items
         var rowsLength = (((items + 3) - 1) / 3) - 1
         var layoutParams = TableRow.LayoutParams(

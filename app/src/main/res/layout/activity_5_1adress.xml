@@ -113,7 +113,7 @@
         android:layout_width="186dp"
         android:layout_height="29dp"
         android:layout_marginTop="32dp"
-        android:progress="33"
+        android:progress="0"
         app:layout_constraintBottom_toBottomOf="@+id/bottomNavV_5_1bottomMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
