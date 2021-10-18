@@ -45,34 +45,34 @@
 
 
     <!--Carrito-->
-    <string name="carrito">Cart</string>
+    <string name="carrito">Carrito</string>
     <string name="items">Mis productos:</string>
     <string name="euros">0€</string>
     <string name="gastos">Gastos de envío:</string>
     <string name="total">Total:</string>
-    <string name="adress">Adress</string>
+    <string name="adress">Dirección</string>
     <string name="payment">Payment</string>
     <string name="finalizar_compra">Finalizar compra</string>
     <string name="iva">IVA</string>
     <string name="iva_value">21%</string>
-    <string name="euro">-€</string>
+    <string name="euro">€</string>
 
     <string name="nombre">Nombre</string>
     <string name="apellido">Apellido</string>
-    <string name="direccion">Direccion</string>
+    <string name="direccion">Dirección</string>
     <string name="ciudad">Ciudad</string>
     <string name="provincia">Provincia</string>
-    <string name="telefono">Telefono</string>
+    <string name="telefono">Teléfono</string>
     <string name="cp">Cp</string>
 
     <string name="cardnumber">Numero de la tarjeta</string>
     <string name="caducidad">Caducidad</string>
     <string name="ccv">Ccv</string>
-    <string name="placeorder">Place Order</string>
+    <string name="placeorder">Realizar pedido</string>
     <string name="envio">Envio</string>
     <string name="subtotal">SubTotal</string>
 
-    <string name="gracias">Graciass!!</string>
+    <string name="gracias">¡Muchas gracias!</string>
     <string name="graciastxt">Muchas gracias por comprar con nosotros, recibira el pedido en los proximos dias habiles, que tengas un buen dia </string>
     <string name="seguir">Seguir comprando</string>
 

@@ -1,80 +1,80 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Jan eta Bizi</string>
     <!--Usuario-->
-    <string name="txt1_nombreusuario">Nombre de usuario</string>
-    <string name="txt2_correo">Correo electrónico</string>
-    <string name="txt3_contraseña">Contraseña</string>
-    <string name="txt4_guardar">Guardar</string>
-    <string name="txt5_eliminar">Eliminar</string>
-    <string name="title_activity_login">Inicio de sesión</string>
+    <string name="txt1_nombreusuario">Username</string>
+    <string name="txt2_correo">Email</string>
+    <string name="txt3_contraseña">Password</string>
+    <string name="txt4_guardar">Save</string>
+    <string name="txt5_eliminar">Delete</string>
+    <string name="title_activity_login">Login</string>
 
     <!-- Strings related to login and register -->
     <string name="promt_user_mail">Email</string>
-    <string name="prompt_user_Name">Nombre</string>
-    <string name="prompt_password">Contraseña</string>
-    <string name="prompt_password_verify">Repite la Contraseña</string>
-    <string name="action_sign_in">Iniciar sesión</string>
-    <string name="action_register">Registrarte</string>
-    <string name="error_message_email">Ingrese el email</string>
-    <string name="error_message_email_correct">Ingrese un email válido</string>
-    <string name="error_invalid_user_id">Número de identificación inválido</string>
-    <string name="error_message_name">Ingrese su nombre completo</string>
-    <string name="error_message_password_empty">Ingrese la contraseña</string>
-    <string name="error_message_password">La contraseña es incorrecta</string>
-    <string name="success_message"> Registro completado correctamente</string>
-    <string name="error_field_required">Este campo es requerido</string>
-    <string name="error_server">Error en el servidor</string>
-    <string name="error_password_match">Las contraseñas no coinciden</string>
-    <string name="error_valid_email_password">Email o contraseña incorrecta</string>
-    <string name="error_email_exists">Este email ya existe</string>
-    <string name="error_incorrect_user_id">Número de identificación no registrado</string>
-    <string name="error_network">Conexión de red no disponible</string>
-    <string name="error_invalid_password">Contraseña inválida</string>
+    <string name="prompt_user_Name">Name</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_password_verify">Retype the password</string>
+    <string name="action_sign_in">Login</string>
+    <string name="action_register">Register</string>
+    <string name="error_message_email">Enter the email</string>
+    <string name="error_message_email_correct">Enter a valid email</string>
+    <string name="error_invalid_user_id">Error invalid user id</string>
+    <string name="error_message_name">Enter your full name</string>
+    <string name="error_message_password_empty">Enter your password</string>
+    <string name="error_message_password">The password is incorrect</string>
+    <string name="success_message"> Record completed correctly</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_server">Error server</string>
+    <string name="error_password_match">The passwords do not match</string>
+    <string name="error_valid_email_password">Incorrect email or password</string>
+    <string name="error_email_exists">This email already exists</string>
+    <string name="error_incorrect_user_id">Unregistered identification number</string>
+    <string name="error_network">Network connection not available</string>
+    <string name="error_invalid_password">Wrong password</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- Splash -->
     <string name="logo">Jan eta bizi</string>
 
-    <string name="titulo">Crea tu cuenta</string>
+    <string name="titulo">Create an account</string>
 
 
     <!--Principal-->
 
-    <string name="filtrobusquedacomida">Busca un alimento</string>
+    <string name="filtrobusquedacomida">Find a product</string>
 
 
     <!--Carrito-->
     <string name="carrito">Cart</string>
-    <string name="items">Mis productos:</string>
+    <string name="items">My products:</string>
     <string name="euros">0€</string>
-    <string name="gastos">Gastos de envío:</string>
+    <string name="gastos">Postal fees:</string>
     <string name="total">Total:</string>
     <string name="adress">Adress</string>
     <string name="payment">Payment</string>
-    <string name="finalizar_compra">Finalizar compra</string>
-    <string name="iva">IVA</string>
+    <string name="finalizar_compra">Proceed to checkout</string>
+    <string name="iva">Tax</string>
     <string name="iva_value">21%</string>
-    <string name="euro">-€</string>
+    <string name="euro">€</string>
 
-    <string name="nombre">Nombre</string>
-    <string name="apellido">Apellido</string>
-    <string name="direccion">Direccion</string>
-    <string name="ciudad">Ciudad</string>
-    <string name="provincia">Provincia</string>
-    <string name="telefono">Telefono</string>
+    <string name="nombre">Name</string>
+    <string name="apellido">Surname</string>
+    <string name="direccion">Address</string>
+    <string name="ciudad">City</string>
+    <string name="provincia">Province</string>
+    <string name="telefono">Phone</string>
     <string name="cp">Cp</string>
 
-    <string name="cardnumber">Numero de la tarjeta</string>
-    <string name="caducidad">Caducidad</string>
+    <string name="cardnumber">Card number</string>
+    <string name="caducidad">Expiration</string>
     <string name="ccv">Ccv</string>
     <string name="placeorder">Place Order</string>
-    <string name="envio">Envio</string>
+    <string name="envio">Sending</string>
     <string name="subtotal">SubTotal</string>
 
-    <string name="gracias">Graciass!!</string>
-    <string name="graciastxt">Muchas gracias por comprar con nosotros, recibira el pedido en los proximos dias habiles, que tengas un buen dia </string>
-    <string name="seguir">Seguir comprando</string>
+    <string name="gracias">Thank you!</string>
+    <string name="graciastxt">Thank you very much for buying with us, you will receive the order in the next few days, have a good day </string>
+    <string name="seguir">Continue buying</string>
 
     <string name="first_fragment_label">Hello first fragment</string>
     <string name="second_fragment_label">Hello second fragment. Arg: %1$s</string>
@@ -82,25 +82,25 @@
 
     <!-- admin  -->
 
-    <string name="btnUsuarios"> Usuarios</string>
-    <string name="btnPedidos"> Pedidos</string>
-    <string name="btnProductos"> Productos</string>
-    <string name="carrito_vacio">Tu carrito está vacío</string>
-    <string name="añadir_carrito">Añadir al carrito</string>
-    <string name="añadir">Añadir al carrito</string>
-    <string name="comprar">Comprar</string>
+    <string name="btnUsuarios">Users</string>
+    <string name="btnPedidos">Orders</string>
+    <string name="btnProductos"> Products</string>
+    <string name="carrito_vacio">Your cart is empty</string>
+    <string name="añadir_carrito">Add to cart</string>
+    <string name="añadir">Add to cart</string>
+    <string name="comprar">Buy</string>
 
 
     <!--Producto-->
     <string name="lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
     <string name="zero">0</string>
-    <string name="Idiomas">Idiomas</string>
-    <string name="tema">Tema</string>
-    <string name="logout">Cerrar sesión</string>
+    <string name="Idiomas">Languages</string>
+    <string name="tema">Theme</string>
+    <string name="logout">Logout</string>
     <string name="temas">Temas</string>
-    <string name="restablecer">Restablecer</string>
-    <string name="euskera">Euskera</string>
-    <string name="español">Español</string>
-    <string name="ingles">Inglés</string>
-    <string name="frances">Frances</string>
+    <string name="restablecer">Restore</string>
+    <string name="euskera">Basque</string>
+    <string name="español">Spanish</string>
+    <string name="ingles">English</string>
+    <string name="frances">French</string>
 </resources>

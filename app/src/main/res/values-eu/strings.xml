@@ -1,35 +1,35 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Jan eta Bizi</string>
     <!--Usuario-->
-    <string name="txt1_nombreusuario">Nombre de usuario</string>
-    <string name="txt2_correo">Correo electrónico</string>
+    <string name="txt1_nombreusuario">Erabiltzaile-izena</string>
+    <string name="txt2_correo">Posta elektronikoa</string>
     <string name="txt3_contraseña">Pasahitza</string>
     <string name="txt4_guardar">Gorde</string>
     <string name="txt5_eliminar">Ezabatu</string>
     <string name="title_activity_login">Hasi saioa</string>
 
     <!-- Strings related to login and register -->
-    <string name="promt_user_mail">Email</string>
+    <string name="promt_user_mail">Posta elektronikoa</string>
     <string name="prompt_user_Name">Izena</string>
     <string name="prompt_password">Pasahitza</string>
-    <string name="prompt_password_verify">Repite la Contraseña</string>
+    <string name="prompt_password_verify">Errepikatu pasahitza</string>
     <string name="action_sign_in">Hasi saioa</string>
-    <string name="action_register">Registrarte</string>
-    <string name="error_message_email">Idatzi helbidea</string>
-    <string name="error_message_email_correct">Ingrese un email válido</string>
-    <string name="error_invalid_user_id">Número de identificación inválido</string>
-    <string name="error_message_name">Ingrese su nombre completo</string>
-    <string name="error_message_password_empty">Ingrese la contraseña</string>
+    <string name="action_register">Erregistratu</string>
+    <string name="error_message_email">Sartu helbidea</string>
+    <string name="error_message_email_correct">Sartu email baliodun bat</string>
+    <string name="error_invalid_user_id">Identifikazio-zenbaki baliogabea</string>
+    <string name="error_message_name">Sartu zure izen osoa</string>
+    <string name="error_message_password_empty">Sartu pasahitza</string>
     <string name="error_message_password">Pasahitza ez da zuzena</string>
-    <string name="success_message"> Registro completado correctamente</string>
-    <string name="error_field_required">Este campo es requerido</string>
-    <string name="error_server">Error en el servidor</string>
+    <string name="success_message">Erregistroa berehala bete da</string>
+    <string name="error_field_required">Eremu hau beharrezkoa da</string>
+    <string name="error_server">Errorea zerbitzarian</string>
     <string name="error_password_match">Pasahitzak ez dira berdinak</string>
-    <string name="error_valid_email_password">Email o contraseña incorrecta</string>
-    <string name="error_email_exists">Este email ya existe</string>
-    <string name="error_incorrect_user_id">Número de identificación no registrado</string>
-    <string name="error_network">Conexión de red no disponible</string>
-    <string name="error_invalid_password">Contraseña inválida</string>
+    <string name="error_valid_email_password">Emaila edo pasahitza ez da zuzena</string>
+    <string name="error_email_exists">Helbide elektroniko hori lehendik ere badago</string>
+    <string name="error_incorrect_user_id">Erregistratu gabeko identifikazio-zenbakia</string>
+    <string name="error_network">Sare-konexioa ez dago erabilgarri</string>
+    <string name="error_invalid_password">Pasahitz baliogabea</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -45,15 +45,15 @@
 
 
     <!--Carrito-->
-    <string name="carrito">Cart</string>
-    <string name="items">Mis productos:</string>
+    <string name="carrito">Erosketako orga</string>
+    <string name="items">Nire produktuak:</string>
     <string name="euros">0€</string>
-    <string name="gastos">Gastos de envío:</string>
+    <string name="gastos">Bidaltze-gastuak:</string>
     <string name="total">Guztira:</string>
     <string name="adress">Helbidea</string>
-    <string name="payment">Payment</string>
+    <string name="payment">Ordainketa</string>
     <string name="finalizar_compra">Amaitu erosketa</string>
-    <string name="iva">IVA</string>
+    <string name="iva">BEZa</string>
     <string name="iva_value">21%</string>
     <string name="euro">-€</string>
 
@@ -61,19 +61,19 @@
     <string name="apellido">Abizena</string>
     <string name="direccion">Helbiea</string>
     <string name="ciudad">Hiria</string>
-    <string name="provincia">Provincia</string>
+    <string name="provincia">Probintzia</string>
     <string name="telefono">Telefono zenbakia</string>
     <string name="cp">Posta kodea</string>
 
     <string name="cardnumber">Numero de la tarjeta</string>
     <string name="caducidad">Caducidad</string>
     <string name="ccv">Ccv</string>
-    <string name="placeorder">Place Order</string>
-    <string name="envio">Envio</string>
-    <string name="subtotal">SubTotal</string>
+    <string name="placeorder">Eskaera egin</string>
+    <string name="envio">Bidalketa</string>
+    <string name="subtotal">Guztizko partziala</string>
 
     <string name="gracias">Mila esker!</string>
-    <string name="graciastxt">Muchas gracias por comprar con nosotros, recibira el pedido en los proximos dias habiles, que tengas un buen dia </string>
+    <string name="graciastxt">Eskerrik asko gurekin erosteagatik, jaso eskaera hurrengo egunetan, egun ona izan dezazun.</string>
     <string name="seguir">Jarraitu erosten</string>
 
     <string name="first_fragment_label">Hello first fragment</string>
@@ -82,12 +82,12 @@
 
     <!-- admin  -->
 
-    <string name="btnUsuarios"> Usuarios</string>
-    <string name="btnPedidos"> Pedidos</string>
-    <string name="btnProductos"> Productos</string>
-    <string name="carrito_vacio">Tu carrito está vacío</string>
-    <string name="añadir_carrito">Añadir al carrito</string>
-    <string name="añadir">Añadir al carrito</string>
+    <string name="btnUsuarios"> Erabiltzaileak</string>
+    <string name="btnPedidos"> Eskaerak</string>
+    <string name="btnProductos"> Produktuak</string>
+    <string name="carrito_vacio">Zure orgatxoa hutsik dago</string>
+    <string name="añadir_carrito">Gehitu orgatxoari</string>
+    <string name="añadir">Gehitu orgatxoari</string>
     <string name="comprar">Erosi</string>
 
 
@@ -95,10 +95,10 @@
     <string name="lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
     <string name="zero">0</string>
     <string name="Idiomas">Hizkuntzak</string>
-    <string name="tema">Tema</string>
+    <string name="tema">Gaia</string>
     <string name="logout">Amaitu saioa</string>
-    <string name="temas">Temas</string>
-    <string name="restablecer">Restablecer</string>
+    <string name="temas">Gaiak</string>
+    <string name="restablecer">Lehengoratu</string>
     <string name="euskera">Euskara</string>
     <string name="español">Erdara</string>
     <string name="ingles">Ingelesa</string>
