@@ -68,7 +68,7 @@ class activity_1login : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun initObjects() {
-        databaseHelper = DatabaseHelper(activity)
+        databaseHelper = DatabaseHelper(activity, "reto1", null, 1)
         inputValidation = InputValidation(activity)
     }
 

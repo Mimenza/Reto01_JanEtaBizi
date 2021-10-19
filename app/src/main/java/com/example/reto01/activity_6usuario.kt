@@ -5,7 +5,6 @@ import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
-import android.net.wifi.rtt.CivicLocationKeys.LANGUAGE
 import android.os.Bundle
 import android.os.Handler
 import android.preference.PreferenceManager
@@ -15,12 +14,15 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_6usuario.*
-import android.widget.CompoundButton
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
+import com.example.reto01.Model.User
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.util.*
 
 
 class activity_6usuario : AppCompatActivity() {
+    internal val admin= DatabaseHelper(this, "reto1", null, 1)
     lateinit var bottomsheet: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,6 +87,7 @@ class activity_6usuario : AppCompatActivity() {
         val fondoLayout = dialog.findViewById<LinearLayout>(R.id.layoutTema)
         val logoutLayout = dialog.findViewById<LinearLayout>(R.id.logoutLayout)
         val temaLayout = dialog.findViewById<LinearLayout>(R.id.layoutTema)
+        var deleteaccount= dialog.findViewById<TextView>(R.id.txtv_deleteaccount)
 
         languageLayout.setOnClickListener {
 
@@ -103,6 +106,11 @@ class activity_6usuario : AppCompatActivity() {
 
         temaLayout.setOnClickListener{
             chooseThemeDialog()
+        }
+
+        deleteaccount.setOnClickListener{
+
+            showDeleteDialog()
         }
 
 
@@ -240,6 +248,28 @@ class activity_6usuario : AppCompatActivity() {
     }
 
 
+    //Delete dialog
+
+    fun showDeleteDialog(){
+
+        MaterialAlertDialogBuilder(this,
+            R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_FullWidthButtons)
+            .setMessage(resources.getString(R.string.txt5_eliminar))
+            .setNegativeButton(resources.getString(R.string.cancel)) { dialog, which ->
+
+            }
+            .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
+
+                val db=this.writableDatabase
+                db.delete(
+                    User,
+                    id.toString() + " = ?",
+                    arrayOf(java.lang.String.valueOf(codigo.getID()))
+                )
+                db.close()
+            }
+            .show()
+    }
 
     fun navegacion(activity: String) {
         when (activity) {

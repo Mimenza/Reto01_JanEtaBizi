@@ -71,7 +71,7 @@ class activity_2registrar : AppCompatActivity(), View.OnClickListener {
      * This method is to initialize objects to be used
      */
     private fun initObjects() {
-        databaseHelper = DatabaseHelper(activity)
+        databaseHelper = DatabaseHelper(activity, "reto1", null, 1)
         inputValidation = InputValidation(activity)
     }
 

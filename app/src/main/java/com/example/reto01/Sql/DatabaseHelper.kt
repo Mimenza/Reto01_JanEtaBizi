@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import com.example.reto01.Model.User
 
 
-class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+class DatabaseHelper(context:Context, s:String, nothing:Nothing?, i:Int) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     companion object{
         private const val DATABASE_VERSION = 1
         private const val DATABASE_NAME = "reto1.db"
