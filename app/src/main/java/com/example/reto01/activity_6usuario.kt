@@ -5,6 +5,7 @@ import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
+import android.net.wifi.rtt.CivicLocationKeys.LANGUAGE
 import android.os.Bundle
 import android.os.Handler
 import android.preference.PreferenceManager
@@ -114,13 +115,15 @@ class activity_6usuario : AppCompatActivity() {
 
     //IDIOMAS DIALOG
 
+    //IDIOMAS DIALOG
+
     fun chooseLanguageDialog() {
         val english = getString(R.string.ingles)
         val spanish = getString(R.string.español)
         val frances = getString(R.string.frances)
         val euskera = getString(R.string.euskera)
 
-        val languages = arrayOf( spanish,english, frances, euskera)
+        val languages = arrayOf(spanish, euskera,  frances, english)
         val builder = AlertDialog.Builder(this)
         builder.setTitle(getString(R.string.Idiomas))
         val yes=MyPreferences(this).darkMode
@@ -136,7 +139,7 @@ class activity_6usuario : AppCompatActivity() {
                     dialog.dismiss()
                 }
                 1 -> {
-                    setLocate("en")
+                    setLocate("eu")
                     recreate()
 
                     MyPreferences(this).lang = 1
@@ -151,7 +154,7 @@ class activity_6usuario : AppCompatActivity() {
                 }
                 3 -> {
 
-                    setLocate("eu")
+                    setLocate("en")
                     recreate()
 
                     MyPreferences(this).lang = 3
@@ -177,25 +180,6 @@ class activity_6usuario : AppCompatActivity() {
         // editor.apply()
     }
 
-    private fun loadLocate(){
-        when (MyPreferences(this).lang) {
-            0 -> {
-                setLocate("en")
-            }
-            1 -> {
-                setLocate("es")
-            }
-            2 -> {
-                setLocate("fr")
-            }
-            3 -> {
-            setLocate("eu")
-        }
-
-        }
-
-    }
-
 
 
     //TEMAS DIALOG
@@ -204,21 +188,21 @@ class activity_6usuario : AppCompatActivity() {
 
         val builder = AlertDialog.Builder(this)
         builder.setTitle(getString(R.string.tema))
-        val styles = arrayOf("Claro","Oscuro","Por defecto")
+        val styles = arrayOf("Oscuro","Claro","Por defecto")
         val checkedItem = MyPreferences(this).darkMode
 
 
         builder.setSingleChoiceItems(styles, checkedItem) { dialog, which ->
             when (which) {
                 0 -> {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                     delegate.applyDayNight()
                     MyPreferences(this).darkMode = 0
 
                     dialog.dismiss()
                 }
                 1 -> {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                     delegate.applyDayNight()
                     MyPreferences(this).darkMode = 1
 
@@ -242,19 +226,17 @@ class activity_6usuario : AppCompatActivity() {
     class MyPreferences(context: Context?) {
 
         companion object {
-            private const val DARK_STATUS = "DARK STATUS"
+            private const val DARK_STATUS = "io.github.manuelernesto.DARK_STATUS"
             private const val LANGUAGE ="language"
+
         }
 
         private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
 
         var darkMode = preferences.getInt(DARK_STATUS, 0)
             set(value) = preferences.edit().putInt(DARK_STATUS, value).apply()
-
-
         var lang = preferences.getInt(LANGUAGE, 0)
             set(value) = preferences.edit().putInt(LANGUAGE, value).apply()
-
     }
 
 
