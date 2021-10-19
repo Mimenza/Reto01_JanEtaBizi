@@ -54,6 +54,8 @@ class activity_1login : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun initViews() {
+
+        constraintLayout = ctly_1layout as ConstraintLayout
         textInputEditTextPassword = pText_1inputContrasena as TextInputEditText
         appCompatButtonLogin = btn_1login as AppCompatButton
         textViewLinkRegister = txtv_1Registrar as AppCompatTextView

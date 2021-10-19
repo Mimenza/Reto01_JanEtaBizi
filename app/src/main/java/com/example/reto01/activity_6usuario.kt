@@ -1,15 +1,23 @@
 package com.example.reto01
 
+import android.app.AlertDialog
 import android.app.Dialog
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.os.Handler
+import android.preference.PreferenceManager
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_6usuario.*
+import android.widget.CompoundButton
+import androidx.appcompat.app.AppCompatDelegate
+import java.util.*
+
 
 class activity_6usuario : AppCompatActivity() {
     lateinit var bottomsheet: ImageView
@@ -73,12 +81,13 @@ class activity_6usuario : AppCompatActivity() {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(R.layout.bottom_sheet)
         val languageLayout = dialog.findViewById<LinearLayout>(R.id.layoutIdiomas)
-        val fondoLayout = dialog.findViewById<LinearLayout>(R.id.layoutFondo)
+        val fondoLayout = dialog.findViewById<LinearLayout>(R.id.layoutTema)
         val logoutLayout = dialog.findViewById<LinearLayout>(R.id.logoutLayout)
+        val temaLayout = dialog.findViewById<LinearLayout>(R.id.layoutTema)
 
         languageLayout.setOnClickListener {
-            val i = Intent(this, activity_6_1idiomas::class.java)
-            startActivity(i)
+
+            chooseLanguageDialog()
         }
 
         fondoLayout.setOnClickListener {
@@ -91,12 +100,164 @@ class activity_6usuario : AppCompatActivity() {
             startActivity(i)
         }
 
+        temaLayout.setOnClickListener{
+            chooseThemeDialog()
+        }
+
+
         dialog.show()
         dialog.window!!.setLayout(
             ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.WRAP_CONTENT
         )
     }
+
+    //IDIOMAS DIALOG
+
+    fun chooseLanguageDialog() {
+        val english = getString(R.string.ingles)
+        val spanish = getString(R.string.español)
+        val frances = getString(R.string.frances)
+        val euskera = getString(R.string.euskera)
+
+        val languages = arrayOf( spanish,english, frances, euskera)
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(getString(R.string.Idiomas))
+        val yes=MyPreferences(this).darkMode
+        val checkedItem = MyPreferences(this).lang
+
+        builder.setSingleChoiceItems(languages, checkedItem) { dialog, which ->
+            when (which) {
+                0 -> {
+                    setLocate("es")
+                    recreate()
+
+                    MyPreferences(this).lang = 0
+                    dialog.dismiss()
+                }
+                1 -> {
+                    setLocate("en")
+                    recreate()
+
+                    MyPreferences(this).lang = 1
+                    dialog.dismiss()
+                }
+                2 -> {
+                    setLocate("fr")
+                    recreate()
+
+                    MyPreferences(this).lang = 2
+                    dialog.dismiss()
+                }
+                3 -> {
+
+                    setLocate("eu")
+                    recreate()
+
+                    MyPreferences(this).lang = 3
+                    dialog.dismiss()
+                }
+
+            }
+
+        }
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    //for change language
+    fun setLocate(lang: String) {
+        val locale= Locale(lang)
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.locale =locale
+        baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
+        //   val editor = getSharedPreferences("settings", Context.MODE_PRIVATE).edit()
+        //editor.putString("my_lang", lang)
+        // editor.apply()
+    }
+
+    private fun loadLocate(){
+        when (MyPreferences(this).lang) {
+            0 -> {
+                setLocate("en")
+            }
+            1 -> {
+                setLocate("es")
+            }
+            2 -> {
+                setLocate("fr")
+            }
+            3 -> {
+            setLocate("eu")
+        }
+
+        }
+
+    }
+
+
+
+    //TEMAS DIALOG
+    fun chooseThemeDialog() {
+
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(getString(R.string.tema))
+        val styles = arrayOf("Claro","Oscuro","Por defecto")
+        val checkedItem = MyPreferences(this).darkMode
+
+
+        builder.setSingleChoiceItems(styles, checkedItem) { dialog, which ->
+            when (which) {
+                0 -> {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    delegate.applyDayNight()
+                    MyPreferences(this).darkMode = 0
+
+                    dialog.dismiss()
+                }
+                1 -> {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    delegate.applyDayNight()
+                    MyPreferences(this).darkMode = 1
+
+
+                    dialog.dismiss()
+                }
+                2 -> {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+                    delegate.applyDayNight()
+                    MyPreferences(this).darkMode = 2
+
+                    dialog.dismiss()
+                }
+            }
+
+        }
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    class MyPreferences(context: Context?) {
+
+        companion object {
+            private const val DARK_STATUS = "DARK STATUS"
+            private const val LANGUAGE ="language"
+        }
+
+        private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
+
+        var darkMode = preferences.getInt(DARK_STATUS, 0)
+            set(value) = preferences.edit().putInt(DARK_STATUS, value).apply()
+
+
+        var lang = preferences.getInt(LANGUAGE, 0)
+            set(value) = preferences.edit().putInt(LANGUAGE, value).apply()
+
+    }
+
+
 
     fun navegacion(activity: String) {
         when (activity) {
