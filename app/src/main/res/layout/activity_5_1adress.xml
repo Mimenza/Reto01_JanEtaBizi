@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_5_1adress">
+    tools:context=".activity_5_1address">
 
     <TextView
         android:id="@+id/txtv_5_1titulocarrito"

@@ -6,16 +6,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
-import kotlinx.android.synthetic.main.activity_5_3gracias.*
+import kotlinx.android.synthetic.main.activity_4producto.*
+import kotlinx.android.synthetic.main.activity_5_1adress.*
+import kotlinx.android.synthetic.main.activity_5carrito.*
 
-class activity_5_3gracias : AppCompatActivity() {
+class activity_5_1address : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-        setContentView(R.layout.activity_5_3gracias)
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
+        setContentView(R.layout.activity_5_1adress)
 
-        bottomNavV_5_3bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
+        bottomNavV_5_1bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_principal -> {
                     navegacion("navigation_principal")
@@ -41,27 +43,27 @@ class activity_5_3gracias : AppCompatActivity() {
             }
         }
 
-        imgv_5_3atras.setOnClickListener() {
-            val i = Intent(this, activity_5_2payment::class.java)
+        imgv_5_1atras.setOnClickListener() {
+            val i = Intent(this@activity_5_1address, activity_5carrito::class.java)
             startActivity(i)
             this.overridePendingTransition(0, 0)
         }
 
-        btn_5_3gracias.setOnTouchListener { v, event ->
-            btn_5_3gracias.setBackgroundResource(R.drawable.my_button_border_clickgreen);
+        btn_5_1adress.setOnTouchListener { v, event ->
+            btn_5_1adress.setBackgroundResource(R.drawable.my_button_border_clickgreen);
             Handler().postDelayed({
-                btn_5_3gracias.setBackgroundResource(R.drawable.my_button_border);
+                btn_5_1adress.setBackgroundResource(R.drawable.my_button_border);
             }, 100)
             false
         }
 
-        btn_5_3gracias.setOnClickListener() {
-
-            val i = Intent(this, activity_3principal::class.java)
+        btn_5_1adress.setOnClickListener() {
+            val i = Intent(this@activity_5_1address, activity_5_2payment::class.java)
             startActivity(i)
+            this.overridePendingTransition(0, 0)
         }
 
-        ObjectAnimator.ofInt(progressBar_5_3, "progress", 100)
+        ObjectAnimator.ofInt(progressBar_5_1, "progress", 33)
             .setDuration(1000)
             .start()
     }

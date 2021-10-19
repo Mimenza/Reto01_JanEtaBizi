@@ -80,7 +80,41 @@ class activity_9blog : AppCompatActivity() {
 
 
         //codigo para el video
+        var myArrayVideo = arrayOf("FXQfugQxjLU","4CS99nyI80M","e0OEmrHzJjk")
 
+        var myArrayId = arrayOf("third_party_player_view", "third_party_player_view02", "third_party_player_view03")
+
+        /*for (i in 0..2){
+
+            var player_view = myArrayId[i]
+
+            player_view.getPlayerUiController().showFullscreenButton(true)
+            player_view.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
+                override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
+                    val videoId = myArrayVideo[i]
+                    youTubePlayer.cueVideo(videoId, 0f)
+                }
+            })
+
+            player_view.getPlayerUiController().setFullScreenButtonClickListener(View.OnClickListener {
+                if (player_view.isFullScreen()) {
+                    player_view.exitFullScreen()
+                    window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
+                    // Show ActionBar
+                    if (supportActionBar != null) {
+                        supportActionBar!!.show()
+                    }
+                } else {
+                    player_view.enterFullScreen()
+                    window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+                    // Hide ActionBar
+                    if (supportActionBar != null) {
+                        supportActionBar!!.hide()
+                    }
+                }
+            })
+
+        }*/
         third_party_player_view.getPlayerUiController().showFullscreenButton(true)
         third_party_player_view.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
@@ -106,5 +140,58 @@ class activity_9blog : AppCompatActivity() {
                 }
             }
         })
+
+        third_party_player_view02.getPlayerUiController().showFullscreenButton(true)
+        third_party_player_view02.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
+            override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
+                val videoId = "4CS99nyI80M"
+                youTubePlayer.cueVideo(videoId, 0f)
+            }
+        })
+
+        third_party_player_view02.getPlayerUiController().setFullScreenButtonClickListener(View.OnClickListener {
+            if (third_party_player_view02.isFullScreen()) {
+                third_party_player_view02.exitFullScreen()
+                window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
+                // Show ActionBar
+                if (supportActionBar != null) {
+                    supportActionBar!!.show()
+                }
+            } else {
+                third_party_player_view02.enterFullScreen()
+                window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+                // Hide ActionBar
+                if (supportActionBar != null) {
+                    supportActionBar!!.hide()
+                }
+            }
+        })
+
+        third_party_player_view03.getPlayerUiController().showFullscreenButton(true)
+        third_party_player_view03.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
+            override fun onReady(@NonNull youTubePlayer: YouTubePlayer) {
+                val videoId = "e0OEmrHzJjk"
+                youTubePlayer.cueVideo(videoId, 0f)
+            }
+        })
+
+        third_party_player_view03.getPlayerUiController().setFullScreenButtonClickListener(View.OnClickListener {
+            if (third_party_player_view03.isFullScreen()) {
+                third_party_player_view03.exitFullScreen()
+                window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
+                // Show ActionBar
+                if (supportActionBar != null) {
+                    supportActionBar!!.show()
+                }
+            } else {
+                third_party_player_view03.enterFullScreen()
+                window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+                // Hide ActionBar
+                if (supportActionBar != null) {
+                    supportActionBar!!.hide()
+                }
+            }
+        })
+
     }
 }

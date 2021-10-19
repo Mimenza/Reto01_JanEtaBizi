@@ -28,7 +28,7 @@
             android:name=".activity_5_2payment"
             android:exported="true" />
         <activity
-            android:name=".activity_5_1adress"
+            android:name=".activity_5_1address"
             android:exported="true" />
         <activity
             android:name=".Adapter.MyCardsCartAdapter"
