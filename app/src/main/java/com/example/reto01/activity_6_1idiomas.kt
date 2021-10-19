@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_6_1idiomas.*
+import kotlinx.android.synthetic.main.activity_6usuario.*
 import java.util.*
 
 class activity_6_1idiomas : AppCompatActivity(), View.OnClickListener {
@@ -70,6 +71,18 @@ class activity_6_1idiomas : AppCompatActivity(), View.OnClickListener {
         val config = Configuration()
         config.locale = myLocale
         baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
+
+        updateTexts()
+    }
+
+    fun updateTexts(){
+
+         txtv_6_1_idiomas.resources.getString(R.string.Idiomas)
+         btn_6_1español.resources.getString(R.string.español)
+        btn_6_1ingles.resources.getString(R.string.ingles)
+        btn_6_1euskera.resources.getString(R.string.euskera)
+        btn_6_1frances.resources.getString(R.string.frances)
+
     }
 
     override fun onClick(v: View?) {
