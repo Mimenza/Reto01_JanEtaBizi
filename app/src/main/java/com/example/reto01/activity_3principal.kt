@@ -14,7 +14,7 @@ class activity_3principal : AppCompatActivity() {
         setContentView(R.layout.activity_3principal)
 
         sv_3scrollView.setVerticalScrollBarEnabled(false)
-        loadTable()
+        sv_3scrollViewFiltro.setVerticalScrollBarEnabled(false)
 
         bottomNavV_3bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
