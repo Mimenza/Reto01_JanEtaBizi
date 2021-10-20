@@ -1,17 +1,21 @@
 package com.example.reto01
+
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.reto01.Model.User
 
-
 class DatabaseHelper(context:Context, s:String, nothing:Nothing?, i:Int) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     companion object{
         private const val DATABASE_VERSION = 1
-        private const val DATABASE_NAME = "reto1.db"
-        // User table name
-        private const val TBL_USER = "User"
+        private const val DATABASE_NAME = "janEtaBizi.db"
+
+        // Tables names
+        private const val TBL_USERS = "Users"
+        private const val TBL_ORDERS = "Orders"
+        private const val TBL_PRODUCTS = "Products"
+        private const val TBL_ORDERS_PRODUCTS = "Orders_Products"
 
         // User Table Columns names
         private val COLUMN_USER_ID = "user_id"
@@ -19,29 +23,86 @@ class DatabaseHelper(context:Context, s:String, nothing:Nothing?, i:Int) : SQLit
         private val COLUMN_USER_EMAIL = "user_email"
         private val COLUMN_USER_PASSWORD = "user_password"
         private val COLUMN_USER_ADMIN = "user_admin"
+
+        // Products Table Columns names
+        private val COLUMN_PRODUCT_ID = "product_id"
+        private val COLUMN_PRODUCT_NAME = "product_name"
+        private val COLUMN_PRODUCT_PRICE = "product_price"
+        private val COLUMN_PRODUCT_CATEGORY = "product_category"
+        private val COLUMN_PRODUCT_LIKES = "product_likes"
+
+        // Orders Table Columns names
+        private val COLUMN_ORDER_ID = "order_id"
+        private val COLUMN_ORDER_USER_ID = "order_user_id"
+        private val COLUMN_ORDER_DATE = "order_date"
+        private val COLUMN_ORDER_TOTAL = "order_total"
+        private val COLUMN_ORDER_ADDRESS = "order_admin"
+
+        // Orders_Products Table Columns names
+        private val COLUMN_ORDER_PRODUCTS_ORDER_ID = "order_product_id"
+        private val COLUMN_ORDER_PRODUCTS_PRODUCT_ID = "product_name"
+        private val COLUMN_ORDER_PRODUCTS_QUANTITY = "product_price"
     }
 
-
-
-    // create table sql query
+    // Create user table sql query
     private  val CREATE_USER_TABLE =
-        "CREATE TABLE ${TBL_USER} (" +
+        "CREATE TABLE ${TBL_USERS} (" +
                 "${COLUMN_USER_ID} INTEGER PRIMARY KEY," +
                 "${COLUMN_USER_NAME} TEXT," +
                 "${COLUMN_USER_EMAIL} TEXT," +
                 "${COLUMN_USER_PASSWORD} TEXT," +
                 "${COLUMN_USER_ADMIN} INTEGER)"
 
+    // Create products table sql query
+    private  val CREATE_PRODUCTS_TABLE =
+        "CREATE TABLE ${TBL_PRODUCTS} (" +
+                "${COLUMN_PRODUCT_ID} INTEGER PRIMARY KEY," +
+                "${COLUMN_PRODUCT_NAME} TEXT," +
+                "${COLUMN_PRODUCT_PRICE} DOUBLE," +
+                "${COLUMN_PRODUCT_CATEGORY} TEXT," +
+                "${COLUMN_PRODUCT_LIKES} INTEGER)"
 
-    // drop table sql query
-    private val DROP_USER_TABLE = "DROP TABLE IF EXISTS ${TBL_USER}"
+    // Create orders table sql query
+    private  val CREATE_ORDERS_TABLE =
+        "CREATE TABLE ${TBL_ORDERS} (" +
+                "${COLUMN_ORDER_ID} INTEGER PRIMARY KEY," +
+                "${COLUMN_ORDER_USER_ID} INTEGER," +
+                "${COLUMN_ORDER_DATE} DATE," +
+                "${COLUMN_ORDER_TOTAL} DOUBLE," +
+                "${COLUMN_ORDER_ADDRESS} TEXT," +
+                "FOREIGN KEY (${COLUMN_ORDER_USER_ID}) REFERENCES ${TBL_USERS}(${COLUMN_USER_ID}))"
 
+    // Create orders_products table sql query
+    private  val CREATE_ORDERS_PRODUCTS_TABLE =
+        "CREATE TABLE ${TBL_ORDERS_PRODUCTS} (" +
+                "${COLUMN_ORDER_PRODUCTS_ORDER_ID} INTEGER," +
+                "${COLUMN_ORDER_PRODUCTS_PRODUCT_ID} INTEGER," +
+                "${COLUMN_ORDER_PRODUCTS_QUANTITY} INTEGER," +
+                "PRIMARY KEY (${COLUMN_ORDER_PRODUCTS_ORDER_ID}, ${COLUMN_ORDER_PRODUCTS_PRODUCT_ID})" +
+                "FOREIGN KEY (${COLUMN_ORDER_PRODUCTS_ORDER_ID}) REFERENCES ${TBL_ORDERS}(${COLUMN_ORDER_ID})," +
+                "FOREIGN KEY (${COLUMN_ORDER_PRODUCTS_PRODUCT_ID}) REFERENCES ${TBL_PRODUCTS}(${COLUMN_PRODUCT_ID}))"
+
+
+    // Drop tables sql query
+    private val DROP_USER_TABLE = "DROP TABLE IF EXISTS ${TBL_USERS}"
+    private val DROP_PRODUCTS_TABLE = "DROP TABLE IF EXISTS ${TBL_PRODUCTS}"
+    private val DROP_ORDERS_TABLE = "DROP TABLE IF EXISTS ${TBL_ORDERS}"
+    private val DROP_ORDERS_PRODUCTS_TABLE = "DROP TABLE IF EXISTS ${TBL_ORDERS_PRODUCTS}"
+
+    // Create tables sql query
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(CREATE_USER_TABLE)
+        db.execSQL(CREATE_PRODUCTS_TABLE)
+        db.execSQL(CREATE_ORDERS_TABLE)
+        db.execSQL(CREATE_ORDERS_PRODUCTS_TABLE)
     }
 
+    // Drop & Create tables sql query
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         db.execSQL(DROP_USER_TABLE)
+        db.execSQL(DROP_PRODUCTS_TABLE)
+        db.execSQL(DROP_ORDERS_TABLE)
+        db.execSQL(DROP_ORDERS_PRODUCTS_TABLE)
         onCreate(db)
     }
 
@@ -58,14 +119,12 @@ class DatabaseHelper(context:Context, s:String, nothing:Nothing?, i:Int) : SQLit
         values.put(COLUMN_USER_PASSWORD, user.password)
         values.put(COLUMN_USER_ADMIN,  user.admin)
         // Inserting Row
-        db.insert(TBL_USER, null, values)
+        db.insert(TBL_USERS, null, values)
         db.close()
     }
 
     //Actualizar usuario
-
     fun updateUser(user: User){
-
         // Gets the data repository in write mode
         val db = this.writableDatabase
 
@@ -76,11 +135,11 @@ class DatabaseHelper(context:Context, s:String, nothing:Nothing?, i:Int) : SQLit
             put("Email", COLUMN_USER_EMAIL)
             put("Password", COLUMN_USER_PASSWORD)
             put("Admin", COLUMN_USER_ADMIN)
-
         }
+
         // update según el id de usuario
         db.update(
-            TBL_USER, values, "${COLUMN_USER_ID} = ?",
+            TBL_USERS, values, "${COLUMN_USER_ID} = ?",
             arrayOf(user.id.toString()))
         db.close()
     }
@@ -90,10 +149,9 @@ class DatabaseHelper(context:Context, s:String, nothing:Nothing?, i:Int) : SQLit
         val db = this.writableDatabase
         // Eliminar usuario según id
         db.delete(
-            TBL_USER, "${COLUMN_USER_ID}= ?",
+            TBL_USERS, "${COLUMN_USER_ID}= ?",
             arrayOf(user.id.toString()))
         db.close()
-
     }
 
     //Lista que hace return de todos los usuarios
@@ -106,7 +164,7 @@ class DatabaseHelper(context:Context, s:String, nothing:Nothing?, i:Int) : SQLit
         val sortOrder = "${COLUMN_USER_ID} ASC"
 
         val cursor = db.query(
-            TBL_USER,   // The table to query
+            TBL_USERS,   // The table to query
             list,             // The array of columns to return (pass null to get all)
             null,              // The columns for the WHERE clause
             null,          // The values for the WHERE clause
@@ -122,7 +180,6 @@ class DatabaseHelper(context:Context, s:String, nothing:Nothing?, i:Int) : SQLit
                 itemIds.add(itemId)
             }
         }
-
     }
 
     /** Hace un check del usuario para saber si existe o no según el parámetro de email
@@ -134,18 +191,16 @@ class DatabaseHelper(context:Context, s:String, nothing:Nothing?, i:Int) : SQLit
         // array of columns to fetch
         val columns = arrayOf(COLUMN_USER_ID)
         val db = this.readableDatabase
+
         // seleccoón según el email
         val selection = "$COLUMN_USER_EMAIL = ?"
+
         // selection argument
         val selectionArgs = arrayOf(email)
+
         // query user table with condition
-        /**
-         * Here query function is used to fetch records from user table this function works like we use sql query.
-         * SQL query equivalent to this query function is
-         * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com';
-         */
         val cursor = db.query(
-            TBL_USER, //Table to query
+            TBL_USERS, //Table to query
             columns,        //columns to return
             selection,      //columns for the WHERE clause
             selectionArgs,  //The values for the WHERE clause
@@ -160,26 +215,25 @@ class DatabaseHelper(context:Context, s:String, nothing:Nothing?, i:Int) : SQLit
         }
         return false
     }
+
     /**
      * Si existe usuario según ambos parámetros (Email y password)
      * Hace return de true/false
-     *
-     *
-     *
      */
-
     fun checkUser(email: String, password: String): Boolean {
         // array of columns to fetch
         val columns = arrayOf(COLUMN_USER_ID)
         val db = this.readableDatabase
+
         // selection criteria
         val selection = "$COLUMN_USER_EMAIL = ? AND $COLUMN_USER_PASSWORD = ?"
+
         // selection arguments
         val selectionArgs = arrayOf(email, password)
-        // query user table with conditions
 
+        // query user table with conditions
         val cursor = db.query(
-            TBL_USER, //Table to query
+            TBL_USERS, //Table to query
             columns, //columns to return
             selection, //columns for the WHERE clause
             selectionArgs, //The values for the WHERE clause
@@ -193,10 +247,7 @@ class DatabaseHelper(context:Context, s:String, nothing:Nothing?, i:Int) : SQLit
             return true
         return false
     }
-
-
-
-
 }
+
 
 
