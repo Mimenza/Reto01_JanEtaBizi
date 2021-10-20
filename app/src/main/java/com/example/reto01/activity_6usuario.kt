@@ -108,10 +108,10 @@ class activity_6usuario : AppCompatActivity() {
             chooseThemeDialog()
         }
 
-        deleteaccount.setOnClickListener{
+       /* deleteaccount.setOnClickListener{
 
             showDeleteDialog()
-        }
+        }*/
 
 
         dialog.show()
@@ -250,7 +250,7 @@ class activity_6usuario : AppCompatActivity() {
 
     //Delete dialog
 
-    fun showDeleteDialog(){
+  /*  fun showDeleteDialog(){
 
         MaterialAlertDialogBuilder(this,
             R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_FullWidthButtons)
@@ -264,12 +264,12 @@ class activity_6usuario : AppCompatActivity() {
                 db.delete(
                     User,
                     id.toString() + " = ?",
-                    arrayOf(java.lang.String.valueOf(codigo.getID()))
+                    arrayOf(java.lang.String.valueOf(id.getID()))
                 )
                 db.close()
             }
             .show()
-    }
+    }*/
 
     fun navegacion(activity: String) {
         when (activity) {
