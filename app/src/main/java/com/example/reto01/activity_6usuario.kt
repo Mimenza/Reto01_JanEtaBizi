@@ -112,7 +112,6 @@ class activity_6usuario : AppCompatActivity() {
             //showDeleteDialog()
         }
 
-
         dialog.show()
         dialog.window!!.setLayout(
             ViewGroup.LayoutParams.MATCH_PARENT,
@@ -249,6 +248,7 @@ class activity_6usuario : AppCompatActivity() {
 
     //Delete dialog
 
+
 /*    fun showDeleteDialog(){
 
         MaterialAlertDialogBuilder(this,
@@ -263,7 +263,7 @@ class activity_6usuario : AppCompatActivity() {
                 db.delete(
                     User,
                     id.toString() + " = ?",
-                    arrayOf(java.lang.String.valueOf(codigo.getID()))
+                    arrayOf(java.lang.String.valueOf(id.getID()))
                 )
                 db.close()
             }
