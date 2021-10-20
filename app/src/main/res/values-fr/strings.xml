@@ -11,6 +11,8 @@
     <!-- Strings related to login and register -->
     <string name="promt_user_mail">Email</string>
     <string name="prompt_user_Name">Nombre</string>
+    <string name="prompt_user_Surname">Apellido</string>
+    <string name="prompt_user_Description">Descripción</string>
     <string name="prompt_password">Contraseña</string>
     <string name="prompt_password_verify">Repite la Contraseña</string>
     <string name="action_sign_in">Iniciar sesión</string>

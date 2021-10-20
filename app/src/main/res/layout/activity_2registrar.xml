@@ -12,9 +12,8 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/pText_2inputNombre"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="224dp"
+        android:layout_width="147dp"
+        android:layout_height="48dp"
         android:background="@drawable/rounded"
 
         android:ems="10"
@@ -22,10 +21,66 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:paddingLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintHorizontal_bias="0.185"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.225" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/pText_2inputCiudad"
+        android:layout_width="147dp"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded"
+
+        android:ems="10"
+        android:hint="@string/ciudad"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.485" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/pText_2inputCP"
+        android:layout_width="147dp"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded"
+
+        android:ems="10"
+        android:hint="@string/cp"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.821"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.485" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/pText_2inputaApellido"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded"
+
+        android:ems="10"
+        android:hint="@string/prompt_user_Surname"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.819"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.225" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_2Register"
@@ -36,10 +91,10 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.773" />
+        app:layout_constraintVertical_bias="0.881" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txtv_2Login"
@@ -48,59 +103,97 @@
         android:text="Inicia sesión aquí"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.828" />
+        app:layout_constraintVertical_bias="0.936" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/pText_2inputContrasena"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_width="316dp"
+        android:layout_height="48dp"
         android:background="@drawable/rounded"
         android:ems="10"
         android:hint="@string/prompt_password"
         android:inputType="textPassword"
-        android:minHeight="48dp"
 
+        android:minHeight="48dp"
         android:paddingLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pText_2inputCorreo" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.667" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/pText_2inputContrasenaV"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_width="316dp"
+        android:layout_height="48dp"
         android:background="@drawable/rounded"
         android:ems="10"
         android:hint="@string/prompt_password_verify"
         android:inputType="textPassword"
-        android:minHeight="48dp"
 
+        android:minHeight="48dp"
         android:paddingLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pText_2inputContrasena" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.766" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/pText_2inputCorreo"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_width="316dp"
+        android:layout_height="48dp"
         android:background="@drawable/rounded"
         android:ems="10"
         android:hint="@string/promt_user_mail"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:paddingLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pText_2inputNombre" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.572" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/pText_2inputDescripcion"
+        android:layout_width="316dp"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded"
+        android:ems="10"
+        android:hint="@string/prompt_user_Description"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.313" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/pText_2inputDireccion"
+        android:layout_width="316dp"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded"
+        android:ems="10"
+        android:hint="@string/direccion"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.402" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txtv_2titulo"
