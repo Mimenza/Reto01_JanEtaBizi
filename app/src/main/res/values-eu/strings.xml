@@ -11,6 +11,8 @@
     <!-- Strings related to login and register -->
     <string name="promt_user_mail">Posta elektronikoa</string>
     <string name="prompt_user_Name">Izena</string>
+    <string name="prompt_user_Surname">Abizena</string>
+    <string name="prompt_user_Description">Deskribapena</string>
     <string name="prompt_password">Pasahitza</string>
     <string name="prompt_password_verify">Errepikatu pasahitza</string>
     <string name="action_sign_in">Hasi saioa</string>

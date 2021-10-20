@@ -11,6 +11,8 @@
     <!-- Strings related to login and register -->
     <string name="promt_user_mail">Email</string>
     <string name="prompt_user_Name">Name</string>
+    <string name="prompt_user_Surname">Last Name</string>
+    <string name="prompt_user_Description">Description</string>
     <string name="prompt_password">Password</string>
     <string name="prompt_password_verify">Retype the password</string>
     <string name="action_sign_in">Login</string>
