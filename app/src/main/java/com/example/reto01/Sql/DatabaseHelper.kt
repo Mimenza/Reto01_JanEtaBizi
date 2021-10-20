@@ -1,10 +1,10 @@
 package com.example.reto01
 import android.content.ContentValues
 import android.content.Context
+import android.content.LocusId
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.reto01.Model.User
-
 
 class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.CursorFactory?, version:Int) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     companion object{
@@ -86,12 +86,12 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
     }
 
     //Eliminar usuario
-    fun deleteUser(user: User) {
+    fun deleteUser(id: Int)   {
         val db = this.writableDatabase
         // Eliminar usuario según id
         db.delete(
             TBL_USER, "${COLUMN_USER_ID}= ?",
-            arrayOf(user.id.toString()))
+            arrayOf(id.toString()))
         db.close()
 
     }

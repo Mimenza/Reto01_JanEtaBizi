@@ -14,20 +14,39 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_6usuario.*
+import kotlinx.android.synthetic.main.activity_1login.*
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
-import com.example.reto01.Model.User
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.textfield.TextInputEditText
+import kotlinx.android.synthetic.main.activity_2registrar.*
+import org.w3c.dom.Text
 import java.util.*
+
+
 
 
 class activity_6usuario : AppCompatActivity() {
     internal val admin= DatabaseHelper(this, "reto1", null, 1)
+
     lateinit var bottomsheet: ImageView
+    //Inputs
+
+     lateinit  var emailText: TextInputEditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_6usuario)
+
+        var sharedPreferences= getSharedPreferences("data", 0)
+
+        val email: String? = sharedPreferences.getString("loggedUser", "")
+
+
+         txtinput_6correo.setText(email)
+
+
 
         bottomsheet = findViewById(R.id.imgv6_bottomsheet)
 
@@ -77,7 +96,15 @@ class activity_6usuario : AppCompatActivity() {
             false
 
         }
+
+
+
+
+
+
     }
+
+
 
     fun showDialog() {
         val dialog = Dialog(this)
@@ -108,10 +135,10 @@ class activity_6usuario : AppCompatActivity() {
             chooseThemeDialog()
         }
 
-       /* deleteaccount.setOnClickListener{
+        deleteaccount.setOnClickListener{
 
             showDeleteDialog()
-        }*/
+        }
 
 
         dialog.show()
@@ -250,7 +277,7 @@ class activity_6usuario : AppCompatActivity() {
 
     //Delete dialog
 
-  /*  fun showDeleteDialog(){
+    fun showDeleteDialog(){
 
         MaterialAlertDialogBuilder(this,
             R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_FullWidthButtons)
@@ -260,16 +287,13 @@ class activity_6usuario : AppCompatActivity() {
             }
             .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
 
-                val db=this.writableDatabase
-                db.delete(
-                    User,
-                    id.toString() + " = ?",
-                    arrayOf(java.lang.String.valueOf(id.getID()))
-                )
-                db.close()
+
+
+
+
             }
             .show()
-    }*/
+    }
 
     fun navegacion(activity: String) {
         when (activity) {
@@ -301,3 +325,4 @@ class activity_6usuario : AppCompatActivity() {
         this.overridePendingTransition(0, 0)
     }
 }
+
