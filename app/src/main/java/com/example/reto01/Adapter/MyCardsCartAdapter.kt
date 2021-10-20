@@ -1,74 +1,57 @@
 package com.example.reto01.Adapter
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.appcompat.view.menu.ActionMenuItemView
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
+import com.example.reto01.Model.Producto
 import com.example.reto01.R
 import kotlinx.android.synthetic.main.viewholder_cart.view.*
 
-class MyCardsCartAdapter: RecyclerView.Adapter<MyCardsCartAdapter.ViewHolder>(){
+class MyCardsCartAdapter(val productos: ArrayList<Producto>, val context: Context): RecyclerView.Adapter<MyCardsCartAdapter.ViewHolder>(){
 
 
-
-
-
-    val titles= arrayOf("Pasteles", "Omega", "Fresas", "Arandano")
-    val precioproducto= arrayOf("10€", "12€", "13€", "14€")
-    val precioproductototal= arrayOf("10€", "12€", "13€", "14€")
-    val images= intArrayOf(R.drawable.dessert, R.drawable.aceite3, R.drawable.fresa, R.drawable.blueberries)
-    val minus= intArrayOf(R.drawable.ic_minus, R.drawable.ic_minus, R.drawable.ic_minus, R.drawable.ic_minus)
-    val mas= intArrayOf(R.drawable.ic_plus, R.drawable.ic_plus, R.drawable.ic_plus, R.drawable.ic_plus)
-
-
-
-    override fun onCreateViewHolder(ViewGroup: ViewGroup, i: Int): ViewHolder {
+    override fun onCreateViewHolder(ViewGroup: ViewGroup, i: Int, ): ViewHolder {
        val v = LayoutInflater.from(ViewGroup.context).inflate(R.layout.viewholder_cart, ViewGroup, false)
 
         return  ViewHolder(v)
     }
 
     override fun onBindViewHolder(ViewHolder: ViewHolder, i: Int) {
-
-        ViewHolder.itemImage.setImageResource(images[i])
-        ViewHolder.itemTitle.text= titles[i]
-        ViewHolder.itemMinus.setImageResource(minus[i])
-        ViewHolder.itemMas.setImageResource(mas[i])
-        ViewHolder.itemPrecioProductoTotal.text= precioproductototal[i]
+        val spinnerVal= intArrayOf(1,2,3,4,5,6,7,8,9,10)
+        var item = productos[i]
+        //var adaptador= ArrayAdapter(context,R.layout.support_simple_spinner_dropdown_item, spinnerVal)
+        ViewHolder.itemImage.setImageResource(item.img)
+        ViewHolder.itemTitle.text= item.name_product
+        ViewHolder.itemPrecioProducto.text= item.price.toString()
+        ViewHolder.itemCategoria.text=item.category
+        //ViewHolder.itemSpiner.adapter=adaptador
 
     }
 
     override fun getItemCount(): Int {
-        return  titles.size
+        return  productos.size
     }
 
       inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
            var itemImage: ImageView
            var itemTitle: TextView
-           var itemMinus : ImageView
-           var itemMas : ImageView
-           var itemPrecioProductoTotal : TextView
+           var itemPrecioProducto : TextView
+           var itemCategoria : TextView
+           var itemSpiner: Spinner
 
           //Inicializar las variables
               init {
                   itemImage = itemView.imgv_cardimg
-                  itemMas = itemView.imgv_cardmas
-                  itemMinus = itemView.imgv_cardmenos
                   itemTitle = itemView.txtv_cardtittle
-
-                  itemPrecioProductoTotal = itemView.txtv_cardeurostotal
-
+                  itemPrecioProducto = itemView.txtv_cardeurostotal
+                  itemCategoria=itemView.txtv_cardcategory
+                  itemSpiner = itemView.spinner_carrito
               }
-
       }
-
-
 
 }
 

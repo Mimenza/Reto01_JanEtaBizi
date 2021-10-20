@@ -83,11 +83,6 @@
         app:layout_constraintVertical_bias="0.515"
         tools:ignore="SpeakableTextPresentCheck">
 
-        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/tb_3tablaProductos"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:stretchColumns="*"></TableLayout>
     </ScrollView>
 
     <ScrollView
@@ -329,4 +324,11 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <TableLayout
+        android:id="@+id/tb_3tablaProductos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="*"
+        tools:layout_editor_absoluteY="51dp"></TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
