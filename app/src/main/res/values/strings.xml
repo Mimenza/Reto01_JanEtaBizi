@@ -115,6 +115,7 @@
     <string name="accept">Aceptar</string>
     <string name="pedidos">Pedidos y pagos</string>
     <string name="deleteaccount">Eliminar cuenta</string>
+    <string name="pordefecto" tools:ignore="MissingTranslation">Por defecto</string>
 
     <!--Blog-->
     <string name="blogtitulo">Blog</string>

@@ -54,6 +54,8 @@ class activity_1login : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun initViews() {
+
+        constraintLayout = ctly_1layout as ConstraintLayout
         textInputEditTextPassword = pText_1inputContrasena as TextInputEditText
         appCompatButtonLogin = btn_1login as AppCompatButton
         textViewLinkRegister = txtv_1Registrar as AppCompatTextView
@@ -66,7 +68,7 @@ class activity_1login : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun initObjects() {
-        databaseHelper = DatabaseHelper(activity)
+        databaseHelper = DatabaseHelper(activity, "reto1", null, 1)
         inputValidation = InputValidation(activity)
     }
 

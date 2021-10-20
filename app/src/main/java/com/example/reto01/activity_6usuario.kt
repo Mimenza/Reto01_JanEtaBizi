@@ -1,17 +1,28 @@
 package com.example.reto01
 
+import android.app.AlertDialog
 import android.app.Dialog
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.os.Handler
+import android.preference.PreferenceManager
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_6usuario.*
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatDelegate
+import com.example.reto01.Model.User
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import java.util.*
+
 
 class activity_6usuario : AppCompatActivity() {
+    internal val admin= DatabaseHelper(this, "reto1", null, 1)
     lateinit var bottomsheet: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,12 +84,14 @@ class activity_6usuario : AppCompatActivity() {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(R.layout.bottom_sheet)
         val languageLayout = dialog.findViewById<LinearLayout>(R.id.layoutIdiomas)
-        val fondoLayout = dialog.findViewById<LinearLayout>(R.id.layoutFondo)
+        val fondoLayout = dialog.findViewById<LinearLayout>(R.id.layoutTema)
         val logoutLayout = dialog.findViewById<LinearLayout>(R.id.logoutLayout)
+        val temaLayout = dialog.findViewById<LinearLayout>(R.id.layoutTema)
+        var deleteaccount= dialog.findViewById<TextView>(R.id.txtv_deleteaccount)
 
         languageLayout.setOnClickListener {
-            val i = Intent(this, activity_6_1idiomas::class.java)
-            startActivity(i)
+
+            chooseLanguageDialog()
         }
 
         fondoLayout.setOnClickListener {
@@ -91,11 +104,171 @@ class activity_6usuario : AppCompatActivity() {
             startActivity(i)
         }
 
+        temaLayout.setOnClickListener{
+            chooseThemeDialog()
+        }
+
+        deleteaccount.setOnClickListener{
+
+            showDeleteDialog()
+        }
+
+
         dialog.show()
         dialog.window!!.setLayout(
             ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.WRAP_CONTENT
         )
+    }
+
+    //IDIOMAS DIALOG
+
+    //IDIOMAS DIALOG
+
+    fun chooseLanguageDialog() {
+        val english = getString(R.string.ingles)
+        val spanish = getString(R.string.español)
+        val frances = getString(R.string.frances)
+        val euskera = getString(R.string.euskera)
+
+        val languages = arrayOf(spanish, euskera,  frances, english)
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(getString(R.string.Idiomas))
+        val yes=MyPreferences(this).darkMode
+        val checkedItem = MyPreferences(this).lang
+
+        builder.setSingleChoiceItems(languages, checkedItem) { dialog, which ->
+            when (which) {
+                0 -> {
+                    setLocate("es")
+                    recreate()
+
+                    MyPreferences(this).lang = 0
+                    dialog.dismiss()
+                }
+                1 -> {
+                    setLocate("eu")
+                    recreate()
+
+                    MyPreferences(this).lang = 1
+                    dialog.dismiss()
+                }
+                2 -> {
+                    setLocate("fr")
+                    recreate()
+
+                    MyPreferences(this).lang = 2
+                    dialog.dismiss()
+                }
+                3 -> {
+
+                    setLocate("en")
+                    recreate()
+
+                    MyPreferences(this).lang = 3
+                    dialog.dismiss()
+                }
+
+            }
+
+        }
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    //for change language
+    fun setLocate(lang: String) {
+        val locale= Locale(lang)
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.locale =locale
+        baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
+        //   val editor = getSharedPreferences("settings", Context.MODE_PRIVATE).edit()
+        //editor.putString("my_lang", lang)
+        // editor.apply()
+    }
+
+
+
+    //TEMAS DIALOG
+    fun chooseThemeDialog() {
+
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(getString(R.string.tema))
+        val styles = arrayOf("Oscuro","Claro","Por defecto")
+        val checkedItem = MyPreferences(this).darkMode
+
+
+        builder.setSingleChoiceItems(styles, checkedItem) { dialog, which ->
+            when (which) {
+                0 -> {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    delegate.applyDayNight()
+                    MyPreferences(this).darkMode = 0
+
+                    dialog.dismiss()
+                }
+                1 -> {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    delegate.applyDayNight()
+                    MyPreferences(this).darkMode = 1
+
+
+                    dialog.dismiss()
+                }
+                2 -> {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+                    delegate.applyDayNight()
+                    MyPreferences(this).darkMode = 2
+
+                    dialog.dismiss()
+                }
+            }
+
+        }
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    class MyPreferences(context: Context?) {
+
+        companion object {
+            private const val DARK_STATUS = "io.github.manuelernesto.DARK_STATUS"
+            private const val LANGUAGE ="language"
+
+        }
+
+        private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
+
+        var darkMode = preferences.getInt(DARK_STATUS, 0)
+            set(value) = preferences.edit().putInt(DARK_STATUS, value).apply()
+        var lang = preferences.getInt(LANGUAGE, 0)
+            set(value) = preferences.edit().putInt(LANGUAGE, value).apply()
+    }
+
+
+    //Delete dialog
+
+    fun showDeleteDialog(){
+
+        MaterialAlertDialogBuilder(this,
+            R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_FullWidthButtons)
+            .setMessage(resources.getString(R.string.txt5_eliminar))
+            .setNegativeButton(resources.getString(R.string.cancel)) { dialog, which ->
+
+            }
+            .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
+
+                val db=this.writableDatabase
+                db.delete(
+                    User,
+                    id.toString() + " = ?",
+                    arrayOf(java.lang.String.valueOf(codigo.getID()))
+                )
+                db.close()
+            }
+            .show()
     }
 
     fun navegacion(activity: String) {
