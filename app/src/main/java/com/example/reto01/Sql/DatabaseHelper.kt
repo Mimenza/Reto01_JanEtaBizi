@@ -147,17 +147,15 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
     }
 
     //Eliminar usuario
-    fun deleteUser(id: Int)   {
+    fun deleteUser(user: User)   {
         val db = this.writableDatabase
         // Eliminar usuario según id
         db.delete(
-<<<<<<< HEAD
-            TBL_USER, "${COLUMN_USER_ID}= ?",
-            arrayOf(id.toString()))
-=======
+
             TBL_USERS, "${COLUMN_USER_ID}= ?",
             arrayOf(user.id.toString()))
->>>>>>> da1aa2220574c84845223225df00bd4779692807
+
+
         db.close()
     }
 

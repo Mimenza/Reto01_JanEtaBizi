@@ -129,10 +129,13 @@ class activity_1login : AppCompatActivity(), View.OnClickListener {
             accountsIntent.putExtra(
                 "EMAIL",
                 textInputEditTextEmail!!.text.toString().trim { it <= ' ' })
+            accountsIntent.putExtra(
+                "CONTRASEÑA",
+                textInputEditTextPassword!!.text.toString().trim { it <= ' ' })
+
+
             emptyInputEditText()
-            var sharedPreferences= getSharedPreferences("data", 0)
-            var editor= sharedPreferences.edit()
-            editor.putString("loggedUser",  textInputEditTextEmail!!.text.toString().trim { it <= ' ' }).apply()
+
 
 
             startActivity(accountsIntent)
