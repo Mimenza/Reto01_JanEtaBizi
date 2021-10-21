@@ -23,9 +23,6 @@ import kotlinx.android.synthetic.main.activity_2registrar.*
 import org.w3c.dom.Text
 import java.util.*
 
-
-
-
 class activity_6usuario : AppCompatActivity() {
     internal val admin= DatabaseHelper(this, "reto1", null, 1)
 
@@ -131,9 +128,10 @@ class activity_6usuario : AppCompatActivity() {
         }
 
         deleteaccount.setOnClickListener{
-
+2
 
             showDeleteDialog()
+
         }
 
 
@@ -145,9 +143,6 @@ class activity_6usuario : AppCompatActivity() {
     }
 
     //IDIOMAS DIALOG
-
-    //IDIOMAS DIALOG
-
     fun chooseLanguageDialog() {
         val english = getString(R.string.ingles)
         val spanish = getString(R.string.español)
@@ -273,12 +268,7 @@ class activity_6usuario : AppCompatActivity() {
 
     //Delete dialog
 
-
-
-
-
-  fun showDeleteDialog(){
-
+    fun showDeleteDialog(){
 
         MaterialAlertDialogBuilder(this,
             R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_FullWidthButtons)
@@ -287,10 +277,6 @@ class activity_6usuario : AppCompatActivity() {
 
             }
             .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
-
-
-
-
 
             }
             .show()
@@ -326,4 +312,5 @@ class activity_6usuario : AppCompatActivity() {
         this.overridePendingTransition(0, 0)
     }
 }
+
 

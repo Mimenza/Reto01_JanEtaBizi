@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
 
@@ -77,13 +76,16 @@
 
     <Spinner
         android:id="@+id/spinner_carrito"
-        android:layout_width="67dp"
-        android:layout_height="48dp"
+        android:layout_width="103dp"
+        android:layout_height="56dp"
+        android:clickable="true"
+        android:clipChildren="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.666" />
+        app:layout_constraintVertical_bias="0.666"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TableRow
+import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_3principal.*
 
 class activity_3principal : AppCompatActivity() {
@@ -42,11 +43,54 @@ class activity_3principal : AppCompatActivity() {
             }
         }
 
-        tb_3tablaProductos.setOnClickListener(){
-            val navegacion_perfil = Intent(this, activity_4producto::class.java)
-            startActivity(navegacion_perfil)
-            this.overridePendingTransition(0, 0)
+        //COMIDA VEGANA
+        tv_3vegan.setOnClickListener(){
+            sv_3scrollView.isVisible= true
+            sv_3scrollViewFiltro.isVisible = false
+            loadTable()
         }
+        //COMIDA SIN GLUTEN
+        tv_3gluten.setOnClickListener(){
+            sv_3scrollView.isVisible= true
+            sv_3scrollViewFiltro.isVisible = false
+            loadTable()
+        }
+        //COMIDA KM0
+        tv_3km0.setOnClickListener(){
+            sv_3scrollView.isVisible= true
+            sv_3scrollViewFiltro.isVisible = false
+            loadTable()
+        }
+        //COMIDA SIN LACTOSA
+        tv_3lactose.setOnClickListener(){
+            sv_3scrollView.isVisible= true
+            sv_3scrollViewFiltro.isVisible = false
+            loadTable()
+        }
+        //COMIDA SIN ACEITE DE PALMA
+        tv_3palm.setOnClickListener(){
+            sv_3scrollView.isVisible= true
+            sv_3scrollViewFiltro.isVisible = false
+            loadTable()
+        }
+        //COMIDA ALTA EN PROTEINA
+        tv_3protein.setOnClickListener(){
+            sv_3scrollView.isVisible= true
+            sv_3scrollViewFiltro.isVisible = false
+            loadTable()
+        }
+        //COMIDA VEGETARIANA
+        tv_3vegetarian.setOnClickListener(){
+            sv_3scrollView.isVisible= true
+            sv_3scrollViewFiltro.isVisible = false
+            loadTable()
+        }
+        tb_3tablaProductos.setOnClickListener(){
+            val navegacion = Intent(this, activity_4producto::class.java)
+            startActivity(navegacion)
+            this.overridePendingTransition(0,0)
+        }
+
     }
 
     fun navegacion(activity: String) {

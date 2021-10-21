@@ -30,17 +30,25 @@
             android:exported="true" />
 
         <activity
+
             android:name=".activity_7_3_3pedido"
             android:exported="true" />
 
         <activity
             android:name=".activity_7_2_2producto"
+
             android:exported="true" />
+
         <activity
             android:name=".activity_7admin"
             android:exported="true" />
         <activity
+
             android:name=".activity_7_1_1usuario"
+
+
+
+
             android:exported="true" />
         <activity
             android:name=".MainActivity"

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import android.widget.AdapterView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reto01.Adapter.MyCardsCartAdapter
 import com.example.reto01.Model.Producto
@@ -71,10 +73,10 @@ class activity_5carrito : AppCompatActivity() {
         //Crear array list de los productos de carrito
         val producto:ArrayList<Producto>
 
-        var producto01 = Producto( -1,"Pasteles",10.0, "postres",10,9,R.drawable.dessert)
-        var producto02 = Producto( -1,"Omega",12.0, "suplemento",10,9,R.drawable.aceite3)
-        var producto03 = Producto( -1,"Fresas",17.0, "fruta",10,9,R.drawable.fresa)
-        var producto04 = Producto( -1,"Arandano",1.0, "fruta",10,9,R.drawable.blueberries)
+        var producto01 = Producto( 0,"Pasteles",10.0, "postres",10,9,R.drawable.dessert)
+        var producto02 = Producto( 1,"Omega",12.0, "suplemento",10,9,R.drawable.aceite3)
+        var producto03 = Producto( 2,"Fresas",17.0, "fruta",10,9,R.drawable.fresa)
+        var producto04 = Producto( 3,"Arandano",1.0, "fruta",10,9,R.drawable.blueberries)
 
        producto = arrayListOf(producto01, producto02, producto03, producto04)
 
@@ -87,6 +89,10 @@ class activity_5carrito : AppCompatActivity() {
         reciclerView_carrito.adapter = adapter
 
         //View Holder carrito ids
+
+
+
+
     }
 
     fun navegacion(activity: String) {
@@ -118,4 +124,7 @@ class activity_5carrito : AppCompatActivity() {
         }
         this.overridePendingTransition(0, 0)
     }
+
+
+
 }
