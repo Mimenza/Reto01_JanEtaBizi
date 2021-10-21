@@ -40,15 +40,15 @@ class activity_7admin : AppCompatActivity() {
         }
 
         btn_7usuarios.setOnClickListener() {
-            val i = Intent(this, activity_7_01usuarios::class.java)
+            val i = Intent(this, activity_7_1_1usuario::class.java)
             startActivity(i)
         }
         btn_7productos.setOnClickListener() {
-            val i = Intent(this, activity_7_02productos::class.java)
+            val i = Intent(this, activity_7_2_2producto::class.java)
             startActivity(i)
         }
         btn_7pedidos.setOnClickListener() {
-            val i = Intent(this, activity_7_03pedidos::class.java)
+            val i = Intent(this, activity_7_3_3pedido::class.java)
             startActivity(i)
         }
     }

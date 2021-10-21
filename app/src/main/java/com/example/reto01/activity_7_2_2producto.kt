@@ -10,10 +10,10 @@ import com.smarteist.autoimageslider.SliderView
 import kotlinx.android.synthetic.main.activity_7_02productos.*
 import java.util.ArrayList
 
-class activity_7_02productos : AppCompatActivity() {
+class activity_7_2_2producto : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_7_02productos)
+        setContentView(R.layout.activity_7_2productos)
         getSupportActionBar()?.hide()
 
         val lista = arrayOf("PRODUCTO 1", "PRODUCTO 2", "PRODUCTO 3", "PRODUCTO 4", "CREAR NUEVO PRODUCTO")

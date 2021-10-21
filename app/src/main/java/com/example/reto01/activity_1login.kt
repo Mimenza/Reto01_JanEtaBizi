@@ -126,17 +126,8 @@ class activity_1login : AppCompatActivity(), View.OnClickListener {
                 textInputEditTextPassword!!.text.toString().trim { it <= ' ' })
         ) {
             val accountsIntent = Intent(activity, activity_3principal::class.java)
-            accountsIntent.putExtra(
-                "EMAIL",
-                textInputEditTextEmail!!.text.toString().trim { it <= ' ' })
-            accountsIntent.putExtra(
-                "CONTRASEÑA",
-                textInputEditTextPassword!!.text.toString().trim { it <= ' ' })
-
 
             emptyInputEditText()
-
-
 
             startActivity(accountsIntent)
         } else {

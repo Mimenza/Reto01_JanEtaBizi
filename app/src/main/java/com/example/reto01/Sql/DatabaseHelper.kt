@@ -3,6 +3,7 @@ package com.example.reto01
 import android.content.ContentValues
 import android.content.Context
 import android.content.LocusId
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.reto01.Model.User
@@ -161,32 +162,41 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
     }
 
     //Lista que hace return de todos los usuarios
-    fun getAllUser() {
+    /**
+     * This method is to fetch all user and return the list of user records
+     *
+     * @return list
+     */
+    fun getAllUser(): List<User> {
+        // array of columns to fetch
+        val columns = arrayOf(COLUMN_USER_ID, COLUMN_USER_EMAIL, COLUMN_USER_NAME, COLUMN_USER_PASSWORD, COLUMN_USER_ADMIN)
+        // sorting orders
+        val sortOrder = "$COLUMN_USER_NAME ASC"
+        val userList : MutableList<User> = ArrayList()
         val db = this.readableDatabase
-
-        val list = arrayOf(COLUMN_USER_ID, COLUMN_USER_NAME, COLUMN_USER_EMAIL, COLUMN_USER_PASSWORD, COLUMN_USER_ADMIN)
-
-        // Ordenar por ID ascendente
-        val sortOrder = "${COLUMN_USER_ID} ASC"
-
+        // query the user table
         val cursor = db.query(
-            TBL_USERS,   // The table to query
-            list,             // The array of columns to return (pass null to get all)
-            null,              // The columns for the WHERE clause
-            null,          // The values for the WHERE clause
-            null,                   // don't group the rows
-            null,                   // don't filter by row groups
-            sortOrder               // The sort order
-        )
-
-        val itemIds = mutableListOf<Long>()
-        with(cursor) {
-            while (moveToNext()) {
-                val itemId = getLong(getColumnIndexOrThrow(COLUMN_USER_ID))
-                itemIds.add(itemId)
-            }
+            TBL_USERS, //Table to query
+            columns,            //columns to return
+            null,     //columns for the WHERE clause
+            null,  //The values for the WHERE clause
+            null,      //group the rows
+            null,       //filter by row groups
+            sortOrder)         //The sort order
+        if (cursor.moveToFirst()) {
+            do {
+                var user=User(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getInt(4))
+                userList.add(user)
+            } while (cursor.moveToNext())
         }
+        cursor.close()
+        db.close()
+        return userList
     }
+
+
+
+
 
     /** Hace un check del usuario para saber si existe o no según el parámetro de email
      * Hace un return de true/false

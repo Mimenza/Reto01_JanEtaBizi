@@ -112,4 +112,5 @@
     <string name="accept">Aceptar</string>
     <string name="title_dialog">¿Desea eliminar la cuenta?</string>
     <string name="dark">Tema oscuro</string>
+    <string name="filtrobusquedausuarios">Busqueda usuarios</string>
 </resources>

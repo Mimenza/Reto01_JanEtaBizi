@@ -18,9 +18,7 @@
         <activity
             android:name=".activity_6_2tema"
             android:exported="true" />
-        <activity
-            android:name=".activity_6_1idiomas"
-            android:exported="true" />
+
         <activity
             android:name=".activity_5_3gracias"
             android:exported="true" />
@@ -30,23 +28,19 @@
         <activity
             android:name=".activity_5_1address"
             android:exported="true" />
+
         <activity
-            android:name=".Adapter.MyCardsCartAdapter"
+            android:name=".activity_7_3_3pedido"
+            android:exported="true" />
+
+        <activity
+            android:name=".activity_7_2_2producto"
             android:exported="true" />
         <activity
-            android:name=".activity_7_03pedidos"
+            android:name=".activity_7admin"
             android:exported="true" />
         <activity
-            android:name=".favDB"
-            android:exported="true" />
-        <activity
-            android:name=".activity_7_02productos"
-            android:exported="true" />
-        <activity
-            android:name=".activity_7"
-            android:exported="true" />
-        <activity
-            android:name=".activity_7_01usuarios"
+            android:name=".activity_7_1_1usuario"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
@@ -60,9 +54,7 @@
         <activity
             android:name=".activity_8likes"
             android:exported="true" />
-        <activity
-            android:name=".activity_7admin"
-            android:exported="true" />
+
         <activity
             android:name=".activity_6usuario"
             android:exported="true" />

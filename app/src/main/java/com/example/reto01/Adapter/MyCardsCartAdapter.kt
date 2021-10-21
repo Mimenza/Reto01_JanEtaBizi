@@ -20,7 +20,7 @@ class MyCardsCartAdapter(val productos: ArrayList<Producto>, val context: Contex
     }
 
     override fun onBindViewHolder(ViewHolder: ViewHolder, i: Int) {
-        val spinnerVal= intArrayOf(1,2,3,4,5,6,7,8,9,10)
+
         var item = productos[i]
         //var adaptador= ArrayAdapter(context,R.layout.support_simple_spinner_dropdown_item, spinnerVal)
         ViewHolder.itemImage.setImageResource(item.img)
