@@ -1,9 +1,8 @@
 package com.example.reto01
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
-import android.content.LocusId
-import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.reto01.Model.User
@@ -167,9 +166,13 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
      *
      * @return list
      */
+
+
+
+    @SuppressLint("Range")
     fun getAllUser(): List<User> {
         // array of columns to fetch
-        val columns = arrayOf(COLUMN_USER_ID, COLUMN_USER_EMAIL, COLUMN_USER_NAME, COLUMN_USER_PASSWORD, COLUMN_USER_ADMIN)
+        val columns = arrayOf(COLUMN_USER_ID, COLUMN_USER_EMAIL, COLUMN_USER_NAME, COLUMN_USER_PASSWORD,COLUMN_USER_ADMIN )
         // sorting orders
         val sortOrder = "$COLUMN_USER_NAME ASC"
         val userList : MutableList<User> = ArrayList()
@@ -185,7 +188,11 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
             sortOrder)         //The sort order
         if (cursor.moveToFirst()) {
             do {
-                var user=User(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getInt(4))
+                val user = User(id = cursor.getString(cursor.getColumnIndex(COLUMN_USER_ID)).toInt(),
+                    name = cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)),
+                    email = cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL)),
+                    password = cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)),
+                    admin = cursor.getInt(cursor.getColumnIndex(COLUMN_USER_ADMIN)))
                 userList.add(user)
             } while (cursor.moveToNext())
         }
@@ -193,8 +200,6 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
         db.close()
         return userList
     }
-
-
 
 
 

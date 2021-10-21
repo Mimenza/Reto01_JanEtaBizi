@@ -1,8 +1,9 @@
 package com.example.reto01
 
+
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_7admin.*
 
 class activity_7admin : AppCompatActivity() {
@@ -40,7 +41,7 @@ class activity_7admin : AppCompatActivity() {
         }
 
         btn_7usuarios.setOnClickListener() {
-            val i = Intent(this, activity_7_1_1usuario::class.java)
+            val i = Intent(this, activity_7_0_1usuarios::class.java)
             startActivity(i)
         }
         btn_7productos.setOnClickListener() {

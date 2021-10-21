@@ -12,15 +12,12 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.ImageView
 import android.widget.LinearLayout
-import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_6usuario.*
-import kotlinx.android.synthetic.main.activity_1login.*
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputEditText
-import kotlinx.android.synthetic.main.activity_2registrar.*
-import org.w3c.dom.Text
+import kotlinx.android.synthetic.main.activity_6usuario.*
 import java.util.*
 
 class activity_6usuario : AppCompatActivity() {
@@ -128,7 +125,7 @@ class activity_6usuario : AppCompatActivity() {
         }
 
         deleteaccount.setOnClickListener{
-2
+
 
             showDeleteDialog()
 
