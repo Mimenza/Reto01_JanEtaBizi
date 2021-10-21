@@ -15,6 +15,13 @@ class activity_5_2payment : AppCompatActivity() {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         setContentView(R.layout.activity_5_2payment)
 
+        //recogemos el dato del intent
+        val total: String? = intent.getStringExtra("total").toString()
+
+        //Escribimos el dato
+        txtv_5_2preciosubtotal.text = total
+        txtv_5_2preciototal.text = total
+
         bottomNavV_5_2bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_principal -> {

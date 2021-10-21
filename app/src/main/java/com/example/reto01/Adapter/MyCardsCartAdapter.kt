@@ -1,5 +1,6 @@
 package com.example.reto01.Adapter
 
+import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.view.LayoutInflater
@@ -10,22 +11,27 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.reto01.Model.Carrito_item
 import com.example.reto01.Model.Producto
 import com.example.reto01.R
+import com.example.reto01.activity_5carrito
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.viewholder_cart.view.*
+import com.example.reto01.MainActivity
+
+
+
 
 
 class MyCardsCartAdapter(private val productos: List<Producto> , val context: Context) :
     RecyclerView.Adapter<MyCardsCartAdapter.ViewHolder>() {
 
-
     override fun onCreateViewHolder(ViewGroup: ViewGroup, i: Int): ViewHolder {
         val v = LayoutInflater.from(ViewGroup.context)
             .inflate(R.layout.viewholder_cart, ViewGroup, false)
+
+
         return ViewHolder(v)
     }
 
     override fun onBindViewHolder(ViewHolder: ViewHolder, i: Int) {
-
         var item = productos[i]
         var adaptador = ArrayAdapter(context, android.R.layout.simple_spinner_item, arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
         ViewHolder.itemImage.setImageResource(item.img)
@@ -50,6 +56,7 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
         }
 
 
+
         ViewHolder.itemSpiner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected( parent: AdapterView<*>, view: View, position: Int, id: Long) {
 
@@ -61,13 +68,20 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
 
                 //Crear un json y una clase para los items del carrito
                 val gson = Gson()
-                val item_Carrito = Carrito_item(item.id_product, parent.getItemAtPosition(position).toString().toInt())
+                val item_Carrito = Carrito_item(item.id_product, parent.getItemAtPosition(position).toString().toInt(),item.price)
                 val itemJson = gson.toJson(item_Carrito)
                 val itemname = "item" + item.id_product
 
                 //Subir datos
                 editor.putString(itemname, itemJson.toString())
                 editor.commit()
+
+                //llamar funcion para poner el precio
+
+                if (context is activity_5carrito) {
+                    context.calcularTotal(item_Carrito)
+                }
+
 
                 //Borrar datos extra
                 //preferences.edit().remove("item").commit();
