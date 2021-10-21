@@ -35,14 +35,15 @@
         app:srcCompat="@drawable/ic_arrow_back" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/reciclerView_5"
+        android:id="@+id/reciclerView_carrito"
         android:layout_width="403dp"
         android:layout_height="362dp"
         app:layout_constraintBottom_toBottomOf="@+id/bottomNavV_5bottomMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.304" />
+        app:layout_constraintVertical_bias="0.304"
+        tools:listitem="@layout/viewholder_cart" />
 
     <TextView
         android:id="@+id/textView14"
@@ -164,7 +165,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reciclerView_5"
+        app:layout_constraintTop_toBottomOf="@+id/reciclerView_carrito"
         app:layout_constraintVertical_bias="0.06999999" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import android.os.Handler
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reto01.Adapter.MyCardsCartAdapter
+import com.example.reto01.Model.Producto
 import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_5carrito.*
 import kotlinx.android.synthetic.main.activity_5carrito.imgv_5atras
@@ -67,11 +68,23 @@ class activity_5carrito : AppCompatActivity() {
             this.overridePendingTransition(0, 0)
         }
 
-        //Adaptador RecyclerView Carrito de la compra
-        val adapter = MyCardsCartAdapter()
-        reciclerView_5.layoutManager = LinearLayoutManager(this)
+        //Crear array list de los productos de carrito
+        val producto:ArrayList<Producto>
 
-        reciclerView_5.adapter = adapter
+        var producto01 = Producto( -1,"Pasteles",10.0, "postres",10,9,R.drawable.dessert)
+        var producto02 = Producto( -1,"Omega",12.0, "suplemento",10,9,R.drawable.aceite3)
+        var producto03 = Producto( -1,"Fresas",17.0, "fruta",10,9,R.drawable.fresa)
+        var producto04 = Producto( -1,"Arandano",1.0, "fruta",10,9,R.drawable.blueberries)
+
+       producto = arrayListOf(producto01, producto02, producto03, producto04)
+
+
+        //Adaptador RecyclerView Carrito de la compra
+        val adapter = MyCardsCartAdapter(producto, this)
+
+        reciclerView_carrito.layoutManager = LinearLayoutManager(this)
+
+        reciclerView_carrito.adapter = adapter
 
         //View Holder carrito ids
     }

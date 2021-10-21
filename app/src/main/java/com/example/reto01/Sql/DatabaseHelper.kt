@@ -32,7 +32,7 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
         private val COLUMN_PRODUCT_PRICE = "product_price"
         private val COLUMN_PRODUCT_CATEGORY = "product_category"
         private val COLUMN_PRODUCT_LIKES = "product_likes"
-
+        private val COLUMN_PRODCUCT_IMG = "product_img"
         // Orders Table Columns names
         private val COLUMN_ORDER_ID = "order_id"
         private val COLUMN_ORDER_USER_ID = "order_user_id"
@@ -62,7 +62,8 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
                 "${COLUMN_PRODUCT_NAME} TEXT," +
                 "${COLUMN_PRODUCT_PRICE} DOUBLE," +
                 "${COLUMN_PRODUCT_CATEGORY} TEXT," +
-                "${COLUMN_PRODUCT_LIKES} INTEGER)"
+                "${COLUMN_PRODUCT_LIKES} INTEGER" +
+                "${COLUMN_PRODCUCT_IMG} TEXT)"
 
     // Create orders table sql query
     private  val CREATE_ORDERS_TABLE =
