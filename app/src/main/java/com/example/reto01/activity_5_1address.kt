@@ -17,6 +17,9 @@ class activity_5_1address : AppCompatActivity() {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
         setContentView(R.layout.activity_5_1adress)
 
+        //recogemos el dato del intent
+        val total: String? = intent.getStringExtra("total").toString()
+
         bottomNavV_5_1bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_principal -> {
@@ -45,6 +48,7 @@ class activity_5_1address : AppCompatActivity() {
 
         imgv_5_1atras.setOnClickListener() {
             val i = Intent(this@activity_5_1address, activity_5carrito::class.java)
+            i.putExtra("total", total)
             startActivity(i)
             this.overridePendingTransition(0, 0)
         }
@@ -97,4 +101,6 @@ class activity_5_1address : AppCompatActivity() {
         }
         this.overridePendingTransition(0, 0)
     }
+
+
 }

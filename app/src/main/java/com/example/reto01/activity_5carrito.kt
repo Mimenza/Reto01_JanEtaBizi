@@ -1,35 +1,33 @@
 package com.example.reto01
 
-import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
-import android.widget.AdapterView
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reto01.Adapter.MyCardsCartAdapter
+import com.example.reto01.Model.Carrito_item
 import com.example.reto01.Model.Producto
 import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_5carrito.*
 import kotlinx.android.synthetic.main.activity_5carrito.imgv_5atras
 import kotlinx.android.synthetic.main.activity_6usuario.*
 import kotlinx.android.synthetic.main.viewholder_cart.*
-import com.google.gson.Gson
-
-import com.google.gson.reflect.TypeToken
-import java.lang.reflect.Type
-import java.sql.Connection
+import kotlinx.android.synthetic.main.activity_5_2payment.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class activity_5carrito : AppCompatActivity() {
+    var total:Double?=0.00
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         setContentView(R.layout.activity_5carrito)
+
 
         bottomNavV_5bottomMenu.setSelectedItemId(R.id.navigation_carrito)
 
@@ -74,26 +72,35 @@ class activity_5carrito : AppCompatActivity() {
 
         btn_5carrito.setOnClickListener() {
             val i = Intent(this@activity_5carrito, activity_5_1address::class.java)
+            i.putExtra("total",total)
             startActivity(i)
             this.overridePendingTransition(0, 0)
         }
 
 
         //Crear array list de los productos de carrito
-        val producto: ArrayList<Producto>
+        val productos: ArrayList<Producto>
 
         var producto01 = Producto(0, "Pasteles", 10.0, "postres", 10, 9, R.drawable.dessert)
         var producto02 = Producto(1, "Omega", 12.0, "suplemento", 10, 9, R.drawable.aceite3)
         var producto03 = Producto(2, "Fresas", 17.0, "fruta", 10, 9, R.drawable.fresa)
         var producto04 = Producto(3, "Arandano", 1.0, "fruta", 10, 9, R.drawable.blueberries)
+        var producto05 = Producto(0, "Pasteles", 10.0, "postres", 10, 9, R.drawable.dessert)
+        var producto06 = Producto(1, "Omega", 12.0, "suplemento", 10, 9, R.drawable.aceite3)
+        var producto07 = Producto(2, "Fresas", 17.0, "fruta", 10, 9, R.drawable.fresa)
+        var producto08 = Producto(3, "Arandano", 1.0, "fruta", 10, 9, R.drawable.blueberries)
 
-        producto = arrayListOf(producto01, producto02, producto03, producto04)
+        //rellenar el array con los productos
+        productos = arrayListOf(producto01, producto02, producto03, producto04, producto05, producto06, producto07, producto08)
 
 
         //Adaptador RecyclerView Carrito de la compra
-        val adapter = MyCardsCartAdapter(producto, this)
+        val adapter = MyCardsCartAdapter(productos, this)
         reciclerView_carrito.layoutManager = LinearLayoutManager(this)
         reciclerView_carrito.adapter = adapter
+
+
+
     }
 
     fun navegacion(activity: String) {
@@ -126,5 +133,20 @@ class activity_5carrito : AppCompatActivity() {
         this.overridePendingTransition(0, 0)
     }
 
+
+    fun calcularTotal( item:Carrito_item){
+        //Funcion para calcular el precio total del carrito
+
+        //Recoger datos que nos interesan
+
+            val cantidad:Double? = item.cantidad!!.toDouble()
+            val precio:Double? = item.precio!!.toDouble()
+            val totalItem:Double? = cantidad!! * precio!!
+            total = total!! + totalItem!!
+
+        txtv_5preciototal.text = total.toString()
+
+
+    }
 
 }
