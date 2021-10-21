@@ -1,6 +1,8 @@
 package com.example.reto01
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -15,6 +17,12 @@ import kotlinx.android.synthetic.main.activity_5carrito.*
 import kotlinx.android.synthetic.main.activity_5carrito.imgv_5atras
 import kotlinx.android.synthetic.main.activity_6usuario.*
 import kotlinx.android.synthetic.main.viewholder_cart.*
+import com.google.gson.Gson
+
+import com.google.gson.reflect.TypeToken
+import java.lang.reflect.Type
+import java.sql.Connection
+
 
 class activity_5carrito : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,29 +78,22 @@ class activity_5carrito : AppCompatActivity() {
             this.overridePendingTransition(0, 0)
         }
 
+
         //Crear array list de los productos de carrito
-        val producto:ArrayList<Producto>
+        val producto: ArrayList<Producto>
 
-        var producto01 = Producto( 0,"Pasteles",10.0, "postres",10,9,R.drawable.dessert)
-        var producto02 = Producto( 1,"Omega",12.0, "suplemento",10,9,R.drawable.aceite3)
-        var producto03 = Producto( 2,"Fresas",17.0, "fruta",10,9,R.drawable.fresa)
-        var producto04 = Producto( 3,"Arandano",1.0, "fruta",10,9,R.drawable.blueberries)
+        var producto01 = Producto(0, "Pasteles", 10.0, "postres", 10, 9, R.drawable.dessert)
+        var producto02 = Producto(1, "Omega", 12.0, "suplemento", 10, 9, R.drawable.aceite3)
+        var producto03 = Producto(2, "Fresas", 17.0, "fruta", 10, 9, R.drawable.fresa)
+        var producto04 = Producto(3, "Arandano", 1.0, "fruta", 10, 9, R.drawable.blueberries)
 
-       producto = arrayListOf(producto01, producto02, producto03, producto04)
+        producto = arrayListOf(producto01, producto02, producto03, producto04)
 
 
         //Adaptador RecyclerView Carrito de la compra
         val adapter = MyCardsCartAdapter(producto, this)
-
         reciclerView_carrito.layoutManager = LinearLayoutManager(this)
-
         reciclerView_carrito.adapter = adapter
-
-        //View Holder carrito ids
-
-
-
-
     }
 
     fun navegacion(activity: String) {
@@ -124,7 +125,6 @@ class activity_5carrito : AppCompatActivity() {
         }
         this.overridePendingTransition(0, 0)
     }
-
 
 
 }
