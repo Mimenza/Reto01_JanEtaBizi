@@ -156,6 +156,7 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
             TBL_USERS, "${COLUMN_USER_ID}= ?",
             arrayOf(user.id.toString()))
 
+
         db.close()
     }
 

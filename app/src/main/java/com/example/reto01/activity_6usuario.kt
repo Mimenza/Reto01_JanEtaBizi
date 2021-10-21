@@ -98,12 +98,7 @@ class activity_6usuario : AppCompatActivity() {
         }
 
 
-
-
-
-
     }
-
 
 
     fun showDialog() {
@@ -136,6 +131,10 @@ class activity_6usuario : AppCompatActivity() {
         }
 
         deleteaccount.setOnClickListener{
+<<<<<<< HEAD
+=======
+
+>>>>>>> b6a2d71bd7d89d954e7f6dfa32442fd8d1e8cb52
 
             showDeleteDialog()
         }
@@ -277,9 +276,18 @@ class activity_6usuario : AppCompatActivity() {
 
     //Delete dialog
 
+<<<<<<< HEAD
 
     fun showDeleteDialog(){
 
+=======
+
+
+
+
+  fun showDeleteDialog(){
+
+>>>>>>> b6a2d71bd7d89d954e7f6dfa32442fd8d1e8cb52
 
         MaterialAlertDialogBuilder(this,
             R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_FullWidthButtons)
