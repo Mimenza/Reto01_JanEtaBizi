@@ -4,12 +4,11 @@ import android.os.AsyncTask
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.reto01.Adapter.UsersRecyclerAdapter
 import com.example.reto01.Model.User
-import kotlinx.android.synthetic.main.activity_701usuarios.*
+import kotlinx.android.synthetic.main.activity_7_1usuarios.*
 
 class activity_7_0_1usuarios : AppCompatActivity() {
     private val activity = this
@@ -20,7 +19,7 @@ class activity_7_0_1usuarios : AppCompatActivity() {
     private lateinit var databaseHelper: DatabaseHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_701usuarios)
+        setContentView(R.layout.activity_7_1usuarios)
         getSupportActionBar()?.hide()
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         initViews()
@@ -39,15 +38,12 @@ class activity_7_0_1usuarios : AppCompatActivity() {
      */
     private fun initObjects() {
         listUsers = ArrayList()
-        usersRecyclerAdapter = UsersRecyclerAdapter(listUsers)
 
-        val mLayoutManager = LinearLayoutManager(applicationContext)
-        recyclerViewUsers.layoutManager = mLayoutManager
-        recyclerViewUsers.itemAnimator = DefaultItemAnimator()
-        recyclerViewUsers.setHasFixedSize(true)
-        recyclerViewUsers.adapter = usersRecyclerAdapter
+        val adapter = UsersRecyclerAdapter(listUsers, this)
+        recyclerViewUsers.layoutManager = LinearLayoutManager(this)
+        recyclerViewUsers.adapter = adapter
+
         databaseHelper = DatabaseHelper(activity, "janEtaBizi", null, 1)
-
 
         var getDataFromSQLite = GetDataFromSQLite()
         getDataFromSQLite.execute()

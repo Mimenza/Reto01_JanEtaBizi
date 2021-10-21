@@ -1,6 +1,7 @@
 package com.example.reto01.Adapter
 
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +11,9 @@ import com.example.reto01.Model.User
 import com.example.reto01.R
 
 
-class UsersRecyclerAdapter(private val listUsers: List<User>) : RecyclerView.Adapter<UsersRecyclerAdapter.UserViewHolder>() {
+class UsersRecyclerAdapter(private val listUsers: List<User>,val context: Context) : RecyclerView.Adapter<UsersRecyclerAdapter.UserViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder{
         // inflating recycler item view
         val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.itemuserrecycler, parent, false)
