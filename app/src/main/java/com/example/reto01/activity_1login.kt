@@ -157,7 +157,6 @@ class activity_1login : AppCompatActivity(), View.OnClickListener {
     fun loadLoggedUser(){
         var sharedPreferences = getSharedPreferences("loggedUser", 0)
         var editor = sharedPreferences.edit()
-
         editor.putString("user", "Galder").apply()
     }
 }

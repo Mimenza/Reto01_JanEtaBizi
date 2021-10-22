@@ -12,12 +12,12 @@
 
 
     <!-- Strings related to login and register -->
-    <string name="promt_user_mail">Email</string>
-    <string name="prompt_user_Name">Nombre</string>
-    <string name="prompt_user_Surname">Apellido</string>
+    <string name="promt_user_mail">Email   <font color='#FF0000'>*</font></string>
+    <string name="prompt_user_Name">Nombre   <font color='#FF0000'>*</font></string>
+    <string name="prompt_user_Surname">Apellido   <font color='#FF0000'>*</font></string>
     <string name="prompt_user_Description">Descripción</string>
-    <string name="prompt_password">Contraseña</string>
-    <string name="prompt_password_verify">Repite la Contraseña</string>
+    <string name="prompt_password">Contraseña   <font color='#FF0000'>*</font></string>
+    <string name="prompt_password_verify">Repite la Contraseña   <font color='#FF0000'>*</font></string>
     <string name="action_sign_in">Iniciar sesión</string>
     <string name="action_register">Registrarte</string>
     <string name="error_message_email">Ingrese el email</string>
@@ -72,11 +72,11 @@
     <string name="envioGratis">Gratis</string>
     <string name="nombre">Nombre</string>
     <string name="apellido">Apellido</string>
-    <string name="direccion">Dirección</string>
-    <string name="ciudad">Ciudad</string>
+    <string name="direccion">Dirección   <font color='#FF0000'>*</font></string>
+    <string name="ciudad">Ciudad   <font color='#FF0000'>*</font></string>
     <string name="provincia">Provincia</string>
     <string name="telefono">Teléfono</string>
-    <string name="cp">Cp</string>
+    <string name="cp">Cp   <font color='#FF0000'>*</font></string>
 
     <string name="cardnumber">Numero de la tarjeta</string>
     <string name="caducidad">Caducidad</string>
@@ -143,4 +143,13 @@
     <string name="descreceta03">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
     <string name="filtrobusquedausuarios">Busqueda usuarios</string>
     <string name="todaslascuentas">Todos los usuarios</string>
+    <string name="error_message_apellido">Ingrese su apellido</string>
+    <string name="error_message_description">Ingrese al menos una descripción   <font color='#FF0000'>*</font></string>
+    <string name="error_message_city">Ingrese una ciudad   <font color='#FF0000'>*</font></string>
+    <string name="error_message_cp">Ingrese un código postal   <font color='#FF0000'>*</font></string>
+    <string name="description">Introduzca una descripción</string>
+    <string name="error_message_address">Ingrese una dirección</string>
+    <string name="email">Email</string>
+    <string name="contraseña">Contraseña</string>
+
 </resources>

@@ -200,7 +200,9 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
     @SuppressLint("Range")
     fun getAllUser(): List<User> {
         // array of columns to fetch
-        val columns = arrayOf(COLUMN_USER_ID, COLUMN_USER_EMAIL, COLUMN_USER_NAME, COLUMN_USER_PASSWORD,COLUMN_USER_ADMIN )
+        val columns = arrayOf(COLUMN_USER_ID, COLUMN_USER_NAME,
+            COLUMN_USER_SURNAME,COLUMN_USER_EMAIL,  COLUMN_USER_ADDRESS,
+            COLUMN_USER_CITY,  COLUMN_USER_CP,  COLUMN_USER_DESCRIPTION,  COLUMN_USER_ADMIN)
         // sorting orders
         val sortOrder = "$COLUMN_USER_NAME ASC"
         val userList : MutableList<User> = ArrayList()
@@ -218,9 +220,14 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
             do {
                 val user = User(id = cursor.getString(cursor.getColumnIndex(COLUMN_USER_ID)).toInt(),
                     name = cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)),
+                    surname  = cursor.getString(cursor.getColumnIndex(COLUMN_USER_SURNAME)),
                     email = cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL)),
-                    password = cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)),
-                    admin = cursor.getInt(cursor.getColumnIndex(COLUMN_USER_ADMIN)))
+                    address = cursor.getString(cursor.getColumnIndex(COLUMN_USER_ADDRESS)),
+                    city = cursor.getString(cursor.getColumnIndex(COLUMN_USER_CITY)),
+                    cp = cursor.getString(cursor.getColumnIndex(COLUMN_USER_CP)),
+                    description = cursor.getString(cursor.getColumnIndex(COLUMN_USER_DESCRIPTION)),
+                    admin = cursor.getInt(cursor.getColumnIndex(COLUMN_USER_ADMIN)),
+                )
                 userList.add(user)
             } while (cursor.moveToNext())
         }

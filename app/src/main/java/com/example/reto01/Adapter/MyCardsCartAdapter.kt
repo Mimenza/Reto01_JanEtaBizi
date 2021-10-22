@@ -1,6 +1,5 @@
 package com.example.reto01.Adapter
 
-import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.view.LayoutInflater
@@ -14,9 +13,6 @@ import com.example.reto01.R
 import com.example.reto01.activity_5carrito
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.viewholder_cart.view.*
-import com.example.reto01.MainActivity
-
-
 
 
 
@@ -27,7 +23,6 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
         val v = LayoutInflater.from(ViewGroup.context)
             .inflate(R.layout.viewholder_cart, ViewGroup, false)
 
-
         return ViewHolder(v)
     }
 
@@ -35,13 +30,15 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
         var item = productos[i]
         var adaptador = ArrayAdapter(context, android.R.layout.simple_spinner_item, arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
         ViewHolder.itemImage.setImageResource(item.img)
-        ViewHolder.itemTitle.text = item.name_product
         ViewHolder.itemPrecioProducto.text = item.price.toString()
         ViewHolder.itemCategoria.text = item.category
         ViewHolder.itemSpiner.adapter = adaptador
 
+
+
+
         //Recoger datos de Shared Preferences
-        val prefs: SharedPreferences = context.getSharedPreferences("carrito", 0)
+        val prefs: SharedPreferences = context.getSharedPreferences("mi_carrito", 0)
         val carrito = prefs.getString("item"+ item.id_product.toString(),null)
 
         //Parsear datos a objeto carrito_item
@@ -50,7 +47,7 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
         val cantidad = carritoJson.cantidad
 
         //Poner cantidad
-         if (cantidad != null) {
+        if (cantidad != null) {
             ViewHolder.itemSpiner.setSelection(cantidad-1)
         }
 
@@ -58,6 +55,7 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
 
         ViewHolder.itemSpiner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected( parent: AdapterView<*>, view: View, position: Int, id: Long) {
+
 
                 // Guardar datos del carrito en el shared preferences
 
@@ -67,14 +65,18 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
 
                 //Crear un json y una clase para los items del carrito
                 val gson = Gson()
+
                 val item_Carrito = Carrito_item(item.id_product, parent.getItemAtPosition(position).toString().toInt(),item.price)
                 val itemJson = gson.toJson(item_Carrito)
+
                 val itemname = "item" + item.id_product
 
                 //Subir datos
                 editor.putString(itemname, itemJson.toString())
                 editor.commit()
 
+                //Borrar datos extra
+                //preferences.edit().remove("item").commit();
                 //llamar funcion para poner el precio
 
                 if (context is activity_5carrito) {

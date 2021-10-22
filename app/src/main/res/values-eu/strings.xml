@@ -138,4 +138,14 @@
     <string name="descreceta03">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
     <string name="filtrobusquedausuarios">Erabiltzaileen bilaketa</string>
     <string name="todaslascuentas">Erabiltzaile guztiak</string>
+    <string name="error_message_apellido">Ingrese su apellido</string>
+    <string name="error_message_description">Ingrese al menos una descripción breve</string>
+
+    <string name="error_message_city">Ingrese una ciudad</string>
+    <string name="error_message_cp">Ingrese un código postal</string>
+    <string name="description">Introduzca una breve descripción (Opcional)</string>
+    <string name="error_message_address">Ingrese una dirección</string>
+    <string name="email">Email</string>
+    <string name="contraseña">Contraseña</string>
+
 </resources>
