@@ -99,8 +99,6 @@ class activity_5carrito : AppCompatActivity() {
         reciclerView_carrito.layoutManager = LinearLayoutManager(this)
         reciclerView_carrito.adapter = adapter
 
-
-
     }
 
     fun navegacion(activity: String) {

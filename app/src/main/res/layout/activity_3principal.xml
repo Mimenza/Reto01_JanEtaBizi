@@ -137,7 +137,7 @@
                         android:layout_height="match_parent"
                         android:background="#33FFFFFF"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="Vegan"
+                        android:text="@string/vegano"
                         android:textColor="#CC000000"
                         android:textSize="20pt"
                         android:textStyle="bold" />
@@ -164,7 +164,7 @@
                         android:layout_height="match_parent"
                         android:background="#33FFFFFF"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="Vegetarian"
+                        android:text="@string/vegetariano"
                         android:textColor="#CC000000"
                         android:textSize="17pt"
                         android:textStyle="bold" />
@@ -199,7 +199,7 @@
                         android:layout_height="match_parent"
                         android:background="#33FFFFFF"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="KM 0"
+                        android:text="@string/km0"
                         android:textColor="#CC000000"
                         android:textSize="20pt"
                         android:textStyle="bold" />
@@ -226,7 +226,7 @@
                         android:layout_height="match_parent"
                         android:background="#33FFFFFF"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="Gluten free"
+                        android:text="@string/gluten"
                         android:textColor="#CC000000"
                         android:textSize="20pt"
                         android:textStyle="bold" />
@@ -260,7 +260,7 @@
                         android:layout_height="match_parent"
                         android:background="#33FFFFFF"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="Lactose free"
+                        android:text="@string/lactosa"
                         android:textColor="#CC000000"
                         android:textSize="20pt"
                         android:textStyle="bold" />
@@ -287,7 +287,7 @@
                         android:layout_height="match_parent"
                         android:background="#33FFFFFF"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="High protein"
+                        android:text="@string/proteina"
                         android:textColor="#CC000000"
                         android:textSize="20pt"
                         android:textStyle="bold" />
@@ -321,7 +321,7 @@
                         android:layout_height="match_parent"
                         android:background="#33FFFFFF"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="Palm oil free"
+                        android:text="@string/aceite"
                         android:textColor="#CC000000"
                         android:textSize="20pt"
                         android:textStyle="bold" />
