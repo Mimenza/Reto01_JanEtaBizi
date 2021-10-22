@@ -37,7 +37,7 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
 
 
 
-        //Recoger datos de Shared Preferences
+     /*   //Recoger datos de Shared Preferences
         val prefs: SharedPreferences = context.getSharedPreferences("mi_carrito", 0)
         val carrito = prefs.getString("item"+ item.id_product.toString(),null)
 
@@ -49,7 +49,7 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
         //Poner cantidad
         if (cantidad != null) {
             ViewHolder.itemSpiner.setSelection(cantidad-1)
-        }
+        }  */
 
 
 
