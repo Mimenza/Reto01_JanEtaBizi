@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/my_gradient_drawable"
-    tools:context=".activity_7_03pedidos">
+    tools:context=".activity_7_3_3pedido">
 
 
   <ImageView
@@ -26,7 +26,7 @@
       android:id="@+id/txtv_7_03pedidos"
       android:layout_width="234dp"
       android:layout_height="48dp"
-      android:text="PEDIDOS"
+      android:text="@string/totalpedidos"
       android:textAlignment="center"
       android:textSize="24sp"
       app:layout_constraintBottom_toBottomOf="parent"
@@ -55,24 +55,24 @@
       <TextView
           android:layout_column="1"
           android:padding="3dip"
-          android:text="num Pedido" />
+          android:text="@string/numeropedido" />
 
       <TextView
           android:gravity="right"
           android:padding="3dip"
-          android:text="Usuario" />
+          android:text="@string/usuario" />
       <TextView
           android:gravity="right"
           android:padding="3dip"
-          android:text="Fecha" />
+          android:text="@string/fecha" />
       <TextView
           android:gravity="right"
           android:padding="3dip"
-          android:text="Estado" />
+          android:text="@string/estado" />
       <TextView
           android:gravity="right"
           android:padding="3dip"
-          android:text="Importe" />
+          android:text="@string/importe" />
     </TableRow>
 
     <TableRow>

@@ -19,7 +19,9 @@
         android:title="Perfil"/>
 
     <item
-        android:id="@+id/navigation_invisible"
-        android:visible="false"
-        />
+        android:id="@+id/navigation_blog"
+        android:icon="@drawable/blog"
+        android:title="Blog"/>
+
+
 </menu>

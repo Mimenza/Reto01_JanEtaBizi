@@ -1,18 +1,23 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Jan eta Bizi</string>
     <!--Usuario-->
-    <string name="txt1_nombreusuario">Nombre de usuario</string>
+    <string name="txt1_nombreusuario">Nombre</string>
+    <string name="txt1_apellidousuario">Apellido</string>
     <string name="txt2_correo">Correo electrónico</string>
+    <string name="txt2_correo2">Correo</string>
     <string name="txt3_contraseña">Contraseña</string>
     <string name="txt4_guardar">Guardar</string>
     <string name="txt5_eliminar">Eliminar</string>
     <string name="title_activity_login">Inicio de sesión</string>
 
+
     <!-- Strings related to login and register -->
-    <string name="promt_user_mail">Email</string>
-    <string name="prompt_user_Name">Nombre</string>
-    <string name="prompt_password">Contraseña</string>
-    <string name="prompt_password_verify">Repite la Contraseña</string>
+    <string name="promt_user_mail">Email   <font color='#FF0000'>*</font></string>
+    <string name="prompt_user_Name">Nombre   <font color='#FF0000'>*</font></string>
+    <string name="prompt_user_Surname">Apellido   <font color='#FF0000'>*</font></string>
+    <string name="prompt_user_Description">Descripción</string>
+    <string name="prompt_password">Contraseña   <font color='#FF0000'>*</font></string>
+    <string name="prompt_password_verify">Repite la Contraseña   <font color='#FF0000'>*</font></string>
     <string name="action_sign_in">Iniciar sesión</string>
     <string name="action_register">Registrarte</string>
     <string name="error_message_email">Ingrese el email</string>
@@ -30,8 +35,10 @@
     <string name="error_incorrect_user_id">Número de identificación no registrado</string>
     <string name="error_network">Conexión de red no disponible</string>
     <string name="error_invalid_password">Contraseña inválida</string>
-
+    <string name="textbtnregister">Registrate aqui </string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="textbtnlogin">Logeate aqui </string>
+
 
     <!-- Splash -->
     <string name="logo">Jan eta bizi</string>
@@ -42,21 +49,45 @@
     <!--Principal-->
 
     <string name="filtrobusquedacomida">Busca un alimento</string>
-
-
-
+    <string name="vegano">Vegano</string>
+    <string name="vegetariano">Vegetariano</string>
+    <string name="km0">KM0</string>
+    <string name="gluten">Sin gluten</string>
+    <string name="lactosa">Sin lactosa</string>
+    <string name="proteina">Alto en proteina</string>
+    <string name="aceite">Sin Aceite Palma</string>
 
     <!--Carrito-->
-    <string name="carrito">Mi carrito</string>
+    <string name="carrito">Carrito</string>
     <string name="items">Mis productos:</string>
     <string name="euros">0€</string>
     <string name="gastos">Gastos de envío:</string>
     <string name="total">Total:</string>
+    <string name="adress">Dirección</string>
+    <string name="payment">Payment</string>
     <string name="finalizar_compra">Finalizar compra</string>
     <string name="iva">IVA</string>
     <string name="iva_value">21%</string>
-    <string name="euro">-€</string>
+    <string name="euro">€</string>
+    <string name="envioGratis">Gratis</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="direccion">Dirección   <font color='#FF0000'>*</font></string>
+    <string name="ciudad">Ciudad   <font color='#FF0000'>*</font></string>
+    <string name="provincia">Provincia</string>
+    <string name="telefono">Teléfono</string>
+    <string name="cp">Cp   <font color='#FF0000'>*</font></string>
 
+    <string name="cardnumber">Numero de la tarjeta</string>
+    <string name="caducidad">Caducidad</string>
+    <string name="ccv">Ccv</string>
+    <string name="placeorder">Realizar pedido</string>
+    <string name="envio">Envio</string>
+    <string name="subtotal">SubTotal</string>
+
+    <string name="gracias">¡Muchas gracias!</string>
+    <string name="graciastxt">Muchas gracias por comprar con nosotros, recibira el pedido en los proximos dias habiles, que tengas un buen dia </string>
+    <string name="seguir">Seguir comprando</string>
 
     <string name="first_fragment_label">Hello first fragment</string>
     <string name="second_fragment_label">Hello second fragment. Arg: %1$s</string>
@@ -71,9 +102,54 @@
     <string name="añadir_carrito">Añadir al carrito</string>
     <string name="añadir">Añadir al carrito</string>
     <string name="comprar">Comprar</string>
-
+    <string name="totalpedidos">Pedidos</string>
+    <string name="numeropedido">N pedido</string>
+    <string name="usuario">Usuario</string>
+    <string name="fecha">Fecha</string>
+    <string name="estado">Estado</string>
+    <string name="importe">Importe</string>
+    <string name="gestion">Gestión</string>
 
     <!--Producto-->
     <string name="lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
     <string name="zero">0</string>
+    <string name="Idiomas">Idiomas</string>
+    <string name="tema">Tema</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="temas">Temas</string>
+    <string name="restablecer">Restablecer</string>
+    <string name="euskera">Euskera</string>
+    <string name="español">Español</string>
+    <string name="ingles">Inglés</string>
+    <string name="frances">Francés</string>
+    <string name="light">Tema claro</string>
+    <string name="dark">Tema oscuro</string>
+    <string name="title_dialog">¿Desea eliminar la cuenta?</string>
+    <string name="cancel">Cancelar</string>
+    <string name="accept">Aceptar</string>
+    <string name="pedidos">Pedidos y pagos</string>
+    <string name="deleteaccount">Eliminar cuenta</string>
+    <string name="pordefecto" tools:ignore="MissingTranslation">Por defecto</string>
+
+    <!--Blog-->
+    <string name="blogtitulo">Blog</string>
+    <string name="tituloreceta01">Receta01</string>
+    <string name="descreceta01">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
+
+    <string name="tituloreceta02">Receta02</string>
+    <string name="descreceta02">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
+
+    <string name="tituloreceta03">Receta03</string>
+    <string name="descreceta03">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
+    <string name="filtrobusquedausuarios">Busqueda usuarios</string>
+    <string name="todaslascuentas">Todos los usuarios</string>
+    <string name="error_message_apellido">Ingrese su apellido</string>
+    <string name="error_message_description">Ingrese al menos una descripción   <font color='#FF0000'>*</font></string>
+    <string name="error_message_city">Ingrese una ciudad   <font color='#FF0000'>*</font></string>
+    <string name="error_message_cp">Ingrese un código postal   <font color='#FF0000'>*</font></string>
+    <string name="description">Introduzca una descripción</string>
+    <string name="error_message_address">Ingrese una dirección</string>
+    <string name="email">Email</string>
+    <string name="contraseña">Contraseña</string>
+
 </resources>

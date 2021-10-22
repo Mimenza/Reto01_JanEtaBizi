@@ -1,78 +1,118 @@
 package com.example.reto01.Adapter
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import android.content.Context
+import android.content.SharedPreferences
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.appcompat.view.menu.ActionMenuItemView
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
+import com.example.reto01.Model.Carrito_item
+import com.example.reto01.Model.Producto
 import com.example.reto01.R
+import com.example.reto01.activity_5carrito
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.viewholder_cart.view.*
 
-class MyCardsCartAdapter: RecyclerView.Adapter<MyCardsCartAdapter.ViewHolder>(){
 
 
-
-
-
-    val titles= arrayOf("Pasteles", "Omega", "Fresas", "Arandano")
-    val precioproducto= arrayOf("10€", "12€", "13€", "14€")
-    val precioproductototal= arrayOf("10€", "12€", "13€", "14€")
-    val images= intArrayOf(R.drawable.dessert, R.drawable.aceite3, R.drawable.fresa, R.drawable.blueberries)
-    val minus= intArrayOf(R.drawable.ic_minus, R.drawable.ic_minus, R.drawable.ic_minus, R.drawable.ic_minus)
-    val mas= intArrayOf(R.drawable.ic_plus, R.drawable.ic_plus, R.drawable.ic_plus, R.drawable.ic_plus)
-
-
+class MyCardsCartAdapter(private val productos: List<Producto> , val context: Context) :
+    RecyclerView.Adapter<MyCardsCartAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(ViewGroup: ViewGroup, i: Int): ViewHolder {
-       val v = LayoutInflater.from(ViewGroup.context).inflate(R.layout.viewholder_cart, ViewGroup, false)
+        val v = LayoutInflater.from(ViewGroup.context)
+            .inflate(R.layout.viewholder_cart, ViewGroup, false)
 
-        return  ViewHolder(v)
+        return ViewHolder(v)
     }
 
     override fun onBindViewHolder(ViewHolder: ViewHolder, i: Int) {
+        var item = productos[i]
+        var adaptador = ArrayAdapter(context, android.R.layout.simple_spinner_item, arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
+        ViewHolder.itemImage.setImageResource(item.img)
+        ViewHolder.itemPrecioProducto.text = item.price.toString()
+        ViewHolder.itemCategoria.text = item.category
+        ViewHolder.itemSpiner.adapter = adaptador
 
-        ViewHolder.itemImage.setImageResource(images[i])
-        ViewHolder.itemTitle.text= titles[i]
-        ViewHolder.itemMinus.setImageResource(minus[i])
-        ViewHolder.itemMas.setImageResource(mas[i])
-        ViewHolder.itemPrecioProducto.text= precioproducto[i]
-        ViewHolder.itemPrecioProductoTotal.text= precioproductototal[i]
 
+
+
+        //Recoger datos de Shared Preferences
+        val prefs: SharedPreferences = context.getSharedPreferences("mi_carrito", 0)
+        val carrito = prefs.getString("item"+ item.id_product.toString(),null)
+
+        //Parsear datos a objeto carrito_item
+        val gsonFile = Gson()
+        val carritoJson: Carrito_item = gsonFile.fromJson(carrito, Carrito_item::class.java)
+        val cantidad = carritoJson.cantidad
+
+        //Poner cantidad
+        if (cantidad != null) {
+            ViewHolder.itemSpiner.setSelection(cantidad-1)
+        }
+
+
+
+        ViewHolder.itemSpiner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected( parent: AdapterView<*>, view: View, position: Int, id: Long) {
+
+
+                // Guardar datos del carrito en el shared preferences
+
+                //Poner nombre al fichero
+                val preferences = view.getContext().getSharedPreferences("carrito", 0)
+                val editor : SharedPreferences.Editor= preferences.edit()
+
+                //Crear un json y una clase para los items del carrito
+                val gson = Gson()
+
+                val item_Carrito = Carrito_item(item.id_product, parent.getItemAtPosition(position).toString().toInt(),item.price)
+                val itemJson = gson.toJson(item_Carrito)
+
+                val itemname = "item" + item.id_product
+
+                //Subir datos
+                editor.putString(itemname, itemJson.toString())
+                editor.commit()
+
+                //Borrar datos extra
+                //preferences.edit().remove("item").commit();
+                //llamar funcion para poner el precio
+
+                if (context is activity_5carrito) {
+                    context.calcularTotal(item_Carrito)
+                }
+
+
+                //Borrar datos extra
+                //preferences.edit().remove("item").commit();
+
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
     }
 
     override fun getItemCount(): Int {
-        return  titles.size
+        return productos.size
     }
 
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-      inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+        var itemImage: ImageView
+        var itemTitle: TextView
+        var itemPrecioProducto: TextView
+        var itemCategoria: TextView
+        var itemSpiner: Spinner
 
-           var itemImage: ImageView
-           var itemTitle: TextView
-           var itemMinus : ImageView
-           var itemMas : ImageView
-           var itemPrecioProducto : TextView
-           var itemPrecioProductoTotal : TextView
-
-          //Inicializar las variables
-              init {
-                  itemImage = itemView.imgv_cardimg
-                  itemMas = itemView.imgv_cardmas
-                  itemMinus = itemView.imgv_cardmenos
-                  itemTitle = itemView.txtv_cardtittle
-                  itemPrecioProducto = itemView.txtv_cardeuros
-                  itemPrecioProductoTotal = itemView.txtv_cardeurostotal
-
-              }
-
-      }
-
-
-
+        //Inicializar las variables
+        init {
+            itemImage = itemView.imgv_cardimg
+            itemTitle = itemView.txtv_cardtittle
+            itemPrecioProducto = itemView.txtv_cardeurostotal
+            itemCategoria = itemView.txtv_cardcategory
+            itemSpiner = itemView.spinner_carrito
+        }
+    }
 }
 
 

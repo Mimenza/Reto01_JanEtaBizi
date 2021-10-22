@@ -4,53 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_6usuario"
     android:focusable="true"
-    android:focusableInTouchMode="true">
+    android:focusableInTouchMode="true"
+    tools:context=".activity_6usuario">
+
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_width="418dp"
+        android:layout_height="279dp"
         android:background="@drawable/my_gradient_drawable"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/txtinput_6nombre"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/imgv6_logout"
-        android:layout_width="34dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.950"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.049"
-        app:srcCompat="@drawable/ic_logout" />
-
-
-    <ImageView
 
         android:id="@+id/imgv6_admin"
         android:layout_width="35dp"
-        android:layout_height="37dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="270dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imgv6_logout"
-        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintEnd_toStartOf="@+id/imgv6_bottomsheet"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062"
+        app:layout_constraintVertical_bias="0.061"
         app:srcCompat="@drawable/admin_icon" />
 
     <TextView
         android:id="@+id/txt_6nombreuser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombre de usuario"
+        android:text="@string/txt1_nombreusuario"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -75,97 +65,146 @@
 
 
     <ImageView
+        android:id="@+id/imgv_6nombre"
         android:layout_width="30dp"
         android:layout_height="62dp"
+        android:layout_marginTop="24dp"
+
+        android:layout_marginEnd="24dp"
         android:src="@drawable/ic_person"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textInputLayout1"
-        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintEnd_toStartOf="@+id/txtinput_6nombre"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.46" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout1"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="275dp"
-        android:layout_height="62dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.46">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtinput_6usuario"
-            android:layout_width="275dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/txt1_nombreusuario" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/imgv6_admin"
+        app:layout_constraintVertical_bias="0.34" />
 
     <ImageView
+        android:id="@+id/imgv_6correo"
         android:layout_width="30dp"
         android:layout_height="62dp"
         android:src="@drawable/ic_email"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textInputLayout2"
-        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintEnd_toStartOf="@+id/txtinput_6correo"
+        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.579" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="275dp"
-        android:layout_height="62dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.58">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtinput_6correo"
-            android:layout_width="275dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/txt2_correo" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintVertical_bias="0.53" />
 
     <ImageView
+        android:id="@+id/imgv_6contraseña"
         android:layout_width="30dp"
         android:layout_height="62dp"
         android:src="@drawable/ic_password"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textInputLayout3"
-        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintEnd_toStartOf="@+id/txtinput_6contrasena"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.701" />
+        app:layout_constraintTop_toBottomOf="@+id/imgv_6correo"
+        app:layout_constraintVertical_bias="0.063" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="275dp"
+
+    <ImageView
+        android:id="@+id/imgv_6descripcion"
+        android:layout_width="30dp"
         android:layout_height="62dp"
+
+        android:src="@drawable/ic_baseline_description_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtinput_6contrasena"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgv_6correo"
+        app:layout_constraintVertical_bias="0.365" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtinput_6nombre"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="328dp"
+        android:background="@drawable/roundedgrey"
+        android:hint="@string/txt1_nombreusuario"
+        android:minHeight="48dp"
+        android:paddingLeft="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavV_6bottomMenu"
+        app:layout_constraintEnd_toStartOf="@+id/txtinput_6apellido"
+        app:layout_constraintTop_toTopOf="@+id/txt_6nombreuser"
+        app:layout_constraintVertical_bias="0.942" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtinput_6apellido"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/roundedgrey"
+        android:hint="@string/txt1_apellidousuario"
+        android:minHeight="48dp"
+        android:paddingLeft="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtinput_6correo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtinput_6nombre"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtinput_6correo"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedgrey"
+        android:hint="@string/txt2_correo2"
+        android:minHeight="48dp"
+        android:paddingLeft="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.60"
+        app:layout_constraintHorizontal_bias="0.702"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtinput_6nombre"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtinput_6contrasena"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedgrey"
+        android:hint="@string/txt3_contraseña"
+        android:minHeight="48dp"
+        android:paddingLeft="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.694"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtinput_6correo"
+        app:layout_constraintVertical_bias="0.098" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtinput_6descripcion"
+        android:layout_width="290dp"
+        android:layout_height="65dp"
+        android:background="@drawable/roundedgrey"
+        android:hint="@string/prompt_user_Description"
+        android:minHeight="48dp"
+        android:paddingLeft="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.694"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtinput_6contrasena"
+        app:layout_constraintVertical_bias="0.138" />
+
+    <Button
+        android:id="@+id/btn_6reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button_border"
+        android:backgroundTint="#20B2AA"
+        android:text="@string/restablecer"
+        android:textColor="@color/mainGreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.272"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.70">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtinput_6contraseña"
-            android:layout_width="275dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/txt3_contraseña" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintVertical_bias="0.825" />
 
     <Button
         android:id="@+id/btn_6save"
@@ -177,9 +216,10 @@
         android:textColor="@color/mainGreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.794"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.828" />
+        app:layout_constraintVertical_bias="0.825" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavV_6bottomMenu"
@@ -192,8 +232,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgv_6nombre"
         app:layout_constraintVertical_bias="1.0"
-        app:menu="@menu/navigation">
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+        app:menu="@menu/navigation"></com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <ImageView
+        android:id="@+id/imgv6_bottomsheet"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="41dp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_6nombreuser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.244"
+        app:srcCompat="@drawable/ic_menu" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

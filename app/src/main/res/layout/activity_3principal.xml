@@ -9,21 +9,33 @@
     tools:context=".activity_3principal">
 
 
-    <ImageView
-        android:id="@+id/imgv_3filtro"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
+    <TextView
+        android:id="@+id/txtv_3topbarColor"
+        android:layout_width="fill_parent"
+        android:layout_height="112dp"
+        android:background="@color/mainGreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.97"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imgv_3Logo"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.060000002"
-        app:srcCompat="@drawable/ic_filter" />
+        app:srcCompat="@drawable/logo" />
 
     <EditText
         android:id="@+id/txt_3busqueda"
-        android:layout_width="310dp"
+        android:layout_width="308dp"
         android:layout_height="48dp"
         android:background="@drawable/search_bg"
         android:drawableStart="@drawable/ic_search"
@@ -37,7 +49,7 @@
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.060000002" />
@@ -60,78 +72,262 @@
     <ScrollView
         android:id="@+id/sv_3scrollView"
         android:layout_width="match_parent"
-        android:layout_height="650dp"
+        android:layout_height="632dp"
         android:fillViewport="true"
         android:scrollbarStyle="insideInset"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53">
+        app:layout_constraintVertical_bias="0.52"
+        tools:ignore="SpeakableTextPresentCheck">
 
-        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <TableLayout
             android:id="@+id/tb_3tablaProductos"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:stretchColumns="*"></TableLayout>
     </ScrollView>
 
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/cg_3chipgroup"
+    <ScrollView
+        android:id="@+id/sv_3scrollViewFiltro"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="163dp"
-        android:background="#9AFFFFFF"
+        android:layout_height="632dp"
+        android:fillViewport="true"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.18">
+        app:layout_constraintVertical_bias="0.515"
+        tools:ignore="SpeakableTextPresentCheck">
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip3_1"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/ll_3vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Vegan" />
+            android:orientation="vertical">
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip3_2"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Vegetarian" />
+            <LinearLayout
+                android:id="@+id/ll_3horizontal1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip3_3"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Full of protein" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_3vegan"
+                    android:layout_width="189dp"
+                    android:layout_height="200dp"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="15dp">
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip3_4"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Free gluten" />
+                    <ImageView
+                        android:id="@+id/iv_3vegan"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pizza" />
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip3_5"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Free lactose" />
+                    <TextView
+                        android:id="@+id/tv_3vegan"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#33FFFFFF"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="@string/vegano"
+                        android:textColor="#CC000000"
+                        android:textSize="20pt"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip3_6"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Palm oil free" />
-    </com.google.android.material.chip.ChipGroup>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_3vegetarian"
+                    android:layout_width="189dp"
+                    android:layout_height="200dp"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="15dp">
+
+                    <ImageView
+                        android:id="@+id/iv_3vegetarian"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pizza" />
+
+                    <TextView
+                        android:id="@+id/tv_3vegetarian"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#33FFFFFF"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="@string/vegetariano"
+                        android:textColor="#CC000000"
+                        android:textSize="17pt"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_3horizontal2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_3km0"
+                    android:layout_width="189dp"
+                    android:layout_height="200dp"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="15dp">
+
+                    <ImageView
+                        android:id="@+id/ci_3km0"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pizza" />
+
+                    <TextView
+                        android:id="@+id/tv_3km0"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#33FFFFFF"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="@string/km0"
+                        android:textColor="#CC000000"
+                        android:textSize="20pt"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_3gluten"
+                    android:layout_width="189dp"
+                    android:layout_height="200dp"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="15dp">
+
+                    <ImageView
+                        android:id="@+id/iv_3gluten"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pizza" />
+
+                    <TextView
+                        android:id="@+id/tv_3gluten"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#33FFFFFF"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="@string/gluten"
+                        android:textColor="#CC000000"
+                        android:textSize="20pt"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_3horizontal3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_3lactose"
+                    android:layout_width="189dp"
+                    android:layout_height="200dp"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="15dp">
+
+                    <ImageView
+                        android:id="@+id/ci_3lactose"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pizza" />
+
+                    <TextView
+                        android:id="@+id/tv_3lactose"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#33FFFFFF"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="@string/lactosa"
+                        android:textColor="#CC000000"
+                        android:textSize="20pt"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_3protein"
+                    android:layout_width="189dp"
+                    android:layout_height="200dp"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="15dp">
+
+                    <ImageView
+                        android:id="@+id/ci_3protein"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pizza" />
+
+                    <TextView
+                        android:id="@+id/tv_3protein"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#33FFFFFF"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="@string/proteina"
+                        android:textColor="#CC000000"
+                        android:textSize="20pt"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_3horizontal4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_3palm"
+                    android:layout_width="189dp"
+                    android:layout_height="200dp"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="15dp">
+
+                    <ImageView
+                        android:id="@+id/ci_3palm"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pizza" />
+
+                    <TextView
+                        android:id="@+id/tv_3palm"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#33FFFFFF"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="@string/aceite"
+                        android:textColor="#CC000000"
+                        android:textSize="20pt"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

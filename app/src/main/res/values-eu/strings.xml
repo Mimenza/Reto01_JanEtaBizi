@@ -1,0 +1,151 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Jan eta Bizi</string>
+    <!--Usuario-->
+    <string name="txt1_nombreusuario">Erabiltzaile-izena</string>
+    <string name="txt1_apellidousuario">Erabiltzaile-abizena</string>
+    <string name="txt2_correo2">Posta elektronikoa</string>
+    <string name="txt2_correo">Posta elektronikoa</string>
+    <string name="txt3_contraseña">Pasahitza</string>
+    <string name="txt4_guardar">Gorde</string>
+    <string name="txt5_eliminar">Ezabatu</string>
+    <string name="title_activity_login">Hasi saioa</string>
+
+    <!-- Strings related to login and register -->
+    <string name="promt_user_mail">Posta elektronikoa</string>
+    <string name="prompt_user_Name">Izena</string>
+    <string name="prompt_user_Surname">Abizena</string>
+    <string name="prompt_user_Description">Deskribapena</string>
+    <string name="prompt_password">Pasahitza</string>
+    <string name="prompt_password_verify">Errepikatu pasahitza</string>
+    <string name="action_sign_in">Hasi saioa</string>
+    <string name="action_register">Erregistratu</string>
+    <string name="error_message_email">Sartu helbidea</string>
+    <string name="error_message_email_correct">Sartu email baliodun bat</string>
+    <string name="error_invalid_user_id">Identifikazio-zenbaki baliogabea</string>
+    <string name="error_message_name">Sartu zure izen osoa</string>
+    <string name="error_message_password_empty">Sartu pasahitza</string>
+    <string name="error_message_password">Pasahitza ez da zuzena</string>
+    <string name="success_message">Erregistroa berehala bete da</string>
+    <string name="error_field_required">Eremu hau beharrezkoa da</string>
+    <string name="error_server">Errorea zerbitzarian</string>
+    <string name="error_password_match">Pasahitzak ez dira berdinak</string>
+    <string name="error_valid_email_password">Emaila edo pasahitza ez da zuzena</string>
+    <string name="error_email_exists">Helbide elektroniko hori lehendik ere badago</string>
+    <string name="error_incorrect_user_id">Erregistratu gabeko identifikazio-zenbakia</string>
+    <string name="error_network">Sare-konexioa ez dago erabilgarri</string>
+    <string name="error_invalid_password">Pasahitz baliogabea</string>
+    <string name="textbtnregister">Erregistratu hemen</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="textbtnlogin">Logeate hemen</string>
+    <!-- Splash -->
+    <string name="logo">Jan eta bizi</string>
+
+    <string name="titulo">Egin kontu berria</string>
+
+
+    <!--Principal-->
+
+    <string name="filtrobusquedacomida">Aurkitu janaria</string>
+    <string name ="vegano">Beganoa</string>
+    <string name ="vegetariano">Begetarianoa</string>
+    <string name ="km0">0KM</string>
+    <string name ="gluten">Gluten gabe</string>
+    <string name ="lactosa">Lactosa gabe</string>
+    <string name ="proteina">Proteina gabe</string>
+    <string name ="aceite">Palma oliorik gabe</string>
+
+    <!--Carrito-->
+    <string name="carrito">Erosketako orga</string>
+    <string name="items">Nire produktuak:</string>
+    <string name="euros">0€</string>
+    <string name="gastos">Bidaltze-gastuak:</string>
+    <string name="total">Guztira:</string>
+    <string name="adress">Helbidea</string>
+    <string name="payment">Ordainketa</string>
+    <string name="finalizar_compra">Amaitu erosketa</string>
+    <string name="iva">BEZa</string>
+    <string name="iva_value">21%</string>
+    <string name="euro">-€</string>
+    <string name ="envioGratis">Doanik</string>
+    <string name="nombre">Izena</string>
+    <string name="apellido">Abizena</string>
+    <string name="direccion">Helbiea</string>
+    <string name="ciudad">Hiria</string>
+    <string name="provincia">Probintzia</string>
+    <string name="telefono">Telefono zenbakia</string>
+    <string name="cp">Posta kodea</string>
+
+    <string name="cardnumber">Txartel zenbakia</string>
+    <string name="caducidad">Iraungitze data</string>
+    <string name="ccv">Ccv</string>
+    <string name="placeorder">Eskaera egin</string>
+    <string name="envio">Bidalketa</string>
+    <string name="subtotal">Guztizko partziala</string>
+
+    <string name="gracias">Mila esker!</string>
+    <string name="graciastxt">Eskerrik asko gurekin erosteagatik, jaso eskaera hurrengo egunetan, egun ona izan dezazun.</string>
+    <string name="seguir">Jarraitu erosten</string>
+
+    <string name="first_fragment_label">Hello first fragment</string>
+    <string name="second_fragment_label">Hello second fragment. Arg: %1$s</string>
+
+
+    <!-- admin  -->
+
+    <string name="btnUsuarios"> Erabiltzaileak</string>
+    <string name="btnPedidos"> Eskaerak</string>
+    <string name="btnProductos"> Produktuak</string>
+    <string name="carrito_vacio">Zure orgatxoa hutsik dago</string>
+    <string name="añadir_carrito">Gehitu orgatxoari</string>
+    <string name="añadir">Gehitu orgatxoari</string>
+    <string name="comprar">Erosi</string>
+    <string name="totalpedidos">Eskaera</string>
+    <string name="numeropedido">Eskaera zenbakia</string>
+    <string name="usuario">erabiltzailea</string>
+    <string name ="fecha">Data</string>
+    <string name ="estado">Egoera</string>
+    <string name ="importe">Zenbatekoa</string>
+    <string name="gestion">Kudeaketa</string>
+
+    <!--Producto-->
+    <string name="lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="zero">0</string>
+    <string name="Idiomas">Hizkuntzak</string>
+    <string name="tema">Gaia</string>
+    <string name="logout">Amaitu saioa</string>
+    <string name="temas">Gaiak</string>
+    <string name="restablecer">Lehengoratu</string>
+    <string name="euskera">Euskara</string>
+    <string name="español">Erdara</string>
+    <string name="ingles">Ingelesa</string>
+    <string name="frances">Frantsesa</string>
+    <string name="pedidos">Ezkaera eta ordainketak</string>
+    <string name="deleteaccount">Kontua ezabatu</string>
+    <string name="light">Gai argia</string>
+    <string name="cancel">kantzelatu</string>
+    <string name="accept">Baieztatu</string>
+    <string name="title_dialog">Kontua ezabatu nahi duzu?</string>
+    <string name="dark">Gai iluna</string>
+    <!--Blog-->
+    <string name="blogtitulo">Blog</string>
+    <string name="tituloreceta01">Errezeta01</string>
+    <string name="descreceta01">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
+
+    <string name="tituloreceta02">Errezeta02</string>
+    <string name="descreceta02">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
+
+    <string name="tituloreceta03">Errezeta03</string>
+    <string name="descreceta03">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
+    <string name="filtrobusquedausuarios">Erabiltzaileen bilaketa</string>
+    <string name="todaslascuentas">Erabiltzaile guztiak</string>
+    <string name="error_message_apellido">Ingrese su apellido</string>
+    <string name="error_message_description">Ingrese al menos una descripción breve</string>
+
+    <string name="error_message_city">Ingrese una ciudad</string>
+    <string name="error_message_cp">Ingrese un código postal</string>
+    <string name="description">Introduzca una breve descripción (Opcional)</string>
+    <string name="error_message_address">Ingrese una dirección</string>
+    <string name="email">Email</string>
+    <string name="contraseña">Contraseña</string>
+
+</resources>
