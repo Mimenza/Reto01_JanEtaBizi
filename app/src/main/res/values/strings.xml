@@ -49,13 +49,13 @@
     <!--Principal-->
 
     <string name="filtrobusquedacomida">Busca un alimento</string>
-    <string name ="vegano">Vegano</string>
-    <string name ="vegetariano">Vegetariano</string>
-    <string name ="km0">KM0</string>
-    <string name ="gluten">Sin gluten</string>
-    <string name ="lactosa">Sin lactosa</string>
-    <string name ="proteina">Alto en proteina</string>
-    <string name ="aceite">Sin Aceite Palma</string>
+    <string name="vegano">Vegano</string>
+    <string name="vegetariano">Vegetariano</string>
+    <string name="km0">KM0</string>
+    <string name="gluten">Sin gluten</string>
+    <string name="lactosa">Sin lactosa</string>
+    <string name="proteina">Alto en proteina</string>
+    <string name="aceite">Sin Aceite Palma</string>
 
     <!--Carrito-->
     <string name="carrito">Carrito</string>
@@ -69,7 +69,7 @@
     <string name="iva">IVA</string>
     <string name="iva_value">21%</string>
     <string name="euro">€</string>
-    <string name ="envioGratis">Gratis</string>
+    <string name="envioGratis">Gratis</string>
     <string name="nombre">Nombre</string>
     <string name="apellido">Apellido</string>
     <string name="direccion">Dirección</string>
@@ -105,9 +105,9 @@
     <string name="totalpedidos">Pedidos</string>
     <string name="numeropedido">N pedido</string>
     <string name="usuario">Usuario</string>
-    <string name ="fecha">Fecha</string>
-    <string name ="estado">Estado</string>
-    <string name ="importe">Importe</string>
+    <string name="fecha">Fecha</string>
+    <string name="estado">Estado</string>
+    <string name="importe">Importe</string>
     <string name="gestion">Gestión</string>
 
     <!--Producto-->
