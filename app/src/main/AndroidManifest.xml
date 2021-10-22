@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.reto01">
+    package="com.example.reto01" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,41 +11,54 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Reto01">
-
-        <activity
-            android:name=".activity_9blog"
-            android:exported="true" />
-        <activity
-            android:name=".activity_6_2tema"
-            android:exported="true" />
-        <activity
-            android:name=".activity_5_3gracias"
-            android:exported="true" />
-        <activity
-            android:name=".activity_5_2payment"
-            android:exported="true" />
-        <activity
-            android:name=".activity_5_1address"
-            android:exported="true" />
-        <activity
-            android:name=".activity_7_0_1usuarios"
-            android:exported="true" />
-        <activity
-            android:name=".activity_7_3_3pedido"
-            android:exported="true" />
+        android:theme="@style/Theme.Reto01" >
         <activity
             android:name=".activity_7_2_2producto"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity_7_2_1producto"
             android:exported="true" />
+        <activity
+            android:name=".activity_9blog"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity_6_2tema"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity_5_3gracias"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity_5_2payment"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity_5_1address"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity_7_0_1usuarios"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity_7_3_3pedido"
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity_7admin"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity_7_1_1usuario"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -54,29 +67,37 @@
         </activity>
         <activity
             android:name=".activity_8likes"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity_6usuario"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity_5carrito"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity_4producto"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity_3principal"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity_2registrar"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity_1login"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+            android:resource="@array/preloaded_fonts"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

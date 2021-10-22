@@ -35,8 +35,10 @@
     <string name="error_incorrect_user_id">Número de identificación no registrado</string>
     <string name="error_network">Conexión de red no disponible</string>
     <string name="error_invalid_password">Contraseña inválida</string>
-
+    <string name="textbtnregister">Registrate aqui </string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="textbtnlogin">Logeate aqui </string>
+
 
     <!-- Splash -->
     <string name="logo">Jan eta bizi</string>
@@ -47,7 +49,13 @@
     <!--Principal-->
 
     <string name="filtrobusquedacomida">Busca un alimento</string>
-
+    <string name="vegano">Vegano</string>
+    <string name="vegetariano">Vegetariano</string>
+    <string name="km0">KM0</string>
+    <string name="gluten">Sin gluten</string>
+    <string name="lactosa">Sin lactosa</string>
+    <string name="proteina">Alto en proteina</string>
+    <string name="aceite">Sin Aceite Palma</string>
 
     <!--Carrito-->
     <string name="carrito">Carrito</string>
@@ -61,7 +69,7 @@
     <string name="iva">IVA</string>
     <string name="iva_value">21%</string>
     <string name="euro">€</string>
-
+    <string name="envioGratis">Gratis</string>
     <string name="nombre">Nombre</string>
     <string name="apellido">Apellido</string>
     <string name="direccion">Dirección</string>
@@ -94,7 +102,13 @@
     <string name="añadir_carrito">Añadir al carrito</string>
     <string name="añadir">Añadir al carrito</string>
     <string name="comprar">Comprar</string>
-
+    <string name="totalpedidos">Pedidos</string>
+    <string name="numeropedido">N pedido</string>
+    <string name="usuario">Usuario</string>
+    <string name="fecha">Fecha</string>
+    <string name="estado">Estado</string>
+    <string name="importe">Importe</string>
+    <string name="gestion">Gestión</string>
 
     <!--Producto-->
     <string name="lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>

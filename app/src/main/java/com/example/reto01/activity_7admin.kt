@@ -45,7 +45,7 @@ class activity_7admin : AppCompatActivity() {
             startActivity(i)
         }
         btn_7productos.setOnClickListener() {
-            val i = Intent(this, activity_7_2_2producto::class.java)
+            val i = Intent(this, activity_7_2_1producto::class.java)
             startActivity(i)
         }
         btn_7pedidos.setOnClickListener() {
