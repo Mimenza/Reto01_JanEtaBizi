@@ -116,6 +116,11 @@ class activity_6usuario : AppCompatActivity() {
         }
 
         logoutLayout.setOnClickListener {
+            var sharedPreferences = getSharedPreferences("loggedUser", 0)
+            var editor = sharedPreferences.edit()
+
+            editor.putString("user", "noLoggedUser").apply()
+
             val i = Intent(this, activity_1login::class.java)
             startActivity(i)
         }

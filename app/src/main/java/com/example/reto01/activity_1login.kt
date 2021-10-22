@@ -9,6 +9,7 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.reto01.Helpers.InputValidation
+import com.example.reto01.Model.Login_barrier
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.activity_1login.*
@@ -30,6 +31,9 @@ class activity_1login : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_1login)
+
+        val login_barrier = Login_barrier()
+        login_barrier.checkLoggedUser(this)
 
         // inicializar las vistas
         initViews()
@@ -125,11 +129,13 @@ class activity_1login : AppCompatActivity(), View.OnClickListener {
                 textInputEditTextEmail!!.text.toString().trim { it <= ' ' },
                 textInputEditTextPassword!!.text.toString().trim { it <= ' ' })
         ) {
-            val accountsIntent = Intent(activity, activity_3principal::class.java)
+            loadLoggedUser()
+            val intent = Intent(activity, activity_3principal::class.java)
 
             emptyInputEditText()
 
-            startActivity(accountsIntent)
+            startActivity(intent)
+            finish()
         } else {
             // Si no es correcto lanza un snackbar diciendo que los datos son erroneos
             Snackbar.make(
@@ -146,6 +152,13 @@ class activity_1login : AppCompatActivity(), View.OnClickListener {
     private fun emptyInputEditText() {
         textInputEditTextEmail!!.text = null
         textInputEditTextPassword!!.text = null
+    }
+
+    fun loadLoggedUser(){
+        var sharedPreferences = getSharedPreferences("loggedUser", 0)
+        var editor = sharedPreferences.edit()
+
+        editor.putString("user", "Galder").apply()
     }
 }
 
