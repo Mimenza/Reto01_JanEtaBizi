@@ -89,8 +89,14 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txtv_2Login"
         android:layout_width="wrap_content"
+<<<<<<< HEAD
         android:layout_height="48dp"
         android:text="Inicia sesión aquí"
+=======
+        android:layout_height="wrap_content"
+        android:text="@string/textbtnlogin"
+        app:layout_constraintBottom_toBottomOf="parent"
+>>>>>>> 494720ce1d8f9e2cc23798d615869915635ecc5e
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_2Register" />

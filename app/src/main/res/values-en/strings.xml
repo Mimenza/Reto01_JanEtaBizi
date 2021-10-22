@@ -7,6 +7,8 @@
     <string name="txt4_guardar">Save</string>
     <string name="txt5_eliminar">Delete</string>
     <string name="title_activity_login">Login</string>
+    <string name="txt1_apellidousuario">Surname</string>
+    <string name="txt2_correo2">Mail</string>
 
     <!-- Strings related to login and register -->
     <string name="promt_user_mail">Email</string>
@@ -32,8 +34,9 @@
     <string name="error_incorrect_user_id">Unregistered identification number</string>
     <string name="error_network">Network connection not available</string>
     <string name="error_invalid_password">Wrong password</string>
-
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="textbtnregister">Register in here</string>
+    <string name="textbtnlogin">Login in here </string>
 
     <!-- Splash -->
     <string name="logo">Jan eta bizi</string>
@@ -42,9 +45,14 @@
 
 
     <!--Principal-->
-
     <string name="filtrobusquedacomida">Find a product</string>
-
+    <string name ="vegano">Vegan</string>
+    <string name ="vegetariano">Vegetarian</string>
+    <string name ="km0">KM0</string>
+    <string name ="gluten">Gluten Free</string>
+    <string name ="lactosa">Lactose Free</string>
+    <string name ="proteina">High Protein</string>
+    <string name ="aceite">Palm Oil Free</string>
 
     <!--Carrito-->
     <string name="carrito">Cart</string>
@@ -58,7 +66,7 @@
     <string name="iva">Tax</string>
     <string name="iva_value">21%</string>
     <string name="euro">€</string>
-
+    <string name ="envioGratis">Free</string>
     <string name="nombre">Name</string>
     <string name="apellido">Surname</string>
     <string name="direccion">Address</string>
@@ -91,7 +99,13 @@
     <string name="añadir_carrito">Add to cart</string>
     <string name="añadir">Add to cart</string>
     <string name="comprar">Buy</string>
-
+    <string name="totalpedidos">Order</string>
+    <string name="numeropedido">Order Nº</string>
+    <string name="usuario">User</string>
+    <string name ="fecha">Date</string>
+    <string name ="estado">Status</string>
+    <string name ="importe">Price</string>
+    <string name="gestion">Management</string>
 
     <!--Producto-->
     <string name="lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
@@ -105,12 +119,23 @@
     <string name="español">Spanish</string>
     <string name="ingles">English</string>
     <string name="frances">French</string>
-    <string name="pedidos">Pedidos y pagos</string>
-    <string name="deleteaccount">Eliminar cuenta</string>
-    <string name="light">Tema claro</string>
-    <string name="cancel">Cancelar</string>
-    <string name="accept">Aceptar</string>
-    <string name="title_dialog">¿Desea eliminar la cuenta?</string>
-    <string name="dark">Tema oscuro</string>
-    <string name="filtrobusquedausuarios">Busqueda usuarios</string>
+    <string name="pedidos">Orders and payments</string>
+    <string name="deleteaccount">Delete Account</string>
+    <string name="light">Light theme</string>
+    <string name="cancel">Cancel</string>
+    <string name="accept">Acept</string>
+    <string name="title_dialog">you want to delete the account?</string>
+    <string name="dark">Dark Theme</string>
+    <string name="filtrobusquedausuarios">Search Users</string>
+
+    <!--Blog-->
+    <string name="blogtitulo">Blog</string>
+    <string name="tituloreceta01">Recipe01</string>
+    <string name="descreceta01">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
+
+    <string name="tituloreceta02">Recipe02</string>
+    <string name="descreceta02">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
+
+    <string name="tituloreceta03">Recipe03</string>
+    <string name="descreceta03">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string><string name="todaslascuentas">Todos los usuarios</string>
 </resources>

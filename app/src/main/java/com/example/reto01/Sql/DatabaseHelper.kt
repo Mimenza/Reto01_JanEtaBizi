@@ -18,12 +18,18 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
         private const val TBL_ORDERS = "Orders"
         private const val TBL_PRODUCTS = "Products"
         private const val TBL_ORDERS_PRODUCTS = "Orders_Products"
+        private const val TBL_LIKES = "Likes"
 
         // User Table Columns names
         private val COLUMN_USER_ID = "user_id"
         private val COLUMN_USER_NAME = "user_name"
+        private val COLUMN_USER_SURNAME = "user_surname"
         private val COLUMN_USER_EMAIL = "user_email"
         private val COLUMN_USER_PASSWORD = "user_password"
+        private val COLUMN_USER_ADDRESS = "user_address"
+        private val COLUMN_USER_CITY = "user_city"
+        private val COLUMN_USER_CP = "user_cp"
+        private val COLUMN_USER_DESCRIPTION = "user_description"
         private val COLUMN_USER_ADMIN = "user_admin"
 
         // Products Table Columns names
@@ -33,6 +39,7 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
         private val COLUMN_PRODUCT_CATEGORY = "product_category"
         private val COLUMN_PRODUCT_LIKES = "product_likes"
         private val COLUMN_PRODCUCT_IMG = "product_img"
+
         // Orders Table Columns names
         private val COLUMN_ORDER_ID = "order_id"
         private val COLUMN_ORDER_USER_ID = "order_user_id"
@@ -44,6 +51,10 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
         private val COLUMN_ORDER_PRODUCTS_ORDER_ID = "order_product_id"
         private val COLUMN_ORDER_PRODUCTS_PRODUCT_ID = "product_name"
         private val COLUMN_ORDER_PRODUCTS_QUANTITY = "product_price"
+
+        // Likes Table Columns names
+        private val COLUMN_LIKES_USER_ID = "likes_user_id"
+        private val COLUMN_LIKES_PRODUCT_ID = "likes_product_id"
     }
 
     // Create user table sql query
@@ -51,8 +62,13 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
         "CREATE TABLE ${TBL_USERS} (" +
                 "${COLUMN_USER_ID} INTEGER PRIMARY KEY," +
                 "${COLUMN_USER_NAME} TEXT," +
+                "${COLUMN_USER_SURNAME} TEXT," +
                 "${COLUMN_USER_EMAIL} TEXT," +
                 "${COLUMN_USER_PASSWORD} TEXT," +
+                "${COLUMN_USER_ADDRESS} TEXT," +
+                "${COLUMN_USER_CITY} TEXT," +
+                "${COLUMN_USER_CP} TEXT," +
+                "${COLUMN_USER_DESCRIPTION} TEXT," +
                 "${COLUMN_USER_ADMIN} INTEGER)"
 
     // Create products table sql query
@@ -85,12 +101,22 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
                 "FOREIGN KEY (${COLUMN_ORDER_PRODUCTS_ORDER_ID}) REFERENCES ${TBL_ORDERS}(${COLUMN_ORDER_ID})," +
                 "FOREIGN KEY (${COLUMN_ORDER_PRODUCTS_PRODUCT_ID}) REFERENCES ${TBL_PRODUCTS}(${COLUMN_PRODUCT_ID}))"
 
+    // Create orders_products table sql query
+    private  val CREATE_LIKES_TABLE =
+        "CREATE TABLE ${TBL_LIKES} (" +
+                "${COLUMN_LIKES_USER_ID} INTEGER," +
+                "${COLUMN_LIKES_PRODUCT_ID} INTEGER," +
+                "PRIMARY KEY (${COLUMN_LIKES_USER_ID}, ${COLUMN_LIKES_PRODUCT_ID})" +
+                "FOREIGN KEY (${COLUMN_LIKES_USER_ID}) REFERENCES ${TBL_USERS}(${COLUMN_USER_ID})," +
+                "FOREIGN KEY (${COLUMN_LIKES_PRODUCT_ID}) REFERENCES ${TBL_PRODUCTS}(${COLUMN_PRODUCT_ID}))"
+
 
     // Drop tables sql query
     private val DROP_USER_TABLE = "DROP TABLE IF EXISTS ${TBL_USERS}"
     private val DROP_PRODUCTS_TABLE = "DROP TABLE IF EXISTS ${TBL_PRODUCTS}"
     private val DROP_ORDERS_TABLE = "DROP TABLE IF EXISTS ${TBL_ORDERS}"
     private val DROP_ORDERS_PRODUCTS_TABLE = "DROP TABLE IF EXISTS ${TBL_ORDERS_PRODUCTS}"
+    private val DROP_LIKES_TABLE = "DROP TABLE IF EXISTS ${TBL_LIKES}"
 
     // Create tables sql query
     override fun onCreate(db: SQLiteDatabase) {
@@ -98,6 +124,7 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
         db.execSQL(CREATE_PRODUCTS_TABLE)
         db.execSQL(CREATE_ORDERS_TABLE)
         db.execSQL(CREATE_ORDERS_PRODUCTS_TABLE)
+        db.execSQL(CREATE_LIKES_TABLE)
     }
 
     // Drop & Create tables sql query
@@ -106,6 +133,7 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
         db.execSQL(DROP_PRODUCTS_TABLE)
         db.execSQL(DROP_ORDERS_TABLE)
         db.execSQL(DROP_ORDERS_PRODUCTS_TABLE)
+        db.execSQL(DROP_LIKES_TABLE)
         onCreate(db)
     }
 
