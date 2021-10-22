@@ -1,9 +1,9 @@
 package com.example.reto01
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reto01.Adapter.MyCardsCartAdapter
 import kotlinx.android.synthetic.main.activity_4producto.*
@@ -95,7 +95,6 @@ class activity_5carrito : AppCompatActivity() {
 
 
         //View Holder carrito ids
-
 
 
     }
