@@ -125,11 +125,14 @@ class activity_5_1address : AppCompatActivity() {
     inner class GetDataFromSQLite : AsyncTask<Void, Void, User>() {
 
         override fun doInBackground(vararg p0: Void?): User {
-            return databaseHelper.getUser("admin@admin.com")!!
+
+            return databaseHelper.getUser("")!!
 
         }
 
         override fun onPostExecute(result:User) {
+
+
             super.onPostExecute(result)
 
         }
