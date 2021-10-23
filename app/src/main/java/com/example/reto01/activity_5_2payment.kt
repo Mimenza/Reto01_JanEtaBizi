@@ -3,20 +3,30 @@ package com.example.reto01
 import android.animation.ObjectAnimator
 import android.content.Intent
 import android.content.SharedPreferences
+import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import com.example.reto01.Model.Carrito_item
+import com.example.reto01.Model.User
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_5_1adress.*
 import kotlinx.android.synthetic.main.activity_5_2payment.*
 
 class activity_5_2payment : AppCompatActivity() {
+    lateinit private var user :  User
+    lateinit var databaseHelper:DatabaseHelper
+    private val activity = this
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         setContentView(R.layout.activity_5_2payment)
+
+        initObjects()
 
         //recogemos el dato del shared
         val prefs: SharedPreferences = this.getSharedPreferences("totalCarrito", 0)
@@ -68,6 +78,7 @@ class activity_5_2payment : AppCompatActivity() {
         }
 
         btn_5_2payment.setOnClickListener() {
+            actualizarDatos()
             val i = Intent(this, activity_5_3gracias::class.java)
             startActivity(i)
             this.overridePendingTransition(0, 0)
@@ -106,5 +117,78 @@ class activity_5_2payment : AppCompatActivity() {
             }
         }
         this.overridePendingTransition(0, 0)
+    }
+
+    private fun initObjects() {
+        user= User()
+
+        databaseHelper = DatabaseHelper(activity, "janEtaBizi", null, 1)
+
+        var getDataFromSQLite = GetDataFromSQLite()
+        getDataFromSQLite.execute()
+
+
+
+    }
+
+
+    inner class GetDataFromSQLite : AsyncTask<Void, Void, User>() {
+
+        //Recoger datos del usuario
+        override fun doInBackground(vararg p0: Void?): User? {
+
+
+            //Recoger datos del usuario loggeado
+            val prefs: SharedPreferences = this@activity_5_2payment.getSharedPreferences("loggedUser", 0)
+            val correo = prefs.getString("correo",null)
+            //Llamar a la función getUser pasándole el correo que hemos guardado en SharedPreferences
+            return databaseHelper.getUser(correo.toString())!!
+        }
+
+        override fun onPostExecute(result: User) {
+
+            super.onPostExecute(result)
+            user = result
+            println(user)
+            rellenarCampos()
+        }
+
+    }
+
+    fun rellenarCampos(){
+
+        txt_5_2cardnumber.setText(user.num_tarjeta)
+        //txt_5_2ccv.setText(user.ccv!!)
+        txt_5_2caducidadtarjeta.setText(user.caducidad)
+
+    }
+
+    fun actualizarDatos(){
+
+        var usuario =User()
+        //Recogemos los datos de los inputs
+
+        var tarjeta =  txt_5_2cardnumber.text.toString()
+        //var ccv = txt_5_2ccv.text.toString().toInt()
+        var caducidad = txt_5_2caducidadtarjeta.text.toString()
+
+        //Rellenamo el objeto de user con los datos
+
+        usuario.id = user.id
+        usuario.name = user.name
+        usuario.surname = user.surname
+        usuario.email = user.email
+        usuario.password = user.password
+        usuario.address = user.address
+        usuario.city = user.city
+        usuario.cp = user.cp
+        usuario.description=user.description
+        usuario.admin=user.admin
+        usuario.tlf = user.tlf
+        usuario.ccv = user.ccv
+        usuario.caducidad = caducidad
+        usuario.num_tarjeta= tarjeta
+
+        databaseHelper.updateUser(usuario)
     }
 }

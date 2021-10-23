@@ -198,20 +198,21 @@ class DatabaseHelper(
 
         // Create a new map of values, where column names are the keys
         val values = ContentValues().apply {
-            put("Id", COLUMN_USER_ID)
-            put("Name", COLUMN_USER_NAME)
-            put("Email", COLUMN_USER_EMAIL)
-            put("Password", COLUMN_USER_PASSWORD)
-            put("Admin", COLUMN_USER_ADMIN)
-            put("Surname", COLUMN_USER_SURNAME)
-            put("Address", COLUMN_USER_ADDRESS)
-            put("City", COLUMN_USER_CITY)
-            put("Description", COLUMN_USER_DESCRIPTION)
-            put("Cp", COLUMN_USER_CP)
-            put("Phone", COLUMN_USER_TLF)
-            put("Ccv", COLUMN_USER_CCV)
-            put("Caducidad", COLUMN_USER_CADUCIDAD)
-            put("Número de tarjeta", COLUMN_USER_NUM_TARJETA)
+            put("user_id", user.id)
+            put("user_name", user.name)
+            put("user_email", user.email)
+            put("user_password", user.password)
+            put("user_admin", user.admin)
+            put("user_surname", user.surname)
+            put("user_address", user.address)
+            put("user_city", user.city)
+            put("user_description", user.description)
+            put("user_cp", user.cp)
+            put("user_tlf", user.tlf)
+            put("user_ccv", user.ccv)
+            put("user_caducidad", user.caducidad)
+            put("user_num_tarjeta", user.num_tarjeta)
+
         }
 
         // update según el id de usuario

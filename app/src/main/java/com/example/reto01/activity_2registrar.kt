@@ -175,7 +175,11 @@ class activity_2registrar : AppCompatActivity(), View.OnClickListener {
                 cp = textInputEditTextCp!!.text.toString().trim(),
                 email = textInputEditTextEmail!!.text.toString().trim(),
                 password = textInputEditTextPassword!!.text.toString().trim(),
-                admin = 0
+                admin = 0,
+                tlf = "",
+                caducidad = "",
+                num_tarjeta = ""
+
             )
 
             // Snack Bar to show success message that record saved successfully

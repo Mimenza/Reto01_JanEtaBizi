@@ -250,7 +250,7 @@ class activity_3principal : AppCompatActivity() {
             super.onPostExecute(result)
             listProducts.clear()
             listProducts.addAll(result!!)
-            println(listProducts)
+            //println(listProducts)
         }
     }
 

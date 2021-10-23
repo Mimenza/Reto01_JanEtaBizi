@@ -70,6 +70,7 @@ class activity_5_1address : AppCompatActivity() {
         }
 
         btn_5_1adress.setOnClickListener() {
+            actualizarDatos()
             val i = Intent(this@activity_5_1address, activity_5_2payment::class.java)
             startActivity(i)
             this.overridePendingTransition(0, 0)
@@ -150,8 +151,7 @@ class activity_5_1address : AppCompatActivity() {
     }
 //Rellenar los campos de dirección con los datos del usuario
     fun rellenarCampos(){
-        println(user)
-        //txt_5_1nombre.hint = user.name
+
         txt_5_1nombre.setText(user.name)
         txt_5_1apellido.setText(user.surname)
         txt_5_1direccion.setText(user.address)
@@ -161,6 +161,36 @@ class activity_5_1address : AppCompatActivity() {
 
     }
 
+    fun actualizarDatos(){
 
+        var usuario =User()
+        //Recogemos los datos de los inputs
+
+        var direccion = txt_5_1direccion.text.toString()
+        var ciudad = txt_5_1city.text.toString()
+        var provincia = txt_5_1provincia.text.toString()
+        var cp  = txt_5_1cp.text.toString()
+        var nombre = txt_5_1nombre.text.toString()
+        var apellido = txt_5_1apellido.text.toString()
+        var telefono = txt_5_1telefono.text.toString()
+
+        //Rellenamo el objeto de user con los datos
+        usuario.id = user.id
+        usuario.name = nombre
+        usuario.surname = apellido
+        usuario.email = user.email
+        usuario.password = user.password
+        usuario.address = direccion
+        usuario.city = ciudad
+        usuario.cp = cp
+        usuario.description=user.description
+        usuario.admin=user.admin
+        usuario.tlf = telefono
+        usuario.ccv = user.ccv
+        usuario.caducidad = user.caducidad
+        usuario.num_tarjeta= user.num_tarjeta
+
+        databaseHelper.updateUser(usuario)
+    }
 
 }
