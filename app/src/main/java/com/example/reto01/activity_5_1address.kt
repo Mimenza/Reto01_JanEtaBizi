@@ -77,7 +77,7 @@ class activity_5_1address : AppCompatActivity() {
         ObjectAnimator.ofInt(progressBar_5_1, "progress", 33)
             .setDuration(1000)
             .start()
-        println(user)
+
     }
 
     fun navegacion(activity: String) {
