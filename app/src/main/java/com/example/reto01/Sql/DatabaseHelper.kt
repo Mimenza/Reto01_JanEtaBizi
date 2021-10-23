@@ -5,6 +5,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.example.reto01.Model.Producto
 import com.example.reto01.Model.User
 
 class DatabaseHelper(
@@ -49,7 +50,8 @@ class DatabaseHelper(
         private val COLUMN_PRODUCT_PRICE = "product_price"
         private val COLUMN_PRODUCT_CATEGORY = "product_category"
         private val COLUMN_PRODUCT_LIKES = "product_likes"
-        private val COLUMN_PRODCUCT_IMG = "product_img"
+        private val COLUMN_PRODUCT_IMG = "product_img"
+        private val COLUMN_PRODUCT_STOCK ="product_stock"
 
         // Orders Table Columns names
         private val COLUMN_ORDER_ID = "order_id"
@@ -86,15 +88,18 @@ class DatabaseHelper(
                 "${COLUMN_USER_NUM_TARJETA} TEXT," +
                 "${COLUMN_USER_ADMIN} INTEGER)"
 
+
+
     // Create products table sql query
-    private val CREATE_PRODUCTS_TABLE =
+    private  val CREATE_PRODUCTS_TABLE =
         "CREATE TABLE ${TBL_PRODUCTS} (" +
                 "${COLUMN_PRODUCT_ID} INTEGER PRIMARY KEY," +
                 "${COLUMN_PRODUCT_NAME} TEXT," +
                 "${COLUMN_PRODUCT_PRICE} DOUBLE," +
                 "${COLUMN_PRODUCT_CATEGORY} TEXT," +
-                "${COLUMN_PRODUCT_LIKES} INTEGER" +
-                "${COLUMN_PRODCUCT_IMG} TEXT)"
+                "${COLUMN_PRODUCT_LIKES} INTEGER," +
+                "${COLUMN_PRODUCT_IMG} INTEGER," +
+                "${COLUMN_PRODUCT_STOCK} INTEGER)"
 
     // Create orders table sql query
     private val CREATE_ORDERS_TABLE =
@@ -126,6 +131,12 @@ class DatabaseHelper(
                 "FOREIGN KEY (${COLUMN_LIKES_PRODUCT_ID}) REFERENCES ${TBL_PRODUCTS}(${COLUMN_PRODUCT_ID}))"
 
 
+    //Load productos
+    //private  val LOAD_PRODUCTS = "INSERT INTO ${TBL_PRODUCTS}  VALUES ( -1 ,'Pepinillos', 10.00 , 'vegan', 12, 1)"
+    private  val LOAD_PRODUCTS = "INSERT INTO ${TBL_PRODUCTS}  VALUES ( -1 ,'Pepinillos', 10.00 , 'vegan', 12, 1, 10), ( 1 ,'Pepinillos', 10.00 , 'vegan', 12, 1, 10) ," +
+            "( 0 ,'Pepinillos', 10.00 , 'vegan', 12, 1, 10), ( 3 ,'Pepinillos', 10.00 , 'vegan', 12, 1, 10), ( 2 ,'Pepinillos', 10.00 , 'vegan', 12, 1, 10)"
+
+
     // Drop tables sql query
     private val DROP_USER_TABLE = "DROP TABLE IF EXISTS ${TBL_USERS}"
     private val DROP_PRODUCTS_TABLE = "DROP TABLE IF EXISTS ${TBL_PRODUCTS}"
@@ -140,6 +151,7 @@ class DatabaseHelper(
         db.execSQL(CREATE_ORDERS_TABLE)
         db.execSQL(CREATE_ORDERS_PRODUCTS_TABLE)
         db.execSQL(CREATE_LIKES_TABLE)
+        db.execSQL(LOAD_PRODUCTS)
     }
 
     // Drop & Create tables sql query
@@ -295,6 +307,45 @@ class DatabaseHelper(
      * Hace un return de true/false
      *
      */
+
+    @SuppressLint("Range")
+    fun getAllProducts():List<Producto>{
+        // array of columns to fetch
+        val columns = arrayOf(COLUMN_PRODUCT_ID, COLUMN_PRODUCT_NAME, COLUMN_PRODUCT_CATEGORY, COLUMN_PRODUCT_LIKES,
+            COLUMN_PRODUCT_PRICE, COLUMN_PRODUCT_IMG, COLUMN_PRODUCT_STOCK )
+        //val columns = arrayOf(COLUMN_PRODUCT_ID, COLUMN_PRODUCT_NAME, COLUMN_PRODUCT_CATEGORY, COLUMN_PRODUCT_LIKES
+        //   COLUMN_PRODUCT_PRICE, COLUMN_PRODUCT_IMG, COLUMN_PRODUCT_STOCK )
+        // sorting orders
+        val sortOrder = "$COLUMN_PRODUCT_LIKES DESC"
+        val productList : MutableList<Producto> = ArrayList()
+        val db = this.readableDatabase
+        // query the user table
+        val cursor = db.query(
+            TBL_PRODUCTS, //Table to query
+            columns,            //columns to return
+            null,     //columns for the WHERE clause
+            null,  //The values for the WHERE clause
+            null,      //group the rows
+            null,       //filter by row groups
+            sortOrder)         //The sort order
+        if (cursor.moveToFirst()) {
+            do {val producto = Producto(
+                id_product = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_ID)),
+                name_product = cursor.getString(cursor.getColumnIndex(COLUMN_PRODUCT_NAME)),
+                price = cursor.getDouble(cursor.getColumnIndex(COLUMN_PRODUCT_PRICE)),
+                category = cursor.getString(cursor.getColumnIndex(COLUMN_PRODUCT_CATEGORY)),
+                stock = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_STOCK)),
+                img= cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_IMG)),
+                likes = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_LIKES)))
+                productList.add(producto)
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        db.close()
+        return productList
+    }
+
+
 
     fun checkUser(email: String): Boolean {
         // array of columns to fetch

@@ -1,19 +1,26 @@
 package com.example.reto01
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.os.AsyncTask
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TableRow
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.example.reto01.Model.Producto
 import kotlinx.android.synthetic.main.activity_3principal.*
 
 class activity_3principal : AppCompatActivity() {
+
+    lateinit private var listProducts : MutableList<Producto>
+    lateinit var databaseHelper:DatabaseHelper
+    private val activity = this
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_3principal)
 
+        initObjects()
         sv_3scrollView.setVerticalScrollBarEnabled(false)
         sv_3scrollViewFiltro.setVerticalScrollBarEnabled(false)
 
@@ -218,4 +225,34 @@ class activity_3principal : AppCompatActivity() {
             }
         }
     }
+
+
+    private fun initObjects() {
+        listProducts= ArrayList()
+
+
+
+        databaseHelper = DatabaseHelper(activity, "janEtaBizi", null, 1)
+
+        var getDataFromSQLite = GetDataFromSQLite()
+        getDataFromSQLite.execute()
+    }
+
+    inner class GetDataFromSQLite : AsyncTask<Void, Void, List<Producto>>() {
+
+        override fun doInBackground(vararg p0: Void?): List<Producto> {
+
+            return databaseHelper.getAllProducts()
+
+        }
+
+        override fun onPostExecute(result: List<Producto>?) {
+            super.onPostExecute(result)
+            listProducts.clear()
+            listProducts.addAll(result!!)
+            println(listProducts)
+        }
+    }
+
+
 }

@@ -141,7 +141,6 @@ class activity_5carrito : AppCompatActivity() {
     fun calcularTotal() {
 
 
-
         //Recoger datos de Shared Preferences
         val prefs: SharedPreferences = this.getSharedPreferences("carrito", 0)
 

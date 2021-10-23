@@ -6,5 +6,6 @@ data class Producto(
     val price: Double? = null,
     val category: String? = null,
     val stock: Int? = null,
-    val img: Int = 1
+    val img: Int = 1,
+    val likes: Int? = null
 )
