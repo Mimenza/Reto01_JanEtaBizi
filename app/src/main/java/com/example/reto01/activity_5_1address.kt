@@ -1,6 +1,7 @@
 package com.example.reto01
 
 import android.animation.ObjectAnimator
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,16 +10,27 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_5_1adress.*
 import kotlinx.android.synthetic.main.activity_5carrito.*
+import com.example.reto01.Model.User
+
+import android.database.Cursor
+
+import android.database.sqlite.SQLiteDatabase
+import android.os.AsyncTask
+import java.util.*
+
 
 class activity_5_1address : AppCompatActivity() {
+    lateinit var user:User
+    lateinit var databaseHelper:DatabaseHelper
+    private val activity = this
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
         setContentView(R.layout.activity_5_1adress)
 
-        //recogemos el dato del intent
-        val total: String? = intent.getStringExtra("total").toString()
+        initObjects()
 
         bottomNavV_5_1bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -48,7 +60,7 @@ class activity_5_1address : AppCompatActivity() {
 
         imgv_5_1atras.setOnClickListener() {
             val i = Intent(this@activity_5_1address, activity_5carrito::class.java)
-            i.putExtra("total", total)
+
             startActivity(i)
             this.overridePendingTransition(0, 0)
         }
@@ -102,5 +114,24 @@ class activity_5_1address : AppCompatActivity() {
         this.overridePendingTransition(0, 0)
     }
 
+    private fun initObjects() {
+
+        databaseHelper = DatabaseHelper(activity, "janEtaBizi", null, 1)
+
+        var getDataFromSQLite = GetDataFromSQLite()
+        getDataFromSQLite.execute()
+    }
+
+    inner class GetDataFromSQLite : AsyncTask<Void, Void, User>() {
+
+        override fun doInBackground(vararg p0: Void?): User {
+            return databaseHelper.getUser(1)!!
+        }
+
+        override fun onPostExecute(result:User) {
+            super.onPostExecute(result)
+            user.copy()
+        }
+    }
 
 }

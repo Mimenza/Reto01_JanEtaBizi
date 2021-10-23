@@ -303,4 +303,30 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
             return true
         return false
     }
+
+   @SuppressLint("Range")
+   fun getUser(id:Int): User? {
+        val db: SQLiteDatabase = this.getReadableDatabase()
+        val res = db.rawQuery("select * from Users where user_id='" + id + "'", null)
+        res.moveToFirst()
+        while (res.isAfterLast == false) {
+            val response = User()
+            response.id = res.getInt(res.getColumnIndex(COLUMN_USER_ID))
+            response.name = res.getString(res.getColumnIndex(COLUMN_USER_NAME))
+            response.surname =res.getString(res.getColumnIndex(COLUMN_USER_SURNAME))
+            response.email = res.getString(res.getColumnIndex(COLUMN_USER_EMAIL))
+            response.password = res.getString(res.getColumnIndex(COLUMN_USER_PASSWORD))
+            response.address = res.getString(res.getColumnIndex(COLUMN_USER_ADDRESS))
+            response.city = res.getString(res.getColumnIndex(COLUMN_USER_CITY))
+            response.cp = res.getString(res.getColumnIndex(COLUMN_USER_CP))
+            response.description= res.getString(res.getColumnIndex(COLUMN_USER_DESCRIPTION))
+            response.admin = res.getInt(res.getColumnIndex(COLUMN_USER_ADMIN))
+
+            // rest of columns
+            return response
+        }
+        return null
+
+    }
+
 }

@@ -2,10 +2,13 @@ package com.example.reto01
 
 import android.animation.ObjectAnimator
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import com.example.reto01.Model.Carrito_item
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_5_2payment.*
 
 class activity_5_2payment : AppCompatActivity() {
@@ -15,8 +18,10 @@ class activity_5_2payment : AppCompatActivity() {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         setContentView(R.layout.activity_5_2payment)
 
-        //recogemos el dato del intent
-        val total: String? = intent.getStringExtra("total").toString()
+        //recogemos el dato del shared
+        val prefs: SharedPreferences = this.getSharedPreferences("totalCarrito", 0)
+        val total= prefs.getString("total",null)
+
 
         //Escribimos el dato
         txtv_5_2preciosubtotal.text = total

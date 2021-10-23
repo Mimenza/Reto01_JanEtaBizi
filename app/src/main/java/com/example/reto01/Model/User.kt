@@ -1,14 +1,14 @@
 package com.example.reto01.Model
 
 data class User(
-    val id: Int? = null,
-    val name: String? = null,
-    val surname: String? = null,
-    val email: String? = null,
-    val password: String? = null,
-    val address: String? = null,
-    val city: String? = null,
-    val cp: String? = null,
-    val description: String? = null,
-    val admin: Int? = null
+    var id: Int? = null,
+    var name: String? = null,
+    var surname: String? = null,
+    var email: String? = null,
+    var password: String? = null,
+    var address: String? = null,
+    var city: String? = null,
+    var cp: String? = null,
+    var description: String? = null,
+    var admin: Int? = null
 )
