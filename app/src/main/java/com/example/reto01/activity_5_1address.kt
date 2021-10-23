@@ -1,26 +1,21 @@
 package com.example.reto01
 
 import android.animation.ObjectAnimator
-import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import com.example.reto01.Model.User
 import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_5_1adress.*
 import kotlinx.android.synthetic.main.activity_5carrito.*
-import com.example.reto01.Model.User
-
-import android.database.Cursor
-
-import android.database.sqlite.SQLiteDatabase
-import android.os.AsyncTask
 import java.util.*
 
 
 class activity_5_1address : AppCompatActivity() {
-    lateinit var user:User
+    lateinit private var user :  User
     lateinit var databaseHelper:DatabaseHelper
     private val activity = this
 
@@ -30,7 +25,7 @@ class activity_5_1address : AppCompatActivity() {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
         setContentView(R.layout.activity_5_1adress)
 
-        //initObjects()
+        initObjects()
 
         bottomNavV_5_1bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -82,6 +77,7 @@ class activity_5_1address : AppCompatActivity() {
         ObjectAnimator.ofInt(progressBar_5_1, "progress", 33)
             .setDuration(1000)
             .start()
+        println(user)
     }
 
     fun navegacion(activity: String) {
@@ -112,26 +108,33 @@ class activity_5_1address : AppCompatActivity() {
             }
         }
         this.overridePendingTransition(0, 0)
+
     }
 
-    /*private fun initObjects() {
+    private fun initObjects() {
+       user= User()
 
         databaseHelper = DatabaseHelper(activity, "janEtaBizi", null, 1)
 
         var getDataFromSQLite = GetDataFromSQLite()
         getDataFromSQLite.execute()
+
+
     }
 
     inner class GetDataFromSQLite : AsyncTask<Void, Void, User>() {
 
         override fun doInBackground(vararg p0: Void?): User {
-            return databaseHelper.getUser(1)!!
+            return databaseHelper.getUser("admin@admin.com")!!
+
         }
 
         override fun onPostExecute(result:User) {
             super.onPostExecute(result)
-            user.copy()
+
         }
-    }*/
+
+    }
+
 
 }

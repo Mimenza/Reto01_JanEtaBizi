@@ -12,3 +12,4 @@ data class User(
     var description: String? = null,
     var admin: Int? = null
 )
+

@@ -66,23 +66,6 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
 
 
 
-
-
-     /*   //Recoger datos de Shared Preferences
-        val prefs: SharedPreferences = context.getSharedPreferences("mi_carrito", 0)
-        val carrito = prefs.getString("item"+ item.id_product.toString(),null)
-
-        //Parsear datos a objeto carrito_item
-        val gsonFile = Gson()
-        val carritoJson: Carrito_item = gsonFile.fromJson(carrito, Carrito_item::class.java)
-        val cantidad = carritoJson.cantidad
-
-        //Poner cantidad
-        if (cantidad != null) {
-            ViewHolder.itemSpiner.setSelection(cantidad-1)
-        }  */
-
-
             //Recoger datos de Shared Preferences
             val prefs: SharedPreferences = context.getSharedPreferences("carrito", 0)
             val carrito = prefs.getString("item"+ item.id_product.toString(),null)
@@ -120,17 +103,12 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
                 editor.putString(itemname, itemJson.toString())
                 editor.commit()
 
-
-                //Borrar datos extra
-                //preferences.edit().remove("item").commit();
-                //llamar funcion para poner el precio
-
                 //Borrar datos extra
                 //preferences.edit().remove("item").commit();
 
 
                 if (context is activity_5carrito) {
-                  //  context.calcularTotal()
+                    //context.calcularTotal()
                 }
 
             }

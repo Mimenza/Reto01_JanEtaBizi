@@ -304,11 +304,13 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
         return false
     }
 
+
    @SuppressLint("Range")
-   fun getUser(id:Int): User? {
+   fun getUser(email:String): User? {
         val db: SQLiteDatabase = this.getReadableDatabase()
-        val res = db.rawQuery("select * from Users where user_id='" + id + "'", null)
+        val res = db.rawQuery("select * from Users where user_email='" + email + "'", null)
         res.moveToFirst()
+
         while (res.isAfterLast == false) {
             val response = User()
             response.id = res.getInt(res.getColumnIndex(COLUMN_USER_ID))
@@ -321,6 +323,7 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
             response.cp = res.getString(res.getColumnIndex(COLUMN_USER_CP))
             response.description= res.getString(res.getColumnIndex(COLUMN_USER_DESCRIPTION))
             response.admin = res.getInt(res.getColumnIndex(COLUMN_USER_ADMIN))
+
 
             // rest of columns
             return response

@@ -2,28 +2,21 @@ package com.example.reto01
 
 import android.content.Intent
 import android.content.SharedPreferences
-
 import android.os.Bundle
 import android.os.Handler
-import androidx.appcompat.app.AppCompatActivity
-
 import android.view.View
-
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reto01.Adapter.MyCardsCartAdapter
 import com.example.reto01.Model.Carrito_item
 import com.example.reto01.Model.Producto
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_4producto.*
+import kotlinx.android.synthetic.main.activity_5_2payment.*
 import kotlinx.android.synthetic.main.activity_5carrito.*
-import kotlinx.android.synthetic.main.activity_5carrito.imgv_5atras
 import kotlinx.android.synthetic.main.activity_6usuario.*
 import kotlinx.android.synthetic.main.viewholder_cart.*
-import kotlinx.android.synthetic.main.activity_5_2payment.*
 import java.util.*
-import kotlin.collections.ArrayList
-import android.widget.AdapterView
-import java.io.File
 
 class activity_5carrito : AppCompatActivity() {
     var total:Double?=0.00
@@ -159,6 +152,7 @@ class activity_5carrito : AppCompatActivity() {
             println(carrito)
             //Parsear datos a objeto carrito_item
             val gsonFile = Gson()
+
             val carritoJson: Carrito_item = gsonFile.fromJson(carrito, Carrito_item::class.java)
             val cantidad:Double? = carritoJson.cantidad!!.toDouble()
             val precio:Double? = carritoJson.precio!!.toDouble()
