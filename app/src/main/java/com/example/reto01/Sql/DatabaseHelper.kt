@@ -5,6 +5,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.example.reto01.Model.Order
 import com.example.reto01.Model.Producto
 import com.example.reto01.Model.User
 
@@ -58,7 +59,7 @@ class DatabaseHelper(
         private val COLUMN_ORDER_USER_ID = "order_user_id"
         private val COLUMN_ORDER_DATE = "order_date"
         private val COLUMN_ORDER_TOTAL = "order_total"
-        private val COLUMN_ORDER_ADDRESS = "order_admin"
+        private val COLUMN_ORDER_ADDRESS = "order_address"
 
         // Orders_Products Table Columns names
         private val COLUMN_ORDER_PRODUCTS_ORDER_ID = "order_product_id"
@@ -234,6 +235,20 @@ class DatabaseHelper(
         )
 
 
+        db.close()
+    }
+
+    //Insertar order
+    fun addOrder(order: Order) {
+        val db = this.writableDatabase
+        val values = ContentValues()
+        values.put(COLUMN_ORDER_ADDRESS, order.address)
+        values.put(COLUMN_ORDER_DATE, order.date)
+        values.put(COLUMN_ORDER_USER_ID, order.id_user)
+        values.put(COLUMN_ORDER_TOTAL,order.total)
+
+        // Inserting Row
+        db.insert(TBL_ORDERS, null, values)
         db.close()
     }
 

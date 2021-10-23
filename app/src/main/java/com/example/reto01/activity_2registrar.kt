@@ -178,7 +178,8 @@ class activity_2registrar : AppCompatActivity(), View.OnClickListener {
                 admin = 0,
                 tlf = "",
                 caducidad = "",
-                num_tarjeta = ""
+                num_tarjeta = "",
+                ccv = 0
 
             )
 
