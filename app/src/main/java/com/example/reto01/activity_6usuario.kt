@@ -4,7 +4,9 @@ import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.res.Configuration
+import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Handler
 import android.preference.PreferenceManager
@@ -15,18 +17,21 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import com.example.reto01.Model.User
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.textfield.TextInputEditText
+import kotlinx.android.synthetic.main.activity_5_1adress.*
 import kotlinx.android.synthetic.main.activity_6usuario.*
 import java.util.*
 
 class activity_6usuario : AppCompatActivity() {
-    internal val admin= DatabaseHelper(this, "reto1", null, 1)
+    lateinit private var user :  User
+    lateinit var databaseHelper:DatabaseHelper
+    private val activity = this
 
     lateinit var bottomsheet: ImageView
     //Inputs
 
-     lateinit  var emailText: TextInputEditText
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +43,7 @@ class activity_6usuario : AppCompatActivity() {
         val email: String? = sharedPreferences.getString("loggedUser", "")
 
 
-         txtinput_6correo.setText(email)
+        initObjects()
 
 
 
@@ -313,6 +318,55 @@ class activity_6usuario : AppCompatActivity() {
         }
         this.overridePendingTransition(0, 0)
     }
+
+    private fun initObjects() {
+        user= User()
+
+        databaseHelper = DatabaseHelper(activity, "janEtaBizi", null, 1)
+
+        var getDataFromSQLite = GetDataFromSQLite()
+        getDataFromSQLite.execute()
+
+
+
+    }
+
+
+    inner class GetDataFromSQLite : AsyncTask<Void, Void, User>() {
+
+        //Recoger datos del usuario
+        override fun doInBackground(vararg p0: Void?): User? {
+
+
+            //Recoger datos del usuario loggeado
+            val prefs: SharedPreferences = this@activity_6usuario.getSharedPreferences("loggedUser", 0)
+            val correo = prefs.getString("correo",null)
+            //Llamar a la función getUser pasándole el correo que hemos guardado en SharedPreferences
+            return databaseHelper.getUser(correo.toString())!!
+        }
+
+        override fun onPostExecute(result: User) {
+
+
+            super.onPostExecute(result)
+            user = result
+            rellenarCampos()
+        }
+
+    }
+    //Rellenar los campos de dirección con los datos del usuario
+    fun rellenarCampos(){
+        println(user)
+
+        txt_6nombreuser.setText(user.name)
+        txtinput_6apellido.setText(user.surname)
+        txtinput_6nombre.setText(user.name)
+        txtinput_6correo.setText(user.email)
+        txtinput_6contrasena.setText(user.password)
+        txtinput_6descripcion.setText(user.description)
+
+    }
+
 }
 
 
