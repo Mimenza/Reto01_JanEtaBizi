@@ -2,6 +2,7 @@ package com.example.reto01
 
 import android.animation.ObjectAnimator
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Handler
@@ -77,7 +78,8 @@ class activity_5_1address : AppCompatActivity() {
         ObjectAnimator.ofInt(progressBar_5_1, "progress", 33)
             .setDuration(1000)
             .start()
-        println(user)
+
+
     }
 
     fun navegacion(activity: String) {
@@ -120,21 +122,32 @@ class activity_5_1address : AppCompatActivity() {
         getDataFromSQLite.execute()
 
 
+
     }
 
     inner class GetDataFromSQLite : AsyncTask<Void, Void, User>() {
 
-        override fun doInBackground(vararg p0: Void?): User {
-            return databaseHelper.getUser("admin@admin.com")!!
+        override fun doInBackground(vararg p0: Void?): User? {
 
+            //Recoger datos de Shared Preferences
+            val prefs: SharedPreferences = this@activity_5_1address.getSharedPreferences("loggedUser", 0)
+            val correo = prefs.getString("correo",null)
+            return databaseHelper.getUser(correo.toString())!!
         }
 
         override fun onPostExecute(result:User) {
             super.onPostExecute(result)
-
+          user = result
+           rellenarCampos()
         }
 
     }
+
+    fun rellenarCampos(){
+        println(user)
+        txt_5_1nombre.hint = user.name
+    }
+
 
 
 }

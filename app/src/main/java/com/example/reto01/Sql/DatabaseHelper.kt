@@ -7,9 +7,14 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.reto01.Model.User
 
-class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.CursorFactory?, version:Int) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+class DatabaseHelper(
+    context: Context,
+    name: String,
+    factory: SQLiteDatabase.CursorFactory?,
+    version: Int
+) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
-    companion object{
+    companion object {
         private const val DATABASE_VERSION = 1
         private const val DATABASE_NAME = "janEtaBizi.db"
 
@@ -58,7 +63,7 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
     }
 
     // Create user table sql query
-    private  val CREATE_USER_TABLE =
+    private val CREATE_USER_TABLE =
         "CREATE TABLE ${TBL_USERS} (" +
                 "${COLUMN_USER_ID} INTEGER PRIMARY KEY," +
                 "${COLUMN_USER_NAME} TEXT," +
@@ -72,7 +77,7 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
                 "${COLUMN_USER_ADMIN} INTEGER)"
 
     // Create products table sql query
-    private  val CREATE_PRODUCTS_TABLE =
+    private val CREATE_PRODUCTS_TABLE =
         "CREATE TABLE ${TBL_PRODUCTS} (" +
                 "${COLUMN_PRODUCT_ID} INTEGER PRIMARY KEY," +
                 "${COLUMN_PRODUCT_NAME} TEXT," +
@@ -82,7 +87,7 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
                 "${COLUMN_PRODCUCT_IMG} TEXT)"
 
     // Create orders table sql query
-    private  val CREATE_ORDERS_TABLE =
+    private val CREATE_ORDERS_TABLE =
         "CREATE TABLE ${TBL_ORDERS} (" +
                 "${COLUMN_ORDER_ID} INTEGER PRIMARY KEY," +
                 "${COLUMN_ORDER_USER_ID} INTEGER," +
@@ -92,7 +97,7 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
                 "FOREIGN KEY (${COLUMN_ORDER_USER_ID}) REFERENCES ${TBL_USERS}(${COLUMN_USER_ID}))"
 
     // Create orders_products table sql query
-    private  val CREATE_ORDERS_PRODUCTS_TABLE =
+    private val CREATE_ORDERS_PRODUCTS_TABLE =
         "CREATE TABLE ${TBL_ORDERS_PRODUCTS} (" +
                 "${COLUMN_ORDER_PRODUCTS_ORDER_ID} INTEGER," +
                 "${COLUMN_ORDER_PRODUCTS_PRODUCT_ID} INTEGER," +
@@ -102,7 +107,7 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
                 "FOREIGN KEY (${COLUMN_ORDER_PRODUCTS_PRODUCT_ID}) REFERENCES ${TBL_PRODUCTS}(${COLUMN_PRODUCT_ID}))"
 
     // Create orders_products table sql query
-    private  val CREATE_LIKES_TABLE =
+    private val CREATE_LIKES_TABLE =
         "CREATE TABLE ${TBL_LIKES} (" +
                 "${COLUMN_LIKES_USER_ID} INTEGER," +
                 "${COLUMN_LIKES_PRODUCT_ID} INTEGER," +
@@ -148,14 +153,14 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
         values.put(COLUMN_USER_NAME, user.name)
         values.put(COLUMN_USER_EMAIL, user.email)
         values.put(COLUMN_USER_PASSWORD, user.password)
-        values.put(COLUMN_USER_ADMIN,  user.admin)
+        values.put(COLUMN_USER_ADMIN, user.admin)
         // Inserting Row
         db.insert(TBL_USERS, null, values)
         db.close()
     }
 
     //Actualizar usuario
-    fun updateUser(user: User){
+    fun updateUser(user: User) {
         // Gets the data repository in write mode
         val db = this.writableDatabase
 
@@ -171,18 +176,20 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
         // update según el id de usuario
         db.update(
             TBL_USERS, values, "${COLUMN_USER_ID} = ?",
-            arrayOf(user.id.toString()))
+            arrayOf(user.id.toString())
+        )
         db.close()
     }
 
     //Eliminar usuario
-    fun deleteUser(user: User)   {
+    fun deleteUser(user: User) {
         val db = this.writableDatabase
         // Eliminar usuario según id
         db.delete(
 
             TBL_USERS, "${COLUMN_USER_ID}= ?",
-            arrayOf(user.id.toString()))
+            arrayOf(user.id.toString())
+        )
 
 
         db.close()
@@ -196,16 +203,17 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
      */
 
 
-
     @SuppressLint("Range")
     fun getAllUser(): List<User> {
         // array of columns to fetch
-        val columns = arrayOf(COLUMN_USER_ID, COLUMN_USER_NAME,
-            COLUMN_USER_SURNAME,COLUMN_USER_EMAIL,  COLUMN_USER_ADDRESS,
-            COLUMN_USER_CITY,  COLUMN_USER_CP,  COLUMN_USER_DESCRIPTION,  COLUMN_USER_ADMIN)
+        val columns = arrayOf(
+            COLUMN_USER_ID, COLUMN_USER_NAME,
+            COLUMN_USER_SURNAME, COLUMN_USER_EMAIL, COLUMN_USER_ADDRESS,
+            COLUMN_USER_CITY, COLUMN_USER_CP, COLUMN_USER_DESCRIPTION, COLUMN_USER_ADMIN
+        )
         // sorting orders
         val sortOrder = "$COLUMN_USER_NAME ASC"
-        val userList : MutableList<User> = ArrayList()
+        val userList: MutableList<User> = ArrayList()
         val db = this.readableDatabase
         // query the user table
         val cursor = db.query(
@@ -215,12 +223,14 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
             null,  //The values for the WHERE clause
             null,      //group the rows
             null,       //filter by row groups
-            sortOrder)         //The sort order
+            sortOrder
+        )         //The sort order
         if (cursor.moveToFirst()) {
             do {
-                val user = User(id = cursor.getString(cursor.getColumnIndex(COLUMN_USER_ID)).toInt(),
+                val user = User(
+                    id = cursor.getString(cursor.getColumnIndex(COLUMN_USER_ID)).toInt(),
                     name = cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)),
-                    surname  = cursor.getString(cursor.getColumnIndex(COLUMN_USER_SURNAME)),
+                    surname = cursor.getString(cursor.getColumnIndex(COLUMN_USER_SURNAME)),
                     email = cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL)),
                     address = cursor.getString(cursor.getColumnIndex(COLUMN_USER_ADDRESS)),
                     city = cursor.getString(cursor.getColumnIndex(COLUMN_USER_CITY)),
@@ -235,7 +245,6 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
         db.close()
         return userList
     }
-
 
 
     /** Hace un check del usuario para saber si existe o no según el parámetro de email
@@ -262,7 +271,8 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
             selectionArgs,  //The values for the WHERE clause
             null,  //group the rows
             null,   //filter by row groups
-            null)  //The sort order
+            null
+        )  //The sort order
         val cursorCount = cursor.count
         cursor.close()
         db.close()
@@ -295,7 +305,8 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
             selectionArgs, //The values for the WHERE clause
             null,  //group the rows
             null, //filter by row groups
-            null) //The sort order
+            null
+        ) //The sort order
         val cursorCount = cursor.count
         cursor.close()
 
@@ -305,8 +316,8 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
     }
 
 
-   @SuppressLint("Range")
-   fun getUser(email:String): User? {
+    @SuppressLint("Range")
+    fun getUser(email: String): User? {
         val db: SQLiteDatabase = this.getReadableDatabase()
         val res = db.rawQuery("select * from Users where user_email='" + email + "'", null)
         res.moveToFirst()
@@ -315,13 +326,8 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
             val response = User()
             response.id = res.getInt(res.getColumnIndex(COLUMN_USER_ID))
             response.name = res.getString(res.getColumnIndex(COLUMN_USER_NAME))
-            response.surname =res.getString(res.getColumnIndex(COLUMN_USER_SURNAME))
             response.email = res.getString(res.getColumnIndex(COLUMN_USER_EMAIL))
             response.password = res.getString(res.getColumnIndex(COLUMN_USER_PASSWORD))
-            response.address = res.getString(res.getColumnIndex(COLUMN_USER_ADDRESS))
-            response.city = res.getString(res.getColumnIndex(COLUMN_USER_CITY))
-            response.cp = res.getString(res.getColumnIndex(COLUMN_USER_CP))
-            response.description= res.getString(res.getColumnIndex(COLUMN_USER_DESCRIPTION))
             response.admin = res.getInt(res.getColumnIndex(COLUMN_USER_ADMIN))
 
 
@@ -329,6 +335,7 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
             return response
         }
         return null
+
 
     }
 
