@@ -79,7 +79,6 @@ class activity_5_1address : AppCompatActivity() {
             .setDuration(1000)
             .start()
 
-
     }
 
     fun navegacion(activity: String) {

@@ -153,7 +153,13 @@ class DatabaseHelper(
         values.put(COLUMN_USER_NAME, user.name)
         values.put(COLUMN_USER_EMAIL, user.email)
         values.put(COLUMN_USER_PASSWORD, user.password)
-        values.put(COLUMN_USER_ADMIN, user.admin)
+        values.put(COLUMN_USER_ADMIN,  user.admin)
+        values.put(COLUMN_USER_CP, user.cp)
+        values.put(COLUMN_USER_CITY,  user.city)
+        values.put(COLUMN_USER_ADDRESS, user.address)
+        values.put(COLUMN_USER_SURNAME,  user.surname)
+        values.put(COLUMN_USER_DESCRIPTION,  user.description)
+
         // Inserting Row
         db.insert(TBL_USERS, null, values)
         db.close()
@@ -167,10 +173,15 @@ class DatabaseHelper(
         // Create a new map of values, where column names are the keys
         val values = ContentValues().apply {
             put("Id", COLUMN_USER_ID)
-            put("Email", COLUMN_USER_NAME)
+            put("Name", COLUMN_USER_NAME)
             put("Email", COLUMN_USER_EMAIL)
             put("Password", COLUMN_USER_PASSWORD)
             put("Admin", COLUMN_USER_ADMIN)
+            put("Surname", COLUMN_USER_SURNAME)
+            put("Address", COLUMN_USER_ADDRESS)
+            put("City", COLUMN_USER_CITY)
+            put("Description", COLUMN_USER_DESCRIPTION)
+            put("Cp", COLUMN_USER_CP)
         }
 
         // update según el id de usuario
