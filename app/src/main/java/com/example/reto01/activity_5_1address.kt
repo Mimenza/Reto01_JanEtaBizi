@@ -30,7 +30,7 @@ class activity_5_1address : AppCompatActivity() {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
         setContentView(R.layout.activity_5_1adress)
 
-        initObjects()
+        //initObjects()
 
         bottomNavV_5_1bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -114,7 +114,7 @@ class activity_5_1address : AppCompatActivity() {
         this.overridePendingTransition(0, 0)
     }
 
-    private fun initObjects() {
+    /*private fun initObjects() {
 
         databaseHelper = DatabaseHelper(activity, "janEtaBizi", null, 1)
 
@@ -132,6 +132,6 @@ class activity_5_1address : AppCompatActivity() {
             super.onPostExecute(result)
             user.copy()
         }
-    }
+    }*/
 
 }

@@ -23,6 +23,7 @@ import kotlinx.android.synthetic.main.activity_5_2payment.*
 import java.util.*
 import kotlin.collections.ArrayList
 import android.widget.AdapterView
+import java.io.File
 
 class activity_5carrito : AppCompatActivity() {
     var total:Double?=0.00
@@ -35,7 +36,9 @@ class activity_5carrito : AppCompatActivity() {
         setContentView(R.layout.activity_5carrito)
 
         //Llamar funcion para saber el total al cargar la pg
-        calcularTotal()
+        Handler().postDelayed({
+            calcularTotal()
+        }, 2)
         //Llamar funcion para cargar los datos
         loadProductos()
 
@@ -144,17 +147,19 @@ class activity_5carrito : AppCompatActivity() {
 
     fun calcularTotal() {
 
+
+
         //Recoger datos de Shared Preferences
         val prefs: SharedPreferences = this.getSharedPreferences("carrito", 0)
 
-        for(x in 0..carritoSize){
+        for(x in 0..carritoSize-1){
 
             val carrito = prefs.getString("item"+ x,null)
 
+            println(carrito)
             //Parsear datos a objeto carrito_item
             val gsonFile = Gson()
             val carritoJson: Carrito_item = gsonFile.fromJson(carrito, Carrito_item::class.java)
-
             val cantidad:Double? = carritoJson.cantidad!!.toDouble()
             val precio:Double? = carritoJson.precio!!.toDouble()
             val totalItem:Double? = cantidad!! * precio!!
