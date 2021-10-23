@@ -9,10 +9,13 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import com.example.reto01.Model.Carrito_item
+import com.example.reto01.Model.Order
 import com.example.reto01.Model.User
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_5_1adress.*
 import kotlinx.android.synthetic.main.activity_5_2payment.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class activity_5_2payment : AppCompatActivity() {
     lateinit private var user :  User
@@ -190,5 +193,52 @@ class activity_5_2payment : AppCompatActivity() {
         usuario.num_tarjeta= tarjeta
 
         databaseHelper.updateUser(usuario)
+
+        createOrder()
+    }
+
+    fun createOrder(){
+        var order = Order()
+
+        //Recogemos el total de shared preference
+        val prefs: SharedPreferences = this.getSharedPreferences("totalCarrito", 0)
+        val total= prefs.getString("total",null).toString().toDouble()
+
+        //Conseguimos la hora local
+        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss").toString()
+        val currentDate = sdf.format(Date())
+
+        //Rellenamos le objeto de order
+        order.date = currentDate
+        order.total = total
+        order.address = user.address
+        order.id_user = user.id
+
+        var createdOrder =databaseHelper.addOrder(order)
+
+
+        createPedidoProducto(createdOrder)
+    }
+
+    fun createPedidoProducto(createdOrder: Unit){
+/*
+        //Recoger datos de Shared Preferences
+        val prefs: SharedPreferences = this.getSharedPreferences("carrito", 0)
+
+        for(x in 0..carritoSize-1){
+
+            val carrito = prefs.getString("item"+ x,null)
+
+
+            //Parsear datos a objeto carrito_item
+            val gsonFile = Gson()
+
+            val carritoJson: Carrito_item = gsonFile.fromJson(carrito, Carrito_item::class.java)
+
+            val cantidad:Double? = carritoJson.cantidad!!.toDouble()
+            val id:Int? = carritoJson.id
+
+        }*/
+
     }
 }

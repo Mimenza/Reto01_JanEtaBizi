@@ -8,23 +8,23 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import com.example.reto01.Model.Carrito_item
 import com.example.reto01.Model.Order
 import com.example.reto01.Model.User
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_5_3gracias.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 class activity_5_3gracias : AppCompatActivity() {
-    lateinit private var user :  User
-    lateinit var databaseHelper:DatabaseHelper
-    private val activity = this
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         setContentView(R.layout.activity_5_3gracias)
-        initObjects()
+
 
 
         bottomNavV_5_3bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
@@ -69,7 +69,7 @@ class activity_5_3gracias : AppCompatActivity() {
 
         btn_5_3gracias.setOnClickListener() {
 
-            createOrder()
+
 
             val i = Intent(this, activity_3principal::class.java)
             startActivity(i)
@@ -112,63 +112,5 @@ class activity_5_3gracias : AppCompatActivity() {
     }
 
 
-    private fun initObjects() {
-        user= User()
 
-        databaseHelper = DatabaseHelper(activity, "janEtaBizi", null, 1)
-
-        var getDataFromSQLite = GetDataFromSQLite()
-        getDataFromSQLite.execute()
-
-    }
-
-
-    inner class GetDataFromSQLite : AsyncTask<Void, Void, User>() {
-
-        //Recoger datos del usuario
-        override fun doInBackground(vararg p0: Void?): User? {
-
-
-            //Recoger datos del usuario loggeado
-            val prefs: SharedPreferences = this@activity_5_3gracias.getSharedPreferences("loggedUser", 0)
-            val correo = prefs.getString("correo",null)
-            //Llamar a la función getUser pasándole el correo que hemos guardado en SharedPreferences
-            return databaseHelper.getUser(correo.toString())!!
-        }
-
-        override fun onPostExecute(result: User) {
-
-            super.onPostExecute(result)
-            user = result
-            }
-
-    }
-
-    fun createOrder(){
-        var order = Order()
-
-        //Recogemos el total de shared preference
-        val prefs: SharedPreferences = this.getSharedPreferences("totalCarrito", 0)
-        val total= prefs.getString("total",null).toString().toDouble()
-
-        print(total)
-        //Conseguimos la hora local
-        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss").toString()
-        val currentDate = sdf.format(Date())
-
-        //Rellenamos le objeto de order
-        order.date = currentDate
-        order.total = total
-        order.address = user.address
-        order.id_user = user.id
-
-
-        var createdOrder =databaseHelper.addOrder(order)
-
-        createPedidoProducto()
-    }
-
-    fun createPedidoProducto(){
-
-    }
 }

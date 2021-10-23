@@ -59,7 +59,7 @@ class DatabaseHelper(
         private val COLUMN_ORDER_USER_ID = "order_user_id"
         private val COLUMN_ORDER_DATE = "order_date"
         private val COLUMN_ORDER_TOTAL = "order_total"
-        private val COLUMN_ORDER_ADDRESS = "order_address"
+        private val COLUMN_ORDER_ADDRESS = "order_admin"
 
         // Orders_Products Table Columns names
         private val COLUMN_ORDER_PRODUCTS_ORDER_ID = "order_product_id"
