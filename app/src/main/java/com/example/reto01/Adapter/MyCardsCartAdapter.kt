@@ -1,6 +1,5 @@
 package com.example.reto01.Adapter
 
-import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.view.LayoutInflater
@@ -14,10 +13,7 @@ import com.example.reto01.R
 import com.example.reto01.activity_5carrito
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.viewholder_cart.view.*
-import com.example.reto01.MainActivity
-
-
-
+import java.io.File
 
 
 class MyCardsCartAdapter(private val productos: List<Producto> , val context: Context) :
@@ -27,6 +23,32 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
         val v = LayoutInflater.from(ViewGroup.context)
             .inflate(R.layout.viewholder_cart, ViewGroup, false)
 
+
+        //Comprobamos si el carrito existe o no
+        val f = File("/data/data/com.example.reto01/shared_prefs/carrito.xml")
+        if (f.exists()){
+            //Si ya existe no hacer nada, ya que leerea los datos ya guardados previamente
+        }
+        else{
+            //Si no existe poner cantidad predeterminada, creando un carrito con los mismos items y seteando cantidad a 1
+
+            //Poner nombre al fichero
+            val preferences = context.getSharedPreferences("carrito", 0)
+            val editor : SharedPreferences.Editor= preferences.edit()
+
+            for (x in 0..productos.size-1) {
+                //Crear un json y una clase para los items del carrito
+                val gson = Gson()
+                val item_Carrito = Carrito_item(productos[x].id_product, 1, productos[x].price)
+                val itemJson = gson.toJson(item_Carrito)
+                val itemname = "item" + productos[x].id_product
+
+                //Subir datos
+                editor.putString(itemname, itemJson.toString())
+                editor.commit()
+            }
+
+        }
 
         return ViewHolder(v)
     }
@@ -40,21 +62,20 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
         ViewHolder.itemCategoria.text = item.category
         ViewHolder.itemSpiner.adapter = adaptador
 
-        //Recoger datos de Shared Preferences
-        val prefs: SharedPreferences = context.getSharedPreferences("carrito", 0)
-        val carrito = prefs.getString("item"+ item.id_product.toString(),null)
 
-        //Parsear datos a objeto carrito_item
-        val gsonFile = Gson()
-        val carritoJson: Carrito_item = gsonFile.fromJson(carrito, Carrito_item::class.java)
-        val cantidad = carritoJson.cantidad
+            //Recoger datos de Shared Preferences
+            val prefs: SharedPreferences = context.getSharedPreferences("carrito", 0)
+            val carrito = prefs.getString("item"+ item.id_product.toString(),null)
 
-        //Poner cantidad
-         if (cantidad != null) {
-            ViewHolder.itemSpiner.setSelection(cantidad-1)
-        }
+            //Parsear datos a objeto carrito_item
+            val gsonFile = Gson()
+            val carritoJson: Carrito_item = gsonFile.fromJson(carrito, Carrito_item::class.java)
+            val cantidad = carritoJson.cantidad
 
-
+            //Poner cantidad ya establecida
+            if (cantidad != null) {
+                ViewHolder.itemSpiner.setSelection(cantidad-1)
+            }
 
         ViewHolder.itemSpiner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected( parent: AdapterView<*>, view: View, position: Int, id: Long) {
@@ -74,16 +95,12 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
                 //Subir datos
                 editor.putString(itemname, itemJson.toString())
                 editor.commit()
-
-                //llamar funcion para poner el precio
-
-                if (context is activity_5carrito) {
-                    context.calcularTotal(item_Carrito)
-                }
-
-
                 //Borrar datos extra
                 //preferences.edit().remove("item").commit();
+
+                if (context is activity_5carrito) {
+                  //  context.calcularTotal()
+                }
 
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {}

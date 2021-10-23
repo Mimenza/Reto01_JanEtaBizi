@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reto01.Adapter.MyCardsCartAdapter
 import com.example.reto01.Model.Carrito_item
 import com.example.reto01.Model.Producto
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_5carrito.*
 import kotlinx.android.synthetic.main.activity_5carrito.imgv_5atras
@@ -18,16 +19,22 @@ import kotlinx.android.synthetic.main.viewholder_cart.*
 import kotlinx.android.synthetic.main.activity_5_2payment.*
 import java.util.*
 import kotlin.collections.ArrayList
-
+import android.widget.AdapterView
 
 class activity_5carrito : AppCompatActivity() {
     var total:Double?=0.00
+
+    var carritoSize:Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         setContentView(R.layout.activity_5carrito)
 
+        //Llamar funcion para saber el total al cargar la pg
+        calcularTotal()
+        //Llamar funcion para cargar los datos
+        loadProductos()
 
         bottomNavV_5bottomMenu.setSelectedItemId(R.id.navigation_carrito)
 
@@ -77,28 +84,6 @@ class activity_5carrito : AppCompatActivity() {
             this.overridePendingTransition(0, 0)
         }
 
-
-        //Crear array list de los productos de carrito
-        val productos: ArrayList<Producto>
-
-        var producto01 = Producto(0, "Pasteles", 10.0, "postres", 10, R.drawable.dessert)
-        var producto02 = Producto(1, "Omega", 12.0, "suplemento", 10, R.drawable.aceite3)
-        var producto03 = Producto(2, "Fresas", 17.0, "fruta", 10, R.drawable.fresa)
-        var producto04 = Producto(3, "Arandano", 1.0, "fruta", 10, R.drawable.blueberries)
-        var producto05 = Producto(0, "Pasteles", 10.0, "postres", 10, R.drawable.dessert)
-        var producto06 = Producto(1, "Omega", 12.0, "suplemento", 10, R.drawable.aceite3)
-        var producto07 = Producto(2, "Fresas", 17.0, "fruta", 10, R.drawable.fresa)
-        var producto08 = Producto(3, "Arandano", 1.0, "fruta", 10, R.drawable.blueberries)
-
-        //rellenar el array con los productos
-        productos = arrayListOf(producto01, producto02, producto03, producto04, producto05, producto06, producto07, producto08)
-
-
-        //Adaptador RecyclerView Carrito de la compra
-        val adapter = MyCardsCartAdapter(productos, this)
-        reciclerView_carrito.layoutManager = LinearLayoutManager(this)
-        reciclerView_carrito.adapter = adapter
-
     }
 
     fun navegacion(activity: String) {
@@ -131,20 +116,54 @@ class activity_5carrito : AppCompatActivity() {
         this.overridePendingTransition(0, 0)
     }
 
+    fun loadProductos(){
+        //Crear array list de los productos de carrito
+        val productos: ArrayList<Producto>
 
-    fun calcularTotal( item:Carrito_item){
-        //Funcion para calcular el precio total del carrito
+        var producto01 = Producto(0, "Pasteles", 10.0, "postres", 10, R.drawable.dessert)
+        var producto02 = Producto(1, "Omega", 12.0, "suplemento", 10, R.drawable.aceite3)
+        var producto03 = Producto(2, "Fresas", 17.0, "fruta", 10, R.drawable.fresa)
+        var producto04 = Producto(3, "Arandano", 1.0, "fruta", 10, R.drawable.blueberries)
+        var producto05 = Producto(4, "Pasteles", 10.0, "postres", 10, R.drawable.dessert)
+        var producto06 = Producto(5, "Omega", 12.0, "suplemento", 10, R.drawable.aceite3)
+        var producto07 = Producto(6, "Fresas", 17.0, "fruta", 10, R.drawable.fresa)
+        var producto08 = Producto(7, "Arandano", 1.0, "fruta", 10, R.drawable.blueberries)
 
-        //Recoger datos que nos interesan
+        //rellenar el array con los productos
+        productos = arrayListOf(producto01, producto02, producto03, producto04, producto05, producto06, producto07, producto08)
 
-            val cantidad:Double? = item.cantidad!!.toDouble()
-            val precio:Double? = item.precio!!.toDouble()
+        carritoSize = productos.size
+        //Adaptador RecyclerView Carrito de la compra
+        val adapter = MyCardsCartAdapter(productos, this)
+        reciclerView_carrito.layoutManager = LinearLayoutManager(this)
+        reciclerView_carrito.adapter = adapter
+    }
+
+    fun calcularTotal() {
+
+        //Recoger datos de Shared Preferences
+        val prefs: SharedPreferences = this.getSharedPreferences("carrito", 0)
+
+        for(x in 0..carritoSize){
+
+            val carrito = prefs.getString("item"+ x,null)
+
+            //Parsear datos a objeto carrito_item
+            val gsonFile = Gson()
+            val carritoJson: Carrito_item = gsonFile.fromJson(carrito, Carrito_item::class.java)
+
+            val cantidad:Double? = carritoJson.cantidad!!.toDouble()
+            val precio:Double? = carritoJson.precio!!.toDouble()
             val totalItem:Double? = cantidad!! * precio!!
             total = total!! + totalItem!!
+
+        }
+
 
         txtv_5preciototal.text = total.toString()
 
 
     }
+
 
 }
