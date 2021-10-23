@@ -17,6 +17,7 @@ class activity_7_0_1usuarios : AppCompatActivity() {
     private lateinit var listUsers: MutableList<User>
     private lateinit var usersRecyclerAdapter: UsersRecyclerAdapter
     private lateinit var databaseHelper: DatabaseHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_7_1usuarios)
@@ -62,6 +63,7 @@ class activity_7_0_1usuarios : AppCompatActivity() {
             super.onPostExecute(result)
             listUsers.clear()
             listUsers.addAll(result!!)
+
         }
 
     }

@@ -163,6 +163,14 @@ class activity_5carrito : AppCompatActivity() {
         txtv_5preciototal.text = total.toString()
 
 
+        //Poner nombre al fichero
+        val preferences = this.getSharedPreferences("totalCarrito", 0)
+        val editor : SharedPreferences.Editor= preferences.edit()
+
+        //Subir datos
+        editor.putString("total", total?.toString())
+        editor.commit()
+
     }
 
 
