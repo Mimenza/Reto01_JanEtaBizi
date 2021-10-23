@@ -5,6 +5,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.example.reto01.Model.Producto
 import com.example.reto01.Model.User
 
 class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.CursorFactory?, version:Int) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
@@ -38,7 +39,8 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
         private val COLUMN_PRODUCT_PRICE = "product_price"
         private val COLUMN_PRODUCT_CATEGORY = "product_category"
         private val COLUMN_PRODUCT_LIKES = "product_likes"
-        private val COLUMN_PRODCUCT_IMG = "product_img"
+        private val COLUMN_PRODUCT_IMG = "product_img"
+        private val COLUMN_PRODUCT_STOCK = "product_stock"
 
         // Orders Table Columns names
         private val COLUMN_ORDER_ID = "order_id"
@@ -79,7 +81,8 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
                 "${COLUMN_PRODUCT_PRICE} DOUBLE," +
                 "${COLUMN_PRODUCT_CATEGORY} TEXT," +
                 "${COLUMN_PRODUCT_LIKES} INTEGER" +
-                "${COLUMN_PRODCUCT_IMG} TEXT)"
+                "${COLUMN_PRODUCT_STOCK} INTEGER" +
+                "${COLUMN_PRODUCT_IMG} TEXT)"
 
     // Create orders table sql query
     private  val CREATE_ORDERS_TABLE =
@@ -118,6 +121,7 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
     private val DROP_ORDERS_PRODUCTS_TABLE = "DROP TABLE IF EXISTS ${TBL_ORDERS_PRODUCTS}"
     private val DROP_LIKES_TABLE = "DROP TABLE IF EXISTS ${TBL_LIKES}"
 
+
     // Create tables sql query
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(CREATE_USER_TABLE)
@@ -140,6 +144,7 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
     override fun onDowngrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         onUpgrade(db, oldVersion, newVersion)
     }
+
 
     //Insertar usuario
     fun addUser(user: User) {
@@ -234,6 +239,44 @@ class DatabaseHelper(context:Context, name: String, factory: SQLiteDatabase.Curs
         cursor.close()
         db.close()
         return userList
+    }
+
+
+    @SuppressLint("Range")
+    fun getAllProducts():List<Producto>{
+        // array of columns to fetch
+        val columns = arrayOf(COLUMN_PRODUCT_ID, COLUMN_PRODUCT_NAME,  COLUMN_PRODUCT_PRICE, COLUMN_PRODUCT_CATEGORY, COLUMN_PRODUCT_LIKES,
+            COLUMN_PRODUCT_IMG,  COLUMN_PRODUCT_STOCK )
+        //val columns = arrayOf(COLUMN_PRODUCT_ID, COLUMN_PRODUCT_NAME, COLUMN_PRODUCT_CATEGORY, COLUMN_PRODUCT_LIKES
+        //   COLUMN_PRODUCT_PRICE, COLUMN_PRODUCT_IMG, COLUMN_PRODUCT_STOCK )
+        // sorting orders
+        val sortOrder = "$COLUMN_PRODUCT_LIKES DESC"
+        val productList : MutableList<Producto> = ArrayList()
+        val db = this.readableDatabase
+        // query the user table
+        val cursor = db.query(
+            TBL_PRODUCTS, //Table to query
+            columns,            //columns to return
+            null,     //columns for the WHERE clause
+            null,  //The values for the WHERE clause
+            null,      //group the rows
+            null,       //filter by row groups
+            sortOrder)         //The sort order
+        if (cursor.moveToFirst()) {
+            do {val producto = Producto(
+                id_product = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_ID)),
+                name_product = cursor.getString(cursor.getColumnIndex(COLUMN_PRODUCT_NAME)),
+                price = cursor.getDouble(cursor.getColumnIndex(COLUMN_PRODUCT_PRICE)),
+                category = cursor.getString(cursor.getColumnIndex(COLUMN_PRODUCT_CATEGORY)),
+                likes = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_LIKES)),
+                stock = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_STOCK)),
+                img= cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_IMG)))
+                productList.add(producto)
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        db.close()
+        return productList
     }
 
 

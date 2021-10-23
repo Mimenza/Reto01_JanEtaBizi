@@ -2,11 +2,11 @@ package com.example.reto01
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.text.method.ScrollingMovementMethod
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.example.reto01.Adapter.MySliderImageAdapter
 import com.google.android.material.snackbar.Snackbar
 import com.smarteist.autoimageslider.SliderView
@@ -56,21 +56,9 @@ class activity_4producto : AppCompatActivity() {
         imageList.add("https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg")
         setImageInSlider(imageList, imageSlider)
 
-        var num = 0
 
-        imgv_4menos.setOnClickListener() {
-            if (num == 0) {
-                txt_4cantidad.text = "0"
-            } else {
-                num--
-                txt_4cantidad.text = num.toString()
-            }
-        }
 
-        imgv_4mas.setOnClickListener() {
-            num++
-            txt_4cantidad.text = num.toString()
-        }
+
 
         btn_4añadircarrito.setOnTouchListener { v, event ->
             btn_4añadircarrito.setBackgroundResource(R.drawable.my_button_border_clickgreen)

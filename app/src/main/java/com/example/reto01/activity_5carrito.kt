@@ -1,29 +1,34 @@
 package com.example.reto01
 
 import android.content.Intent
-
+import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Handler
-import androidx.appcompat.app.AppCompatActivity
-
 import android.view.View
-
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.reto01.Adapter.MyCardsCartAdapter
+import androidx.recyclerview.widget.RecyclerView
+import com.example.reto01.Adapter.ProductCartAdapter
 import com.example.reto01.Model.Carrito_item
 import com.example.reto01.Model.Producto
 import kotlinx.android.synthetic.main.activity_4producto.*
-import kotlinx.android.synthetic.main.activity_5carrito.*
-import kotlinx.android.synthetic.main.activity_5carrito.imgv_5atras
-import kotlinx.android.synthetic.main.activity_6usuario.*
-import kotlinx.android.synthetic.main.viewholder_cart.*
 import kotlinx.android.synthetic.main.activity_5_2payment.*
+import kotlinx.android.synthetic.main.activity_5carrito.*
+import kotlinx.android.synthetic.main.activity_6usuario.*
+import kotlinx.android.synthetic.main.activity_7_1usuarios.*
+import kotlinx.android.synthetic.main.viewholder_cart.*
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class activity_5carrito : AppCompatActivity() {
     var total:Double?=0.00
+    private val activity = this
+
+
+    private lateinit var listProducts: MutableList<Producto>
+    private lateinit var productRecyclerAdapter: ProductCartAdapter
+    private lateinit var recyclerViewProductCart: RecyclerView
+    private lateinit var databaseHelper: DatabaseHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
@@ -79,9 +84,11 @@ class activity_5carrito : AppCompatActivity() {
             this.overridePendingTransition(0, 0)
         }
 
+        initViews()
+        initObjects()
 
         //Crear array list de los productos de carrito
-        val productos: ArrayList<Producto>
+       /* val productos: ArrayList<Producto>
 
         var producto01 = Producto(0, "Pasteles", 10.0, "postres", 10, R.drawable.dessert)
         var producto02 = Producto(1, "Omega", 12.0, "suplemento", 10, R.drawable.aceite3)
@@ -93,15 +100,13 @@ class activity_5carrito : AppCompatActivity() {
         var producto08 = Producto(3, "Arandano", 1.0, "fruta", 10, R.drawable.blueberries)
 
         //rellenar el array con los productos
-        productos = arrayListOf(producto01, producto02, producto03, producto04, producto05, producto06, producto07, producto08)
+        productos = arrayListOf(producto01, producto02, producto03, producto04, producto05, producto06, producto07, producto08)*/
 
 
-        //Adaptador RecyclerView Carrito de la compra
-        val adapter = MyCardsCartAdapter(productos, this)
-        reciclerView_carrito.layoutManager = LinearLayoutManager(this)
-        reciclerView_carrito.adapter = adapter
+
 
     }
+
 
     fun navegacion(activity: String) {
         when (activity) {
@@ -148,4 +153,36 @@ class activity_5carrito : AppCompatActivity() {
 
     }
 
+    private fun initViews(){
+
+            recyclerViewProductCart =reciclerView_carrito as RecyclerView
+    }
+  //LLAMADA A BBDD PARA UNA LISTA DE PRODUCTOS
+    private fun initObjects() {
+        listProducts= ArrayList()
+
+       val adapter = ProductCartAdapter(listProducts, this)
+       recyclerViewProductCart.layoutManager = LinearLayoutManager(this)
+       recyclerViewProductCart.adapter = adapter
+
+
+        databaseHelper = DatabaseHelper(activity, "janEtaBizi", null, 1)
+
+        var getDataFromSQLite = GetDataFromSQLite()
+        getDataFromSQLite.execute()
+    }
+
+
+    inner class GetDataFromSQLite : AsyncTask<Void, Void, List<Producto>>() {
+
+        override fun doInBackground(vararg p0: Void?): List<Producto> {
+            return databaseHelper.getAllProducts()
+        }
+
+        override fun onPostExecute(result: List<Producto>?) {
+            super.onPostExecute(result)
+            listProducts.clear()
+            listProducts.addAll(result!!)
+        }
+}
 }

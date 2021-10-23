@@ -5,6 +5,7 @@ data class Producto(
     val name_product: String? = null,
     val price: Double? = null,
     val category: String? = null,
-    val stock: Int? = null,
+    val stock: Int = 1,
+    val likes: Int? = null,
     val img: Int = 1
 )

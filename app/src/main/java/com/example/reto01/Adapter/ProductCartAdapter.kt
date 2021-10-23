@@ -12,7 +12,6 @@ import com.example.reto01.R
 import kotlinx.android.synthetic.main.viewholder_cart.view.*
 
 
-
 class ProductCartAdapter(private val productos: List<Producto>, val context: Context) :
     RecyclerView.Adapter<ProductCartAdapter.ViewHolder>() {
 
@@ -57,7 +56,6 @@ class ProductCartAdapter(private val productos: List<Producto>, val context: Con
                 if (context is activity_5carrito) {
                     context.calcularTotal(item_Carrito)
                 }
-
 
                 //Borrar datos extra
                 //preferences.edit().remove("item").commit();
