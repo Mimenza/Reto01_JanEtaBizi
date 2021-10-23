@@ -149,7 +149,7 @@ class activity_5carrito : AppCompatActivity() {
 
             val carrito = prefs.getString("item"+ x,null)
 
-            println(carrito)
+
             //Parsear datos a objeto carrito_item
             val gsonFile = Gson()
 

@@ -1,5 +1,6 @@
 package com.example.reto01.Model
 
+
 data class User(
     var id: Int? = null,
     var name: String? = null,
@@ -10,6 +11,10 @@ data class User(
     var city: String? = null,
     var cp: String? = null,
     var description: String? = null,
-    var admin: Int? = null
+    var admin: Int? = null,
+    var tlf: String? = null,
+    var ccv: Int? = null,
+    var caducidad: String?= null,
+    var num_tarjeta: String? = null
 )
 

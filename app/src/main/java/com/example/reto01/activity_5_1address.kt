@@ -2,6 +2,7 @@ package com.example.reto01
 
 import android.animation.ObjectAnimator
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Handler
@@ -120,14 +121,21 @@ class activity_5_1address : AppCompatActivity() {
         getDataFromSQLite.execute()
 
 
+
     }
+
 
     inner class GetDataFromSQLite : AsyncTask<Void, Void, User>() {
 
-        override fun doInBackground(vararg p0: Void?): User {
+          //Recoger datos del usuario
+        override fun doInBackground(vararg p0: Void?): User? {
 
-            return databaseHelper.getUser("")!!
 
+            //Recoger datos del usuario loggeado
+            val prefs: SharedPreferences = this@activity_5_1address.getSharedPreferences("loggedUser", 0)
+            val correo = prefs.getString("correo",null)
+              //Llamar a la función getUser pasándole el correo que hemos guardado en SharedPreferences
+            return databaseHelper.getUser(correo.toString())!!
         }
 
         override fun onPostExecute(result:User) {
@@ -135,9 +143,24 @@ class activity_5_1address : AppCompatActivity() {
 
             super.onPostExecute(result)
 
+           user = result
+           rellenarCampos()
         }
 
     }
+//Rellenar los campos de dirección con los datos del usuario
+    fun rellenarCampos(){
+        println(user)
+        //txt_5_1nombre.hint = user.name
+        txt_5_1nombre.setText(user.name)
+        txt_5_1apellido.setText(user.surname)
+        txt_5_1direccion.setText(user.address)
+        txt_5_1city.setText(user.city)
+        txt_5_1cp.setText(user.cp)
+        txt_5_1telefono.setText(user.tlf)
+
+    }
+
 
 
 }
