@@ -7,7 +7,7 @@
     <string name="txt2_correo2">Correo</string>
     <string name="txt3_contraseña">Contraseña</string>
     <string name="txt4_guardar">Guardar</string>
-    <string name="txt5_eliminar">Eliminar</string>
+    <string name="txt5_eliminar">¿Eliminar cuenta?</string>
     <string name="title_activity_login">Inicio de sesión</string>
 
 

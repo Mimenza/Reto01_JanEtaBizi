@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TableRow
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -13,8 +14,10 @@ import kotlinx.android.synthetic.main.activity_3principal.*
 class activity_3principal : AppCompatActivity() {
 
     lateinit private var listProducts : MutableList<Producto>
+
     lateinit var databaseHelper:DatabaseHelper
     private val activity = this
+
 
 
 
@@ -24,7 +27,8 @@ class activity_3principal : AppCompatActivity() {
         setContentView(R.layout.activity_3principal)
 
 
-                 initObjects()
+
+        initObjects()
         sv_3scrollView.setVerticalScrollBarEnabled(false)
         sv_3scrollViewFiltro.setVerticalScrollBarEnabled(false)
 
@@ -103,6 +107,7 @@ class activity_3principal : AppCompatActivity() {
         }
 
     }
+
 
     fun navegacion(activity: String) {
         when (activity) {
@@ -229,6 +234,7 @@ class activity_3principal : AppCompatActivity() {
             }
         }
     }
+
 
 
 

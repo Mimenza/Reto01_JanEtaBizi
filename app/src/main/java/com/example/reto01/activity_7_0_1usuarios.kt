@@ -40,7 +40,7 @@ class activity_7_0_1usuarios : AppCompatActivity() {
     private fun initObjects() {
         listUsers = ArrayList()
 
-        val adapter = UsersRecyclerAdapter(listUsers, this)
+        val adapter = UsersRecyclerAdapter(listUsers)
         recyclerViewUsers.layoutManager = LinearLayoutManager(this)
         recyclerViewUsers.adapter = adapter
 
@@ -57,6 +57,7 @@ class activity_7_0_1usuarios : AppCompatActivity() {
 
         override fun doInBackground(vararg p0: Void?): List<User> {
             return databaseHelper.getAllUser()
+
         }
 
         override fun onPostExecute(result: List<User>?) {

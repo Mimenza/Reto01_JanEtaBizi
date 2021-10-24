@@ -226,13 +226,13 @@ class DatabaseHelper(
     }
 
     //Eliminar usuario
-    fun deleteUser(user: User) {
+    fun deleteUser(correo: String?) {
         val db = this.writableDatabase
         // Eliminar usuario según id
         db.delete(
 
-            TBL_USERS, "${COLUMN_USER_ID}= ?",
-            arrayOf(user.id.toString())
+            TBL_USERS, "${COLUMN_USER_EMAIL}= ?",
+            arrayOf(correo)
         )
 
 

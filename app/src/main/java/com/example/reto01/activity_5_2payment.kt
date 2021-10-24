@@ -244,7 +244,6 @@ class activity_5_2payment : AppCompatActivity() {
             val cantidad:Int = carritoJson.cantidad!!.toInt()
             val id:Int? = carritoJson.id
 
-
             //===================================================================================
             //Rellenamos el pedidoProducto con los datos que tenemos en el sharedPreferences del carrito
 

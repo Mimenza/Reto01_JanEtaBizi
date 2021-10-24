@@ -15,10 +15,13 @@ import android.view.Window
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.view.isVisible
 import com.example.reto01.Model.User
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.android.synthetic.main.activity_3principal.*
 import kotlinx.android.synthetic.main.activity_5_1adress.*
 import kotlinx.android.synthetic.main.activity_5_2payment.*
 import kotlinx.android.synthetic.main.activity_6usuario.*
@@ -41,7 +44,6 @@ class activity_6usuario : AppCompatActivity() {
 
         var sharedPreferences= getSharedPreferences("data", 0)
 
-        val email: String? = sharedPreferences.getString("loggedUser", "")
 
 
         initObjects()
@@ -302,6 +304,30 @@ class activity_6usuario : AppCompatActivity() {
             }
             .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
 
+
+                //Recoger datos del usuario loggeado
+                val prefs: SharedPreferences = this.getSharedPreferences("loggedUser", 0)
+                val correo = prefs.getString("correo",null)
+                //Llamar a la función deleteuser pasándole el correo que hemos guardado en SharedPreferences
+
+
+
+                Toast.makeText(this, "Cuenta eliminada correctamente!", Toast.LENGTH_SHORT).show()
+                databaseHelper.deleteUser(correo)
+                Handler().postDelayed({
+
+                   /*Nos redirecciona al activity login poniendo al usuario que no está logeado, después de eliminar
+                    la cuenta*/
+
+                    var sharedPreferences = getSharedPreferences("loggedUser", 0)
+                    var editor = sharedPreferences.edit()
+
+                    editor.putString("user", "noLoggedUser").apply()
+
+                    val i = Intent(this, activity_1login::class.java)
+                    startActivity(i)
+                }, 1000)
+
             }
             .show()
     }
@@ -368,9 +394,22 @@ class activity_6usuario : AppCompatActivity() {
             super.onPostExecute(result)
             user = result
             rellenarCampos()
+            administrador()
         }
 
     }
+
+      fun administrador() {
+        //Si no es admin oculta botón admin
+
+            if(user.admin==0){
+                imgv6_admin.isVisible= false
+               }else{
+                imgv6_admin.isVisible= true
+            }
+    }
+
+
     //Rellenar los campos de dirección con los datos del usuario
     fun rellenarCampos(){
         println(user)
