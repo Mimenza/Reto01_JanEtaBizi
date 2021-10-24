@@ -20,6 +20,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import com.example.reto01.Model.User
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.activity_5_1adress.*
+import kotlinx.android.synthetic.main.activity_5_2payment.*
 import kotlinx.android.synthetic.main.activity_6usuario.*
 import java.util.*
 
@@ -96,6 +97,22 @@ class activity_6usuario : AppCompatActivity() {
 
         }
 
+        btn_6save.setOnTouchListener { v, event ->
+            btn_6save.setBackgroundResource(R.drawable.my_button_border_clickgreen);
+            Handler().postDelayed({
+                btn_6save.setBackgroundResource(R.drawable.my_button_border);
+            }, 100)
+
+            false
+
+        }
+
+        btn_6save.setOnClickListener(){
+            updateUser()
+        }
+        btn_6reset.setOnClickListener(){
+            rellenarCampos()
+        }
 
     }
 
@@ -367,6 +384,42 @@ class activity_6usuario : AppCompatActivity() {
 
     }
 
+    fun updateUser(){
+
+        var usuario =User()
+        //Recogemos los datos de los inputs
+
+         var nombre = txtinput_6nombre.text.toString()
+         var apellido = txtinput_6apellido.text.toString()
+         var correo = txtinput_6correo.text.toString()
+         var pass = txtinput_6contrasena.text.toString()
+         var description = txtinput_6descripcion.text.toString()
+
+        //Rellenamo el objeto de user con los datos
+
+        usuario.id = user.id
+        usuario.name = nombre
+        usuario.surname = apellido
+        usuario.email = correo
+        usuario.password = pass
+        usuario.address = user.address
+        usuario.city = user.city
+        usuario.cp = user.cp
+        usuario.description=description
+        usuario.admin=user.admin
+        usuario.tlf = user.tlf
+        usuario.ccv = user.ccv
+        usuario.caducidad = user.caducidad
+        usuario.num_tarjeta= user.num_tarjeta
+
+        databaseHelper.updateUser(usuario)
+
+        finish();
+        overridePendingTransition(0, 0);
+        startActivity(getIntent());
+        overridePendingTransition(0, 0);
+
+    }
 }
 
 

@@ -70,14 +70,13 @@
         android:layout_height="62dp"
         android:layout_marginTop="24dp"
 
-        android:layout_marginEnd="24dp"
         android:src="@drawable/ic_person"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/txtinput_6nombre"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgv6_admin"
-        app:layout_constraintVertical_bias="0.34" />
+        app:layout_constraintVertical_bias="0.342" />
 
     <ImageView
         android:id="@+id/imgv_6correo"
@@ -85,11 +84,11 @@
         android:layout_height="62dp"
         android:src="@drawable/ic_email"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/txtinput_6correo"
-        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53" />
+        app:layout_constraintVertical_bias="0.535" />
 
     <ImageView
         android:id="@+id/imgv_6contraseña"
@@ -97,11 +96,11 @@
         android:layout_height="62dp"
         android:src="@drawable/ic_password"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/txtinput_6contrasena"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgv_6correo"
-        app:layout_constraintVertical_bias="0.063" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.627" />
 
     <ImageView
         android:id="@+id/imgv_6descripcion"
@@ -110,41 +109,41 @@
 
         android:src="@drawable/ic_baseline_description_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/txtinput_6contrasena"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgv_6correo"
-        app:layout_constraintVertical_bias="0.365" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.738" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtinput_6nombre"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="328dp"
         android:background="@drawable/roundedgrey"
         android:hint="@string/txt1_nombreusuario"
         android:minHeight="48dp"
         android:paddingLeft="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavV_6bottomMenu"
-        app:layout_constraintEnd_toStartOf="@+id/txtinput_6apellido"
-        app:layout_constraintTop_toTopOf="@+id/txt_6nombreuser"
-        app:layout_constraintVertical_bias="0.942" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.298"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.434" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtinput_6apellido"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="28dp"
         android:background="@drawable/roundedgrey"
         android:hint="@string/txt1_apellidousuario"
         android:minHeight="48dp"
         android:paddingLeft="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtinput_6correo"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtinput_6nombre"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.868"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.436" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtinput_6correo"
@@ -201,10 +200,10 @@
         android:textColor="@color/mainGreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintHorizontal_bias="0.279"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.825" />
+        app:layout_constraintVertical_bias="0.871" />
 
     <Button
         android:id="@+id/btn_6save"
@@ -219,7 +218,7 @@
         app:layout_constraintHorizontal_bias="0.794"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.825" />
+        app:layout_constraintVertical_bias="0.871" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavV_6bottomMenu"
