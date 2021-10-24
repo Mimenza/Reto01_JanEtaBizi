@@ -6,6 +6,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.reto01.Model.Order
+import com.example.reto01.Model.Pedido_producto
 import com.example.reto01.Model.Producto
 import com.example.reto01.Model.User
 
@@ -59,12 +60,12 @@ class DatabaseHelper(
         private val COLUMN_ORDER_USER_ID = "order_user_id"
         private val COLUMN_ORDER_DATE = "order_date"
         private val COLUMN_ORDER_TOTAL = "order_total"
-        private val COLUMN_ORDER_ADDRESS = "order_admin"
+        private val COLUMN_ORDER_ADDRESS = "order_address"
 
         // Orders_Products Table Columns names
-        private val COLUMN_ORDER_PRODUCTS_ORDER_ID = "order_product_id"
-        private val COLUMN_ORDER_PRODUCTS_PRODUCT_ID = "product_name"
-        private val COLUMN_ORDER_PRODUCTS_QUANTITY = "product_price"
+        private val COLUMN_ORDER_PRODUCTS_ORDER_ID = "product_order_id"
+        private val COLUMN_ORDER_PRODUCTS_PRODUCT_ID = "product_product_id"
+        private val COLUMN_ORDER_PRODUCTS_QUANTITY = "product_product_quantity"
 
         // Likes Table Columns names
         private val COLUMN_LIKES_USER_ID = "likes_user_id"
@@ -239,7 +240,7 @@ class DatabaseHelper(
     }
 
     //Insertar order
-    fun addOrder(order: Order) {
+    fun addOrder(order: Order): ContentValues {
         val db = this.writableDatabase
         val values = ContentValues()
         values.put(COLUMN_ORDER_ADDRESS, order.address)
@@ -250,8 +251,44 @@ class DatabaseHelper(
         // Inserting Row
         db.insert(TBL_ORDERS, null, values)
         db.close()
+
+        return values
+    }
+    fun addOrder_product(pedidoProducto: Pedido_producto) {
+        val db = this.writableDatabase
+        val values = ContentValues()
+        values.put(COLUMN_ORDER_PRODUCTS_ORDER_ID, pedidoProducto.id_order)
+        values.put(COLUMN_ORDER_PRODUCTS_PRODUCT_ID, pedidoProducto.id_product)
+        values.put(COLUMN_ORDER_PRODUCTS_QUANTITY, pedidoProducto.quantity)
+
+        // Inserting Row
+        db.insert(TBL_ORDERS_PRODUCTS, null, values)
+        db.close()
+
     }
 
+    @SuppressLint("Range")
+    fun lastOrder(): Order? {
+
+        val db: SQLiteDatabase = this.getReadableDatabase()
+        val res = db.rawQuery("select * from Orders where Orders.order_id =(SELECT MAX(order_id)  FROM Orders)", null)
+        res.moveToFirst()
+
+        while (res.isAfterLast == false) {
+            val response = Order()
+            response.id_user = res.getInt(res.getColumnIndex(COLUMN_ORDER_USER_ID))
+            response.address = res.getString(res.getColumnIndex(COLUMN_ORDER_ADDRESS))
+            response.id_order = res.getInt(res.getColumnIndex(COLUMN_ORDER_ID))
+            response.date= res.getString(res.getColumnIndex(COLUMN_ORDER_DATE))
+            response.total = res.getDouble(res.getColumnIndex(COLUMN_ORDER_TOTAL))
+
+            // rest of columns
+            return response
+        }
+        return null
+
+
+    }
     //Lista que hace return de todos los usuarios
     /**
      * This method is to fetch all user and return the list of user records
@@ -459,5 +496,7 @@ class DatabaseHelper(
 
 
     }
+
+
 
 }

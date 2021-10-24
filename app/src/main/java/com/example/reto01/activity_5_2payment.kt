@@ -10,6 +10,7 @@ import android.os.Handler
 import android.view.View
 import com.example.reto01.Model.Carrito_item
 import com.example.reto01.Model.Order
+import com.example.reto01.Model.Pedido_producto
 import com.example.reto01.Model.User
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_5_1adress.*
@@ -30,15 +31,6 @@ class activity_5_2payment : AppCompatActivity() {
         setContentView(R.layout.activity_5_2payment)
 
         initObjects()
-
-        //recogemos el dato del shared
-        val prefs: SharedPreferences = this.getSharedPreferences("totalCarrito", 0)
-        val total= prefs.getString("total",null)
-
-
-        //Escribimos el dato
-        txtv_5_2preciosubtotal.text = total
-        txtv_5_2preciototal.text = total
 
         bottomNavV_5_2bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -164,6 +156,14 @@ class activity_5_2payment : AppCompatActivity() {
         //txt_5_2ccv.setText(user.ccv!!)
         txt_5_2caducidadtarjeta.setText(user.caducidad)
 
+        //recogemos el dato del shared
+        val prefs: SharedPreferences = this.getSharedPreferences("totalCarrito", 0)
+        val total= prefs.getString("total",null)
+
+        //Escribimos el dato
+        txtv_5_2preciosubtotal.text = total
+        txtv_5_2preciototal.text = total
+
     }
 
     fun actualizarDatos(){
@@ -204,6 +204,8 @@ class activity_5_2payment : AppCompatActivity() {
         val prefs: SharedPreferences = this.getSharedPreferences("totalCarrito", 0)
         val total= prefs.getString("total",null).toString().toDouble()
 
+        val sizeCarrito=prefs.getString("size",null).toString().toInt()
+
         //Conseguimos la hora local
         val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss").toString()
         val currentDate = sdf.format(Date())
@@ -216,16 +218,20 @@ class activity_5_2payment : AppCompatActivity() {
 
         var createdOrder =databaseHelper.addOrder(order)
 
-
-        createPedidoProducto(createdOrder)
+        println(createdOrder)
+        createPedidoProducto(sizeCarrito)
     }
 
-    fun createPedidoProducto(createdOrder: Unit){
-/*
+    fun createPedidoProducto(sizeCarrito: Int){
+
         //Recoger datos de Shared Preferences
         val prefs: SharedPreferences = this.getSharedPreferences("carrito", 0)
 
-        for(x in 0..carritoSize-1){
+        //Recoger el ultimo order de db
+        var lastOrder =databaseHelper.lastOrder()
+
+
+        for(x in 0..sizeCarrito-1){
 
             val carrito = prefs.getString("item"+ x,null)
 
@@ -235,10 +241,23 @@ class activity_5_2payment : AppCompatActivity() {
 
             val carritoJson: Carrito_item = gsonFile.fromJson(carrito, Carrito_item::class.java)
 
-            val cantidad:Double? = carritoJson.cantidad!!.toDouble()
+            val cantidad:Int = carritoJson.cantidad!!.toInt()
             val id:Int? = carritoJson.id
 
-        }*/
+
+            //===================================================================================
+            //Rellenamos el pedidoProducto con los datos que tenemos en el sharedPreferences del carrito
+
+            var pedidoProducto =Pedido_producto()
+
+            if (lastOrder != null) {
+                pedidoProducto.id_order = lastOrder.id_order
+            }
+            pedidoProducto.id_product = id
+            pedidoProducto.quantity = cantidad
+
+            databaseHelper.addOrder_product(pedidoProducto)
+        }
 
     }
 }

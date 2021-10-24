@@ -171,7 +171,8 @@ class activity_5carrito : AppCompatActivity() {
         //Subir datos
         editor.putString("total", total?.toString())
         editor.commit()
-
+        editor.putString("size", carritoSize.toString())
+        editor.commit()
 
     }
 
