@@ -48,14 +48,14 @@
 
     <!--Principal-->
 
-    <string name="filtrobusquedacomida">Busca un alimento</string>
-    <string name="vegano">Vegano</string>
-    <string name="vegetariano">Vegetariano</string>
+    <string name="filtrobusquedacomida">Busca una categoría</string>
+    <string name="vegano">VEGANO</string>
+    <string name="vegetariano">VEGETARIANO</string>
     <string name="km0">KM0</string>
-    <string name="gluten">Sin gluten</string>
-    <string name="lactosa">Sin lactosa</string>
-    <string name="proteina">Alto en proteina</string>
-    <string name="aceite">Sin Aceite Palma</string>
+    <string name="gluten">SIN GLUTEN</string>
+    <string name="lactosa">Sin LACTOSA</string>
+    <string name="proteina">ALTO EN PROTEÍNA</string>
+    <string name="aceite">SIN ACEITE PALMA</string>
 
     <!--Carrito-->
     <string name="carrito">Carrito</string>

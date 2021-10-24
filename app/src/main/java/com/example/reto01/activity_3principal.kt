@@ -15,12 +15,16 @@ class activity_3principal : AppCompatActivity() {
     lateinit private var listProducts : MutableList<Producto>
     lateinit var databaseHelper:DatabaseHelper
     private val activity = this
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_3principal)
 
-        initObjects()
+
+                 initObjects()
         sv_3scrollView.setVerticalScrollBarEnabled(false)
         sv_3scrollViewFiltro.setVerticalScrollBarEnabled(false)
 
@@ -227,10 +231,9 @@ class activity_3principal : AppCompatActivity() {
     }
 
 
+
     private fun initObjects() {
         listProducts= ArrayList()
-
-
 
         databaseHelper = DatabaseHelper(activity, "janEtaBizi", null, 1)
 

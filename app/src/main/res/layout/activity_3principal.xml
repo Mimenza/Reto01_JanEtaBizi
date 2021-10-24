@@ -8,7 +8,6 @@
     android:focusableInTouchMode="true"
     tools:context=".activity_3principal">
 
-
     <TextView
         android:id="@+id/txtv_3topbarColor"
         android:layout_width="fill_parent"
@@ -20,6 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
 
     <ImageView
         android:id="@+id/imgv_3Logo"
@@ -54,20 +54,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.060000002" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavV_3bottomMenu"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:menu="@menu/navigation" />
 
     <ScrollView
         android:id="@+id/sv_3scrollView"
@@ -94,6 +80,7 @@
         android:id="@+id/sv_3scrollViewFiltro"
         android:layout_width="match_parent"
         android:layout_height="632dp"
+        android:layout_marginTop="15dp"
         android:fillViewport="true"
         android:scrollbarStyle="insideInset"
         android:scrollbars="vertical"
@@ -108,18 +95,21 @@
             android:id="@+id/ll_3vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/ll_3horizontal1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="5dp">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_3vegan"
-                    android:layout_width="189dp"
-                    android:layout_height="200dp"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
                     android:layout_margin="4dp"
                     app:cardCornerRadius="15dp">
 
@@ -128,8 +118,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:adjustViewBounds="true"
+                        android:alpha="0.8"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/pizza" />
+                        android:src="@drawable/vegan" />
 
                     <TextView
                         android:id="@+id/tv_3vegan"
@@ -139,15 +130,16 @@
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/vegano"
                         android:textColor="#CC000000"
-                        android:textSize="20pt"
+                        android:textSize="12pt"
                         android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_3vegetarian"
-                    android:layout_width="189dp"
-                    android:layout_height="200dp"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
                     android:layout_margin="4dp"
+                    android:paddingStart="30dp"
                     app:cardCornerRadius="15dp">
 
                     <ImageView
@@ -155,8 +147,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:adjustViewBounds="true"
+                        android:alpha="0.8"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/pizza" />
+                        android:src="@drawable/vegetarian" />
 
                     <TextView
                         android:id="@+id/tv_3vegetarian"
@@ -166,7 +159,7 @@
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/vegetariano"
                         android:textColor="#CC000000"
-                        android:textSize="17pt"
+                        android:textSize="12pt"
                         android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
 
@@ -176,12 +169,13 @@
                 android:id="@+id/ll_3horizontal2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingStart="5dp">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_3km0"
-                    android:layout_width="189dp"
-                    android:layout_height="200dp"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
                     android:layout_margin="4dp"
                     app:cardCornerRadius="15dp">
 
@@ -190,8 +184,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:adjustViewBounds="true"
+                        android:alpha="0.8"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/pizza" />
+                        android:src="@drawable/km0" />
 
                     <TextView
                         android:id="@+id/tv_3km0"
@@ -201,14 +196,14 @@
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/km0"
                         android:textColor="#CC000000"
-                        android:textSize="20pt"
+                        android:textSize="12pt"
                         android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_3gluten"
-                    android:layout_width="189dp"
-                    android:layout_height="200dp"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
                     android:layout_margin="4dp"
                     app:cardCornerRadius="15dp">
 
@@ -217,8 +212,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:adjustViewBounds="true"
+                        android:alpha="0.8"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/pizza" />
+                        android:src="@drawable/nogluten" />
 
                     <TextView
                         android:id="@+id/tv_3gluten"
@@ -228,7 +224,7 @@
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/gluten"
                         android:textColor="#CC000000"
-                        android:textSize="20pt"
+                        android:textSize="12pt"
                         android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
@@ -237,12 +233,13 @@
                 android:id="@+id/ll_3horizontal3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingStart="5dp">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_3lactose"
-                    android:layout_width="189dp"
-                    android:layout_height="200dp"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
                     android:layout_margin="4dp"
                     app:cardCornerRadius="15dp">
 
@@ -251,8 +248,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:adjustViewBounds="true"
+                        android:alpha="0.8"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/pizza" />
+                        android:src="@drawable/nolactose" />
 
                     <TextView
                         android:id="@+id/tv_3lactose"
@@ -262,14 +260,14 @@
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/lactosa"
                         android:textColor="#CC000000"
-                        android:textSize="20pt"
+                        android:textSize="12pt"
                         android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_3protein"
-                    android:layout_width="189dp"
-                    android:layout_height="200dp"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
                     android:layout_margin="4dp"
                     app:cardCornerRadius="15dp">
 
@@ -278,8 +276,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:adjustViewBounds="true"
+                        android:alpha="0.8"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/pizza" />
+                        android:src="@drawable/protein" />
 
                     <TextView
                         android:id="@+id/tv_3protein"
@@ -289,7 +288,7 @@
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/proteina"
                         android:textColor="#CC000000"
-                        android:textSize="20pt"
+                        android:textSize="12pt"
                         android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
@@ -298,12 +297,13 @@
                 android:id="@+id/ll_3horizontal4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingStart="5dp">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_3palm"
-                    android:layout_width="189dp"
-                    android:layout_height="200dp"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
                     android:layout_margin="4dp"
                     app:cardCornerRadius="15dp">
 
@@ -312,8 +312,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:adjustViewBounds="true"
+                        android:alpha="0.8"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/pizza" />
+                        android:src="@drawable/nopalmoil" />
 
                     <TextView
                         android:id="@+id/tv_3palm"
@@ -323,11 +324,21 @@
                         android:gravity="center_horizontal|center_vertical"
                         android:text="@string/aceite"
                         android:textColor="#CC000000"
-                        android:textSize="20pt"
+                        android:textSize="12pt"
                         android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavV_3bottomMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/navigation" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
