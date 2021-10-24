@@ -135,8 +135,8 @@ class DatabaseHelper(
 
     //Load productos
     //private  val LOAD_PRODUCTS = "INSERT INTO ${TBL_PRODUCTS}  VALUES ( -1 ,'Pepinillos', 10.00 , 'vegan', 12, 1)"
-    private  val LOAD_PRODUCTS = "INSERT INTO ${TBL_PRODUCTS}  VALUES ( -1 ,'Pepinillos', 10.00 , 'vegan', 12, 1, 10), ( 1 ,'Pepinillos', 10.00 , 'vegan', 12, 1, 10) ," +
-            "( 0 ,'Pepinillos', 10.00 , 'vegan', 12, 1, 10), ( 3 ,'Pepinillos', 10.00 , 'vegan', 12, 1, 10), ( 2 ,'Pepinillos', 10.00 , 'vegan', 12, 1, 10)"
+    private  val LOAD_PRODUCTS = "INSERT INTO ${TBL_PRODUCTS}  VALUES ( -1 ,'Pepinillos', 10.00 , 'vegan', 12, 1, 10), ( 1 ,'Pepinillos', 10.00 , 'vegetarian', 12, 1, 10) ," +
+            "( 0 ,'Pepinillos', 10.00 , 'no_palm_oil', 12, 1, 10), ( 3 ,'Pepinillos', 10.00 , 'no_lactose', 12, 1, 10), ( 2 ,'Pepinillos', 10.00 , 'protein', 12, 1, 10)"
 
 
     // Drop tables sql query
@@ -397,6 +397,44 @@ class DatabaseHelper(
         db.close()
         return productList
     }
+
+
+    @SuppressLint("Range")
+    fun getProductsByCategory(category: String): List<Producto> {
+        val db: SQLiteDatabase = this.getReadableDatabase()
+        val columns = arrayOf(COLUMN_PRODUCT_ID, COLUMN_PRODUCT_NAME, COLUMN_PRODUCT_CATEGORY, COLUMN_PRODUCT_LIKES,
+            COLUMN_PRODUCT_PRICE, COLUMN_PRODUCT_IMG, COLUMN_PRODUCT_STOCK )
+        val productList : MutableList<Producto> = ArrayList()
+        val res = db.rawQuery("select * from Products where product_category='" + category + "'", null)
+        res.moveToFirst()
+        val cursor = db.query(
+            TBL_PRODUCTS, //Table to query
+            columns,            //columns to return
+            null,     //columns for the WHERE clause
+            null,  //The values for the WHERE clause
+            null,      //group the rows
+            null,       //filter by row groups
+            null)         //The sort order
+
+        if (cursor.moveToFirst()) {
+            do {val producto = Producto(
+                id_product = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_ID)),
+                name_product = cursor.getString(cursor.getColumnIndex(COLUMN_PRODUCT_NAME)),
+                price = cursor.getDouble(cursor.getColumnIndex(COLUMN_PRODUCT_PRICE)),
+                category = cursor.getString(cursor.getColumnIndex(COLUMN_PRODUCT_CATEGORY)),
+                stock = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_STOCK)),
+                img= cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_IMG)),
+                likes = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_LIKES)))
+                productList.add(producto)
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        db.close()
+        return productList
+
+    }
+
+
 
 
 
