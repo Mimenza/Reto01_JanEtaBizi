@@ -152,5 +152,13 @@
     <string name="error_message_address">Entrez une adresse s\'il vous plait</string>
     <string name="email">E-mail</string>
     <string name="contraseña">Mot de passe</string>
+    <string name="cardnumberinput">Número de la tarjeta</string>
+    <string name="caducidad_title">Caducidad</string>
+
+
+    <string name="error_message_numerotarjeta">Ingrese su número de tarjeta</string>
+    <string name="error_message_caducidadtarjeta">Ingrese la caducidad de su tarjeta</string>
+    <string name="error_message_cvv">Ingrese el cvv de su tarjeta</string>
+
 
 </resources>

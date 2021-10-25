@@ -78,9 +78,10 @@
     <string name="telefono">Teléfono</string>
     <string name="cp">Cp   <font color='#FF0000'>*</font></string>
 
-    <string name="cardnumber">Numero de la tarjeta</string>
-    <string name="caducidad">Caducidad</string>
-    <string name="ccv">Ccv</string>
+    <string name="cardnumber">Numero de la tarjeta    <font color='#FF0000'>*</font></string>
+
+    <string name="caducidad">Caducidad    <font color='#FF0000'>*</font></string>
+    <string name="ccv">Ccv   <font color='#FF0000'>*</font></string>
     <string name="placeorder">Realizar pedido</string>
     <string name="envio">Envio</string>
     <string name="subtotal">SubTotal</string>
@@ -151,5 +152,14 @@
     <string name="error_message_address">Ingrese una dirección</string>
     <string name="email">Email</string>
     <string name="contraseña">Contraseña</string>
+    <string name="cardnumberinput">Número de la tarjeta</string>
+    <string name="caducidad_title">Caducidad</string>
+
+
+    <string name="error_message_numerotarjeta">Ingrese su número de tarjeta</string>
+    <string name="error_message_caducidadtarjeta">Ingrese la caducidad de su tarjeta</string>
+
+    <string name="error_message_cvv">Ingrese el cvv de su tarjeta</string>
+
 
 </resources>
