@@ -8,14 +8,10 @@ import android.os.Bundle
 import android.os.Handler
 import android.text.method.ScrollingMovementMethod
 import android.view.View
-import com.example.reto01.Adapter.MySliderImageAdapter
-import com.example.reto01.Model.Carrito_item
 import com.example.reto01.Model.Producto
 import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
-import com.smarteist.autoimageslider.SliderView
 import kotlinx.android.synthetic.main.activity_4producto.*
-import java.util.*
 
 class activity_4producto : AppCompatActivity() {
     var product: Producto = Producto()
@@ -83,7 +79,7 @@ class activity_4producto : AppCompatActivity() {
 
         }
 
-        imgv_4atras.setOnClickListener() {
+        imgv_7_2_2atras.setOnClickListener() {
             val i = Intent(this, activity_3principal::class.java)
             startActivity(i)
         }
@@ -95,7 +91,7 @@ class activity_4producto : AppCompatActivity() {
         }
 
         //Producto  descripción scroll
-        txtv_4descripcionproducto.movementMethod = ScrollingMovementMethod()
+        txtv_7_1_1descripcionproducto.movementMethod = ScrollingMovementMethod()
     }
 
     fun loadProductData() {
@@ -104,8 +100,8 @@ class activity_4producto : AppCompatActivity() {
 
         product = gsonFile.fromJson(prefs.getString("product", null), Producto::class.java)
 
-        txtv_4nombreProducto.setText(product.name_product)
-        imgv_4producto.setImageResource(product.img)
+        txtv_7_2_2nombreProducto.setText(product.name_product)
+        imgv_7_2_2producto.setImageResource(product.img)
     }
 
     fun navegacion(activity: String) {

@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/txtv_4nombreProducto"
+        android:id="@+id/txtv_7_2_2nombreProducto"
         android:layout_width="234dp"
         android:layout_height="48dp"
         android:text="Nombre Producto"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.065" />
 
     <TextView
-        android:id="@+id/txtv_4descripcionproducto"
+        android:id="@+id/txtv_7_1_1descripcionproducto"
         android:layout_width="322dp"
         android:layout_height="171dp"
         android:text="@string/lorem"
@@ -34,7 +34,7 @@
         app:layout_constraintVertical_bias="0.675" />
 
     <ImageView
-        android:id="@+id/imgv_4atras"
+        android:id="@+id/imgv_7_2_2atras"
         android:layout_width="34dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,11 +50,11 @@
         style="c"
         android:layout_width="39dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgv_4atras"
+        app:layout_constraintBottom_toBottomOf="@+id/imgv_7_2_2atras"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.956"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgv_4atras"
+        app:layout_constraintTop_toTopOf="@+id/imgv_7_2_2atras"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_favorite" />
 
@@ -107,7 +107,7 @@
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <ImageView
-        android:id="@+id/imgv_4producto"
+        android:id="@+id/imgv_7_2_2producto"
         android:layout_width="272dp"
         android:layout_height="271dp"
         app:layout_constraintBottom_toBottomOf="parent"

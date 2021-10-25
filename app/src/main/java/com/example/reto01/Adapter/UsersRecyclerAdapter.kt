@@ -30,9 +30,9 @@ class UsersRecyclerAdapter(private val listUsers: List<User>) : RecyclerView.Ada
         var usuario = listUsers[i]
         println(usuario)
         holder.textViewImg.setImageResource(R.drawable.ic_person)
-        holder.textViewName.text = usuario.name
-        holder.textViewEmail.text = usuario.email
-        holder.textViewSurname.text = usuario.password
+        holder.textViewName.text = "Nombre: "+usuario.name
+        holder.textViewSurname.text = "Apellido: "+ usuario.surname
+        holder.textViewEmail.text = "Email: "+usuario.email
         holder.itemView.setOnClickListener { onclick(usuario,holder.itemView.context ) }
 
     }

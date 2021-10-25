@@ -21,7 +21,7 @@
             android:drawableStart="@drawable/ic_search"
             android:drawablePadding="10dp"
             android:ems="10"
-            android:hint="@string/filtrobusquedausuarios"
+            android:hint="@string/filtrobusquedaproductos"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:paddingStart="20dp"
@@ -31,7 +31,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/todaslascuentas"
+            android:text="@string/Productos"
             android:textSize="20sp" />
 
 
@@ -39,7 +39,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewUsuarios"
+        android:id="@+id/recyclerViewProductos"
         android:layout_width="417dp"
         android:layout_height="577dp" />
 

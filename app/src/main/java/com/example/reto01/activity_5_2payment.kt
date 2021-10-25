@@ -223,9 +223,10 @@ class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
         val prefs: SharedPreferences = this.getSharedPreferences("totalCarrito", 0)
         val total= prefs.getString("total",null)
 
+        var euro= "€"
         //Escribimos el dato
-        txtv_5_2preciosubtotal.text = total
-        txtv_5_2preciototal.text = total
+        txtv_5_2preciosubtotal.text = total+euro
+        txtv_5_2preciototal.text = total+euro
 
     }
 

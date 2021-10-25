@@ -149,14 +149,15 @@ class activity_5carrito : AppCompatActivity() {
             val gsonFile = Gson()
             val carritoJson: Carrito_item = gsonFile.fromJson(carrito, Carrito_item::class.java)
 
+
             val cantidad:Double? = carritoJson.cantidad!!.toDouble()
             val precio:Double? = carritoJson.precio!!.toDouble()
             val totalItem:Double? = cantidad!! * precio!!
             total = total!! + totalItem!!
 
         }
-
-        txtv_5preciototal.text = total.toString()
+        var euro= "€"
+        txtv_5preciototal.text = total.toString()+euro
 
         //Poner nombre al fichero
         val preferences = this.getSharedPreferences("totalCarrito", 0)
