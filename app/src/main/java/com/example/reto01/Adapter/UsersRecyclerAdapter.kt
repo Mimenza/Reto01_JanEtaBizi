@@ -39,12 +39,25 @@ class UsersRecyclerAdapter(private val listUsers: List<User>) : RecyclerView.Ada
 
     private fun onclick(usuario: User, context: Context) {
 
-        println(usuario)
-
         val intent = Intent( context, activity_7_1_1usuario::class.java)
+        intent.putExtra("name",usuario.name)
+        intent.putExtra("surname",usuario.surname)
+        intent.putExtra("correo",usuario.email)
+        intent.putExtra("pass",usuario.password)
+        intent.putExtra("ciudad",usuario.city)
+        intent.putExtra("cp",usuario.cp)
+        intent.putExtra("direccion",usuario.address)
+        intent.putExtra("tarjeta",usuario.num_tarjeta)
+        intent.putExtra("tlfn",usuario.tlf)
+        intent.putExtra("desc",usuario.description)
+        //----------------------------------------------
+        //enviamos todos los datos para futuro update
 
+        intent.putExtra("id",usuario.id)
+        intent.putExtra("admin",usuario.admin)
+        intent.putExtra("caducidad",usuario.caducidad)
+        intent.putExtra("ccv",usuario.ccv)
 
-        //intent.putExtra("obj",usuario)
         context.startActivity(intent)
    }
 

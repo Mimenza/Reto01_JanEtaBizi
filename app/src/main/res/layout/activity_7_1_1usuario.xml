@@ -7,6 +7,51 @@
     tools:context=".activity_7_1_1usuario">
 
 
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtinput_7_1_1apellido"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedgrey"
+        android:hint="@string/txt1_apellidousuario"
+        android:minHeight="48dp"
+        android:paddingLeft="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.868"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.32" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtinput_7_1_1descripcion"
+        android:layout_width="290dp"
+        android:layout_height="65dp"
+        android:background="@drawable/roundedgrey"
+        android:hint="@string/prompt_user_Description"
+        android:minHeight="48dp"
+        android:paddingLeft="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.694"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.834" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtinput_7_1_1direccion"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedgrey"
+        android:hint="@string/direcciongestion"
+        android:minHeight="48dp"
+        android:paddingLeft="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.694"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.603" />
+
     <ImageView
         android:id="@+id/imgv_6correo3"
         android:layout_width="30dp"
@@ -17,37 +62,7 @@
         app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.428" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtinput_7_1_1nombre"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/roundedgrey"
-        android:hint="@string/txt1_nombreusuario"
-        android:minHeight="48dp"
-        android:paddingLeft="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.298"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtinput_7_1_1ciudad"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/roundedgrey"
-        android:hint="@string/ciudadgestion"
-        android:minHeight="48dp"
-        android:paddingLeft="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.298"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.566" />
+        app:layout_constraintVertical_bias="0.395" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtinput_7_1_1cp"
@@ -62,23 +77,66 @@
         app:layout_constraintHorizontal_bias="0.868"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.566" />
+        app:layout_constraintVertical_bias="0.532" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtinput_7_1_1contrasena"
+        android:id="@+id/txtinput_7_1_1ciudad"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedgrey"
+        android:hint="@string/ciudadgestion"
+        android:minHeight="48dp"
+        android:paddingLeft="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.298"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.532" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtinput_7_1_1tlfn"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="344dp"
         android:background="@drawable/roundedgrey"
-        android:hint="@string/txt3_contraseña"
+        android:hint="@string/tlfngestion"
         android:minHeight="48dp"
         android:paddingLeft="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.694"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtinput_6correo"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.743" />
+
+    <Button
+        android:id="@+id/btn_7_1_1save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="52dp"
+        android:background="@drawable/my_button_border"
+        android:backgroundTint="#20B2AA"
+        android:text="@string/txt4_guardar"
+        android:textColor="@color/mainGreen"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_7_01Eliminar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_7_01Eliminar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtinput_7_1_1tarjeta"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedgrey"
+        android:hint="@string/tarjetagestion"
+        android:minHeight="48dp"
+        android:paddingLeft="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.694"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.673" />
 
     <ImageView
         android:id="@+id/imgv_6descripcion3"
@@ -91,13 +149,26 @@
         app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.865" />
+        app:layout_constraintVertical_bias="0.831" />
+
+    <ImageView
+        android:id="@+id/imgv_6nombre3"
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+
+        android:src="@drawable/ic_person"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.296" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtinput_7_1_1correo"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="392dp"
         android:background="@drawable/roundedgrey"
         android:hint="@string/txt2_correo2"
         android:minHeight="48dp"
@@ -106,114 +177,66 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.694"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtinput_6nombre"
-        app:layout_constraintVertical_bias="0.08" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtinput_7_1_1direccion"
-        android:layout_width="290dp"
+    <Button
+        android:id="@+id/btn_7_01Eliminar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="248dp"
-        android:background="@drawable/roundedgrey"
-        android:hint="@string/direcciongestion"
-        android:minHeight="48dp"
-        android:paddingLeft="12dp"
+        android:layout_marginStart="80dp"
+        android:background="@drawable/my_button_border"
+        android:backgroundTint="#20B2AA"
+        android:text="@string/txt5_eliminar"
+        android:textColor="@color/mainGreen"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.694"
+        app:layout_constraintEnd_toStartOf="@+id/btn_7_1_1save"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtinput_6nombre"
-        app:layout_constraintVertical_bias="0.08" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.942" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtinput_7_1_1tarjeta"
-        android:layout_width="290dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
-        android:background="@drawable/roundedgrey"
-        android:hint="@string/tarjetagestion"
-        android:minHeight="48dp"
-        android:paddingLeft="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.694"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtinput_6nombre"
-        app:layout_constraintVertical_bias="0.08" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtinput_7_1_1tlfn"
-        android:layout_width="290dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="152dp"
-        android:background="@drawable/roundedgrey"
-        android:hint="@string/tlfngestion"
-        android:minHeight="48dp"
-        android:paddingLeft="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.694"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtinput_6nombre"
-        app:layout_constraintVertical_bias="0.08" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtinput_7_1_1apellido"
+        android:id="@+id/txtinput_7_1_1nombre"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:background="@drawable/roundedgrey"
-        android:hint="@string/txt1_apellidousuario"
+        android:hint="@string/txt1_nombreusuario"
         android:minHeight="48dp"
         android:paddingLeft="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.868"
+        app:layout_constraintHorizontal_bias="0.298"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354" />
+        app:layout_constraintVertical_bias="0.32" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtinput_7_1_1contrasena"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedgrey"
+        android:hint="@string/txt3_contraseña"
+        android:minHeight="48dp"
+        android:paddingLeft="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.694"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.465" />
 
     <ImageView
         android:id="@+id/imgv_6contraseña3"
         android:layout_width="30dp"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:src="@drawable/ic_password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.502" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtinput_7_1_1descripcion"
-        android:layout_width="290dp"
-        android:layout_height="65dp"
-        android:layout_marginBottom="84dp"
-        android:background="@drawable/roundedgrey"
-        android:hint="@string/prompt_user_Description"
-        android:minHeight="48dp"
-        android:paddingLeft="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.694"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtinput_6contrasena"
-        app:layout_constraintVertical_bias="0.138" />
-
-    <ImageView
-        android:id="@+id/imgv_6nombre3"
-        android:layout_width="30dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="24dp"
-
-        android:layout_marginBottom="440dp"
-        android:src="@drawable/ic_person"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.081"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgv6_admin"
-        app:layout_constraintVertical_bias="0.342" />
+        app:layout_constraintVertical_bias="0.468" />
 
     <TextView
         android:id="@+id/textView"
@@ -250,38 +273,55 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-        app:layout_constraintVertical_bias="0.07999998" />
+        app:layout_constraintVertical_bias="0.050000012" />
 
-
-    <Button
-        android:id="@+id/btn_7_01Eliminar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:background="@drawable/my_button_border"
-        android:backgroundTint="#20B2AA"
-        android:text="@string/txt5_eliminar"
-        android:textColor="@color/mainGreen"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="30dp"
+        android:layout_height="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_7_01save"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.529"
+        app:srcCompat="@drawable/ic_city" />
 
-    <Button
-        android:id="@+id/btn_7_01save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="52dp"
-        android:background="@drawable/my_button_border"
-        android:backgroundTint="#20B2AA"
-        android:text="@string/txt4_guardar"
-        android:textColor="@color/mainGreen"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_7_01Eliminar"
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="30dp"
+        android:layout_height="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_7_01Eliminar"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.604"
+        app:srcCompat="@drawable/ic_adress" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="30dp"
+        android:layout_height="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.674"
+        app:srcCompat="@drawable/ic_card" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="30dp"
+        android:layout_height="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.744"
+        app:srcCompat="@drawable/ic_baseline_phone_android_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
