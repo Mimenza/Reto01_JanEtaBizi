@@ -398,7 +398,6 @@ class DatabaseHelper(
         return productList
     }
 
-
     @SuppressLint("Range")
     fun getProductsByCategory(category: String): List<Producto> {
         val db: SQLiteDatabase = this.getReadableDatabase()
@@ -434,7 +433,32 @@ class DatabaseHelper(
 
     }
 
+    //Get product object by id_product
+    @SuppressLint("Range")
+    fun getProduct(id: Int): Producto? {
+        val db: SQLiteDatabase = this.getReadableDatabase()
+        val res = db.rawQuery("select * from Products where id_product='" + id + "'", null)
+        res.moveToFirst()
 
+        while (res.isAfterLast == false) {
+            val response = Producto()
+
+
+            response.id_product = res.getInt(res.getColumnIndex(COLUMN_PRODUCT_ID))
+            response.name_product = res.getString(res.getColumnIndex(COLUMN_PRODUCT_NAME))
+            response.price = res.getDouble(res.getColumnIndex(COLUMN_PRODUCT_PRICE))
+            response.category= res.getString(res.getColumnIndex(COLUMN_PRODUCT_CATEGORY))
+            response.likes = res.getInt(res.getColumnIndex(COLUMN_PRODUCT_LIKES))
+            response.img = res.getInt(res.getColumnIndex(COLUMN_PRODUCT_IMG))
+            response.stock = res.getInt(res.getColumnIndex(COLUMN_PRODUCT_STOCK))
+
+            // rest of columns
+            return response
+        }
+        return null
+
+
+    }
 
 
 
