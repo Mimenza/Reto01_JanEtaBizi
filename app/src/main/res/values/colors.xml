@@ -50,4 +50,7 @@
         <item>@color/dot_dark_screen3</item>
         <item>@color/dot_dark_screen4</item>
     </array>
+    <!-- Colores para el Blog-->
+    <color name="claro">#FAEBE0</color>
+
 </resources>

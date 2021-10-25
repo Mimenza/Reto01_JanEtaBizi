@@ -47,8 +47,8 @@
 
     <ScrollView
         android:id="@+id/scrollView_901"
-        android:layout_width="wrap_content"
-        android:layout_height="600dp"
+        android:layout_width="412dp"
+        android:layout_height="630dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavV_9bottomMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,21 +57,22 @@
 
         <LinearLayout
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="@dimen/fab_margin"
             android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
 
             <LinearLayout
                 android:id="@+id/linearLayout_901"
-                android:layout_width="wrap_content"
+                android:layout_width="409dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:background="@color/claro"
                 android:orientation="vertical"
+                android:background="@color/claro"
+                android:clickable="true"
 
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -85,9 +86,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/tituloreceta01"
                     android:textAlignment="center"
-                    android:layout_marginTop="10dp"
                     android:textSize="20sp"
-                    android:textStyle="bold|italic" />
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/imageView7"
@@ -101,16 +101,13 @@
                     android:id="@+id/txtv_9fecha01"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/fab_margin"
-                    android:text="@string/fechareceta01"
-                    android:textStyle="italic"/>
+                    android:text="octubre 24, 2021" />
 
                 <TextView
                     android:id="@+id/txtv_9descreceta01"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/fab_margin"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="center_vertical|end"
                     android:layout_marginBottom="50dp"
                     android:paddingHorizontal="25dp"
                     android:text="@string/descreceta01" />
@@ -119,13 +116,11 @@
 
             <LinearLayout
                 android:id="@+id/linearLayout_902"
-                android:layout_width="wrap_content"
+                android:layout_width="409dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:background="@color/claro"
                 android:orientation="vertical"
+                android:background="@color/claro"
+                android:clickable="true"
 
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -137,50 +132,42 @@
                     android:id="@+id/txtv_9nombrereceta02"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/tituloreceta01"
+                    android:text="@string/tituloreceta02"
                     android:textAlignment="center"
-                    android:layout_marginTop="10dp"
                     android:textSize="20sp"
-                    android:textStyle="bold|italic" />
+                    android:textStyle="bold" />
 
                 <ImageView
-                    android:id="@+id/imagereceta02"
+                    android:id="@+id/image_9receta02"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
                     android:layout_margin="@dimen/fab_margin"
 
-                    app:srcCompat="@drawable/receta02portada" />
+                    app:srcCompat="@drawable/crema_de_lombarda_y_pera_portada" />
 
                 <TextView
                     android:id="@+id/txtv_9fecha02"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/fab_margin"
-                    android:text="@string/fechareceta01"
-                    android:textStyle="italic"/>
+                    android:text="octubre 24, 2021" />
 
                 <TextView
                     android:id="@+id/txtv_9descreceta02"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/fab_margin"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="center_vertical|end"
                     android:layout_marginBottom="50dp"
                     android:paddingHorizontal="25dp"
-                    android:text="@string/descreceta01" />
+                    android:text="@string/descreceta02" />
 
             </LinearLayout>
-
             <LinearLayout
                 android:id="@+id/linearLayout_903"
-                android:layout_width="wrap_content"
+                android:layout_width="409dp"
                 android:layout_height="wrap_content"
-
-                android:layout_marginBottom="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:background="@color/claro"
                 android:orientation="vertical"
+                android:background="@color/claro"
+                android:clickable="true"
 
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -194,35 +181,31 @@
                     android:layout_height="wrap_content"
                     android:text="@string/tituloreceta01"
                     android:textAlignment="center"
-                    android:layout_marginTop="10dp"
                     android:textSize="20sp"
-                    android:textStyle="bold|italic" />
+                    android:textStyle="bold" />
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/image_9receta03"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
                     android:layout_margin="@dimen/fab_margin"
 
-                    app:srcCompat="@drawable/receta03portada" />
+                    app:srcCompat="@drawable/crema_de_lombarda_y_pera_portada" />
 
                 <TextView
                     android:id="@+id/txtv_9fecha03"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/fab_margin"
-                    android:text="@string/fechareceta01"
-                    android:textStyle="italic"/>
+                    android:text="octubre 24, 2021" />
 
                 <TextView
                     android:id="@+id/txtv_9descreceta03"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/fab_margin"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="center_vertical|end"
                     android:layout_marginBottom="50dp"
                     android:paddingHorizontal="25dp"
-                    android:text="@string/descreceta01" />
+                    android:text="@string/descreceta03" />
 
             </LinearLayout>
         </LinearLayout>

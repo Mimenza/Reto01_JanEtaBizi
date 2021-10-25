@@ -133,9 +133,9 @@
 
     <!--Blog-->
     <string name="blogtitulo">Blog</string>
-    <string name="tituloreceta01">Receta01</string>
-    <string name="descreceta01">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
-
+    <string name="tituloreceta01">Crema de lombarda y pera</string>
+    <string name="descreceta01">Aunque este es un plato muy presente en los menús navideños, nada nos debería impedir incorporarlo a nuestras celebraciones en cualquier otro momento del año. Es un entrante elegante, vistoso y que tiene todas las de ganarse los estómagos de nuestros comensales. Porque está de-li-cio-sa.</string>
+    <string name="fechareceta01">octubre 24, 2021</string>
     <string name="tituloreceta02">Receta02</string>
     <string name="descreceta02">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
 
