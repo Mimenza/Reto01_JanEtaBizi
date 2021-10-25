@@ -78,9 +78,10 @@
     <string name="telefono">Teléfono</string>
     <string name="cp">Cp   <font color='#FF0000'>*</font></string>
 
-    <string name="cardnumber">Numero de la tarjeta</string>
-    <string name="caducidad">Caducidad</string>
-    <string name="ccv">Ccv</string>
+    <string name="cardnumber">Numero de la tarjeta    <font color='#FF0000'>*</font></string>
+
+    <string name="caducidad">Caducidad    <font color='#FF0000'>*</font></string>
+    <string name="ccv">Ccv   <font color='#FF0000'>*</font></string>
     <string name="placeorder">Realizar pedido</string>
     <string name="envio">Envio</string>
     <string name="subtotal">SubTotal</string>
@@ -138,9 +139,9 @@
 
     <!--Blog-->
     <string name="blogtitulo">Blog</string>
-    <string name="tituloreceta01">Receta01</string>
-    <string name="descreceta01">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
-
+    <string name="tituloreceta01">Crema de lombarda y pera</string>
+    <string name="descreceta01">Aunque este es un plato muy presente en los menús navideños, nada nos debería impedir incorporarlo a nuestras celebraciones en cualquier otro momento del año. Es un entrante elegante, vistoso y que tiene todas las de ganarse los estómagos de nuestros comensales. Porque está de-li-cio-sa.</string>
+    <string name="fechareceta01">octubre 24, 2021</string>
     <string name="tituloreceta02">Receta02</string>
     <string name="descreceta02">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
 
@@ -156,5 +157,16 @@
     <string name="error_message_address">Ingrese una dirección</string>
     <string name="email">Email</string>
     <string name="contraseña">Contraseña</string>
+    <string name="cardnumberinput">Número de la tarjeta</string>
+    <string name="caducidad_title">Caducidad</string>
+
+
+    <string name="error_message_numerotarjeta">Ingrese su número de tarjeta</string>
+    <string name="error_message_caducidadtarjeta">Ingrese la caducidad de su tarjeta</string>
+
+    <string name="error_message_cvv">Ingrese el cvv de su tarjeta</string>
+    <string name="error_message_direccion">Ingrese una dirección</string>
+    <string name="error_message_ciudad">Ingrese una ciudad</string>
+
 
 </resources>

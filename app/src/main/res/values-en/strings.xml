@@ -131,8 +131,8 @@
     <!--Blog-->
     <string name="blogtitulo">Blog</string>
     <string name="tituloreceta01">Recipe01</string>
-    <string name="descreceta01">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
-
+    <string name="descreceta01">Although this is a very present dish on Christmas menus, nothing should prevent us from incorporating it into our celebrations at any other time of the year. It is an elegant and colorful starter that has everything to win the stomachs of our guests. Because it\'s de-li-cio-sa.</string>
+    <string name="fechareceta01">October 24, 2021</string>
     <string name="tituloreceta02">Recipe02</string>
     <string name="descreceta02">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
 
@@ -147,5 +147,16 @@
     <string name="error_message_address">Ingrese una dirección</string>
     <string name="email">Email</string>
     <string name="contraseña">Contraseña</string>
+    <string name="cardnumberinput">Número de la tarjeta</string>
+    <string name="caducidad_title">Caducidad</string>
+
+
+    <string name="error_message_numerotarjeta">Ingrese su número de tarjeta</string>
+    <string name="error_message_caducidadtarjeta">Ingrese la caducidad de su tarjeta</string>
+
+    <string name="error_message_cvv">Ingrese el cvv de su tarjeta</string>
+    <string name="error_message_direccion">Ingrese una dirección</string>
+    <string name="error_message_ciudad">Ingrese una ciudad</string>
+
 
 </resources>

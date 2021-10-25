@@ -14,14 +14,14 @@
         android:title="Compra" />
 
     <item
+        android:id="@+id/navigation_blog"
+        android:icon="@drawable/blog"
+        android:title="Blog"/>
+    <item
         android:id="@+id/navigation_perfil"
         android:icon="@drawable/usuario"
         android:title="Perfil"/>
 
-    <item
-        android:id="@+id/navigation_blog"
-        android:icon="@drawable/blog"
-        android:title="Blog"/>
 
 
 </menu>
