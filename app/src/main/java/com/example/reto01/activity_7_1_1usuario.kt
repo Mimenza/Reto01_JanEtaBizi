@@ -6,6 +6,7 @@ import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.widget.Toast
 import com.example.reto01.Model.User
 import com.example.reto01.activity_5_2payment.GetDataFromSQLite
 import kotlinx.android.synthetic.main.activity_7_1_1usuario.*
@@ -56,6 +57,11 @@ class activity_7_1_1usuario : AppCompatActivity() {
         txtinput_7_1_1direccion.setText(intent.getStringExtra("direccion"))
 
 
+        if (intent.getStringExtra("surname") != null){
+
+            Toast.makeText(this,"hola",Toast.LENGTH_LONG).show()
+        }
+
         btn_7_1_1save.setOnClickListener(){
             //recogemos los valores de los input
             updateUser()        }
@@ -63,7 +69,7 @@ class activity_7_1_1usuario : AppCompatActivity() {
     }
 
     private fun updateUser() {
-       /* user = User()
+        user = User()
 
         user.surname= txtinput_7_1_1apellido.text.toString()
         user.city=txtinput_7_1_1ciudad.text.toString()
@@ -73,16 +79,16 @@ class activity_7_1_1usuario : AppCompatActivity() {
         user.description = txtinput_7_1_1descripcion.text.toString()
         user.name =txtinput_7_1_1nombre.text.toString()
         user.num_tarjeta = txtinput_7_1_1tarjeta.text.toString()
-        user.tlf =  txtinput_7_1_1tlfn.toString()
+        user.tlf =  txtinput_7_1_1tlfn.text.toString()
         user.address =txtinput_7_1_1direccion.text.toString()
         //------------------------------------------------------------
 
-        user.id= intent.getIntExtra("id")
-        user.ccv= intent.getIntExtra("ccv")
+        user.id= intent.getIntExtra("id",0)
+        user.ccv= intent.getIntExtra("ccv",0)
         user.caducidad= intent.getStringExtra("caducidad")
-        user.admin= intent.getIntExtra("admin")
+        user.admin= intent.getIntExtra("admin",0)
 
-        databaseHelper.updateUser(user)*/
+        databaseHelper.updateUser(user)
 
     }
 
