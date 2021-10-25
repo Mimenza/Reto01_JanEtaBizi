@@ -1,20 +1,16 @@
 package com.example.reto01
 
-<<<<<<< HEAD:app/src/main/java/com/example/reto01/activity_7_2_1producto.kt
-=======
 import android.content.Context
 import android.os.AsyncTask
->>>>>>> 6e47b6a211e0ef46f115a4f3830ce7a09c08fa18:app/src/main/java/com/example/reto01/activity_7_2productos.kt
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-<<<<<<< HEAD:app/src/main/java/com/example/reto01/activity_7_2_1producto.kt
-=======
 import com.example.reto01.Adapter.ProductsRecyclerAdapter
->>>>>>> 6e47b6a211e0ef46f115a4f3830ce7a09c08fa18:app/src/main/java/com/example/reto01/activity_7_2productos.kt
 import com.example.reto01.Adapter.UsersRecyclerAdapter
 import com.example.reto01.Model.Producto
+import com.example.reto01.Model.User
 import kotlinx.android.synthetic.main.activity_7_1usuarios.*
 import kotlinx.android.synthetic.main.activity_7_2productos.*
 
@@ -35,24 +31,8 @@ class activity_7_2productos : AppCompatActivity() {
 
     }
 
-<<<<<<< HEAD:app/src/main/java/com/example/reto01/activity_7_2_1producto.kt
-    /**
-     * This method is to initialize views
-     */
-    private fun initViews() {
-        recyclerViewUsers = recyclerViewPedidos as RecyclerView
-    }
-}
-
-    /**
-     * This method is to initialize objects to be used
-     */
-   /* private fun initObjects() {
-        listProduct = ArrayList()
-=======
     private fun initViews(){
         recyclerViewProducts =recyclerViewProductos as RecyclerView
->>>>>>> 6e47b6a211e0ef46f115a4f3830ce7a09c08fa18:app/src/main/java/com/example/reto01/activity_7_2productos.kt
 
     }
     private fun initObjects(){
@@ -80,7 +60,7 @@ class activity_7_2productos : AppCompatActivity() {
             listProducts.clear()
             listProducts.addAll(result!!)
 
-         //Cargar el adapter después de llamar a la bbdd
+            //Cargar el adapter después de llamar a la bbdd
             val adapter = ProductsRecyclerAdapter(listProducts)
             recyclerViewProducts.layoutManager = LinearLayoutManager(context)
             recyclerViewProducts.adapter = adapter

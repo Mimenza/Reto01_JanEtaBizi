@@ -110,21 +110,13 @@
     <string name="estado">Estado</string>
     <string name="importe">Importe</string>
     <string name="gestion">Gestión</string>
-<<<<<<< HEAD
-    <string name="ciudadgestion">Ciudad</string>
-    <string name="cpgestion">Cp</string>
-    <string name="direcciongestion">Direccion</string>
-    <string name="tarjetagestion">Tarjeta</string>
-    <string name="descripciongestion">Descripcion</string>
-    <string name="tlfngestion">Tlfn</string>
-=======
     <string name="ciudadgestion" tools:ignore="MissingTranslation">Ciudad</string>
     <string name="cpgestion" tools:ignore="MissingTranslation">Cp</string>
     <string name="direcciongestion" tools:ignore="MissingTranslation">Direccion</string>
     <string name="tarjetagestion" tools:ignore="MissingTranslation">Tarjeta</string>
     <string name="descripciongestion" tools:ignore="MissingTranslation">Descripcion</string>
     <string name="tlfngestion" tools:ignore="MissingTranslation">Tlfn</string>
->>>>>>> 6e47b6a211e0ef46f115a4f3830ce7a09c08fa18
+
     <!--Producto-->
     <string name="lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
     <string name="zero">0</string>
