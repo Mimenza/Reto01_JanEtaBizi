@@ -8,20 +8,31 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import com.example.reto01.Helpers.InputValidation
 import com.example.reto01.Model.Carrito_item
 import com.example.reto01.Model.Order
 import com.example.reto01.Model.Pedido_producto
 import com.example.reto01.Model.User
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_2registrar.*
 import kotlinx.android.synthetic.main.activity_5_1adress.*
 import kotlinx.android.synthetic.main.activity_5_2payment.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class activity_5_2payment : AppCompatActivity() {
+class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
     lateinit private var user :  User
     lateinit var databaseHelper:DatabaseHelper
     private val activity = this
+    private lateinit var buttonPayment: Button
+    private lateinit var inputValidation:InputValidation
+    private lateinit var textInputNumeroTarjeta:EditText
+    private lateinit var textInputCcvTarjeta:EditText
+    private lateinit var textInputCaducidadTarjeta:EditText
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -30,7 +41,9 @@ class activity_5_2payment : AppCompatActivity() {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         setContentView(R.layout.activity_5_2payment)
 
+        initViews()
         initObjects()
+        initListeners()
 
         bottomNavV_5_2bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -72,12 +85,10 @@ class activity_5_2payment : AppCompatActivity() {
             false
         }
 
-        btn_5_2payment.setOnClickListener() {
+       /* btn_5_2payment.setOnClickListener() {
             actualizarDatos()
-            val i = Intent(this, activity_5_3gracias::class.java)
-            startActivity(i)
-            this.overridePendingTransition(0, 0)
-        }
+
+        }*/
 
         ObjectAnimator.ofInt(progressBar_5_2, "progress", 66)
             .setDuration(1000)
@@ -114,17 +125,69 @@ class activity_5_2payment : AppCompatActivity() {
         this.overridePendingTransition(0, 0)
     }
 
+
+    private fun initViews(){
+
+        buttonPayment = btn_5_2payment as Button
+        textInputNumeroTarjeta = txt_5_2cardnumber as EditText
+        textInputCcvTarjeta = txt_5_2ccv as EditText
+        textInputCaducidadTarjeta = txt_5_2caducidadtarjeta as EditText
+
+
+    }
     private fun initObjects() {
         user= User()
+
+        inputValidation = InputValidation(activity)
 
         databaseHelper = DatabaseHelper(activity, "janEtaBizi", null, 1)
 
         var getDataFromSQLite = GetDataFromSQLite()
         getDataFromSQLite.execute()
+    }
 
+
+    private fun initListeners(){
+        btn_5_2payment!!.setOnClickListener(this)
+
+    }
+    //Si el cliente le da a realizar pedido, creamos una función para llamar a la SQLite
+    override fun onClick(v: View?) {
+        when (v) {
+            buttonPayment -> validarCampos()
+        }
+    }
+
+    private fun validarCampos(){
+        //Si el número de tarjeta está vacío, lanzar mensaje de error
+        if (!inputValidation!!.isInputEditTextFilled(
+                textInputNumeroTarjeta,
+                getString(R.string.error_message_numerotarjeta)
+            )
+        ){return}
+        //Si la caducidad de la tarjeta está vacío, lanzar mensaje de error
+     else  if (!inputValidation!!.isInputEditTextFilled(
+                textInputCaducidadTarjeta,
+                getString(R.string.error_message_caducidadtarjeta)
+            )
+        ){return}
+        //Si el cvv está vacío, lanzar mensaje de error
+     else  if (!inputValidation!!.isInputEditTextFilled(
+                textInputCcvTarjeta,
+                getString(R.string.error_message_cvv)
+            )
+        ){return}
+        else{
+
+            actualizarDatos()
+            val i = Intent(this, activity_5_3gracias::class.java)
+            startActivity(i)
+            this.overridePendingTransition(0, 0)
+        }
 
 
     }
+
 
 
     inner class GetDataFromSQLite : AsyncTask<Void, Void, User>() {
@@ -260,3 +323,5 @@ class activity_5_2payment : AppCompatActivity() {
 
     }
 }
+
+

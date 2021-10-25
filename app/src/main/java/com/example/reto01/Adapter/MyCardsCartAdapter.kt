@@ -51,8 +51,6 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
             }
 
         }
-
-
         return ViewHolder(v)
     }
 
@@ -63,8 +61,6 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
         ViewHolder.itemPrecioProducto.text = item.price.toString()
         ViewHolder.itemCategoria.text = item.category
         ViewHolder.itemSpiner.adapter = adaptador
-
-
 
             //Recoger datos de Shared Preferences
             val prefs: SharedPreferences = context.getSharedPreferences("carrito", 0)
@@ -83,7 +79,6 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
 
         ViewHolder.itemSpiner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected( parent: AdapterView<*>, view: View, position: Int, id: Long) {
-
 
                 // Guardar datos del carrito en el shared preferences
 
@@ -108,7 +103,7 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
 
 
                 if (context is activity_5carrito) {
-                    //context.calcularTotal()
+                   // context.calcularTotal()
                 }
 
             }

@@ -175,7 +175,7 @@ class activity_2registrar : AppCompatActivity(), View.OnClickListener {
                 cp = textInputEditTextCp!!.text.toString().trim(),
                 email = textInputEditTextEmail!!.text.toString().trim(),
                 password = textInputEditTextPassword!!.text.toString().trim(),
-                admin = 1,
+                admin = 0,
                 tlf = "",
                 caducidad = "",
                 num_tarjeta = "",

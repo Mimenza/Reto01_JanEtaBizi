@@ -1,5 +1,6 @@
 package com.example.reto01
 
+import android.content.Context
 import android.os.AsyncTask
 import android.os.Bundle
 import android.view.View
@@ -12,7 +13,6 @@ import kotlinx.android.synthetic.main.activity_7_1usuarios.*
 
 class activity_7_0_1usuarios : AppCompatActivity() {
     private val activity = this
-
     private lateinit var recyclerViewUsers: RecyclerView
     private lateinit var listUsers: MutableList<User>
     private lateinit var usersRecyclerAdapter: UsersRecyclerAdapter
@@ -37,13 +37,12 @@ class activity_7_0_1usuarios : AppCompatActivity() {
     /**
      * This method is to initialize objects to be used
      */
+    lateinit var context:Context
+
     private fun initObjects() {
         listUsers = ArrayList()
 
-        val adapter = UsersRecyclerAdapter(listUsers)
-        recyclerViewUsers.layoutManager = LinearLayoutManager(this)
-        recyclerViewUsers.adapter = adapter
-
+        context =this;
         databaseHelper = DatabaseHelper(activity, "janEtaBizi", null, 1)
 
         var getDataFromSQLite = GetDataFromSQLite()
@@ -57,7 +56,6 @@ class activity_7_0_1usuarios : AppCompatActivity() {
 
         override fun doInBackground(vararg p0: Void?): List<User> {
             return databaseHelper.getAllUser()
-
         }
 
         override fun onPostExecute(result: List<User>?) {
@@ -65,6 +63,10 @@ class activity_7_0_1usuarios : AppCompatActivity() {
             listUsers.clear()
             listUsers.addAll(result!!)
 
+
+            val adapter = UsersRecyclerAdapter(listUsers)
+            recyclerViewUsers.layoutManager = LinearLayoutManager(context)
+            recyclerViewUsers.adapter = adapter
         }
 
     }

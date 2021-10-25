@@ -214,9 +214,7 @@ class DatabaseHelper(
             put("user_ccv", user.ccv)
             put("user_caducidad", user.caducidad)
             put("user_num_tarjeta", user.num_tarjeta)
-
         }
-
         // update según el id de usuario
         db.update(
             TBL_USERS, values, "${COLUMN_USER_ID} = ?",
