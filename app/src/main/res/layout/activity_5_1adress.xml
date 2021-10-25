@@ -135,6 +135,8 @@
         android:id="@+id/txt_5_1telefono"
         android:layout_width="342dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:background="@drawable/roundedgrey"
         android:ems="10"
         android:hint="@string/telefono"
@@ -162,8 +164,10 @@
 
     <EditText
         android:id="@+id/txt_5_1apellido"
-        android:layout_width="171dp"
+        android:layout_width="150dp"
         android:layout_height="48dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="40dp"
         android:background="@drawable/roundedgrey"
         android:ems="10"
         android:hint="@string/apellido"
@@ -171,7 +175,7 @@
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.034"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/txt_5_1nombre"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.475" />
@@ -189,7 +193,7 @@
 
     <EditText
         android:id="@+id/txt_5_1nombre"
-        android:layout_width="171dp"
+        android:layout_width="150dp"
         android:layout_height="48dp"
         android:layout_marginStart="40dp"
         android:background="@drawable/roundedgrey"
@@ -215,8 +219,9 @@
 
     <EditText
         android:id="@+id/txt_5_1cp"
-        android:layout_width="114dp"
+        android:layout_width="100dp"
         android:layout_height="48dp"
+        android:layout_marginEnd="40dp"
         android:background="@drawable/roundedgrey"
         android:ems="10"
         android:hint="cp"
@@ -224,7 +229,7 @@
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/txt_5_1provincia"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.341" />
@@ -233,6 +238,8 @@
         android:id="@+id/txt_5_1direccion"
         android:layout_width="342dp"
         android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:background="@drawable/roundedgrey"
         android:ems="10"
         android:hint="@string/direccion"
@@ -271,8 +278,9 @@
 
     <EditText
         android:id="@+id/txt_5_1city"
-        android:layout_width="114dp"
+        android:layout_width="100dp"
         android:layout_height="48dp"
+        android:layout_marginStart="40dp"
         android:background="@drawable/roundedgrey"
         android:ems="10"
         android:hint="@string/ciudad"
@@ -280,7 +288,7 @@
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/txt_5_1provincia"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.618"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.341" />
@@ -309,7 +317,7 @@
 
     <EditText
         android:id="@+id/txt_5_1provincia"
-        android:layout_width="114dp"
+        android:layout_width="100dp"
         android:layout_height="48dp"
         android:background="@drawable/roundedgrey"
         android:ems="10"

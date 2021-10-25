@@ -11,7 +11,7 @@ import com.example.reto01.Adapter.UsersRecyclerAdapter
 import com.example.reto01.Model.User
 import kotlinx.android.synthetic.main.activity_7_1usuarios.*
 
-class activity_7_0_1usuarios : AppCompatActivity() {
+class activity_7_1usuarios : AppCompatActivity() {
     private val activity = this
     private lateinit var recyclerViewUsers: RecyclerView
     private lateinit var listUsers: MutableList<User>

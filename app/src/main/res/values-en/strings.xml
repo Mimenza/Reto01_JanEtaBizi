@@ -157,6 +157,10 @@
     <string name="error_message_cvv">Ingrese el cvv de su tarjeta</string>
     <string name="error_message_direccion">Ingrese una dirección</string>
     <string name="error_message_ciudad">Ingrese una ciudad</string>
+    <string name="Productos">Todos los productos</string>
+    <string name="filtrobusquedaproductos">Busqueda productos</string>
+    <string name="eliminar">Eliminar producto</string>
+    <string name="update_product">Actualizar producto</string>
 
 
 </resources>
