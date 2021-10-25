@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_7_1_1usuario.*
-import kotlinx.android.synthetic.main.activity_7_1_1usuario.spinner_usuarios
+
 
 class activity_7_1_1usuario : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,10 +14,7 @@ class activity_7_1_1usuario : AppCompatActivity() {
         setContentView(R.layout.activity_7_1_1usuario)
         getSupportActionBar()?.hide()
 
-        val lista = arrayOf("USUARIO 1", "USUARIO 2", "USUARIO 3", "USUARIO 4", "CREAR NUEVO USUARIO")
-        val adaptador = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista)
 
-        spinner_usuarios.adapter = adaptador
 
         imgv7_01_atras.setOnClickListener() {
             val i = Intent(this, activity_7admin::class.java)

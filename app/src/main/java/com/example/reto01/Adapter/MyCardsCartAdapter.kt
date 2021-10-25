@@ -51,8 +51,6 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
             }
 
         }
-
-
         return ViewHolder(v)
     }
 
@@ -83,7 +81,6 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
 
         ViewHolder.itemSpiner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected( parent: AdapterView<*>, view: View, position: Int, id: Long) {
-
 
                 // Guardar datos del carrito en el shared preferences
 
