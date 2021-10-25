@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.reto01.Model.User
 import com.example.reto01.R
 import com.example.reto01.activity_7_1_1usuario
-import com.google.gson.Gson
 import kotlinx.android.synthetic.main.itemuserrecycler.view.*
 
 
@@ -77,7 +76,7 @@ class UsersRecyclerAdapter(private val listUsers: List<User>) : RecyclerView.Ada
 
         init {
             textViewImg = view.imageViewImg
-            textViewName = view.textViewName
+            textViewName = view.textViewNameProductPedido
             textViewEmail = view.textViewEmail
             textViewSurname = view.textViewSurname
         }

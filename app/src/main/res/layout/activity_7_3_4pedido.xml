@@ -13,25 +13,11 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/txt_3busqueda"
-            android:layout_width="248dp"
-            android:layout_height="48dp"
-            android:background="@drawable/search_bg"
-            android:drawableStart="@drawable/ic_search"
-            android:drawablePadding="10dp"
-            android:ems="10"
-            android:hint="@string/filtrobusquedausuarios"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:paddingStart="20dp"
-            android:textSize="14sp"
-            android:textStyle="italic" />
-
         <TextView
+            android:id="@+id/txt_id_order"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/todaslascuentas"
+            android:text="ID del  Order"
             android:textSize="20sp" />
 
 
@@ -39,10 +25,10 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewPedidos"
+        android:id="@+id/recyclerViewPedidosProductos"
         android:layout_width="417dp"
         android:layout_height="577dp"
-        tools:listitem="@layout/itemuserrecycler" />
+        tools:listitem="@layout/itemsuborderrecycler" />
 
 
 </LinearLayout>

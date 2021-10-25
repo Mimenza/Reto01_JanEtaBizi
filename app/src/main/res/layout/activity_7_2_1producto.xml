@@ -39,7 +39,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewUsuarios"
+        android:id="@+id/recyclerViewPedidos"
         android:layout_width="417dp"
         android:layout_height="577dp" />
 

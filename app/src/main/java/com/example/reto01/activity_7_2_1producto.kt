@@ -1,15 +1,11 @@
 package com.example.reto01
 
-import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.reto01.Adapter.ProductCartAdapter
 import com.example.reto01.Adapter.UsersRecyclerAdapter
 import com.example.reto01.Model.Producto
-import com.example.reto01.Model.User
 import kotlinx.android.synthetic.main.activity_7_1usuarios.*
 
 class activity_7_2_1producto : AppCompatActivity() {
@@ -34,7 +30,7 @@ class activity_7_2_1producto : AppCompatActivity() {
      * This method is to initialize views
      */
     private fun initViews() {
-        recyclerViewUsers = recyclerViewUsuarios as RecyclerView
+        recyclerViewUsers = recyclerViewPedidos as RecyclerView
     }
 }
 

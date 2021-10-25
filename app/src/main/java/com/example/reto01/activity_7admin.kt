@@ -49,7 +49,7 @@ class activity_7admin : AppCompatActivity() {
             startActivity(i)
         }
         btn_7pedidos.setOnClickListener() {
-            val i = Intent(this, activity_7_3_3pedido::class.java)
+            val i = Intent(this, activity_7_3_3pedidos::class.java)
             startActivity(i)
         }
     }
