@@ -232,7 +232,7 @@
     <EditText
         android:id="@+id/txt_5_1direccion"
         android:layout_width="342dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
         android:background="@drawable/roundedgrey"
         android:ems="10"
         android:hint="@string/direccion"

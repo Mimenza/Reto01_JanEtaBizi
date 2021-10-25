@@ -137,7 +137,9 @@ class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
     }
     private fun initObjects() {
         user= User()
+
         inputValidation = InputValidation(activity)
+
         databaseHelper = DatabaseHelper(activity, "janEtaBizi", null, 1)
 
         var getDataFromSQLite = GetDataFromSQLite()
@@ -180,6 +182,7 @@ class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
             actualizarDatos()
             val i = Intent(this, activity_5_3gracias::class.java)
             startActivity(i)
+            this.overridePendingTransition(0, 0)
         }
 
 

@@ -7,18 +7,27 @@ import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import android.widget.Button
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.example.reto01.Helpers.InputValidation
 import com.example.reto01.Model.User
 import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_5_1adress.*
+import kotlinx.android.synthetic.main.activity_5_2payment.*
 import kotlinx.android.synthetic.main.activity_5carrito.*
 import java.util.*
 
 
-class activity_5_1address : AppCompatActivity() {
+class activity_5_1address : AppCompatActivity(), View.OnClickListener {
     lateinit private var user :  User
     lateinit var databaseHelper:DatabaseHelper
     private val activity = this
+    private lateinit var buttonAddress: Button
+    private lateinit var inputValidation:InputValidation
+    private lateinit var textInputDireccion:EditText
+    private lateinit var textInputCiudad:EditText
+    private lateinit var textInputCp:EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +35,10 @@ class activity_5_1address : AppCompatActivity() {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
         setContentView(R.layout.activity_5_1adress)
 
+        initViews()
         initObjects()
+        initListeners()
+
 
         bottomNavV_5_1bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -69,12 +81,12 @@ class activity_5_1address : AppCompatActivity() {
             false
         }
 
-        btn_5_1adress.setOnClickListener() {
+      /*  btn_5_1adress.setOnClickListener() {
             actualizarDatos()
             val i = Intent(this@activity_5_1address, activity_5_2payment::class.java)
             startActivity(i)
             this.overridePendingTransition(0, 0)
-        }
+        }*/
 
         ObjectAnimator.ofInt(progressBar_5_1, "progress", 33)
             .setDuration(1000)
@@ -113,14 +125,64 @@ class activity_5_1address : AppCompatActivity() {
 
     }
 
+    private fun initViews(){
+
+        buttonAddress = btn_5_1adress as Button
+        textInputDireccion = txt_5_1direccion as EditText
+        textInputCiudad = txt_5_1city as EditText
+        textInputCp = txt_5_1cp as EditText
+
+
+    }
     private fun initObjects() {
-       user= User()
+        user= User()
+
+        inputValidation = InputValidation(activity)
 
         databaseHelper = DatabaseHelper(activity, "janEtaBizi", null, 1)
 
         var getDataFromSQLite = GetDataFromSQLite()
         getDataFromSQLite.execute()
+    }
 
+
+    private fun initListeners(){
+        btn_5_1adress!!.setOnClickListener(this)
+
+    }
+    //Si el cliente le da a realizar pedido, creamos una función para llamar a la SQLite
+    override fun onClick(v:View?) {
+        when (v) {
+            buttonAddress -> validarCampos1()
+        }
+    }
+
+    private fun validarCampos1(){
+        //Si el número de tarjeta está vacío, lanzar mensaje de error
+        if (!inputValidation!!.isInputEditTextFilled(
+                textInputDireccion,
+                getString(R.string.error_message_direccion)
+            )
+        ){return}
+        //Si la caducidad de la tarjeta está vacío, lanzar mensaje de error
+        else  if (!inputValidation!!.isInputEditTextFilled(
+                textInputCiudad,
+                getString(R.string.error_message_ciudad)
+            )
+        ){return}
+        //Si el cvv está vacío, lanzar mensaje de error
+        else  if (!inputValidation!!.isInputEditTextFilled(
+                textInputCp,
+                getString(R.string.error_message_cp)
+            )
+        ){return}
+        else{
+
+            actualizarDatos()
+            val i = Intent(this, activity_5_2payment::class.java)
+            startActivity(i)
+            this.overridePendingTransition(0, 0)
+        }
 
 
     }
@@ -192,5 +254,7 @@ class activity_5_1address : AppCompatActivity() {
 
         databaseHelper.updateUser(usuario)
     }
+
+
 
 }

@@ -159,6 +159,8 @@
     <string name="error_message_numerotarjeta">Ingrese su número de tarjeta</string>
     <string name="error_message_caducidadtarjeta">Ingrese la caducidad de su tarjeta</string>
     <string name="error_message_cvv">Ingrese el cvv de su tarjeta</string>
+    <string name="error_message_direccion">Ingrese una dirección</string>
+    <string name="error_message_ciudad">Ingrese una ciudad</string>
 
 
 </resources>
