@@ -135,8 +135,8 @@ class DatabaseHelper(
 
     //Load productos
     //private  val LOAD_PRODUCTS = "INSERT INTO ${TBL_PRODUCTS}  VALUES ( -1 ,'Pepinillos', 10.00 , 'vegan', 12, 1)"
-    private  val LOAD_PRODUCTS = "INSERT INTO ${TBL_PRODUCTS}  VALUES ( -1 ,'Pepinillos', 10.00 , 'vegan', 12, 1, 10), ( 1 ,'Pepinillos', 10.00 , 'vegetarian', 12, 1, 10) ," +
-            "( 0 ,'Pepinillos', 10.00 , 'no_palm_oil', 12, 1, 10), ( 3 ,'Pepinillos', 10.00 , 'no_lactose', 12, 1, 10), ( 2 ,'Pepinillos', 10.00 , 'protein', 12, 1, 10)"
+    private  val LOAD_PRODUCTS = "INSERT INTO ${TBL_PRODUCTS}  VALUES ( 0 ,'Pepinillos', 10.00 , 'vegan', 12, 2131230843, 10), ( 1 ,'Pepinillos', 10.00 , 'vegan', 12, 2131230808, 10) ," +
+            "( 2 ,'Pepinillos', 10.00 , 'vegetarian', 12, 2131230844, 10), ( 3 ,'Pepinillos', 10.00 , 'vegetarian', 12, 2131230825, 10), ( 4 ,'Pepinillos', 10.00 , 'vegetarian', 12, 2131230843, 10)"
 
 
     // Drop tables sql query
