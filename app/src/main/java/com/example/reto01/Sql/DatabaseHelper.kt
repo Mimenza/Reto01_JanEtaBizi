@@ -224,7 +224,7 @@ class DatabaseHelper(
         db.close()
     }
 
-    //Eliminar usuario
+    //Eliminar usuario por correo
     fun deleteUser(correo: String?) {
         val db = this.writableDatabase
         // Eliminar usuario según id
@@ -232,6 +232,20 @@ class DatabaseHelper(
 
             TBL_USERS, "${COLUMN_PRODUCT_ID}= ?",
             arrayOf(correo)
+        )
+
+
+        db.close()
+    }
+
+    //Eliminar usuario por correo
+    fun deleteUserById(id: Int?) {
+        val db = this.writableDatabase
+        // Eliminar usuario según id
+        db.delete(
+
+            TBL_USERS, "${COLUMN_USER_ID}= ?",
+            arrayOf(id.toString())
         )
 
 

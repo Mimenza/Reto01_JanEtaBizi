@@ -7,9 +7,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.widget.Toast
+import com.example.reto01.Model.Producto
 import com.example.reto01.Model.User
 import com.example.reto01.activity_5_2payment.GetDataFromSQLite
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_7_1_1usuario.*
+import kotlinx.android.synthetic.main.activity_7_2_2producto.*
 
 
 class activity_7_1_1usuario : AppCompatActivity() {
@@ -57,14 +61,51 @@ class activity_7_1_1usuario : AppCompatActivity() {
         txtinput_7_1_1direccion.setText(intent.getStringExtra("direccion"))
 
 
-        if (intent.getStringExtra("surname") != null){
 
-            Toast.makeText(this,"hola",Toast.LENGTH_LONG).show()
-        }
 
         btn_7_1_1save.setOnClickListener(){
             //recogemos los valores de los input
             updateUser()        }
+
+
+
+        val prefs: SharedPreferences = this.getSharedPreferences("user", 0)
+        val gsonFile = Gson()
+
+        user = gsonFile.fromJson(prefs.getString("user", null), User::class.java)
+
+
+        var id_user= user.id
+        btn_7_01Eliminar.setOnClickListener(){
+            deleteUserDialog(id_user)
+            println(id_user)
+        }
+
+
+    }
+
+    private fun deleteUserDialog(id_user:Int?){
+
+        MaterialAlertDialogBuilder(this,
+            R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_FullWidthButtons)
+            .setMessage(resources.getString(R.string.txt5_eliminar))
+            .setNegativeButton(resources.getString(R.string.cancel)) { dialog, which ->
+
+            }
+            .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
+
+
+                Toast.makeText(this, "Cuenta eliminada correctamente!", Toast.LENGTH_SHORT).show()
+                databaseHelper.deleteUserById(id_user)
+                Handler().postDelayed({
+
+                    val i = Intent(this, activity_7_1usuarios::class.java)
+                    startActivity(i)
+                }, 1000)
+
+            }
+            .show()
+
 
     }
 
