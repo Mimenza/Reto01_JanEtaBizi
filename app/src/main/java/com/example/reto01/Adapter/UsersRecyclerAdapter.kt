@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.reto01.Model.User
 import com.example.reto01.R
 import com.example.reto01.activity_7_1_1usuario
+import com.example.reto01.activity_7_1usuarios
+import com.example.reto01.activity_7_2productos
 import kotlinx.android.synthetic.main.itemuserrecycler.view.*
 
 
@@ -58,6 +60,14 @@ class UsersRecyclerAdapter(private val listUsers: List<User>) : RecyclerView.Ada
         intent.putExtra("ccv",usuario.ccv)
 
         context.startActivity(intent)
+
+        if(context is activity_7_1usuarios){
+
+            (context).deleteUser(usuario)
+        }
+
+
+
    }
 
     override fun getItemCount(): Int {

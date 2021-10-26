@@ -93,6 +93,7 @@
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:background="#FAEBE0"
         android:id="@+id/bottomNavV_5_1bottomMenu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -140,7 +141,7 @@
         android:background="@drawable/roundedgrey"
         android:ems="10"
         android:hint="@string/telefono"
-        android:inputType="textPersonName"
+        android:inputType="number|textPersonName"
         android:minHeight="48dp"
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -167,7 +168,7 @@
         android:layout_width="150dp"
         android:layout_height="48dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/roundedgrey"
         android:ems="10"
         android:hint="@string/apellido"
@@ -195,7 +196,7 @@
         android:id="@+id/txt_5_1nombre"
         android:layout_width="150dp"
         android:layout_height="48dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="32dp"
         android:background="@drawable/roundedgrey"
         android:ems="10"
         android:hint="@string/nombre"
@@ -219,18 +220,16 @@
 
     <EditText
         android:id="@+id/txt_5_1cp"
-        android:layout_width="100dp"
+        android:layout_width="150dp"
         android:layout_height="48dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/roundedgrey"
         android:ems="10"
         android:hint="cp"
-        android:inputType="textPersonName"
+        android:inputType="number|textPersonName"
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/txt_5_1provincia"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.341" />
 
@@ -278,17 +277,17 @@
 
     <EditText
         android:id="@+id/txt_5_1city"
-        android:layout_width="100dp"
+        android:layout_width="150dp"
         android:layout_height="48dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="32dp"
         android:background="@drawable/roundedgrey"
         android:ems="10"
         android:hint="@string/ciudad"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/txt_5_1provincia"
-        app:layout_constraintHorizontal_bias="0.618"
+        app:layout_constraintEnd_toStartOf="@+id/txt_5_1cp"
+        app:layout_constraintHorizontal_bias="0.063"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.341" />
@@ -303,33 +302,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/txtv_5_1state"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/provincia"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/txt_5_1provincia"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/txt_5_1provincia"
-        android:layout_width="100dp"
-        android:layout_height="48dp"
-        android:background="@drawable/roundedgrey"
-        android:ems="10"
-        android:hint="@string/provincia"
-        android:inputType="textPersonName"
-        android:paddingLeft="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.341" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

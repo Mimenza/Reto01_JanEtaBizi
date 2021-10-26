@@ -183,6 +183,7 @@
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:background="#FAEBE0"
         android:id="@+id/bottomNavV_5_2bottomMenu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -229,7 +230,7 @@
         android:background="@drawable/roundedgrey"
         android:ems="10"
         android:hint="@string/ccv"
-        android:inputType="textPersonName"
+        android:inputType="number|textPersonName"
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -246,7 +247,7 @@
         android:background="@drawable/roundedgrey"
         android:ems="10"
         android:hint="@string/caducidad"
-        android:inputType="textPersonName"
+        android:inputType="date"
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -286,7 +287,7 @@
         android:background="@drawable/roundedgrey"
         android:ems="10"
         android:hint="@string/cardnumber"
-        android:inputType="textPersonName"
+        android:inputType="number|textPersonName"
         android:minHeight="48dp"
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toTopOf="@+id/view_5_2"

@@ -3,6 +3,7 @@ package com.example.reto01
 import android.animation.ObjectAnimator
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Color
 import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Handler
@@ -39,6 +40,9 @@ class activity_5_1address : AppCompatActivity(), View.OnClickListener {
         initObjects()
         initListeners()
 
+        //Damos color al progress bar
+        progressBar_5_1.getProgressDrawable().setColorFilter(
+            Color.parseColor("#E2C2B9"), android.graphics.PorterDuff.Mode.SRC_IN);
 
         bottomNavV_5_1bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -134,6 +138,7 @@ class activity_5_1address : AppCompatActivity(), View.OnClickListener {
 
 
     }
+
     private fun initObjects() {
         user= User()
 
@@ -144,7 +149,6 @@ class activity_5_1address : AppCompatActivity(), View.OnClickListener {
         var getDataFromSQLite = GetDataFromSQLite()
         getDataFromSQLite.execute()
     }
-
 
     private fun initListeners(){
         btn_5_1adress!!.setOnClickListener(this)
@@ -187,7 +191,6 @@ class activity_5_1address : AppCompatActivity(), View.OnClickListener {
 
     }
 
-
     inner class GetDataFromSQLite : AsyncTask<Void, Void, User>() {
 
           //Recoger datos del usuario
@@ -211,7 +214,7 @@ class activity_5_1address : AppCompatActivity(), View.OnClickListener {
         }
 
     }
-//Rellenar los campos de dirección con los datos del usuario
+    //Rellenar los campos de dirección con los datos del usuario
     fun rellenarCampos(){
 
         txt_5_1nombre.setText(user.name)
@@ -219,6 +222,7 @@ class activity_5_1address : AppCompatActivity(), View.OnClickListener {
         txt_5_1direccion.setText(user.address)
         txt_5_1city.setText(user.city)
         txt_5_1cp.setText(user.cp)
+
         txt_5_1telefono.setText(user.tlf)
 
     }
@@ -230,7 +234,7 @@ class activity_5_1address : AppCompatActivity(), View.OnClickListener {
 
         var direccion = txt_5_1direccion.text.toString()
         var ciudad = txt_5_1city.text.toString()
-        var provincia = txt_5_1provincia.text.toString()
+
         var cp  = txt_5_1cp.text.toString()
         var nombre = txt_5_1nombre.text.toString()
         var apellido = txt_5_1apellido.text.toString()

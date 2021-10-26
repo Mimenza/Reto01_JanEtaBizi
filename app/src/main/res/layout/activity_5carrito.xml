@@ -129,6 +129,7 @@
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:background="#FAEBE0"
         android:id="@+id/bottomNavV_5bottomMenu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

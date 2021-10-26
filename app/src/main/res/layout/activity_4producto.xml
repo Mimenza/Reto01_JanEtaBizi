@@ -60,7 +60,7 @@
 
 
     <Button
-        android:id="@+id/btn_4comprar"
+        android:id="@+id/btn_4buy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/my_button_border"
@@ -75,7 +75,7 @@
         app:layout_constraintVertical_bias="0.836" />
 
     <Button
-        android:id="@+id/btn_4añadircarrito"
+        android:id="@+id/btn_4addtocart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/my_button_border"
@@ -90,6 +90,7 @@
         app:layout_constraintVertical_bias="0.836" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:background="#FAEBE0"
         android:id="@+id/bottomNavV_4bottomMenu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -100,7 +101,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintTop_toBottomOf="@+id/btn_4comprar"
+        app:layout_constraintTop_toBottomOf="@+id/btn_4buy"
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/navigation">
 

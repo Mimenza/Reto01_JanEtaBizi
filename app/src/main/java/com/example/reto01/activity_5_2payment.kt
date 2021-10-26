@@ -3,6 +3,7 @@ package com.example.reto01
 import android.animation.ObjectAnimator
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Color
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -44,6 +45,10 @@ class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
         initViews()
         initObjects()
         initListeners()
+
+        //Damos color al progress bar
+        progressBar_5_2.getProgressDrawable().setColorFilter(
+            Color.parseColor("#E2C2B9"), android.graphics.PorterDuff.Mode.SRC_IN);
 
         bottomNavV_5_2bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -236,7 +241,7 @@ class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
         //Recogemos los datos de los inputs
 
         var tarjeta =  txt_5_2cardnumber.text.toString()
-        //var ccv = txt_5_2ccv.text.toString().toInt()
+        var ccv = txt_5_2ccv.text.toString().toInt()
         var caducidad = txt_5_2caducidadtarjeta.text.toString()
 
         //Rellenamo el objeto de user con los datos
@@ -252,7 +257,7 @@ class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
         usuario.description=user.description
         usuario.admin=user.admin
         usuario.tlf = user.tlf
-        usuario.ccv = user.ccv
+        usuario.ccv = ccv
         usuario.caducidad = caducidad
         usuario.num_tarjeta= tarjeta
 

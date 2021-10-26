@@ -76,7 +76,7 @@
         android:background="@drawable/rounded"
         android:ems="10"
         android:hint="@string/cp"
-        android:inputType="textPersonName"
+        android:inputType="number|textPersonName"
         android:minHeight="48dp"
         android:paddingLeft="20dp"
         app:layout_constraintEnd_toEndOf="parent"

@@ -116,6 +116,7 @@ class activity_5carrito : AppCompatActivity() {
     }
 
     fun loadProductos(){
+
         val prefs: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
         val editor : SharedPreferences.Editor = prefs.edit()
         val gson = Gson()
@@ -136,6 +137,7 @@ class activity_5carrito : AppCompatActivity() {
         }
 
        /* carritoSize = productos.size*/
+
         //Adaptador RecyclerView Carrito de la compra
         val adapter = MyCardsCartAdapter(productos, this)
         reciclerView_carrito.layoutManager = LinearLayoutManager(this)

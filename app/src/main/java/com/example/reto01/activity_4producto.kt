@@ -51,7 +51,13 @@ class activity_4producto : AppCompatActivity() {
         }
 
 
-        btn_4añadircarrito.setOnClickListener() {
+        btn_4addtocart.setOnTouchListener { v, event ->
+            btn_4addtocart.setBackgroundResource(R.drawable.my_button_border_clickgreen)
+            Handler().postDelayed({
+                btn_4addtocart.setBackgroundResource(R.drawable.my_button_border)
+            }, 100)
+
+
             val prefs: SharedPreferences = getSharedPreferences("carritoProductos", 0)
             val editor: SharedPreferences.Editor = prefs.edit()
             val gson = Gson()
@@ -70,18 +76,20 @@ class activity_4producto : AppCompatActivity() {
             editor.putString((length.toInt() - 1).toString(), itemJson.toString())
             editor.commit()
 
-            btn_4añadircarrito.setBackgroundResource(R.drawable.my_button_border_clickgreen)
+            btn_4addtocart.setBackgroundResource(R.drawable.my_button_border_clickgreen)
             Handler().postDelayed({
-                btn_4añadircarrito.setBackgroundResource(R.drawable.my_button_border)
+                btn_4addtocart.setBackgroundResource(R.drawable.my_button_border)
             }, 100)
             false
         }
 
 
-        btn_4comprar.setOnTouchListener { v, event ->
-            btn_4comprar.setBackgroundResource(R.drawable.my_button_border_clickgreen)
+
+        btn_4buy.setOnTouchListener { v, event ->
+            btn_4buy.setBackgroundResource(R.drawable.my_button_border_clickgreen)
+
             Handler().postDelayed({
-                btn_4comprar.setBackgroundResource(R.drawable.my_button_border)
+                btn_4buy.setBackgroundResource(R.drawable.my_button_border)
             }, 100)
         }
 
