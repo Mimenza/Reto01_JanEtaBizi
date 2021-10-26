@@ -6,6 +6,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.reto01.DatabaseHelper
@@ -14,6 +15,9 @@ import com.example.reto01.Model.Pedido_producto
 import com.example.reto01.R
 import kotlinx.android.synthetic.main.itemorderrecycler.view.*
 import kotlinx.android.synthetic.main.itemorderrecycler.view.textViewNameProductPedido
+import kotlinx.android.synthetic.main.itemorderrecycler.view.txtViewCantidad
+import kotlinx.android.synthetic.main.itemsuborderrecycler.view.*
+import kotlinx.android.synthetic.main.itemuserrecycler.view.*
 import kotlin.properties.Delegates
 
 
@@ -35,8 +39,10 @@ class SubordersRecyclerAdapter(private val listSuborders: List<Pedido_producto>,
     override fun onBindViewHolder(holder: SubordersViewHolder, i: Int) {
 
         var suborder = listSuborders[i]
+        var producto = suborder.id_product?.let { databaseHelper.getProduct(it)}
 
-        holder.textViewName.text = (suborder.id_product?.let { databaseHelper.getProduct(it)?.name_product }).toString()
+        holder.textViewName.text = (producto?.name_product).toString()
+        producto?.img?.let { holder.textImg.setImageResource(it) }
         holder.textViewAmount.text = suborder.quantity.toString()
 
     }
@@ -52,11 +58,12 @@ class SubordersRecyclerAdapter(private val listSuborders: List<Pedido_producto>,
     inner class SubordersViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var  textViewName: TextView
         var  textViewAmount: TextView
+        var  textImg : ImageView
 
         init {
             textViewName = view.textViewNameProductPedido
             textViewAmount = view.txtViewCantidad
-
+            textImg = view.imageViewSuborder
         }
     }
 
