@@ -135,13 +135,42 @@
     <!--Blog-->
     <string name="blogtitulo">Blog</string>
     <string name="tituloreceta01">Crème de chou rouge et poire</string>
-    <string name="descreceta01">... </string>
+    <string name="descreceta01">Bien que ce soit un plat très présent dans les menus de Noël, rien
+        Je devrais éviter de l\'incorporer dans nos célébrations à tout autre moment de l\'année.
+        C\'est une entrée élégante et colorée qui a tout pour gagner les estomacs de nos convives. Parce que c\'est de-li-cio-sa.</string>
     <string name="fechareceta01"> 24 octobre 2021</string>
-    24 octobre 2021
-    <string name="tituloreceta02">Recette02</string>
+    <string name="ingredientes">INGRÉDIENTS</string>
+    <string name="ingredientes01">1/2 chou rouge \n
+    2 oignons \n
+    1 poire \n
+    500 ml de bouillon de légumes maison \n
+    200 ml de lait ou de crème liquide \n
+    3-4 cuillères à soupe d\'huile d\'olive extra vierge \n
+    Sel \n
+    Raisins secs \n
+    Pignons \n
+    aneth</string>
+    <string name="preparacion">PRÉPARATION</string>
+    <string name="preparacion011">> 1.Retirez le tronc dur du chou rouge et jetez-le. Coupez le reste en julienne épaisse à l\'aide d\'un couteau bien aiguisé. Nous lavons abondamment à l\'eau froide et égouttons. \n
+
+2.Épluchez les oignons et coupez-les en deux. Ensuite, nous coupons chaque moitié en quatre. \n
+
+3. Épluchez la poire, coupez-la dans le sens de la longueur, retirez les graines et coupez-la en cinq ou six morceaux.\n
+
+4. Faites chauffer l\'huile dans une casserole rapide, comme le WMF Perfect, ajoutez l\'oignon et faites sauter pendant quelques minutes. Ajouter le chou rouge et la poire et faire revenir quelques minutes</string>
+
+    <string name="preparacion012"> 5.Retirez le tronc dur du chou rouge et jetez-le. Coupez le reste en julienne épaisse à l\'aide d\'un couteau bien aiguisé. Nous lavons abondamment à l\'eau froide et égouttons. \n
+
+6.Épluchez les oignons et coupez-les en deux. Ensuite, nous coupons chaque moitié en quatre. \n
+
+7. Épluchez la poire, coupez-la dans le sens de la longueur, retirez les graines et coupez-la en cinq ou six morceaux.\n
+
+8. Faites chauffer l\'huile dans une casserole rapide, comme le WMF Perfect, ajoutez l\'oignon et faites sauter pendant quelques minutes. Ajouter le chou rouge et la poire et faire revenir quelques minutes</string>
+
+    <string name="tituloreceta02">Mini Dutch Pancakes</string>
     <string name="descreceta02">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
 
-    <string name="tituloreceta03">Recette03</string>
+    <string name="tituloreceta03">Gyozas aux légumes (boulettes chinoises)</string>
     <string name="descreceta03">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
     <string name="filtrobusquedausuarios">Rechercher des utilisateurs</string>
     <string name="todaslascuentas">Tous les utilisateurs</string>
@@ -153,5 +182,6 @@
     <string name="error_message_address">Entrez une adresse s\'il vous plait</string>
     <string name="email">E-mail</string>
     <string name="contraseña">Mot de passe</string>
+
 
 </resources>

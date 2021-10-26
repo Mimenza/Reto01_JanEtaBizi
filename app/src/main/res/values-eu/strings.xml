@@ -128,14 +128,43 @@
     <string name="dark">Gai iluna</string>
     <!--Blog-->
     <string name="blogtitulo">Blog</string>
-    <string name="tituloreceta01">Errezeta01</string>
+    <string name="tituloreceta01">Aza gorria eta madari krema</string>
     <string name="descreceta01">Gabonetako menuetan plater hau oso presente dagoen arren, ezerk ez digu eragotzi behar urteko beste edozein unetan gure ospakizunetan sartzea. Hasiberri dotorea eta koloretsua da, gure gonbidatuen urdailak irabazteko dena duena. De-li-cio-sa delako.</string>
     <string name="fechareceta01">2021eko urriaren 24a</string>
 
-    <string name="tituloreceta02">Errezeta02</string>
+    <string name="ingredientes">OSAGAIAK</string>
+    <string name="ingredientes01">1/2 aza gorri \n
+        2 tipula \n
+        1 madari \n
+        Etxeko barazki salda 500 ml \n
+        200 ml esne edo krema likido \n
+        3-4 koilarakada oliba olio birjina estra \n
+        Gatza \n
+        Mahaspasak \n
+        Piñuak \n
+        Aneta</string>
+    <string name="preparacion">PRESTAKETA</string>
+    <string name="preparacion011">1.Kendu aza gorriari enbor gogorra eta bota. Gainerakoa juliana lodietan moztu labana zorrotz baten laguntzaz. Ur hotz askorekin garbitzen dugu eta xukatzen dugu. \n
+
+    2.Tipula zuritu eta erditik moztu. Ondoren, erdi bakoitza laurdenetan mozten dugu. \n
+
+    3. Udarea zuritu, luzera moztu, haziak kendu eta bospasei zatitan moztu \n
+
+    4.Berotu olioa lapiko azkar batean, WMF Perfect adibidez, gehitu tipula eta erregosi minutu pare batez. Gehitu aza gorria eta udarea eta frijitu minutu pare batez. \n</string>
+
+    <string name="preparacion012"> 5.Gehitu salda eta ondu dastatzeko (hobe labur geratu eta egosketaren amaieran puntua doitzea). Tapa itxi eta su bizian berotzen dugu. Balbula azaleratzen den unean, lehen lerroa besterik ez, beroa ertain-baxura jaisten dugu eta zortzi minutuz zenbatzen dugu. \n
+
+    6. Behin egosteko denbora igarota, sua itzali eta lapikoari bere burua despresurizatzen utziko dugu. Behin lurrun guztia atera eta balbula berriro ezkutatuta irekitzen dugu. \n
+
+    7. Esnegaina birrindu beso-nahastagailuarekin edo elikagai-prozesadorearen laguntzaz. Gehitu krema likidoa eta irabiatu berriro. Zapore-puntua probatu eta doitzen dugu beharrezkoa ikusten badugu. \n
+
+    8 Zupiroetan zerbitzatzen dugu eta mahaira eramaten dugu, zati bakoitza mahaspasekin, pinuekin eta aneta adarrez apainduz.</string>
+
+
+    <string name="tituloreceta02">Mini Dutch Pancakes</string>
     <string name="descreceta02">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
 
-    <string name="tituloreceta03">Errezeta03</string>
+    <string name="tituloreceta03">Barazki gyozas (Txinako dumplings)</string>
     <string name="descreceta03">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
     <string name="filtrobusquedausuarios">Erabiltzaileen bilaketa</string>
     <string name="todaslascuentas">Erabiltzaile guztiak</string>
@@ -148,5 +177,7 @@
     <string name="error_message_address">Ingrese una dirección</string>
     <string name="email">Email</string>
     <string name="contraseña">Contraseña</string>
+
+
 
 </resources>
