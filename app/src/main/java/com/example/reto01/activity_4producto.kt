@@ -71,13 +71,8 @@ class activity_4producto : AppCompatActivity() {
             }
         }
 
-        btn_4addtocart.setOnTouchListener { v, event ->
-            btn_4addtocart.setBackgroundResource(R.drawable.my_button_border_clickgreen)
-            Handler().postDelayed({
-                btn_4addtocart.setBackgroundResource(R.drawable.my_button_border)
-            }, 100)
 
-
+        btn_4addtocart.setOnClickListener(){
             val prefs: SharedPreferences = getSharedPreferences("carritoProductos", 0)
             val editor: SharedPreferences.Editor = prefs.edit()
             val gson = Gson()

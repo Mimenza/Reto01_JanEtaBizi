@@ -155,6 +155,7 @@ class activity_3principal : AppCompatActivity() {
         layoutParams.setMargins(2, 2, 2, 2)
 
         var i = 0
+        var j = 0
         while (i <= rowsLength) {
             if (itemsLength >= 3) {
                 var newRow = TableRow(this)
@@ -162,9 +163,9 @@ class activity_3principal : AppCompatActivity() {
                 var newCol2 = ImageView(this)
                 var newCol3 = ImageView(this)
 
-                newCol1.setImageResource(filteredItems[i].img)
-                newCol2.setImageResource(filteredItems[i+1].img)
-                newCol3.setImageResource(filteredItems[i+2].img)
+                newCol1.setImageResource(filteredItems[j].img)
+                newCol2.setImageResource(filteredItems[j+1].img)
+                newCol3.setImageResource(filteredItems[j+2].img)
 
                 newRow.addView(newCol1, layoutParams)
                 newRow.addView(newCol2, layoutParams)
@@ -223,14 +224,15 @@ class activity_3principal : AppCompatActivity() {
 
                 i++
                 itemsLength = itemsLength - 3
+                j = j + 3
             } else if (itemsLength == 2) {
                 var newRow = TableRow(this)
                 var newCol1 = ImageView(this)
                 var newCol2 = ImageView(this)
                 var newCol3 = ImageView(this)
 
-                newCol1.setImageResource(filteredItems[i].img)
-                newCol2.setImageResource(filteredItems[i+1].img)
+                newCol1.setImageResource(filteredItems[j].img)
+                newCol2.setImageResource(filteredItems[j+1].img)
 
                 newRow.addView(newCol1, layoutParams)
                 newRow.addView(newCol2, layoutParams)
@@ -265,7 +267,7 @@ class activity_3principal : AppCompatActivity() {
                 sharedPreferencesEditor.commit()
 
                 newCol1.setOnClickListener(){
-                    val productJson = gson.toJson(filteredItems[i-1])
+                    val productJson = gson.toJson(filteredItems[j-1])
                     sharedPreferencesEditor.putString("product", productJson)
                     sharedPreferencesEditor.commit()
 

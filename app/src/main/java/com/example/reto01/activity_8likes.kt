@@ -125,6 +125,7 @@ class activity_8likes : AppCompatActivity() {
         layoutParams.setMargins(2, 2, 2, 2)
 
         var i = 0
+        var j = 0
         while (i <= rowsLength) {
             if (itemsLength >= 3) {
                 var newRow = TableRow(this)
@@ -132,9 +133,9 @@ class activity_8likes : AppCompatActivity() {
                 var newCol2 = ImageView(this)
                 var newCol3 = ImageView(this)
 
-                newCol1.setImageResource(listProducts[i].img)
-                newCol2.setImageResource(listProducts[i+1].img)
-                newCol3.setImageResource(listProducts[i+2].img)
+                newCol1.setImageResource(listProducts[j].img)
+                newCol2.setImageResource(listProducts[j+1].img)
+                newCol3.setImageResource(listProducts[j+2].img)
 
                 newRow.addView(newCol1, layoutParams)
                 newRow.addView(newCol2, layoutParams)
@@ -160,14 +161,15 @@ class activity_8likes : AppCompatActivity() {
 
                 i++
                 itemsLength = itemsLength - 3
+                j = j + 3
             } else if (itemsLength == 2) {
                 var newRow = TableRow(this)
                 var newCol1 = ImageView(this)
                 var newCol2 = ImageView(this)
                 var newCol3 = ImageView(this)
 
-                newCol1.setImageResource(listProducts[i].img)
-                newCol2.setImageResource(listProducts[i+1].img)
+                newCol1.setImageResource(listProducts[j].img)
+                newCol2.setImageResource(listProducts[j+1].img)
 
                 newRow.addView(newCol1, layoutParams)
                 newRow.addView(newCol2, layoutParams)
@@ -199,7 +201,7 @@ class activity_8likes : AppCompatActivity() {
                 var newCol2 = ImageView(this)
                 var newCol3 = ImageView(this)
 
-                newCol1.setImageResource(listProducts[i].img)
+                newCol1.setImageResource(listProducts[j].img)
 
                 newRow.addView(newCol1, layoutParams)
                 newRow.addView(newCol2, layoutParams)
