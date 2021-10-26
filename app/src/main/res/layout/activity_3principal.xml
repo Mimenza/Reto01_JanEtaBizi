@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    tools:context=".activity_3principal">
+    tools:context=".activity_3principal"
+   >
 
     <TextView
         android:id="@+id/txtv_3topbarColor"
@@ -333,6 +334,7 @@
     </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:background="#FAEBE0"
         android:id="@+id/bottomNavV_3bottomMenu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
