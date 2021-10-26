@@ -50,10 +50,10 @@ class activity_4producto : AppCompatActivity() {
         }
 
 
-        btn_7_2_2eliminar.setOnTouchListener { v, event ->
-            btn_7_2_2eliminar.setBackgroundResource(R.drawable.my_button_border_clickgreen)
+        btn_4addtocart.setOnTouchListener { v, event ->
+            btn_4addtocart.setBackgroundResource(R.drawable.my_button_border_clickgreen)
             Handler().postDelayed({
-                btn_7_2_2eliminar.setBackgroundResource(R.drawable.my_button_border)
+                btn_4addtocart.setBackgroundResource(R.drawable.my_button_border)
             }, 100)
 
             val prefs: SharedPreferences = getSharedPreferences("carritoProductos", 0)

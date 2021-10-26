@@ -36,6 +36,8 @@ class activity_7_2productos : AppCompatActivity() {
 
     }
 
+
+
     private fun initViews(){
         recyclerViewProducts =recyclerViewProductos as RecyclerView
 

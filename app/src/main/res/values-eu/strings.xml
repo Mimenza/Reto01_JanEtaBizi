@@ -192,8 +192,7 @@
     <string name="eliminar">Eliminar producto</string>
     <string name="update_product">Actualizar producto</string>
     <string name="delete">Eliminar</string>
-
-
+    <string name="txt5_eliminarproducto">¿Eliminar producto?</string>
 
 
 </resources>

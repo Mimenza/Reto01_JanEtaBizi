@@ -25,9 +25,9 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/recyclerViewProductos"
+        android:id="@+id/recyclerViewProductos"
         android:layout_width="417dp"
-        android:layout_height="577dp" />
+        android:layout_height="633dp" />
 
 
 </LinearLayout>
