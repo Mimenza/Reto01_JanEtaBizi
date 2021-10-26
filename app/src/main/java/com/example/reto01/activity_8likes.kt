@@ -9,6 +9,8 @@ import android.widget.TableRow
 import com.example.reto01.Model.Likes
 import com.example.reto01.Model.Producto
 import com.example.reto01.Model.User
+import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_3principal.*
 import kotlinx.android.synthetic.main.activity_8likes.*
 import java.util.ArrayList
 
@@ -25,7 +27,15 @@ class activity_8likes : AppCompatActivity() {
         initObjects()
 
         sv_8scrollView.setVerticalScrollBarEnabled(false)
-        loadTable()
+
+        //Recoger datos del usuario loggeado
+        val prefs: SharedPreferences =
+            this@activity_8likes.getSharedPreferences("loggedUser", 0)
+        val correo = prefs.getString("correo", null)
+        //Llamar a la función getUser pasándole el correo que hemos guardado en SharedPreferences
+        user = databaseHelper.getUser(correo.toString())!!
+
+        loadTable(user)
 
         bottomNavV_8bottomMenu.setSelectedItemId(R.id.navigation_likes)
 
@@ -54,6 +64,8 @@ class activity_8likes : AppCompatActivity() {
                 else -> false
             }
         }
+
+
 
     }
 
@@ -87,16 +99,8 @@ class activity_8likes : AppCompatActivity() {
         this.overridePendingTransition(0, 0)
     }
 
-    fun loadTable() {
-
-        //Recoger datos del usuario loggeado
-        val prefs: SharedPreferences =
-            this@activity_8likes.getSharedPreferences("loggedUser", 0)
-        val correo = prefs.getString("correo", null)
-        //Llamar a la función getUser pasándole el correo que hemos guardado en SharedPreferences
-        user = databaseHelper.getUser(correo.toString())!!
-
-        var listaProductos = ArrayList<Producto>()
+    fun loadTable(user: User)  {
+        var listProducts = ArrayList<Producto>()
         //Recomes la lista de likes que tiene ese user
         var listaLikes:MutableList<Likes> =databaseHelper.getUserLikes(user.id)
 
@@ -106,18 +110,19 @@ class activity_8likes : AppCompatActivity() {
             //Guardamos los datos del producto y lo pusheamos
             var producto = listaLikes[i].id_producto?.let { databaseHelper.getProduct(it) }
 
-            listaProductos.add(producto!!)
+            listProducts.add(producto!!)
         }
 
-        println(listaProductos)
+        println(listProducts)
 
-        var items = listaProductos.size
-        var itemsLength = items
-        var rowsLength = (((items + 3) - 1) / 3) - 1
+        var rowsLength = (((listProducts.size + 3) - 1) / 3) - 1
+        var itemsLength = listProducts.size
         var layoutParams = TableRow.LayoutParams(
             TableRow.LayoutParams.WRAP_CONTENT,
             TableRow.LayoutParams.WRAP_CONTENT
         )
+
+        layoutParams.setMargins(2, 2, 2, 2)
 
         var i = 0
         while (i <= rowsLength) {
@@ -127,11 +132,9 @@ class activity_8likes : AppCompatActivity() {
                 var newCol2 = ImageView(this)
                 var newCol3 = ImageView(this)
 
-                newCol1.setImageResource(R.drawable.prueba)
-                newCol2.setImageResource(R.drawable.prueba)
-                newCol3.setImageResource(R.drawable.prueba)
-
-                layoutParams.setMargins(2, 2, 2, 2)
+                newCol1.setImageResource(listProducts[i].img)
+                newCol2.setImageResource(listProducts[i+1].img)
+                newCol3.setImageResource(listProducts[i+2].img)
 
                 newRow.addView(newCol1, layoutParams)
                 newRow.addView(newCol2, layoutParams)
@@ -161,49 +164,64 @@ class activity_8likes : AppCompatActivity() {
                 var newRow = TableRow(this)
                 var newCol1 = ImageView(this)
                 var newCol2 = ImageView(this)
+                var newCol3 = ImageView(this)
 
-                newCol1.setImageResource(R.drawable.prueba)
-                newCol2.setImageResource(R.drawable.prueba)
-
-                layoutParams.setMargins(2, 2, 2, 2)
+                newCol1.setImageResource(listProducts[i].img)
+                newCol2.setImageResource(listProducts[i+1].img)
 
                 newRow.addView(newCol1, layoutParams)
                 newRow.addView(newCol2, layoutParams)
+                newRow.addView(newCol3, layoutParams)
 
                 tb_8tablaProductos.addView(newRow)
 
                 newCol1.requestLayout()
                 newCol2.requestLayout()
+                newCol3.requestLayout()
 
                 newCol1.getLayoutParams().height = 262
                 newCol2.getLayoutParams().height = 262
+                newCol3.getLayoutParams().height = 262
 
                 newCol1.getLayoutParams().width = 262
                 newCol2.getLayoutParams().width = 262
+                newCol3.getLayoutParams().width = 262
 
                 newCol1.setScaleType(ImageView.ScaleType.FIT_XY)
                 newCol2.setScaleType(ImageView.ScaleType.FIT_XY)
+                newCol3.setScaleType(ImageView.ScaleType.FIT_XY)
+
 
                 i++
             } else {
                 var newRow = TableRow(this)
                 var newCol1 = ImageView(this)
+                var newCol2 = ImageView(this)
+                var newCol3 = ImageView(this)
 
-                newCol1.setImageResource(R.drawable.prueba)
-
-                layoutParams.setMargins(2, 2, 2, 2)
+                newCol1.setImageResource(listProducts[i].img)
 
                 newRow.addView(newCol1, layoutParams)
+                newRow.addView(newCol2, layoutParams)
+                newRow.addView(newCol3, layoutParams)
 
                 tb_8tablaProductos.addView(newRow)
 
                 newCol1.requestLayout()
+                newCol2.requestLayout()
+                newCol3.requestLayout()
 
                 newCol1.getLayoutParams().height = 262
+                newCol2.getLayoutParams().height = 262
+                newCol3.getLayoutParams().height = 262
 
                 newCol1.getLayoutParams().width = 262
+                newCol2.getLayoutParams().width = 262
+                newCol3.getLayoutParams().width = 262
 
                 newCol1.setScaleType(ImageView.ScaleType.FIT_XY)
+                newCol2.setScaleType(ImageView.ScaleType.FIT_XY)
+                newCol3.setScaleType(ImageView.ScaleType.FIT_XY)
 
                 i++
             }

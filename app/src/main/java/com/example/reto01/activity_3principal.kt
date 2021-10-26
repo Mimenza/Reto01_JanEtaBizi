@@ -188,6 +188,39 @@ class activity_3principal : AppCompatActivity() {
                 newCol2.setScaleType(ImageView.ScaleType.FIT_XY)
                 newCol3.setScaleType(ImageView.ScaleType.FIT_XY)
 
+                val sharedPreferences = getSharedPreferences("product", 0)
+                val sharedPreferencesEditor: SharedPreferences.Editor = sharedPreferences.edit()
+                val gson = Gson()
+
+                val productJson = gson.toJson(filteredItems[i])
+
+                sharedPreferencesEditor.putString("product", productJson)
+                sharedPreferencesEditor.commit()
+
+                newCol1.setOnClickListener(){
+                    val productJson = gson.toJson(filteredItems[i-1])
+                    sharedPreferencesEditor.putString("product", productJson)
+                    sharedPreferencesEditor.commit()
+
+                    navegacion("navigation_producto")
+                }
+
+                newCol2.setOnClickListener(){
+                    val productJson = gson.toJson(filteredItems[i])
+                    sharedPreferencesEditor.putString("product", productJson)
+                    sharedPreferencesEditor.commit()
+
+                    navegacion("navigation_producto")
+                }
+
+                newCol3.setOnClickListener(){
+                    val productJson = gson.toJson(filteredItems[i+1])
+                    sharedPreferencesEditor.putString("product", productJson)
+                    sharedPreferencesEditor.commit()
+
+                    navegacion("navigation_producto")
+                }
+
                 i++
                 itemsLength = itemsLength - 3
             } else if (itemsLength == 2) {
@@ -277,6 +310,23 @@ class activity_3principal : AppCompatActivity() {
                 newCol1.setScaleType(ImageView.ScaleType.FIT_XY)
                 newCol2.setScaleType(ImageView.ScaleType.FIT_XY)
                 newCol3.setScaleType(ImageView.ScaleType.FIT_XY)
+
+                val sharedPreferences = getSharedPreferences("product", 0)
+                val sharedPreferencesEditor: SharedPreferences.Editor = sharedPreferences.edit()
+                val gson = Gson()
+
+                val productJson = gson.toJson(filteredItems[i])
+
+                sharedPreferencesEditor.putString("product", productJson)
+                sharedPreferencesEditor.commit()
+
+                newCol1.setOnClickListener(){
+                    val productJson = gson.toJson(filteredItems[i-1])
+                    sharedPreferencesEditor.putString("product", productJson)
+                    sharedPreferencesEditor.commit()
+
+                    navegacion("navigation_producto")
+                }
 
                 i++
             }

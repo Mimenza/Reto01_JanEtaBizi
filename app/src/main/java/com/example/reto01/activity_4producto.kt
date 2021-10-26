@@ -27,7 +27,23 @@ class activity_4producto : AppCompatActivity() {
         setContentView(R.layout.activity_4producto)
         loadProductData()
         initObjects()
+        //-----------------------------------------------------------------------------------------
 
+        //Recoger datos del usuario loggeado
+        val prefs: SharedPreferences =
+            this@activity_4producto.getSharedPreferences("loggedUser", 0)
+        val correo = prefs.getString("correo", null)
+        //Llamar a la función getUser pasándole el correo que hemos guardado en SharedPreferences
+        user = databaseHelper.getUser(correo.toString())!!
+
+        //Comprobamos si el usuario tiene ese producto likeado
+        var checkLike = databaseHelper.checkLike(product.id_product, user.id)
+
+        //Cambiamos el color del like
+        if (checkLike){
+            imgv_4favorite.setImageResource(R.drawable.ic_favoritered)
+        }
+        //-----------------------------------------------------------------------------------------
 
         bottomNavV_4bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -102,20 +118,13 @@ class activity_4producto : AppCompatActivity() {
 
         imgv_4favorite.setOnClickListener() {
 
-            //Recoger datos del usuario loggeado
-            val prefs: SharedPreferences =
-                this@activity_4producto.getSharedPreferences("loggedUser", 0)
-            val correo = prefs.getString("correo", null)
-            //Llamar a la función getUser pasándole el correo que hemos guardado en SharedPreferences
-            user = databaseHelper.getUser(correo.toString())!!
-
-
             if(databaseHelper.checkLike(product.id_product, user.id)){
                 //Este usuario  le ha dado like al producto
-
                     println("BORRANDO")
                 //Borramos el producto de like
                 databaseHelper.deletelike(product.id_product)
+                //Cambiamos la imagen
+                imgv_4favorite.setImageResource(R.drawable.ic_favorite)
 
             } else{
                 //Este usuario no le ha dado like al producto
@@ -123,11 +132,10 @@ class activity_4producto : AppCompatActivity() {
                 println("GUARDANDO")
                 //Añadimos el producto a like
                 databaseHelper.generatelike(product.id_product, user. id)
+                //Cambiamos la imagen
+                imgv_4favorite.setImageResource(R.drawable.ic_favoritered)
 
             }
-
-
-
 
         }
 
@@ -182,20 +190,7 @@ class activity_4producto : AppCompatActivity() {
 
     }
 
-    /*fun checklikefun(){
-        //Checkeamos si el producto tiene likes o no.
 
-        if(databaseHelper.checkLike(product.id_product, user.id)){
-            //Este usuario  le ha dado like al producto
-            checklike = true
-
-        } else{
-            //Este usuario no le ha dado like al producto
-            checklike = false
-
-        }
-
-    }*/
 }
 
 
