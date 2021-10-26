@@ -1,6 +1,9 @@
 package com.example.reto01
 
 import android.content.Context
+import android.content.Intent
+import android.content.LocusId
+import android.content.SharedPreferences
 import android.os.AsyncTask
 import android.os.Bundle
 import android.view.View
@@ -9,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.reto01.Adapter.UsersRecyclerAdapter
 import com.example.reto01.Model.User
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_7_1usuarios.*
 
 class activity_7_1usuarios : AppCompatActivity() {
@@ -47,6 +51,19 @@ class activity_7_1usuarios : AppCompatActivity() {
 
         var getDataFromSQLite = GetDataFromSQLite()
         getDataFromSQLite.execute()
+    }
+
+    fun deleteUser(user:User){
+
+        val sharedPreferences = getSharedPreferences("user", 0)
+        val sharedPreferencesEditor: SharedPreferences.Editor = sharedPreferences.edit()
+        val gson = Gson()
+
+        val productJson = gson.toJson(user)
+
+        sharedPreferencesEditor.putString("user", productJson)
+        sharedPreferencesEditor.commit()
+
     }
 
     /**

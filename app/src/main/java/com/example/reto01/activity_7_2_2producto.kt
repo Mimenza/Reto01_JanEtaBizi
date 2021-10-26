@@ -53,7 +53,6 @@ class activity_7_2_2producto : AppCompatActivity() {
         }
 
 
-
     }
     fun initObjects(){
 

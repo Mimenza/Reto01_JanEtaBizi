@@ -16,6 +16,11 @@ import com.example.reto01.R
 import com.example.reto01.activity_7_3_4pedidoo
 import kotlinx.android.synthetic.main.itemorderrecycler.view.*
 import kotlinx.android.synthetic.main.itemorderrecycler.view.textViewNameProductPedido
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.util.*
 import kotlin.properties.Delegates
 
 
@@ -38,7 +43,11 @@ class OrdersRecyclerAdapter(private val listOrders: List<Order>, contexto: Conte
 
         var order = listOrders[i]
         holder.textViewName.text = ((order.id_user?.let { databaseHelper.getUserId(it) })?.name).toString()
-        holder.textViewDate.text = order.date
+
+
+
+
+
         holder.textViewOrder.text= order.id_order.toString()
         holder.textViewPrecio.text= order.total.toString()
         holder.itemView.setOnClickListener { onclick(order,holder.itemView.context )}
