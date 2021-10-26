@@ -132,8 +132,45 @@ class DatabaseHelper(
     //private  val LOAD_PRODUCTS = "INSERT INTO ${TBL_PRODUCTS}  VALUES ( -1 ,'Pepinillos', 10.00 , 'vegan', 12, 1)"
 
     private  val LOAD_PRODUCTS =
-        "INSERT INTO ${TBL_PRODUCTS}  VALUES ( 0 ,'Pasteles', 10.00 , 'vegan', 12, 2131230844, 10), ( 1 ,'Omega', 10.00 , 'vegan', 12, 2131230808, 10) ," +
-            "( 2 ,'Fresas', 10.00 , 'vegetarian', 12, 2131230845, 10), ( 3 ,'Arandano', 10.00 , 'vegetarian', 12, 2131230825, 10), ( 4 ,'Pasteles', 10.00 , 'vegetarian', 12, 2131230844, 10)"
+        "INSERT INTO ${TBL_PRODUCTS}  VALUES " +
+                //VEGANO
+                "( 0 ,'Pasta con salsa boloñesa de tempeh', 10.00 , 'vegan', 12, 2131230948, 10), " +
+                "( 1 ,'Fideos soba con salsa de soja y jengibre fresco', 13.00 , 'vegan', 12, 2131230947, 10) , " +
+                "( 2 ,'Patatas gratinadas', 7.00 , 'vegan', 12, 2131230949, 10), " +
+                "( 3 ,'Risotto de setas vegano', 9.50 , 'vegan', 12, 2131230950, 10), " +
+                "( 4 ,'Rollitos de verano de sushi', 15.00 , 'vegan', 12, 2131230951, 10), "+
+                //SIN HUEVO
+                "( 5 ,'Paté de champiñones con tomillo y Marsala', 10.00 , 'huevo', 12, 2131230954, 10), " +
+                "( 6 ,'Aguacates caprese', 13.00 , 'huevo', 12, 2131230952, 10) ," +
+                "( 7 ,'Tortillitas de camarones', 7.00 , 'huevo', 12, 2131230956, 10), " +
+                "( 8 ,'Ensalada César de brócoli', 9.50 , 'huevo', 12, 2131230953, 10), " +
+                "( 9 ,'Espaguetis a la carbonara de aguacate', 15.00 , 'huevo', 12, 2131230955, 10), "+
+                //SIN LACTEOS
+                "( 10 ,'Natillas sin lactosa', 10.00 , 'lacteo', 12, 2131230961, 10), " +
+                "( 11 ,'Magdalenas sin lactosa', 13.00 , 'lacteo', 12,2131230959 , 10) ," +
+                "( 12 ,'Mousse de chocolate', 7.00 , 'lacteo', 12, 2131230960, 10), " +
+                "( 13 ,'Ensalada cremosa de atún', 9.50 , 'lacteo', 12,2131230957 , 10), " +
+                "( 14 ,'Hummus clásico', 15.00 , 'lacteo', 12, 2131230958, 10), "+
+                //KM0
+                "( 15 ,'1', 10.00 , 'KM0', 12,1 , 10), " +
+                "( 16 ,'2', 13.00 , 'KM0', 12,1 , 10) ," +
+                "( 17 ,'3', 7.00 , 'KM0', 12,1 , 10), " +
+                "( 18 ,'4', 9.50 , 'KM0', 12,1 , 10), " +
+                "( 19 ,'5', 15.00 , 'KM0', 12,1 , 10), " +
+                //CELIACO
+                "( 20 ,'CODORNICES EN SALSA DE VINO TINTO', 10.00 , 'celiaco', 12, 2131230962, 10), " +
+                "( 21 ,'ESTOFADO DE CERDO CON PATATAS', 13.00 , 'celiaco', 12, 2131230964, 10) ," +
+                "( 22 ,'CREMA DE BROCOLI', 7.00 , 'celiaco', 12, 2131230963, 10), " +
+                "( 23 ,'SOLOMILLO DE CERDO A LA MOSTAZA Y MIEL', 9.50 , 'celiaco', 12, 2131230966, 10), " +
+                "( 24 ,'SALMOREJO CORDOBES', 15.00 , 'celiaco', 12, 2131230965, 10), " +
+                //DEPORTE
+                "( 25 ,'Polvo batido proteina', 10.00 , 'deporte', 12, 2131230971, 10), " +
+                "( 26 ,'Barritas proteina chocolate', 13.00 , 'deporte', 12,2131230967 , 10) ," +
+                "( 27 ,'Crema chocolate ', 7.00 , 'deporte', 12, 2131230969, 10), " +
+                "( 28 ,'GlucoSport', 9.50 , 'deporte', 12, 2131230970, 10), " +
+                "( 29 ,'Colnatur', 15.00 , 'deporte', 12,  2131230968, 10) "
+
+
 
 
 

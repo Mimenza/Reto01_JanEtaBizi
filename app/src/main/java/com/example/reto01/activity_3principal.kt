@@ -9,6 +9,7 @@ import android.widget.TableRow
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.example.reto01.Model.Producto
+import com.example.reto01.Model.User
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_3principal.*
 
@@ -56,47 +57,64 @@ class activity_3principal : AppCompatActivity() {
             }
         }
 
+       /* var user0 = User()
+        user0.id=R.drawable.polvobatido
+        var user1 = User()
+        user1.id=R.drawable.barrita
+        var user2 = User()
+        user2.id=R.drawable.cremablanca
+        var user3 = User()
+        user3.id=R.drawable.glucosport
+        var user4 = User()
+        user4.id=R.drawable.colnatur
+
+        println("U S U A R I O "+ user0)
+        println("U S U A R I O "+ user1)
+        println("U S U A R I O "+ user2)
+        println("U S U A R I O "+ user3)
+        println("U S U A R I O "+ user4)*/
+
         //COMIDA VEGANA
         tv_3vegan.setOnClickListener(){
             sv_3scrollView.isVisible= true
             sv_3scrollViewFiltro.isVisible = false
             loadTable("vegan")
         }
-        //COMIDA SIN GLUTEN
-        tv_3gluten.setOnClickListener(){
+        //COMIDA DEPORTE
+        tv_3deporte.setOnClickListener(){
             sv_3scrollView.isVisible= true
             sv_3scrollViewFiltro.isVisible = false
-            loadTable("glutenFree")
+            loadTable("deporte")
         }
+        //COMIDA SIN LACTEOS
+        tv_3leche.setOnClickListener(){
+            sv_3scrollView.isVisible= true
+            sv_3scrollViewFiltro.isVisible = false
+            loadTable("lacteo")
+        }
+        //COMIDA CELIACOS
+        tv_3lceliaco.setOnClickListener(){
+            sv_3scrollView.isVisible= true
+            sv_3scrollViewFiltro.isVisible = false
+            loadTable("celiaco")
+        }
+        //COMIDA SIN ACEITE DE PALMA
+        /*tv_3palm.setOnClickListener(){
+            sv_3scrollView.isVisible= true
+            sv_3scrollViewFiltro.isVisible = false
+            loadTable("palmOilFree")
+        }*/
         //COMIDA KM0
         tv_3km0.setOnClickListener(){
             sv_3scrollView.isVisible= true
             sv_3scrollViewFiltro.isVisible = false
-            loadTable("km0")
+            loadTable("KM0")
         }
-        //COMIDA SIN LACTOSA
-        tv_3lactose.setOnClickListener(){
+        //COMIDA SIN HUEVO
+        tv_3huevo.setOnClickListener(){
             sv_3scrollView.isVisible= true
             sv_3scrollViewFiltro.isVisible = false
-            loadTable("lactoseFree")
-        }
-        //COMIDA SIN ACEITE DE PALMA
-        tv_3palm.setOnClickListener(){
-            sv_3scrollView.isVisible= true
-            sv_3scrollViewFiltro.isVisible = false
-            loadTable("palmOilFree")
-        }
-        //COMIDA ALTA EN PROTEINA
-        tv_3protein.setOnClickListener(){
-            sv_3scrollView.isVisible= true
-            sv_3scrollViewFiltro.isVisible = false
-            loadTable("highProtein")
-        }
-        //COMIDA VEGETARIANA
-        tv_3vegetarian.setOnClickListener(){
-            sv_3scrollView.isVisible= true
-            sv_3scrollViewFiltro.isVisible = false
-            loadTable("vegetarian")
+            loadTable("huevo")
         }
     }
 

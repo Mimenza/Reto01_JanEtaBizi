@@ -50,11 +50,11 @@
 
     <string name="filtrobusquedacomida">Busca una categoría</string>
     <string name="vegano">VEGANO</string>
-    <string name="vegetariano">VEGETARIANO</string>
     <string name="km0">KM0</string>
-    <string name="gluten">SIN GLUTEN</string>
     <string name="lactosa">SIN LACTOSA</string>
-    <string name="proteina">ALTO EN PROTEÍNA</string>
+    <string name="deporte">DEPORTISTAS</string>
+    <string name="celiaco">CELIACOS</string>
+    <string name="huevo">SIN HUEVO</string>
     <string name="aceite">SIN ACEITE PALMA</string>
 
     <!--Carrito-->

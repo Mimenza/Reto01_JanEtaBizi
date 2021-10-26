@@ -121,7 +121,7 @@
                         android:adjustViewBounds="true"
                         android:alpha="0.8"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/vegan" />
+                        android:src="@drawable/pastatempeh" />
 
                     <TextView
                         android:id="@+id/tv_3vegan"
@@ -150,15 +150,15 @@
                         android:adjustViewBounds="true"
                         android:alpha="0.8"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/vegetarian" />
+                        android:src="@drawable/pate" />
 
                     <TextView
-                        android:id="@+id/tv_3vegetarian"
+                        android:id="@+id/tv_3huevo"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="#33FFFFFF"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/vegetariano"
+                        android:text="@string/huevo"
                         android:textColor="#CC000000"
                         android:textSize="12pt"
                         android:textStyle="bold" />
@@ -187,15 +187,15 @@
                         android:adjustViewBounds="true"
                         android:alpha="0.8"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/km0" />
+                        android:src="@drawable/hummus" />
 
                     <TextView
-                        android:id="@+id/tv_3km0"
+                        android:id="@+id/tv_3leche"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="#33FFFFFF"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/km0"
+                        android:text="@string/lactosa"
                         android:textColor="#CC000000"
                         android:textSize="12pt"
                         android:textStyle="bold" />
@@ -215,15 +215,15 @@
                         android:adjustViewBounds="true"
                         android:alpha="0.8"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/nogluten" />
+                        android:src="@drawable/barrita" />
 
                     <TextView
-                        android:id="@+id/tv_3gluten"
+                        android:id="@+id/tv_3deporte"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="#33FFFFFF"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/gluten"
+                        android:text="@string/deporte"
                         android:textColor="#CC000000"
                         android:textSize="12pt"
                         android:textStyle="bold" />
@@ -251,15 +251,15 @@
                         android:adjustViewBounds="true"
                         android:alpha="0.8"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/nolactose" />
+                        android:src="@drawable/codorniz" />
 
                     <TextView
-                        android:id="@+id/tv_3lactose"
+                        android:id="@+id/tv_3lceliaco"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="#33FFFFFF"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/lactosa"
+                        android:text="@string/celiaco"
                         android:textColor="#CC000000"
                         android:textSize="12pt"
                         android:textStyle="bold" />
@@ -279,15 +279,15 @@
                         android:adjustViewBounds="true"
                         android:alpha="0.8"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/protein" />
+                        android:src="@drawable/km0" />
 
                     <TextView
-                        android:id="@+id/tv_3protein"
+                        android:id="@+id/tv_3km0"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="#33FFFFFF"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/proteina"
+                        android:text="@string/km0"
                         android:textColor="#CC000000"
                         android:textSize="12pt"
                         android:textStyle="bold" />
@@ -317,16 +317,6 @@
                         android:scaleType="centerCrop"
                         android:src="@drawable/nopalmoil" />
 
-                    <TextView
-                        android:id="@+id/tv_3palm"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#33FFFFFF"
-                        android:gravity="center_horizontal|center_vertical"
-                        android:text="@string/aceite"
-                        android:textColor="#CC000000"
-                        android:textSize="12pt"
-                        android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
 
             </LinearLayout>

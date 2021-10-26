@@ -21,6 +21,7 @@ import kotlinx.android.synthetic.main.activity_2registrar.*
 import kotlinx.android.synthetic.main.activity_5_1adress.*
 import kotlinx.android.synthetic.main.activity_5_2payment.*
 import java.text.SimpleDateFormat
+import java.time.LocalTime
 import java.util.*
 
 class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
@@ -276,11 +277,7 @@ class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
         val sizeCarrito=prefs.getString("size",null).toString().toInt()
 
         //Conseguimos la hora local
-        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss").toString()
-        val currentDate = sdf.format(Date())
-
-        //Rellenamos le objeto de order
-        order.date = currentDate
+        order.date = LocalTime.now().toString() //Rellenamos le objeto de order
         order.total = total
         order.address = user.address
         order.id_user = user.id
