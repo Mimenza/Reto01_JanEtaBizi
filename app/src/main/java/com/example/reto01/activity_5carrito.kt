@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reto01.Adapter.MyCardsCartAdapter
@@ -16,12 +17,14 @@ import kotlinx.android.synthetic.main.activity_5_2payment.*
 import kotlinx.android.synthetic.main.activity_5carrito.*
 import kotlinx.android.synthetic.main.activity_6usuario.*
 import kotlinx.android.synthetic.main.viewholder_cart.*
+import java.io.File
 import java.util.*
 
 class activity_5carrito : AppCompatActivity() {
-     var total:Double?=0.00
-
+    var total:Double?=0.00
     var carritoSize:Int = 0
+    var productos: ArrayList<Producto> = arrayListOf()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
@@ -113,22 +116,26 @@ class activity_5carrito : AppCompatActivity() {
     }
 
     fun loadProductos(){
-        //Crear array list de los productos de carrito
-        val productos: ArrayList<Producto>
+        val prefs: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
+        val editor : SharedPreferences.Editor = prefs.edit()
+        val gson = Gson()
 
-        var producto01 = Producto(0, "Pasteles", 10.0, "postres", 10, R.drawable.dessert)
-        var producto02 = Producto(1, "Omega", 12.0, "suplemento", 10, R.drawable.aceite3)
-        var producto03 = Producto(2, "Fresas", 17.0, "fruta", 10, R.drawable.fresa)
-        var producto04 = Producto(3, "Arandano", 1.0, "fruta", 10, R.drawable.blueberries)
-        var producto05 = Producto(4, "Pasteles", 10.0, "postres", 10, R.drawable.dessert)
-        var producto06 = Producto(5, "Omega", 12.0, "suplemento", 10, R.drawable.aceite3)
-        var producto07 = Producto(6, "Fresas", 17.0, "fruta", 10, R.drawable.fresa)
-        var producto08 = Producto(7, "Arandano", 1.0, "fruta", 10, R.drawable.blueberries)
+        val f = File("/data/data/com.example.reto01/shared_prefs/carrito.xml")
+        if (f.exists()){
+            f.delete()
+        }
 
-        //rellenar el array con los productos
-        productos = arrayListOf(producto01, producto02, producto03, producto04, producto05, producto06, producto07, producto08)
+        var length = prefs.getString("length", null)
 
-        carritoSize = productos.size
+        if(length !=  null){
+            for(i in 0..length.toInt()-1){
+                val productJson = prefs.getString(i.toString(),null)
+                val product: Producto = gson.fromJson(productJson, Producto::class.java)
+                productos.add(product)
+            }
+        }
+
+       /* carritoSize = productos.size*/
         //Adaptador RecyclerView Carrito de la compra
         val adapter = MyCardsCartAdapter(productos, this)
         reciclerView_carrito.layoutManager = LinearLayoutManager(this)
@@ -141,20 +148,20 @@ class activity_5carrito : AppCompatActivity() {
         //Recoger datos de Shared Preferences
         val prefs: SharedPreferences = this.getSharedPreferences("carrito", 0)
 
-        for(x in 0..carritoSize-1){
 
-            val carrito = prefs.getString("item"+ x,null)
+        for(x in productos){
+            val carrito = prefs.getString("item" + x.id_product.toString(),null)
 
-            //Parsear datos a objeto carrito_item
-            val gsonFile = Gson()
-            val carritoJson: Carrito_item = gsonFile.fromJson(carrito, Carrito_item::class.java)
+            if(carrito != null){
+                //Parsear datos a objeto carrito_item
+                val gsonFile = Gson()
+                val carritoJson: Carrito_item = gsonFile.fromJson(carrito, Carrito_item::class.java)
 
-
-            val cantidad:Double? = carritoJson.cantidad!!.toDouble()
-            val precio:Double? = carritoJson.precio!!.toDouble()
-            val totalItem:Double? = cantidad!! * precio!!
-            total = total!! + totalItem!!
-
+                val cantidad:Double? = carritoJson.cantidad!!.toDouble()
+                val precio:Double? = carritoJson.precio!!.toDouble()
+                val totalItem:Double? = cantidad!! * precio!!
+                total = total!! + totalItem!!
+            }
         }
         var euro= "€"
         txtv_5preciototal.text = total.toString()+euro
@@ -165,7 +172,6 @@ class activity_5carrito : AppCompatActivity() {
 
         //Subir datos
         editor.putString("total", total?.toString())
-        editor.commit()
         editor.putString("size", carritoSize.toString())
         editor.commit()
 

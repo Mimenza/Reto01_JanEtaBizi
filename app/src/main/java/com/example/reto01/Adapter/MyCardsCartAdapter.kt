@@ -64,9 +64,9 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
         ViewHolder.itemSpiner.adapter = adaptador
 
             //Recoger datos de Shared Preferences
-            val prefs: SharedPreferences = context.getSharedPreferences("carrito", 0)
-            val carrito = prefs.getString("item"+ item.id_product.toString(),null)
+            var prefs: SharedPreferences = context.getSharedPreferences("carrito", 0)
 
+            val carrito = prefs.getString("item"+ item.id_product.toString(),null)
 
             //Parsear datos a objeto carrito_item
             val gsonFile = Gson()
@@ -93,7 +93,7 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
                 val item_Carrito = Carrito_item(item.id_product, parent.getItemAtPosition(position).toString().toInt(),item.price)
                 val itemJson = gson.toJson(item_Carrito)
 
-                val itemname = "item" + item.id_product
+                val itemname = "item" + item.id_product.toString()
 
                 //Subir datos
                 editor.putString(itemname, itemJson.toString())

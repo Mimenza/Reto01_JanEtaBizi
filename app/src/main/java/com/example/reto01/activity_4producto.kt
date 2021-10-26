@@ -15,6 +15,7 @@ import kotlinx.android.synthetic.main.activity_4producto.*
 
 class activity_4producto : AppCompatActivity() {
     var product: Producto = Producto()
+
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,33 +51,38 @@ class activity_4producto : AppCompatActivity() {
         }
 
 
-        btn_4añadircarrito.setOnTouchListener { v, event ->
-            btn_4añadircarrito.setBackgroundResource(R.drawable.my_button_border_clickgreen)
-            Handler().postDelayed({
-                btn_4añadircarrito.setBackgroundResource(R.drawable.my_button_border)
-            }, 100)
-
+        btn_4añadircarrito.setOnClickListener() {
             val prefs: SharedPreferences = getSharedPreferences("carritoProductos", 0)
-            val editor : SharedPreferences.Editor = prefs.edit()
+            val editor: SharedPreferences.Editor = prefs.edit()
             val gson = Gson()
 
             val itemJson = gson.toJson(product)
 
-            //Subir datos
-            editor.putString(product.id_product.toString(), itemJson.toString())
+            var length = prefs.getString("length", null)
+            if (length != null) {
+                length = (length.toInt() + 1).toString()
+                editor.putString("length", length)
+            } else {
+                length = "1"
+                editor.putString("length", length)
+            }
+
+            editor.putString((length.toInt() - 1).toString(), itemJson.toString())
             editor.commit()
 
+            btn_4añadircarrito.setBackgroundResource(R.drawable.my_button_border_clickgreen)
+            Handler().postDelayed({
+                btn_4añadircarrito.setBackgroundResource(R.drawable.my_button_border)
+            }, 100)
             false
         }
 
-        btn_4comprar.setOnTouchListener { v, event ->
 
+        btn_4comprar.setOnTouchListener { v, event ->
             btn_4comprar.setBackgroundResource(R.drawable.my_button_border_clickgreen)
             Handler().postDelayed({
                 btn_4comprar.setBackgroundResource(R.drawable.my_button_border)
             }, 100)
-            false
-
         }
 
         imgv_7_2_2atras.setOnClickListener() {

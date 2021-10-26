@@ -98,12 +98,6 @@ class activity_3principal : AppCompatActivity() {
             sv_3scrollViewFiltro.isVisible = false
             loadTable("vegetarian")
         }
-        tb_3tablaProductos.setOnClickListener(){
-            val navegacion = Intent(this, activity_4producto::class.java)
-            startActivity(navegacion)
-            this.overridePendingTransition(0,0)
-        }
-
     }
 
 
