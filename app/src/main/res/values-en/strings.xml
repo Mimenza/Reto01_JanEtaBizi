@@ -130,13 +130,46 @@
 
     <!--Blog-->
     <string name="blogtitulo">Blog</string>
-    <string name="tituloreceta01">Recipe01</string>
-    <string name="descreceta01">Although this is a very present dish on Christmas menus, nothing should prevent us from incorporating it into our celebrations at any other time of the year. It is an elegant and colorful starter that has everything to win the stomachs of our guests. Because it\'s de-li-cio-sa.</string>
+    <string name="tituloreceta01">Red cabbage and pear cream </string>
+    <string name="descreceta01">Although this is a very present dish on Christmas menus,
+        nothing should prevent us from incorporating it into our celebrations at any other time of the year.
+        It is an elegant and colorful starter that has everything to win the stomachs of our guests.
+        Because it\'s de-li-cio-sa.</string>
     <string name="fechareceta01">October 24, 2021</string>
-    <string name="tituloreceta02">Recipe02</string>
+    <string name="tituloreceta02">Mini Dutch Pancakes</string>
+    <string name="ingredientes">INGREDIENTS</string>
+    <string name="ingredientes01">1/2 red cabbage \n
+    2 onions \n
+    1 pear \n
+    500 ml of homemade vegetable broth \n
+    200 ml of milk or liquid cream \n
+    3-4 tablespoons of extra virgin olive oil \n
+    Salt \n
+    Raisins \n
+    Sprockets \n
+    Dill</string>
+    <string name="preparacion">PREPARATION</string>
+    <string name="preparacion011">1.Remove the hard trunk of the red cabbage and discard it. Cut the rest into thick julienne strips with the help of a sharp knife. We wash with plenty of cold water and drain. \n
+
+2.Peel the onions and cut them in half. Then we cut each half into quarters. \n
+
+3. Peel the pear, cut lengthwise, remove the seeds and cut into five or six pieces. \n
+
+4.Heat the oil in a fast pot, such as the WMF Perfect, add the onion and sauté for a couple of minutes. Add the red cabbage and the pear and fry for a couple more minutes. \n</string>
+
+    <string name="preparacion012"> 5.Add the broth and season to taste (better to stay short and adjust the point at the end of cooking). We close the lid and heat over high heat. The moment the valve pops up, just the first line, we turn the heat down to medium low and count for eight minutes. \n
+
+6. Once the cooking time has elapsed, we turn off the heat and let the pot depressurize itself. We open once all the steam has come out and the valve is hidden again. \n
+
+7. Crush the cream with an arm mixer or with the help of a food processor. Add the liquid cream and beat again. We test and adjust the flavor point if we consider it necessary. \n
+
+8 We serve in tureens and take to the table, decorating each portion with raisins, pine nuts and dill branches.</string>
+
+
+
     <string name="descreceta02">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
 
-    <string name="tituloreceta03">Recipe03</string>
+    <string name="tituloreceta03">Vegetable gyozas (Chinese dumplings)</string>
     <string name="descreceta03">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string><string name="todaslascuentas">Todos los usuarios</string>
     <string name="error_message_apellido">Ingrese su apellido</string>
     <string name="error_message_description">Ingrese al menos una descripción breve</string>
@@ -161,6 +194,9 @@
     <string name="filtrobusquedaproductos">Busqueda productos</string>
     <string name="eliminar">Eliminar producto</string>
     <string name="update_product">Actualizar producto</string>
+    <string name="delete">Eliminar</string>
+
+
 
 
 </resources>

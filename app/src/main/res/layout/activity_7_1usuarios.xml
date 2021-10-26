@@ -19,7 +19,8 @@
             android:layout_height="wrap_content"
             android:text="@string/todaslascuentas"
             android:textSize="30sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
+
 
 
     </LinearLayout>

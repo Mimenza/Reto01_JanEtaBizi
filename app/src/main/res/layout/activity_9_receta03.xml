@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/claro"
     tools:context=".activity_9blog">
 
 
@@ -22,7 +23,7 @@
         android:id="@+id/imgv9_03_atras"
         android:layout_width="34dp"
         android:layout_height="wrap_content"
-
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView_901"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,7 +66,7 @@
         android:id="@+id/scrollView_901"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginBottom="61dp"
+        android:layout_marginBottom="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,10 +77,8 @@
         <LinearLayout
             android:id="@+id/linearLayout_902"
             android:layout_width="wrap_content"
-            android:layout_height="400dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="40dp"
+            android:layout_height="550dp"
+
             android:layout_marginBottom="40dp"
             android:background="@color/claro"
             android:orientation="vertical"
@@ -94,8 +93,8 @@
                 android:id="@+id/txtv_9nombrereceta01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-                android:text="@string/tituloreceta01"
+                android:layout_marginTop="20dp"
+                android:text="@string/tituloreceta03"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:textStyle="bold|italic" />
@@ -110,6 +109,41 @@
                 android:textStyle="italic" />
 
             <TextView
+                android:id="@+id/txtv_9ingredientestitulo01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="@string/ingredientes"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/txtv_9ingredientes01"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:layout_margin="@dimen/fab_margin"
+                android:layout_marginBottom="50dp"
+                android:paddingHorizontal="25dp"
+                android:text="@string/ingredientes01" />
+
+            <ImageView
+                android:id="@+id/imagereceta011"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:srcCompat="@drawable/receta031" />
+            <TextView
+                android:id="@+id/txtv_9preparaciontitulo01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="@string/preparacion"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
                 android:id="@+id/txtv_9instrucciones011"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -117,28 +151,12 @@
                 android:layout_margin="@dimen/fab_margin"
                 android:layout_marginBottom="50dp"
                 android:paddingHorizontal="25dp"
-                android:text="@string/descreceta01" />
-
-            <ImageView
-                android:id="@+id/imagereceta011"
-                android:layout_width="match_parent"
-                android:layout_height="175dp"
-                app:srcCompat="@drawable/receta031" />
-
-            <TextView
-                android:id="@+id/txtv_9instrucciones012"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|end"
-                android:layout_margin="@dimen/fab_margin"
-                android:layout_marginBottom="50dp"
-                android:paddingHorizontal="25dp"
-                android:text="@string/descreceta01" />
+                android:text="@string/preparacion011" />
 
             <ImageView
                 android:id="@+id/imagereceta012"
                 android:layout_width="match_parent"
-                android:layout_height="175dp"
+                android:layout_height="300dp"
                 app:srcCompat="@drawable/receta032" />
 
             <TextView
@@ -149,7 +167,7 @@
                 android:layout_margin="@dimen/fab_margin"
                 android:layout_marginBottom="50dp"
                 android:paddingHorizontal="25dp"
-                android:text="@string/descreceta01" />
+                android:text="@string/preparacion012" />
 
 
         </LinearLayout>
