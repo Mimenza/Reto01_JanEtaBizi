@@ -6,7 +6,6 @@ import android.os.Bundle
 
 import kotlinx.android.synthetic.main.activity_7_2_2producto.*
 import kotlinx.android.synthetic.main.activity_9blog.*
-
 import kotlinx.android.synthetic.main.activity_9_receta02.*
 
 
@@ -19,7 +18,7 @@ class activity_9_receta02 : AppCompatActivity() {
             val i = Intent(this, activity_9blog::class.java)
             startActivity(i)
         }
-        bottomNavV_9bottomMenu.setSelectedItemId(R.id.navigation_blog)
+
         fun navegacion_principal() {
             val navegacion_compra = Intent(this, activity_3principal::class.java)
             startActivity(navegacion_compra)
@@ -55,7 +54,7 @@ class activity_9_receta02 : AppCompatActivity() {
 
         }
 
-        bottomNavV_9bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
+        /*bottomNavV_9bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_principal -> {
                     navegacion_principal()
@@ -79,7 +78,7 @@ class activity_9_receta02 : AppCompatActivity() {
                 }
                 else -> false
             }
-        }
+        }*/
 
 
 

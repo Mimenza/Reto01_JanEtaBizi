@@ -121,12 +121,10 @@ class activity_5carrito : AppCompatActivity() {
         var producto03 = Producto(2, "Fresas", 17.0, "fruta", 10, R.drawable.fresa)
         var producto04 = Producto(3, "Arandano", 1.0, "fruta", 10, R.drawable.blueberries)
         var producto05 = Producto(4, "Pasteles", 10.0, "postres", 10, R.drawable.dessert)
-        var producto06 = Producto(5, "Omega", 12.0, "suplemento", 10, R.drawable.aceite3)
-        var producto07 = Producto(6, "Fresas", 17.0, "fruta", 10, R.drawable.fresa)
-        var producto08 = Producto(7, "Arandano", 1.0, "fruta", 10, R.drawable.blueberries)
+
 
         //rellenar el array con los productos
-        productos = arrayListOf(producto01, producto02, producto03, producto04, producto05, producto06, producto07, producto08)
+        productos = arrayListOf(producto01, producto02, producto03, producto04, producto05)
 
         carritoSize = productos.size
         //Adaptador RecyclerView Carrito de la compra
