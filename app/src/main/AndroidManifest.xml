@@ -14,26 +14,29 @@
         android:theme="@style/Theme.Reto01" >
         <activity
             android:name=".activity_7_2productos"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity_7_3_4pedidoo"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity_9_receta03"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity_9_receta02"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity_9_receta01"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity_7_2_2producto"
             android:exported="true"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity_7_2_1productos"
-            android:exported="true" />
+
         <activity
             android:name=".activity_9blog"
             android:exported="true"

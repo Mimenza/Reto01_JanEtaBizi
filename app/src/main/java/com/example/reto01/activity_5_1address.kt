@@ -222,6 +222,7 @@ class activity_5_1address : AppCompatActivity(), View.OnClickListener {
         txt_5_1direccion.setText(user.address)
         txt_5_1city.setText(user.city)
         txt_5_1cp.setText(user.cp)
+
         txt_5_1telefono.setText(user.tlf)
 
     }
