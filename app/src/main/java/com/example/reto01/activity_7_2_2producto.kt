@@ -25,7 +25,7 @@ class activity_7_2_2producto : AppCompatActivity() {
         getSupportActionBar()?.hide()
 
 
-
+         initObjects()
         imgv_7_2_2atras.setOnClickListener() {
             val i = Intent(this, activity_7_2productos::class.java)
             startActivity(i)
@@ -55,14 +55,17 @@ class activity_7_2_2producto : AppCompatActivity() {
 
 
     }
+    fun initObjects(){
 
+        databaseHelper = DatabaseHelper(activity, "janEtaBizi", null, 1)
+    }
     //Delete dialog
 
     fun showDeleteDialog(id_product:Int?) {
 
         MaterialAlertDialogBuilder(this,
             R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_FullWidthButtons)
-            .setMessage(resources.getString(R.string.txt5_eliminar))
+            .setMessage(resources.getString(R.string.txt5_eliminarproducto))
             .setNegativeButton(resources.getString(R.string.cancel)) { dialog, which ->
 
             }
@@ -81,6 +84,8 @@ class activity_7_2_2producto : AppCompatActivity() {
             }
             .show()
     }
+
+
 
 }
 

@@ -245,7 +245,7 @@ class DatabaseHelper(
         db.delete(
 
             TBL_PRODUCTS, "${COLUMN_PRODUCT_ID}= ?",
-            arrayOf(arrayOf(id_product).toString())
+            arrayOf(id_product.toString())
         )
 
 
