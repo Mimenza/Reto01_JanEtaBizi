@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:rotationX="-1"
     tools:context=".activity_4producto">
 
 
@@ -56,13 +57,13 @@
         android:textColor="@color/mainGreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.825"
+        app:layout_constraintHorizontal_bias="0.713"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.836" />
 
     <Button
-        android:id="@+id/btn_7_2_2eliminar"
+        android:id="@+id/btn_7_2_2delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/my_button_border"
@@ -71,7 +72,7 @@
         android:textColor="@color/mainGreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintHorizontal_bias="0.226"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.836" />

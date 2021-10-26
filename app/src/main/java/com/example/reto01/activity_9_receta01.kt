@@ -3,13 +3,13 @@ package com.example.reto01
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-<<<<<<< HEAD
+
 import kotlinx.android.synthetic.main.activity_7_2_2producto.*
 import kotlinx.android.synthetic.main.activity_9blog.*
 
-=======
+
 import kotlinx.android.synthetic.main.activity_9_receta01.*
->>>>>>> e81359b371640673460352c6ff51cde5bd3a90e2
+
 class activity_9_receta01 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

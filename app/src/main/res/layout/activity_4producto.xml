@@ -75,7 +75,7 @@
         app:layout_constraintVertical_bias="0.836" />
 
     <Button
-        android:id="@+id/btn_7_2_2eliminar"
+        android:id="@+id/btn_4addtocart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/my_button_border"

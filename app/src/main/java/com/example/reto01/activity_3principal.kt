@@ -227,7 +227,7 @@ class activity_3principal : AppCompatActivity() {
                 newCol2.setScaleType(ImageView.ScaleType.FIT_XY)
                 newCol3.setScaleType(ImageView.ScaleType.FIT_XY)
 
-               //30 y negrita
+
                 val sharedPreferences = getSharedPreferences("product", 0)
                 val sharedPreferencesEditor: SharedPreferences.Editor = sharedPreferences.edit()
                 val gson = Gson()

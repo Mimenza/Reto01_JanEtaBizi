@@ -4,14 +4,11 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import com.example.reto01.Adapter.MySliderImageAdapter
+import android.os.Handler
+import android.widget.Toast
 import com.example.reto01.Model.Producto
-import com.example.reto01.Model.User
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.gson.Gson
-import com.smarteist.autoimageslider.SliderView
-import kotlinx.android.synthetic.main.activity_4producto.*
-import kotlinx.android.synthetic.main.activity_7_1_1usuario.*
 import kotlinx.android.synthetic.main.activity_7_2_2producto.*
 import kotlinx.android.synthetic.main.activity_7_2_2producto.imgv_7_2_2atras
 import kotlinx.android.synthetic.main.activity_7_2_2producto.imgv_7_2_2producto
@@ -26,7 +23,6 @@ class activity_7_2_2producto : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_7_2_2producto)
         getSupportActionBar()?.hide()
-
 
 
 
@@ -50,10 +46,41 @@ class activity_7_2_2producto : AppCompatActivity() {
 
         txtv_7_2_2nombreProducto.setText(product.name_product)
         imgv_7_2_2producto.setImageResource(product.img)
+        var id_product= product.id_product
+
+        btn_7_2_2delete.setOnClickListener() {
+            showDeleteDialog(id_product)
+        }
+
 
 
     }
 
+    //Delete dialog
+
+    fun showDeleteDialog(id_product:Int?) {
+
+        MaterialAlertDialogBuilder(this,
+            R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_FullWidthButtons)
+            .setMessage(resources.getString(R.string.txt5_eliminar))
+            .setNegativeButton(resources.getString(R.string.cancel)) { dialog, which ->
+
+            }
+            .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
+
+
+
+                Toast.makeText(this, "Producto eliminado correctamente!", Toast.LENGTH_SHORT).show()
+                databaseHelper.deleteProduct(id_product)
+                Handler().postDelayed({
+
+                    val i = Intent(this, activity_7_2productos::class.java)
+                    startActivity(i)
+                }, 1000)
+
+            }
+            .show()
+    }
 
 }
 
