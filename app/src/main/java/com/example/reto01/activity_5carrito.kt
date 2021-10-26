@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.viewholder_cart.*
 import java.util.*
 
 class activity_5carrito : AppCompatActivity() {
-    var total:Double?=0.00
+     var total:Double?=0.00
 
     var carritoSize:Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,11 +27,8 @@ class activity_5carrito : AppCompatActivity() {
         getSupportActionBar()?.hide()
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         setContentView(R.layout.activity_5carrito)
+        calcularTotal()
 
-        //Llamar funcion para saber el total al cargar la pg
-        Handler().postDelayed({
-            calcularTotal()
-        }, 2)
         //Llamar funcion para cargar los datos
         loadProductos()
 
@@ -139,7 +136,7 @@ class activity_5carrito : AppCompatActivity() {
     }
 
     fun calcularTotal() {
-
+        var total:Double?=0.00
 
         //Recoger datos de Shared Preferences
         val prefs: SharedPreferences = this.getSharedPreferences("carrito", 0)
@@ -148,21 +145,19 @@ class activity_5carrito : AppCompatActivity() {
 
             val carrito = prefs.getString("item"+ x,null)
 
-
             //Parsear datos a objeto carrito_item
             val gsonFile = Gson()
-
             val carritoJson: Carrito_item = gsonFile.fromJson(carrito, Carrito_item::class.java)
+
+
             val cantidad:Double? = carritoJson.cantidad!!.toDouble()
             val precio:Double? = carritoJson.precio!!.toDouble()
             val totalItem:Double? = cantidad!! * precio!!
             total = total!! + totalItem!!
 
         }
-
-
-        txtv_5preciototal.text = total.toString()
-
+        var euro= "€"
+        txtv_5preciototal.text = total.toString()+euro
 
         //Poner nombre al fichero
         val preferences = this.getSharedPreferences("totalCarrito", 0)
@@ -173,6 +168,10 @@ class activity_5carrito : AppCompatActivity() {
         editor.commit()
         editor.putString("size", carritoSize.toString())
         editor.commit()
+
+        Handler().postDelayed({
+            calcularTotal()
+        }, 1000)
 
     }
 

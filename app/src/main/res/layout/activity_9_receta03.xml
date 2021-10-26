@@ -20,7 +20,7 @@
 
 
     <ImageView
-        android:id="@+id/imgv7_02_atras"
+        android:id="@+id/imgv9_03_atras"
         android:layout_width="34dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -70,7 +70,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgv7_02_atras"
+        app:layout_constraintTop_toBottomOf="@+id/imgv9_03_atras"
         app:layout_constraintVertical_bias="0.95">
 
 

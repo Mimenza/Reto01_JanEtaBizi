@@ -5,34 +5,38 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import com.example.reto01.Adapter.MySliderImageAdapter
+import com.example.reto01.Model.Producto
+import com.example.reto01.Model.User
 import com.smarteist.autoimageslider.SliderView
+import kotlinx.android.synthetic.main.activity_7_1_1usuario.*
 import kotlinx.android.synthetic.main.activity_7_2_2producto.*
 
 class activity_7_2_2producto : AppCompatActivity() {
+
+    lateinit private var product : Producto
+    lateinit var databaseHelper:DatabaseHelper
+    private val activity = this
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_7_2_2producto)
         getSupportActionBar()?.hide()
 
-        val lista =
-            arrayOf("PRODUCTO 1", "PRODUCTO 2", "PRODUCTO 3", "PRODUCTO 4", "CREAR NUEVO PRODUCTO")
-        val adaptador = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista)
 
-        // spinner_productos.adapter = adaptador
 
-        //Image slider (Imagenes)
-        val imageSlider = findViewById<SliderView>(R.id.imageSlider)
-        val imageList: ArrayList<String> = ArrayList()
 
-        imageList.add("https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg")
-        imageList.add("https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg")
-        imageList.add("https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg")
-        setImageInSlider(imageList, imageSlider)
-
-        imgv7_02_atras.setOnClickListener() {
-            val i = Intent(this, activity_7admin::class.java)
+        imgv_7_2_2atras.setOnClickListener() {
+            val i = Intent(this, activity_7_2productos::class.java)
             startActivity(i)
         }
+
+         //Rellenar con los datos del input
+        txtv_7_2_2nombreProducto.setText(intent.getStringExtra("title"))
+       // txtinput_7_1_1nombre.setText(intent.getStringExtra("category"))
+       // imgv_7_2_2producto.setImageResource(intent.getIntExtra("img"))
+        txtv_7_1_1descripcionproducto.setText(intent.getStringExtra("price"))
+
+
+
 
 /*        btn_7_01Eliminar.setOnTouchListener { v, event ->
 
@@ -58,12 +62,7 @@ class activity_7_2_2producto : AppCompatActivity() {
         // txtv_7_02descripcionproducto.movementMethod = ScrollingMovementMethod()
     }
 
-    private fun setImageInSlider(images: ArrayList<String>, imageSlider: SliderView) {
-        val adapter = MySliderImageAdapter()
-        adapter.renewItems(images)
-        imageSlider.setSliderAdapter(adapter)
-        imageSlider.isAutoCycle = false
-    }
+
 }
 
 

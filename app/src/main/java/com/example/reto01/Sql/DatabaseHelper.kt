@@ -45,7 +45,6 @@ class DatabaseHelper(
         private val COLUMN_USER_NUM_TARJETA = "user_num_tarjeta"
 
 
-
         // Products Table Columns names
         private val COLUMN_PRODUCT_ID = "product_id"
         private val COLUMN_PRODUCT_NAME = "product_name"
@@ -53,7 +52,7 @@ class DatabaseHelper(
         private val COLUMN_PRODUCT_CATEGORY = "product_category"
         private val COLUMN_PRODUCT_LIKES = "product_likes"
         private val COLUMN_PRODUCT_IMG = "product_img"
-        private val COLUMN_PRODUCT_STOCK ="product_stock"
+        private val COLUMN_PRODUCT_STOCK = "product_stock"
 
         // Orders Table Columns names
         private val COLUMN_ORDER_ID = "order_id"
@@ -91,9 +90,8 @@ class DatabaseHelper(
                 "${COLUMN_USER_ADMIN} INTEGER)"
 
 
-
     // Create products table sql query
-    private  val CREATE_PRODUCTS_TABLE =
+    private val CREATE_PRODUCTS_TABLE =
         "CREATE TABLE ${TBL_PRODUCTS} (" +
                 "${COLUMN_PRODUCT_ID} INTEGER PRIMARY KEY," +
                 "${COLUMN_PRODUCT_NAME} TEXT," +
@@ -135,8 +133,11 @@ class DatabaseHelper(
 
     //Load productos
     //private  val LOAD_PRODUCTS = "INSERT INTO ${TBL_PRODUCTS}  VALUES ( -1 ,'Pepinillos', 10.00 , 'vegan', 12, 1)"
-    private  val LOAD_PRODUCTS = "INSERT INTO ${TBL_PRODUCTS}  VALUES ( -1 ,'Pepinillos', 10.00 , 'vegan', 12, 1, 10), ( 1 ,'Pepinillos', 10.00 , 'vegetarian', 12, 1, 10) ," +
-            "( 0 ,'Pepinillos', 10.00 , 'no_palm_oil', 12, 1, 10), ( 3 ,'Pepinillos', 10.00 , 'no_lactose', 12, 1, 10), ( 2 ,'Pepinillos', 10.00 , 'protein', 12, 1, 10)"
+
+    private  val LOAD_PRODUCTS =
+        "INSERT INTO ${TBL_PRODUCTS}  VALUES ( 0 ,'Pepinillos', 10.00 , 'vegan', 12, 2131230843, 10), ( 1 ,'Fresas', 10.00 , 'vegan', 12, 2131230808, 10) ," +
+            "( 2 ,'Salchichas', 10.00 , 'vegetarian', 12, 2131230844, 10), ( 3 ,'Legumbres', 10.00 , 'vegetarian', 12, 2131230825, 10), ( 4 ,'Pepinillos', 10.00 , 'vegetarian', 12, 2131230843, 10)"
+
 
 
     // Drop tables sql query
@@ -177,16 +178,16 @@ class DatabaseHelper(
         values.put(COLUMN_USER_NAME, user.name)
         values.put(COLUMN_USER_EMAIL, user.email)
         values.put(COLUMN_USER_PASSWORD, user.password)
-        values.put(COLUMN_USER_ADMIN,  user.admin)
+        values.put(COLUMN_USER_ADMIN, user.admin)
         values.put(COLUMN_USER_CP, user.cp)
-        values.put(COLUMN_USER_CITY,  user.city)
+        values.put(COLUMN_USER_CITY, user.city)
         values.put(COLUMN_USER_ADDRESS, user.address)
-        values.put(COLUMN_USER_SURNAME,  user.surname)
-        values.put(COLUMN_USER_DESCRIPTION,  user.description)
-        values.put(COLUMN_USER_CCV,  user.ccv)
-        values.put(COLUMN_USER_NUM_TARJETA,  user.num_tarjeta)
-        values.put(COLUMN_USER_TLF,  user.tlf)
-        values.put(COLUMN_USER_CADUCIDAD,  user.caducidad)
+        values.put(COLUMN_USER_SURNAME, user.surname)
+        values.put(COLUMN_USER_DESCRIPTION, user.description)
+        values.put(COLUMN_USER_CCV, user.ccv)
+        values.put(COLUMN_USER_NUM_TARJETA, user.num_tarjeta)
+        values.put(COLUMN_USER_TLF, user.tlf)
+        values.put(COLUMN_USER_CADUCIDAD, user.caducidad)
 
         // Inserting Row
         db.insert(TBL_USERS, null, values)
@@ -214,9 +215,7 @@ class DatabaseHelper(
             put("user_ccv", user.ccv)
             put("user_caducidad", user.caducidad)
             put("user_num_tarjeta", user.num_tarjeta)
-
         }
-
         // update según el id de usuario
         db.update(
             TBL_USERS, values, "${COLUMN_USER_ID} = ?",
@@ -246,7 +245,7 @@ class DatabaseHelper(
         values.put(COLUMN_ORDER_ADDRESS, order.address)
         values.put(COLUMN_ORDER_DATE, order.date)
         values.put(COLUMN_ORDER_USER_ID, order.id_user)
-        values.put(COLUMN_ORDER_TOTAL,order.total)
+        values.put(COLUMN_ORDER_TOTAL, order.total)
 
         // Inserting Row
         db.insert(TBL_ORDERS, null, values)
@@ -254,6 +253,7 @@ class DatabaseHelper(
 
         return values
     }
+
     fun addOrder_product(pedidoProducto: Pedido_producto) {
         val db = this.writableDatabase
         val values = ContentValues()
@@ -271,7 +271,10 @@ class DatabaseHelper(
     fun lastOrder(): Order? {
 
         val db: SQLiteDatabase = this.getReadableDatabase()
-        val res = db.rawQuery("select * from Orders where Orders.order_id =(SELECT MAX(order_id)  FROM Orders)", null)
+        val res = db.rawQuery(
+            "select * from Orders where Orders.order_id =(SELECT MAX(order_id)  FROM Orders)",
+            null
+        )
         res.moveToFirst()
 
         while (res.isAfterLast == false) {
@@ -279,7 +282,7 @@ class DatabaseHelper(
             response.id_user = res.getInt(res.getColumnIndex(COLUMN_ORDER_USER_ID))
             response.address = res.getString(res.getColumnIndex(COLUMN_ORDER_ADDRESS))
             response.id_order = res.getInt(res.getColumnIndex(COLUMN_ORDER_ID))
-            response.date= res.getString(res.getColumnIndex(COLUMN_ORDER_DATE))
+            response.date = res.getString(res.getColumnIndex(COLUMN_ORDER_DATE))
             response.total = res.getDouble(res.getColumnIndex(COLUMN_ORDER_TOTAL))
 
             // rest of columns
@@ -314,7 +317,8 @@ class DatabaseHelper(
             COLUMN_USER_CCV,
             COLUMN_USER_CADUCIDAD,
             COLUMN_USER_NUM_TARJETA,
-            COLUMN_USER_TLF )
+            COLUMN_USER_TLF
+        )
         // sorting orders
         val sortOrder = "$COLUMN_USER_NAME ASC"
         val userList: MutableList<User> = ArrayList()
@@ -355,6 +359,47 @@ class DatabaseHelper(
         return userList
     }
 
+    @SuppressLint("Range")
+    fun getAllOrders(): List<Order> {
+        // array of columns to fetch
+        val columns = arrayOf(
+            COLUMN_ORDER_ADDRESS,
+            COLUMN_ORDER_DATE,
+            COLUMN_ORDER_ID,
+            COLUMN_ORDER_TOTAL,
+            COLUMN_ORDER_USER_ID
+        )
+        // sorting orders
+        val sortOrder = "$COLUMN_ORDER_ID DESC"
+        val orderList: MutableList<Order> = ArrayList()
+        val db = this.readableDatabase
+        // query the user table
+        val cursor = db.query(
+            TBL_ORDERS, //Table to query
+            columns,            //columns to return
+            null,     //columns for the WHERE clause
+            null,  //The values for the WHERE clause
+            null,      //group the rows
+            null,       //filter by row groups
+            sortOrder
+        )         //The sort order
+        if (cursor.moveToFirst()) {
+            do {
+                val order = Order(
+                    address = cursor.getString(cursor.getColumnIndex(COLUMN_ORDER_ADDRESS)),
+                    id_order = cursor.getInt(cursor.getColumnIndex(COLUMN_ORDER_ID)),
+                    id_user = cursor.getInt(cursor.getColumnIndex(COLUMN_ORDER_USER_ID)),
+                    date = cursor.getString(cursor.getColumnIndex(COLUMN_ORDER_DATE)),
+                    total = cursor.getDouble(cursor.getColumnIndex(COLUMN_ORDER_TOTAL)),
+
+                    )
+                orderList.add(order)
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        db.close()
+        return orderList
+    }
 
     /** Hace un check del usuario para saber si existe o no según el parámetro de email
      * Hace un return de true/false
@@ -362,15 +407,17 @@ class DatabaseHelper(
      */
 
     @SuppressLint("Range")
-    fun getAllProducts():List<Producto>{
+    fun getAllProducts(): List<Producto> {
         // array of columns to fetch
-        val columns = arrayOf(COLUMN_PRODUCT_ID, COLUMN_PRODUCT_NAME, COLUMN_PRODUCT_CATEGORY, COLUMN_PRODUCT_LIKES,
-            COLUMN_PRODUCT_PRICE, COLUMN_PRODUCT_IMG, COLUMN_PRODUCT_STOCK )
+        val columns = arrayOf(
+            COLUMN_PRODUCT_ID, COLUMN_PRODUCT_NAME, COLUMN_PRODUCT_CATEGORY, COLUMN_PRODUCT_LIKES,
+            COLUMN_PRODUCT_PRICE, COLUMN_PRODUCT_IMG, COLUMN_PRODUCT_STOCK
+        )
         //val columns = arrayOf(COLUMN_PRODUCT_ID, COLUMN_PRODUCT_NAME, COLUMN_PRODUCT_CATEGORY, COLUMN_PRODUCT_LIKES
         //   COLUMN_PRODUCT_PRICE, COLUMN_PRODUCT_IMG, COLUMN_PRODUCT_STOCK )
         // sorting orders
         val sortOrder = "$COLUMN_PRODUCT_LIKES DESC"
-        val productList : MutableList<Producto> = ArrayList()
+        val productList: MutableList<Producto> = ArrayList()
         val db = this.readableDatabase
         // query the user table
         val cursor = db.query(
@@ -380,16 +427,19 @@ class DatabaseHelper(
             null,  //The values for the WHERE clause
             null,      //group the rows
             null,       //filter by row groups
-            sortOrder)         //The sort order
+            sortOrder
+        )         //The sort order
         if (cursor.moveToFirst()) {
-            do {val producto = Producto(
-                id_product = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_ID)),
-                name_product = cursor.getString(cursor.getColumnIndex(COLUMN_PRODUCT_NAME)),
-                price = cursor.getDouble(cursor.getColumnIndex(COLUMN_PRODUCT_PRICE)),
-                category = cursor.getString(cursor.getColumnIndex(COLUMN_PRODUCT_CATEGORY)),
-                stock = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_STOCK)),
-                img= cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_IMG)),
-                likes = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_LIKES)))
+            do {
+                val producto = Producto(
+                    id_product = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_ID)),
+                    name_product = cursor.getString(cursor.getColumnIndex(COLUMN_PRODUCT_NAME)),
+                    price = cursor.getDouble(cursor.getColumnIndex(COLUMN_PRODUCT_PRICE)),
+                    category = cursor.getString(cursor.getColumnIndex(COLUMN_PRODUCT_CATEGORY)),
+                    stock = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_STOCK)),
+                    img = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_IMG)),
+                    likes = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_LIKES))
+                )
                 productList.add(producto)
             } while (cursor.moveToNext())
         }
@@ -401,10 +451,13 @@ class DatabaseHelper(
     @SuppressLint("Range")
     fun getProductsByCategory(category: String): List<Producto> {
         val db: SQLiteDatabase = this.getReadableDatabase()
-        val columns = arrayOf(COLUMN_PRODUCT_ID, COLUMN_PRODUCT_NAME, COLUMN_PRODUCT_CATEGORY, COLUMN_PRODUCT_LIKES,
-            COLUMN_PRODUCT_PRICE, COLUMN_PRODUCT_IMG, COLUMN_PRODUCT_STOCK )
-        val productList : MutableList<Producto> = ArrayList()
-        val res = db.rawQuery("select * from Products where product_category='" + category + "'", null)
+        val columns = arrayOf(
+            COLUMN_PRODUCT_ID, COLUMN_PRODUCT_NAME, COLUMN_PRODUCT_CATEGORY, COLUMN_PRODUCT_LIKES,
+            COLUMN_PRODUCT_PRICE, COLUMN_PRODUCT_IMG, COLUMN_PRODUCT_STOCK
+        )
+        val productList: MutableList<Producto> = ArrayList()
+        val res =
+            db.rawQuery("select * from Products where product_category='" + category + "'", null)
         res.moveToFirst()
         val cursor = db.query(
             TBL_PRODUCTS, //Table to query
@@ -413,17 +466,20 @@ class DatabaseHelper(
             null,  //The values for the WHERE clause
             null,      //group the rows
             null,       //filter by row groups
-            null)         //The sort order
+            null
+        )         //The sort order
 
         if (cursor.moveToFirst()) {
-            do {val producto = Producto(
-                id_product = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_ID)),
-                name_product = cursor.getString(cursor.getColumnIndex(COLUMN_PRODUCT_NAME)),
-                price = cursor.getDouble(cursor.getColumnIndex(COLUMN_PRODUCT_PRICE)),
-                category = cursor.getString(cursor.getColumnIndex(COLUMN_PRODUCT_CATEGORY)),
-                stock = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_STOCK)),
-                img= cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_IMG)),
-                likes = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_LIKES)))
+            do {
+                val producto = Producto(
+                    id_product = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_ID)),
+                    name_product = cursor.getString(cursor.getColumnIndex(COLUMN_PRODUCT_NAME)),
+                    price = cursor.getDouble(cursor.getColumnIndex(COLUMN_PRODUCT_PRICE)),
+                    category = cursor.getString(cursor.getColumnIndex(COLUMN_PRODUCT_CATEGORY)),
+                    stock = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_STOCK)),
+                    img = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_IMG)),
+                    likes = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_LIKES))
+                )
                 productList.add(producto)
             } while (cursor.moveToNext())
         }
@@ -437,7 +493,7 @@ class DatabaseHelper(
     @SuppressLint("Range")
     fun getProduct(id: Int): Producto? {
         val db: SQLiteDatabase = this.getReadableDatabase()
-        val res = db.rawQuery("select * from Products where id_product='" + id + "'", null)
+        val res = db.rawQuery("select * from Products where product_id='" + id + "'", null)
         res.moveToFirst()
 
         while (res.isAfterLast == false) {
@@ -447,7 +503,7 @@ class DatabaseHelper(
             response.id_product = res.getInt(res.getColumnIndex(COLUMN_PRODUCT_ID))
             response.name_product = res.getString(res.getColumnIndex(COLUMN_PRODUCT_NAME))
             response.price = res.getDouble(res.getColumnIndex(COLUMN_PRODUCT_PRICE))
-            response.category= res.getString(res.getColumnIndex(COLUMN_PRODUCT_CATEGORY))
+            response.category = res.getString(res.getColumnIndex(COLUMN_PRODUCT_CATEGORY))
             response.likes = res.getInt(res.getColumnIndex(COLUMN_PRODUCT_LIKES))
             response.img = res.getInt(res.getColumnIndex(COLUMN_PRODUCT_IMG))
             response.stock = res.getInt(res.getColumnIndex(COLUMN_PRODUCT_STOCK))
@@ -459,8 +515,6 @@ class DatabaseHelper(
 
 
     }
-
-
 
     fun checkUser(email: String): Boolean {
         // array of columns to fetch
@@ -525,7 +579,6 @@ class DatabaseHelper(
         return false
     }
 
-
     @SuppressLint("Range")
     fun getUser(email: String): User? {
         val db: SQLiteDatabase = this.getReadableDatabase()
@@ -537,7 +590,7 @@ class DatabaseHelper(
             response.id = res.getInt(res.getColumnIndex(COLUMN_USER_ID))
             response.password = res.getString(res.getColumnIndex(COLUMN_USER_PASSWORD))
             response.name = res.getString(res.getColumnIndex(COLUMN_USER_NAME))
-            response.surname= res.getString(res.getColumnIndex(COLUMN_USER_SURNAME))
+            response.surname = res.getString(res.getColumnIndex(COLUMN_USER_SURNAME))
             response.email = res.getString(res.getColumnIndex(COLUMN_USER_EMAIL))
             response.password = res.getString(res.getColumnIndex(COLUMN_USER_PASSWORD))
             response.tlf = res.getString(res.getColumnIndex(COLUMN_USER_TLF))
@@ -548,7 +601,7 @@ class DatabaseHelper(
             response.admin = res.getInt(res.getColumnIndex(COLUMN_USER_ADMIN))
             response.city = res.getString(res.getColumnIndex(COLUMN_USER_CITY))
             response.cp = res.getString(res.getColumnIndex(COLUMN_USER_CP))
-            response.description= res.getString(res.getColumnIndex(COLUMN_USER_DESCRIPTION))
+            response.description = res.getString(res.getColumnIndex(COLUMN_USER_DESCRIPTION))
 
 
             // rest of columns
@@ -559,6 +612,100 @@ class DatabaseHelper(
 
     }
 
+    @SuppressLint("Range")
+    fun getUserId(id: Int): User? {
+        val db: SQLiteDatabase = this.getReadableDatabase()
+        val res = db.rawQuery("select * from Users where user_id='" + id + "'", null)
+        res.moveToFirst()
 
+        while (res.isAfterLast == false) {
+            val response = User()
+            response.id = res.getInt(res.getColumnIndex(COLUMN_USER_ID))
+            response.password = res.getString(res.getColumnIndex(COLUMN_USER_PASSWORD))
+            response.name = res.getString(res.getColumnIndex(COLUMN_USER_NAME))
+            response.surname = res.getString(res.getColumnIndex(COLUMN_USER_SURNAME))
+            response.email = res.getString(res.getColumnIndex(COLUMN_USER_EMAIL))
+            response.password = res.getString(res.getColumnIndex(COLUMN_USER_PASSWORD))
+            response.tlf = res.getString(res.getColumnIndex(COLUMN_USER_TLF))
+            response.address = res.getString(res.getColumnIndex(COLUMN_USER_ADDRESS))
+            response.ccv = res.getInt(res.getColumnIndex(COLUMN_USER_CCV))
+            response.caducidad = res.getString(res.getColumnIndex(COLUMN_USER_CADUCIDAD))
+            response.num_tarjeta = res.getString(res.getColumnIndex(COLUMN_USER_NUM_TARJETA))
+            response.admin = res.getInt(res.getColumnIndex(COLUMN_USER_ADMIN))
+            response.city = res.getString(res.getColumnIndex(COLUMN_USER_CITY))
+            response.cp = res.getString(res.getColumnIndex(COLUMN_USER_CP))
+            response.description = res.getString(res.getColumnIndex(COLUMN_USER_DESCRIPTION))
+
+
+            // rest of columns
+            return response
+        }
+        return null
+
+
+    }
+
+    @SuppressLint("Range")
+    fun getPedidoProducto(id_Order: Int): ArrayList<Pedido_producto> {
+        val arrayPedidos = ArrayList<Pedido_producto>()
+
+        val db: SQLiteDatabase = this.getReadableDatabase()
+        val res = db.rawQuery("select * from Orders_Products where product_order_id='" + id_Order + "'", null)
+        res.moveToFirst()
+
+        while (res.isAfterLast == false) {
+
+            val response = Pedido_producto()
+            response.quantity = res.getInt(res.getColumnIndex(COLUMN_ORDER_PRODUCTS_QUANTITY))
+            response.id_product = res.getInt(res.getColumnIndex(COLUMN_ORDER_PRODUCTS_PRODUCT_ID))
+            response.id_order = res.getInt(res.getColumnIndex(COLUMN_ORDER_PRODUCTS_ORDER_ID))
+
+            // rest of columns
+            println(response)
+            arrayPedidos.add(response)
+        }
+
+
+        return arrayPedidos
+
+
+    }
+
+    @SuppressLint("Range")
+    fun getPedidoProducto1(id_Order: Int): MutableList<Pedido_producto> {
+        val db: SQLiteDatabase = this.getReadableDatabase()
+        val columns = arrayOf(
+            COLUMN_ORDER_PRODUCTS_ORDER_ID, COLUMN_ORDER_PRODUCTS_PRODUCT_ID, COLUMN_ORDER_PRODUCTS_QUANTITY
+        )
+        val listPedidos: MutableList<Pedido_producto> = ArrayList()
+        val res = db.rawQuery("select * from Orders_Products where product_order_id='" + id_Order + "'", null)
+        res.moveToFirst()
+        val cursor = db.query(
+            TBL_ORDERS_PRODUCTS, //Table to query
+            columns,            //columns to return
+            null,     //columns for the WHERE clause
+            null,  //The values for the WHERE clause
+            null,      //group the rows
+            null,       //filter by row groups
+            null
+        )         //The sort order
+
+        if (cursor.moveToFirst()) {
+            do {
+                val  pedidoProducto = Pedido_producto(
+                    id_product = cursor.getInt(cursor.getColumnIndex(COLUMN_ORDER_PRODUCTS_PRODUCT_ID)),
+                    id_order = cursor.getInt(cursor.getColumnIndex(COLUMN_ORDER_PRODUCTS_ORDER_ID)),
+                    quantity = cursor.getInt(cursor.getColumnIndex(COLUMN_ORDER_PRODUCTS_QUANTITY))
+
+                )
+                listPedidos.add(pedidoProducto)
+
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        db.close()
+        return listPedidos
+
+    }
 
 }

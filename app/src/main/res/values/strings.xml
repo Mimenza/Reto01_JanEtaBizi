@@ -53,7 +53,7 @@
     <string name="vegetariano">VEGETARIANO</string>
     <string name="km0">KM0</string>
     <string name="gluten">SIN GLUTEN</string>
-    <string name="lactosa">Sin LACTOSA</string>
+    <string name="lactosa">SIN LACTOSA</string>
     <string name="proteina">ALTO EN PROTEÍNA</string>
     <string name="aceite">SIN ACEITE PALMA</string>
 
@@ -78,9 +78,10 @@
     <string name="telefono">Teléfono</string>
     <string name="cp">Cp   <font color='#FF0000'>*</font></string>
 
-    <string name="cardnumber">Numero de la tarjeta</string>
-    <string name="caducidad">Caducidad</string>
-    <string name="ccv">Ccv</string>
+    <string name="cardnumber">Numero de la tarjeta    <font color='#FF0000'>*</font></string>
+
+    <string name="caducidad">Caducidad    <font color='#FF0000'>*</font></string>
+    <string name="ccv">Ccv   <font color='#FF0000'>*</font></string>
     <string name="placeorder">Realizar pedido</string>
     <string name="envio">Envio</string>
     <string name="subtotal">SubTotal</string>
@@ -109,6 +110,12 @@
     <string name="estado">Estado</string>
     <string name="importe">Importe</string>
     <string name="gestion">Gestión</string>
+    <string name="ciudadgestion" tools:ignore="MissingTranslation">Ciudad</string>
+    <string name="cpgestion" tools:ignore="MissingTranslation">Cp</string>
+    <string name="direcciongestion" tools:ignore="MissingTranslation">Direccion</string>
+    <string name="tarjetagestion" tools:ignore="MissingTranslation">Tarjeta</string>
+    <string name="descripciongestion" tools:ignore="MissingTranslation">Descripcion</string>
+    <string name="tlfngestion" tools:ignore="MissingTranslation">Tlfn</string>
 
     <!--Producto-->
     <string name="lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
@@ -182,5 +189,20 @@
     <string name="error_message_address">Ingrese una dirección</string>
     <string name="email">Email</string>
     <string name="contraseña">Contraseña</string>
+    <string name="cardnumberinput">Número de la tarjeta</string>
+    <string name="caducidad_title">Caducidad</string>
+
+
+    <string name="error_message_numerotarjeta">Ingrese su número de tarjeta</string>
+    <string name="error_message_caducidadtarjeta">Ingrese la caducidad de su tarjeta</string>
+
+    <string name="error_message_cvv">Ingrese el cvv de su tarjeta</string>
+    <string name="error_message_direccion">Ingrese una dirección</string>
+    <string name="error_message_ciudad">Ingrese una ciudad</string>
+    <string name="Productos">Todos los productos</string>
+    <string name="filtrobusquedaproductos">Busqueda productos</string>
+    <string name="eliminar">Eliminar producto</string>
+    <string name="update_product">Actualizar producto</string>
+
 
 </resources>

@@ -16,5 +16,7 @@ data class User(
     var ccv: Int? = null,
     var caducidad: String?= null,
     var num_tarjeta: String? = null
-)
+) {
+
+}
 

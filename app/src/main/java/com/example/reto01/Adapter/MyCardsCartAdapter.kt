@@ -41,7 +41,7 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
             for (x in 0..productos.size-1) {
                 //Crear un json y una clase para los items del carrito
                 val gson = Gson()
-                val item_Carrito = Carrito_item(productos[x].id_product, 1, productos[x].price)
+                val item_Carrito = Carrito_item(productos[x].id_product, 1, productos[x].price )
                 val itemJson = gson.toJson(item_Carrito)
                 val itemname = "item" + productos[x].id_product
 
@@ -51,20 +51,17 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
             }
 
         }
-
-
         return ViewHolder(v)
     }
 
     override fun onBindViewHolder(ViewHolder: ViewHolder, i: Int) {
         var item = productos[i]
+        var euro = "€"
         var adaptador = ArrayAdapter(context, android.R.layout.simple_spinner_item, arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
         ViewHolder.itemImage.setImageResource(item.img)
-        ViewHolder.itemPrecioProducto.text = item.price.toString()
+        ViewHolder.itemPrecioProducto.text = item.price.toString()+ euro
         ViewHolder.itemCategoria.text = item.category
         ViewHolder.itemSpiner.adapter = adaptador
-
-
 
             //Recoger datos de Shared Preferences
             val prefs: SharedPreferences = context.getSharedPreferences("carrito", 0)
@@ -83,7 +80,6 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
 
         ViewHolder.itemSpiner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected( parent: AdapterView<*>, view: View, position: Int, id: Long) {
-
 
                 // Guardar datos del carrito en el shared preferences
 
@@ -108,7 +104,7 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
 
 
                 if (context is activity_5carrito) {
-                    //context.calcularTotal()
+                   // context.calcularTotal()
                 }
 
             }

@@ -1,32 +1,30 @@
 package com.example.reto01
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.AsyncTask
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TableRow
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.example.reto01.Model.Producto
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_3principal.*
 
 class activity_3principal : AppCompatActivity() {
-
     lateinit private var listProducts : MutableList<Producto>
-
     lateinit var databaseHelper:DatabaseHelper
     private val activity = this
 
-
-
+    override fun onBackPressed() {
+        navegacion("navigation_principal")
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_3principal)
-
-
 
         initObjects()
         sv_3scrollView.setVerticalScrollBarEnabled(false)
@@ -62,43 +60,43 @@ class activity_3principal : AppCompatActivity() {
         tv_3vegan.setOnClickListener(){
             sv_3scrollView.isVisible= true
             sv_3scrollViewFiltro.isVisible = false
-            loadTable()
+            loadTable("vegan")
         }
         //COMIDA SIN GLUTEN
         tv_3gluten.setOnClickListener(){
             sv_3scrollView.isVisible= true
             sv_3scrollViewFiltro.isVisible = false
-            loadTable()
+            loadTable("glutenFree")
         }
         //COMIDA KM0
         tv_3km0.setOnClickListener(){
             sv_3scrollView.isVisible= true
             sv_3scrollViewFiltro.isVisible = false
-            loadTable()
+            loadTable("km0")
         }
         //COMIDA SIN LACTOSA
         tv_3lactose.setOnClickListener(){
             sv_3scrollView.isVisible= true
             sv_3scrollViewFiltro.isVisible = false
-            loadTable()
+            loadTable("lactoseFree")
         }
         //COMIDA SIN ACEITE DE PALMA
         tv_3palm.setOnClickListener(){
             sv_3scrollView.isVisible= true
             sv_3scrollViewFiltro.isVisible = false
-            loadTable()
+            loadTable("palmOilFree")
         }
         //COMIDA ALTA EN PROTEINA
         tv_3protein.setOnClickListener(){
             sv_3scrollView.isVisible= true
             sv_3scrollViewFiltro.isVisible = false
-            loadTable()
+            loadTable("highProtein")
         }
         //COMIDA VEGETARIANA
         tv_3vegetarian.setOnClickListener(){
             sv_3scrollView.isVisible= true
             sv_3scrollViewFiltro.isVisible = false
-            loadTable()
+            loadTable("vegetarian")
         }
         tb_3tablaProductos.setOnClickListener(){
             val navegacion = Intent(this, activity_4producto::class.java)
@@ -135,14 +133,26 @@ class activity_3principal : AppCompatActivity() {
                 val navegacion_compra = Intent(this, activity_9blog::class.java)
                 startActivity(navegacion_compra)
             }
+
+            "navigation_producto" -> {
+                val navegacion_compra = Intent(this, activity_4producto::class.java)
+                startActivity(navegacion_compra)
+            }
         }
         this.overridePendingTransition(0, 0)
     }
 
-    fun loadTable() {
-        var items = 26
-        var itemsLength = items
-        var rowsLength = (((items + 3) - 1) / 3) - 1
+    fun loadTable(category: String) {
+        var filteredItems:ArrayList<Producto> = ArrayList()
+
+        for(i in 0..listProducts.size-1){
+            if(listProducts[i].category == category){
+                filteredItems.add(listProducts[i])
+            }
+        }
+
+        var rowsLength = (((filteredItems.size + 3) - 1) / 3) - 1
+        var itemsLength = filteredItems.size
         var layoutParams = TableRow.LayoutParams(
             TableRow.LayoutParams.WRAP_CONTENT,
             TableRow.LayoutParams.WRAP_CONTENT
@@ -158,9 +168,9 @@ class activity_3principal : AppCompatActivity() {
                 var newCol2 = ImageView(this)
                 var newCol3 = ImageView(this)
 
-                newCol1.setImageResource(R.drawable.prueba)
-                newCol2.setImageResource(R.drawable.prueba)
-                newCol3.setImageResource(R.drawable.prueba)
+                newCol1.setImageResource(filteredItems[i].img)
+                newCol2.setImageResource(filteredItems[i+1].img)
+                newCol3.setImageResource(filteredItems[i+2].img)
 
                 newRow.addView(newCol1, layoutParams)
                 newRow.addView(newCol2, layoutParams)
@@ -190,53 +200,94 @@ class activity_3principal : AppCompatActivity() {
                 var newRow = TableRow(this)
                 var newCol1 = ImageView(this)
                 var newCol2 = ImageView(this)
+                var newCol3 = ImageView(this)
 
-                newCol1.setImageResource(R.drawable.prueba)
-                newCol2.setImageResource(R.drawable.prueba)
+                newCol1.setImageResource(filteredItems[i].img)
+                newCol2.setImageResource(filteredItems[i+1].img)
 
                 newRow.addView(newCol1, layoutParams)
                 newRow.addView(newCol2, layoutParams)
+                newRow.addView(newCol3, layoutParams)
 
                 tb_3tablaProductos.addView(newRow)
 
                 newCol1.requestLayout()
                 newCol2.requestLayout()
+                newCol3.requestLayout()
 
                 newCol1.getLayoutParams().height = 262
                 newCol2.getLayoutParams().height = 262
+                newCol3.getLayoutParams().height = 262
 
                 newCol1.getLayoutParams().width = 262
                 newCol2.getLayoutParams().width = 262
+                newCol3.getLayoutParams().width = 262
 
                 newCol1.setScaleType(ImageView.ScaleType.FIT_XY)
                 newCol2.setScaleType(ImageView.ScaleType.FIT_XY)
+                newCol3.setScaleType(ImageView.ScaleType.FIT_XY)
+
+
+                val sharedPreferences = getSharedPreferences("product", 0)
+                val sharedPreferencesEditor: SharedPreferences.Editor = sharedPreferences.edit()
+                val gson = Gson()
+
+                val productJson = gson.toJson(filteredItems[i])
+
+                sharedPreferencesEditor.putString("product", productJson)
+                sharedPreferencesEditor.commit()
+
+                newCol1.setOnClickListener(){
+                    val productJson = gson.toJson(filteredItems[i-1])
+                    sharedPreferencesEditor.putString("product", productJson)
+                    sharedPreferencesEditor.commit()
+
+                    navegacion("navigation_producto")
+                }
+
+                newCol2.setOnClickListener(){
+                    val productJson = gson.toJson(filteredItems[i])
+                    sharedPreferencesEditor.putString("product", productJson)
+                    sharedPreferencesEditor.commit()
+
+                    navegacion("navigation_producto")
+                }
 
                 i++
             } else {
                 var newRow = TableRow(this)
                 var newCol1 = ImageView(this)
+                var newCol2 = ImageView(this)
+                var newCol3 = ImageView(this)
 
-                newCol1.setImageResource(R.drawable.prueba)
+                newCol1.setImageResource(filteredItems[i].img)
 
                 newRow.addView(newCol1, layoutParams)
+                newRow.addView(newCol2, layoutParams)
+                newRow.addView(newCol3, layoutParams)
 
                 tb_3tablaProductos.addView(newRow)
 
                 newCol1.requestLayout()
+                newCol2.requestLayout()
+                newCol3.requestLayout()
 
                 newCol1.getLayoutParams().height = 262
+                newCol2.getLayoutParams().height = 262
+                newCol3.getLayoutParams().height = 262
 
                 newCol1.getLayoutParams().width = 262
+                newCol2.getLayoutParams().width = 262
+                newCol3.getLayoutParams().width = 262
 
                 newCol1.setScaleType(ImageView.ScaleType.FIT_XY)
+                newCol2.setScaleType(ImageView.ScaleType.FIT_XY)
+                newCol3.setScaleType(ImageView.ScaleType.FIT_XY)
 
                 i++
             }
         }
     }
-
-
-
 
     private fun initObjects() {
         listProducts= ArrayList()

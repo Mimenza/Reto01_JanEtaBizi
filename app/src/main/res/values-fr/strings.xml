@@ -182,6 +182,20 @@
     <string name="error_message_address">Entrez une adresse s\'il vous plait</string>
     <string name="email">E-mail</string>
     <string name="contraseña">Mot de passe</string>
+    <string name="cardnumberinput">Número de la tarjeta</string>
+    <string name="caducidad_title">Caducidad</string>
+
+
+    <string name="error_message_numerotarjeta">Ingrese su número de tarjeta</string>
+    <string name="error_message_caducidadtarjeta">Ingrese la caducidad de su tarjeta</string>
+    <string name="error_message_cvv">Ingrese el cvv de su tarjeta</string>
+    <string name="error_message_direccion">Ingrese una dirección</string>
+    <string name="error_message_ciudad">Ingrese una ciudad</string>
+    <string name="Productos">Todos los productos</string>
+    <string name="filtrobusquedaproductos">Busqueda productos</string>
+    <string name="eliminar">Eliminar producto</string>
+    <string name="update_product">Actualizar producto</string>
+
 
 
 </resources>

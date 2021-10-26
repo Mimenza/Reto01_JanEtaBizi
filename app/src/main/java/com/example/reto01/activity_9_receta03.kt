@@ -4,14 +4,18 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_7_2_2producto.*
+<<<<<<< HEAD
 import kotlinx.android.synthetic.main.activity_9blog.*
 
+=======
+import kotlinx.android.synthetic.main.activity_9_receta03.*
+>>>>>>> e81359b371640673460352c6ff51cde5bd3a90e2
 class activity_9_receta03 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_9_receta03)
         getSupportActionBar()?.hide()
-        imgv7_02_atras.setOnClickListener() {
+        imgv9_03_atras.setOnClickListener() {
             val i = Intent(this, activity_9blog::class.java)
             startActivity(i)
         }
