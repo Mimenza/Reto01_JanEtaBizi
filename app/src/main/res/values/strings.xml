@@ -141,12 +141,43 @@
     <!--Blog-->
     <string name="blogtitulo">Blog</string>
     <string name="tituloreceta01">Crema de lombarda y pera</string>
-    <string name="descreceta01">Aunque este es un plato muy presente en los menús navideños, nada nos debería impedir incorporarlo a nuestras celebraciones en cualquier otro momento del año. Es un entrante elegante, vistoso y que tiene todas las de ganarse los estómagos de nuestros comensales. Porque está de-li-cio-sa.</string>
+    <string name="descreceta01">Aunque este es un plato muy presente en los menús navideños, nada nos
+        debería impedir incorporarlo a nuestras celebraciones en cualquier otro momento del año.
+        Es un entrante elegante, vistoso y que tiene todas las de ganarse los estómagos de nuestros comensales. Porque está de-li-cio-sa.</string>
     <string name="fechareceta01">octubre 24, 2021</string>
-    <string name="tituloreceta02">Receta02</string>
+    <string name="ingredientes">INGREDIENTES</string>
+    <string name="ingredientes01">1/2 lombarda \n
+    2 cebollas\n
+    1 pera\n
+    500 ml de caldo de verduras casero\n
+    200 ml de leche o nata líquida\n
+    3-4 cucharadas de aceite de oliva virgen extra\n
+    Sal\n
+    Uvas pasas\n
+    Piñones\n
+    Eneldo</string>
+    <string name="preparacion">PREPARACIÓN</string>
+    <string name="preparacion011">1.Retiramos el tronco duro de la lombarda y lo desechamos. Cortamos el resto en juliana gruesa con ayuda de un cuchillo bien afilado. Lavamos con abundante agua fría y escurrimos.\n
+
+2.Pelamos las cebollas y las cortamos por la mitad. Después cortamos cada mitad en cuartos.\n
+
+3.Pelamos la pera, cortamos a lo largo, retiramos las semillas y cortamos en cinco o seis trozos.\n
+
+4.Calentamos el aceite en una olla rápida, como la WMF Perfect, echamos la cebolla y rehogamos un par de minutos. Incorporamos la lombarda y la pera y sofreímos un par de minutos más.\n</string>
+
+    <string name="preparacion012"> 5.Agregamos el caldo y sazonamos al gusto (mejor quedarnos cortos y ajustar el punto al final de la cocción). Cerramos la tapa y calentamos a fuego alto. En el momento en que asome la válvula, solo la primera raya, bajamos el fuego a medio bajo y contamos ocho minutos.\n
+
+6.Transcurrido el tiempo de cocción apagamos el fuego y dejamos que la olla se despresurice sola. Abrimos una vez ha salido todo el vapor y la válvula está escondida de nuevo.\n
+
+7.Trituramos la crema con una batidora de brazo o con ayuda de un robot de cocina. Agregamos la nata líquida y batimos de nuevo. Probamos y ajustamos el punto de sabor sí lo consideramos necesario.\n
+
+8.Servimos en soperas y llevamos a la mesa, decorando cada ración con uvas pasas, piñones y ramas de eneldo.</string>
+
+
+    <string name="tituloreceta02">Mini Dutch Pancakes</string>
     <string name="descreceta02">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
 
-    <string name="tituloreceta03">Receta03</string>
+    <string name="tituloreceta03">Gyozas vegetales (empanadillas chinas)</string>
     <string name="descreceta03">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
     <string name="filtrobusquedausuarios">Busqueda usuarios</string>
     <string name="todaslascuentas">Todos los usuarios</string>
