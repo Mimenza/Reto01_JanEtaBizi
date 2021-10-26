@@ -3,6 +3,7 @@ package com.example.reto01
 import android.animation.ObjectAnimator
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Color
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,7 @@ import com.example.reto01.Model.Carrito_item
 import com.example.reto01.Model.Order
 import com.example.reto01.Model.User
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_5_1adress.*
 import kotlinx.android.synthetic.main.activity_5_3gracias.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -25,7 +27,9 @@ class activity_5_3gracias : AppCompatActivity() {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         setContentView(R.layout.activity_5_3gracias)
 
-
+        //Damos color al progress bar
+        progressBar_5_3.getProgressDrawable().setColorFilter(
+            Color.parseColor("#E2C2B9"), android.graphics.PorterDuff.Mode.SRC_IN);
 
         bottomNavV_5_3bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
