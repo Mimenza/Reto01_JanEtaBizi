@@ -1,17 +1,28 @@
 package com.example.reto01
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TableRow
+import com.example.reto01.Model.Likes
+import com.example.reto01.Model.Producto
+import com.example.reto01.Model.User
 import kotlinx.android.synthetic.main.activity_8likes.*
+import java.util.ArrayList
 
 class activity_8likes : AppCompatActivity() {
+    lateinit private var user: User
+    lateinit var databaseHelper: DatabaseHelper
+    private val activity = this
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_8likes)
+
+        initObjects()
 
         sv_8scrollView.setVerticalScrollBarEnabled(false)
         loadTable()
@@ -43,6 +54,7 @@ class activity_8likes : AppCompatActivity() {
                 else -> false
             }
         }
+
     }
 
     fun navegacion(activity: String) {
@@ -76,7 +88,30 @@ class activity_8likes : AppCompatActivity() {
     }
 
     fun loadTable() {
-        var items = 4
+
+        //Recoger datos del usuario loggeado
+        val prefs: SharedPreferences =
+            this@activity_8likes.getSharedPreferences("loggedUser", 0)
+        val correo = prefs.getString("correo", null)
+        //Llamar a la función getUser pasándole el correo que hemos guardado en SharedPreferences
+        user = databaseHelper.getUser(correo.toString())!!
+
+        var listaProductos = ArrayList<Producto>()
+        //Recomes la lista de likes que tiene ese user
+        var listaLikes:MutableList<Likes> =databaseHelper.getUserLikes(user.id)
+
+        //Recorremos el array y buscarmos el producto
+        for(i in 0..listaLikes.size-1){
+
+            //Guardamos los datos del producto y lo pusheamos
+            var producto = listaLikes[i].id_producto?.let { databaseHelper.getProduct(it) }
+
+            listaProductos.add(producto!!)
+        }
+
+        println(listaProductos)
+
+        var items = listaProductos.size
         var itemsLength = items
         var rowsLength = (((items + 3) - 1) / 3) - 1
         var layoutParams = TableRow.LayoutParams(
@@ -173,5 +208,9 @@ class activity_8likes : AppCompatActivity() {
                 i++
             }
         }
+    }
+    private fun initObjects() {
+        databaseHelper = DatabaseHelper(activity, "janEtaBizi", null, 1)
+
     }
 }

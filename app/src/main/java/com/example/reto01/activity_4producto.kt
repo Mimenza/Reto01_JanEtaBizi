@@ -9,12 +9,15 @@ import android.os.Handler
 import android.text.method.ScrollingMovementMethod
 import android.view.View
 import com.example.reto01.Model.Producto
-import com.google.android.material.snackbar.Snackbar
+import com.example.reto01.Model.User
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_4producto.*
 
 class activity_4producto : AppCompatActivity() {
     var product: Producto = Producto()
+    lateinit private var user: User
+    lateinit var databaseHelper: DatabaseHelper
+    private val activity = this
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +26,8 @@ class activity_4producto : AppCompatActivity() {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
         setContentView(R.layout.activity_4producto)
         loadProductData()
+        initObjects()
+
 
         bottomNavV_4bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -49,7 +54,6 @@ class activity_4producto : AppCompatActivity() {
                 else -> false
             }
         }
-
 
         btn_4addtocart.setOnTouchListener { v, event ->
             btn_4addtocart.setBackgroundResource(R.drawable.my_button_border_clickgreen)
@@ -83,8 +87,6 @@ class activity_4producto : AppCompatActivity() {
             false
         }
 
-
-
         btn_4buy.setOnTouchListener { v, event ->
             btn_4buy.setBackgroundResource(R.drawable.my_button_border_clickgreen)
 
@@ -99,13 +101,40 @@ class activity_4producto : AppCompatActivity() {
         }
 
         imgv_4favorite.setOnClickListener() {
-            //Producto Favorito snackbar
-            Snackbar.make(imgv_4favorite, "Producto añadido", Snackbar.LENGTH_SHORT)
-                .show()
+
+            //Recoger datos del usuario loggeado
+            val prefs: SharedPreferences =
+                this@activity_4producto.getSharedPreferences("loggedUser", 0)
+            val correo = prefs.getString("correo", null)
+            //Llamar a la función getUser pasándole el correo que hemos guardado en SharedPreferences
+            user = databaseHelper.getUser(correo.toString())!!
+
+
+            if(databaseHelper.checkLike(product.id_product, user.id)){
+                //Este usuario  le ha dado like al producto
+
+                    println("BORRANDO")
+                //Borramos el producto de like
+                databaseHelper.deletelike(product.id_product)
+
+            } else{
+                //Este usuario no le ha dado like al producto
+
+                println("GUARDANDO")
+                //Añadimos el producto a like
+                databaseHelper.generatelike(product.id_product, user. id)
+
+            }
+
+
+
+
         }
 
         //Producto  descripción scroll
         txtv_7_1_1descripcionproducto.movementMethod = ScrollingMovementMethod()
+
+
     }
 
     fun loadProductData() {
@@ -147,6 +176,26 @@ class activity_4producto : AppCompatActivity() {
         }
         this.overridePendingTransition(0, 0)
     }
+
+    private fun initObjects() {
+        databaseHelper = DatabaseHelper(activity, "janEtaBizi", null, 1)
+
+    }
+
+    /*fun checklikefun(){
+        //Checkeamos si el producto tiene likes o no.
+
+        if(databaseHelper.checkLike(product.id_product, user.id)){
+            //Este usuario  le ha dado like al producto
+            checklike = true
+
+        } else{
+            //Este usuario no le ha dado like al producto
+            checklike = false
+
+        }
+
+    }*/
 }
 
 

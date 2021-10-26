@@ -5,10 +5,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.example.reto01.Model.Order
-import com.example.reto01.Model.Pedido_producto
-import com.example.reto01.Model.Producto
-import com.example.reto01.Model.User
+import com.example.reto01.Model.*
 
 class DatabaseHelper(
     context: Context,
@@ -733,6 +730,99 @@ class DatabaseHelper(
         cursor.close()
         db.close()
         return listPedidos
+
+    }
+
+
+
+    fun generatelike(idProduct: Int?, id: Int?) {
+        //Funcion que genera like en la DB
+        val db = this.writableDatabase
+        val values = ContentValues()
+        values.put(COLUMN_LIKES_PRODUCT_ID, idProduct)
+        values.put(COLUMN_LIKES_USER_ID, id)
+
+        // Inserting Row
+        db.insert(TBL_LIKES, null, values)
+        db.close()
+
+    }
+
+    fun deletelike(idProduct: Int?) {
+        //Funcion que borra el like de la DB
+
+        val db = this.writableDatabase
+
+        // Inserting Row
+        db.delete(
+            TBL_LIKES, "${COLUMN_LIKES_PRODUCT_ID} = ? ",
+            arrayOf(idProduct.toString())
+        )
+        db.close()
+
+    }
+
+    fun checkLike(idProduct: Int?, id: Int?): Boolean {
+        // array of columns to fetch
+        val columns = arrayOf(COLUMN_LIKES_PRODUCT_ID)
+        val db = this.readableDatabase
+
+        // selection criteria
+        val selection = "$COLUMN_LIKES_PRODUCT_ID = ? AND $COLUMN_LIKES_USER_ID = ?"
+
+        // selection arguments
+        val selectionArgs = arrayOf(idProduct.toString(), id.toString())
+
+        // query user table with conditions
+        val cursor = db.query(
+            TBL_LIKES, //Table to query
+            columns, //columns to return
+            selection, //columns for the WHERE clause
+            selectionArgs, //The values for the WHERE clause
+            null,  //group the rows
+            null, //filter by row groups
+            null
+        ) //The sort order
+        val cursorCount = cursor.count
+        cursor.close()
+
+        if (cursorCount > 0)
+            return true
+        return false
+    }
+
+    @SuppressLint("Range")
+    fun getUserLikes(id: Int?): MutableList<Likes> {
+        val db: SQLiteDatabase = this.getReadableDatabase()
+        val columns = arrayOf(
+            COLUMN_LIKES_PRODUCT_ID, COLUMN_LIKES_USER_ID
+        )
+        val likesList: MutableList<Likes> = ArrayList()
+        val res =
+            db.rawQuery("select * from Likes where likes_user_id='" + id + "'", null)
+        res.moveToFirst()
+        val cursor = db.query(
+            TBL_LIKES, //Table to query
+            columns,            //columns to return
+            null,     //columns for the WHERE clause
+            null,  //The values for the WHERE clause
+            null,      //group the rows
+            null,       //filter by row groups
+            null
+        )         //The sort order
+
+        if (cursor.moveToFirst()) {
+            do {
+                val like = Likes(
+                    id_user = cursor.getInt(cursor.getColumnIndex(COLUMN_LIKES_USER_ID)),
+                    id_producto = cursor.getInt(cursor.getColumnIndex(COLUMN_LIKES_PRODUCT_ID)),
+                )
+                likesList.add(like)
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        db.close()
+        return likesList
 
     }
 
