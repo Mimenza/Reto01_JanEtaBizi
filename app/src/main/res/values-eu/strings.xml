@@ -162,6 +162,7 @@
     <string name="filtrobusquedaproductos">Busqueda productos</string>
     <string name="eliminar">Eliminar producto</string>
     <string name="update_product">Actualizar producto</string>
+    <string name="delete">Eliminar</string>
 
 
 </resources>

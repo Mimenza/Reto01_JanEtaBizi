@@ -230,7 +230,7 @@ class activity_5_1address : AppCompatActivity(), View.OnClickListener {
 
         var direccion = txt_5_1direccion.text.toString()
         var ciudad = txt_5_1city.text.toString()
-        var provincia = txt_5_1provincia.text.toString()
+
         var cp  = txt_5_1cp.text.toString()
         var nombre = txt_5_1nombre.text.toString()
         var apellido = txt_5_1apellido.text.toString()

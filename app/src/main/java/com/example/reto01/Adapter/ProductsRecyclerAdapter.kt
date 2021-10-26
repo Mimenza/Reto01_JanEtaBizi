@@ -8,12 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.reto01.*
 import com.example.reto01.Model.Producto
 import com.example.reto01.Model.User
-import com.example.reto01.R
-import com.example.reto01.activity_7_1_1usuario
-import com.example.reto01.activity_7_2_2producto
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.gproduct_card.view.*
 
@@ -27,6 +26,7 @@ class ProductsRecyclerAdapter(private val listProducts: List<Producto>) : Recycl
         val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.gproduct_card, parent, false)
         return ProductViewHolder(itemView)
+
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, i: Int) {
@@ -45,15 +45,14 @@ class ProductsRecyclerAdapter(private val listProducts: List<Producto>) : Recycl
     private fun onclick(producto: Producto, context: Context) {
          //Al hacer intent pasamos estos parámetros
 
-        val intent = Intent( context, activity_7_2_2producto::class.java)
-        intent.putExtra("title",producto.name_product)
-        //intent.putExtra("description",producto.)
-        intent.putExtra("img",producto.img.toString())
-        intent.putExtra("price",producto.price )
-        //----------------------------------------------
-        //enviamos todos los datos para futuro update
 
-        context.startActivity(intent)
+
+        if(context is activity_7_2productos){
+
+            (context).loadproducto(producto)
+        }
+
+
     }
 
     override fun getItemCount(): Int {
