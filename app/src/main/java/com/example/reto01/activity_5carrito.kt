@@ -13,6 +13,7 @@ import com.example.reto01.Adapter.MyCardsCartAdapter
 import com.example.reto01.Model.Carrito_item
 import com.example.reto01.Model.Producto
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_3principal.*
 import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_5_2payment.*
 import kotlinx.android.synthetic.main.activity_5carrito.*
@@ -32,6 +33,7 @@ class activity_5carrito : AppCompatActivity() {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         setContentView(R.layout.activity_5carrito)
         calcularTotal()
+        loadCarritoNumber()
 
         //Llamar funcion para cargar los datos
         loadProductos()
@@ -93,16 +95,22 @@ class activity_5carrito : AppCompatActivity() {
         }
 
         btn_5borrarcarrito.setOnClickListener(){
-        //Borramos los shared preferences del carrito
-            val settings: SharedPreferences = this.getSharedPreferences("carrito", MODE_PRIVATE)
-            settings.edit().clear().commit()
-            val settings1: SharedPreferences = this.getSharedPreferences("carritoProductos", MODE_PRIVATE)
-            settings1.edit().clear().commit()
+
+
+
+            //Borramos los shared preferences del carrito
+            val f = File("/data/data/com.example.reto01/shared_prefs/carrito.xml")
+            f.delete()
+
+            val f2 = File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml")
+            f2.delete()
 
             //Recargamos la activity
-            finish()
-            startActivity(getIntent())
+
+            navegacion("navigation_carrito")
             this.overridePendingTransition(0, 0)
+            finish()
+
         }
 
     }
@@ -206,4 +214,12 @@ class activity_5carrito : AppCompatActivity() {
     }
 
 
+    fun loadCarritoNumber(){
+        if ( File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml").exists()){
+            var badge = bottomNavV_5bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
+            val prefss: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
+            // An icon only badge will be displayed unless a number is set:
+            badge.number = prefss.getString("length",null).toString().toInt()
+        }
+    }
 }

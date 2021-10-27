@@ -13,10 +13,12 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.reto01.Helpers.InputValidation
 import com.example.reto01.Model.User
+import kotlinx.android.synthetic.main.activity_3principal.*
 import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_5_1adress.*
 import kotlinx.android.synthetic.main.activity_5_2payment.*
 import kotlinx.android.synthetic.main.activity_5carrito.*
+import java.io.File
 import java.util.*
 
 
@@ -39,7 +41,7 @@ class activity_5_1address : AppCompatActivity(), View.OnClickListener {
         initViews()
         initObjects()
         initListeners()
-
+        loadCarritoNumber()
         //Damos color al progress bar
         progressBar_5_1.getProgressDrawable().setColorFilter(
             Color.parseColor("#E2C2B9"), android.graphics.PorterDuff.Mode.SRC_IN);
@@ -260,5 +262,13 @@ class activity_5_1address : AppCompatActivity(), View.OnClickListener {
     }
 
 
+    fun loadCarritoNumber(){
+        if ( File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml").exists()){
+            var badge = bottomNavV_5_1bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
+            val prefss: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
+            // An icon only badge will be displayed unless a number is set:
+            badge.number = prefss.getString("length",null).toString().toInt()
+        }
+    }
 
 }

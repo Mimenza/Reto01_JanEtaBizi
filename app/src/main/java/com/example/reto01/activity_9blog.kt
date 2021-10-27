@@ -1,6 +1,7 @@
 package com.example.reto01
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -8,13 +9,17 @@ import androidx.annotation.NonNull
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import kotlinx.android.synthetic.main.activity_3principal.*
+import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_9blog.*
+import java.io.File
 
 class activity_9blog : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_9blog)
         getSupportActionBar()?.hide()
+
+        loadCarritoNumber()
 
         linearLayout_901.setOnClickListener(){
             val navegacion_receta01 = Intent(this, activity_9_receta01::class.java)
@@ -96,5 +101,14 @@ class activity_9blog : AppCompatActivity() {
 
 
 
+    }
+
+    fun loadCarritoNumber(){
+        if ( File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml").exists()){
+            var badge = bottomNavV_9bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
+            val prefss: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
+            // An icon only badge will be displayed unless a number is set:
+            badge.number = prefss.getString("length",null).toString().toInt()
+        }
     }
 }

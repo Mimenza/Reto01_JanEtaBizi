@@ -18,8 +18,11 @@ import com.example.reto01.Model.Pedido_producto
 import com.example.reto01.Model.User
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_2registrar.*
+import kotlinx.android.synthetic.main.activity_3principal.*
+import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_5_1adress.*
 import kotlinx.android.synthetic.main.activity_5_2payment.*
+import java.io.File
 import java.text.SimpleDateFormat
 import java.time.LocalTime
 import java.util.*
@@ -42,7 +45,7 @@ class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
         getSupportActionBar()?.hide()
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         setContentView(R.layout.activity_5_2payment)
-
+        loadCarritoNumber()
         initViews()
         initObjects()
         initListeners()
@@ -323,7 +326,20 @@ class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
 
             databaseHelper.addOrder_product(pedidoProducto)
         }
+        //Borramos los shared preferences del carrito
+        val f = File("/data/data/com.example.reto01/shared_prefs/carrito.xml")
+        f.delete()
+        val f2 = File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml")
+        f2.delete()
 
+    }
+    fun loadCarritoNumber(){
+        if ( File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml").exists()){
+            var badge = bottomNavV_5_2bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
+            val prefss: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
+            // An icon only badge will be displayed unless a number is set:
+            badge.number = prefss.getString("length",null).toString().toInt()
+        }
     }
 }
 

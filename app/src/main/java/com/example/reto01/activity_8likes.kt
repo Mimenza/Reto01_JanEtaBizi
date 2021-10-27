@@ -11,7 +11,9 @@ import com.example.reto01.Model.Producto
 import com.example.reto01.Model.User
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_3principal.*
+import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_8likes.*
+import java.io.File
 import java.util.ArrayList
 
 class activity_8likes : AppCompatActivity() {
@@ -25,6 +27,7 @@ class activity_8likes : AppCompatActivity() {
         setContentView(R.layout.activity_8likes)
 
         initObjects()
+        loadCarritoNumber()
 
         sv_8scrollView.setVerticalScrollBarEnabled(false)
 
@@ -232,5 +235,13 @@ class activity_8likes : AppCompatActivity() {
     private fun initObjects() {
         databaseHelper = DatabaseHelper(activity, "janEtaBizi", null, 1)
 
+    }
+    fun loadCarritoNumber(){
+        if ( File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml").exists()){
+            var badge = bottomNavV_8bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
+            val prefss: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
+            // An icon only badge will be displayed unless a number is set:
+            badge.number = prefss.getString("length",null).toString().toInt()
+        }
     }
 }

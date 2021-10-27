@@ -12,6 +12,8 @@ import com.example.reto01.Model.Producto
 import com.example.reto01.Model.User
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_3principal.*
+import kotlinx.android.synthetic.main.activity_4producto.*
+import java.io.File
 
 class activity_3principal : AppCompatActivity() {
     lateinit private var listProducts: MutableList<Producto>
@@ -26,7 +28,7 @@ class activity_3principal : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_3principal)
-
+        loadCarritoNumber()
         initObjects()
         sv_3scrollView.setVerticalScrollBarEnabled(false)
         sv_3scrollViewFiltro.setVerticalScrollBarEnabled(false)
@@ -368,5 +370,15 @@ class activity_3principal : AppCompatActivity() {
         }
     }
 
+    fun loadCarritoNumber(){
+
+        if ( File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml").exists()){
+            var badge = bottomNavV_3bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
+            val prefss: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
+
+            // An icon only badge will be displayed unless a number is set:
+            badge.number = prefss.getString("length",null).toString().toInt()
+        }
+    }
 
 }

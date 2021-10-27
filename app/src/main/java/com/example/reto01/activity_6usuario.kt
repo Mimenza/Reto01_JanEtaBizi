@@ -22,9 +22,11 @@ import androidx.core.view.isVisible
 import com.example.reto01.Model.User
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.activity_3principal.*
+import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_5_1adress.*
 import kotlinx.android.synthetic.main.activity_5_2payment.*
 import kotlinx.android.synthetic.main.activity_6usuario.*
+import java.io.File
 import java.util.*
 
 class activity_6usuario : AppCompatActivity() {
@@ -45,7 +47,7 @@ class activity_6usuario : AppCompatActivity() {
         var sharedPreferences= getSharedPreferences("data", 0)
 
 
-
+        loadCarritoNumber()
         initObjects()
 
 
@@ -458,6 +460,15 @@ class activity_6usuario : AppCompatActivity() {
         startActivity(getIntent());
         overridePendingTransition(0, 0);
 
+    }
+
+    fun loadCarritoNumber(){
+        if ( File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml").exists()){
+            var badge = bottomNavV_6bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
+            val prefss: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
+            // An icon only badge will be displayed unless a number is set:
+            badge.number = prefss.getString("length",null).toString().toInt()
+        }
     }
 }
 

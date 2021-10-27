@@ -1,8 +1,10 @@
 package com.example.reto01
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_7_2_2producto.*
 
 import kotlinx.android.synthetic.main.activity_9blog.*
@@ -18,6 +20,7 @@ class activity_9_receta03 : AppCompatActivity() {
             startActivity(i)
         }
 
+       // loadCarritoNumber()
 
         fun navegacion_principal() {
             val navegacion_compra = Intent(this, activity_3principal::class.java)
@@ -83,5 +86,13 @@ class activity_9_receta03 : AppCompatActivity() {
 
 
 
+    }
+    fun loadCarritoNumber(){
+        var badge = bottomNavV_4bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
+
+        val prefss: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
+
+        // An icon only badge will be displayed unless a number is set:
+        badge.number = prefss.getString("length",null).toString().toInt()
     }
 }

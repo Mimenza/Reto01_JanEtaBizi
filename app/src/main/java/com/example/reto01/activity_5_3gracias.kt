@@ -13,8 +13,11 @@ import com.example.reto01.Model.Carrito_item
 import com.example.reto01.Model.Order
 import com.example.reto01.Model.User
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_3principal.*
+import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_5_1adress.*
 import kotlinx.android.synthetic.main.activity_5_3gracias.*
+import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -26,6 +29,7 @@ class activity_5_3gracias : AppCompatActivity() {
         getSupportActionBar()?.hide()
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         setContentView(R.layout.activity_5_3gracias)
+        loadCarritoNumber()
 
         //Damos color al progress bar
         progressBar_5_3.getProgressDrawable().setColorFilter(
@@ -73,8 +77,6 @@ class activity_5_3gracias : AppCompatActivity() {
 
         btn_5_3gracias.setOnClickListener() {
 
-
-
             val i = Intent(this, activity_3principal::class.java)
             startActivity(i)
         }
@@ -115,6 +117,13 @@ class activity_5_3gracias : AppCompatActivity() {
         this.overridePendingTransition(0, 0)
     }
 
-
+    fun loadCarritoNumber(){
+        if ( File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml").exists()){
+            var badge = bottomNavV_5_3bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
+            val prefss: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
+            // An icon only badge will be displayed unless a number is set:
+            badge.number = prefss.getString("length",null).toString().toInt()
+        }
+    }
 
 }

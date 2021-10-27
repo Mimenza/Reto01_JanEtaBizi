@@ -11,7 +11,9 @@ import android.view.View
 import com.example.reto01.Model.Producto
 import com.example.reto01.Model.User
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_3principal.*
 import kotlinx.android.synthetic.main.activity_4producto.*
+import java.io.File
 
 class activity_4producto : AppCompatActivity() {
     var product: Producto = Producto()
@@ -71,6 +73,8 @@ class activity_4producto : AppCompatActivity() {
             }
         }
 
+        loadCarritoNumber()
+
 
         btn_4addtocart.setOnClickListener(){
             val prefs: SharedPreferences = getSharedPreferences("carritoProductos", 0)
@@ -96,6 +100,8 @@ class activity_4producto : AppCompatActivity() {
                 btn_4addtocart.setBackgroundResource(R.drawable.my_button_border)
             }, 100)
             false
+
+            loadCarritoNumber()
         }
 
         btn_4buy.setOnTouchListener { v, event ->
@@ -185,7 +191,14 @@ class activity_4producto : AppCompatActivity() {
 
     }
 
-
+    fun loadCarritoNumber(){
+        if ( File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml").exists()){
+            var badge = bottomNavV_4bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
+            val prefss: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
+            // An icon only badge will be displayed unless a number is set:
+            badge.number = prefss.getString("length",null).toString().toInt()
+        }
+    }
 }
 
 
