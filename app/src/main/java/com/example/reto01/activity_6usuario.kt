@@ -26,6 +26,7 @@ import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_5_1adress.*
 import kotlinx.android.synthetic.main.activity_5_2payment.*
 import kotlinx.android.synthetic.main.activity_6usuario.*
+import kotlinx.android.synthetic.main.bottom_sheet.*
 import java.io.File
 import java.util.*
 
@@ -129,6 +130,7 @@ class activity_6usuario : AppCompatActivity() {
         val fondoLayout = dialog.findViewById<LinearLayout>(R.id.layoutTema)
         val logoutLayout = dialog.findViewById<LinearLayout>(R.id.logoutLayout)
         val temaLayout = dialog.findViewById<LinearLayout>(R.id.layoutTema)
+        val seebuzon= dialog.findViewById<LinearLayout>(R.id.layoutBuzon)
         var deleteaccount= dialog.findViewById<TextView>(R.id.txtv_deleteaccount)
 
         languageLayout.setOnClickListener {
@@ -155,8 +157,12 @@ class activity_6usuario : AppCompatActivity() {
             chooseThemeDialog()
         }
 
-        deleteaccount.setOnClickListener{
+        seebuzon.setOnClickListener(){
+            val i = Intent(this, activity_10buzon::class.java)
+            startActivity(i)
+        }
 
+        deleteaccount.setOnClickListener{
 
             showDeleteDialog()
 
@@ -235,7 +241,6 @@ class activity_6usuario : AppCompatActivity() {
     }
 
 
-
     //TEMAS DIALOG
     fun chooseThemeDialog() {
 
@@ -292,7 +297,6 @@ class activity_6usuario : AppCompatActivity() {
         var lang = preferences.getInt(LANGUAGE, 0)
             set(value) = preferences.edit().putInt(LANGUAGE, value).apply()
     }
-
 
     //Delete dialog
 
@@ -375,7 +379,6 @@ class activity_6usuario : AppCompatActivity() {
 
 
     }
-
 
     inner class GetDataFromSQLite : AsyncTask<Void, Void, User>() {
 

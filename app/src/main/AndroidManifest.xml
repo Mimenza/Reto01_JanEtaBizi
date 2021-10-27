@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.reto01" >
+    package="com.example.reto01">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,32 +11,32 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Reto01" >
+        android:theme="@style/Theme.Reto01">
+
         <activity
             android:name=".activity_7_2productos"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity_7_3_4pedidoo"
             android:exported="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity_9_receta03"
             android:exported="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity_9_receta02"
             android:exported="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity_9_receta01"
             android:exported="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity_7_2_2producto"
             android:exported="true"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".activity_9blog"
             android:exported="true"
@@ -76,7 +76,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -112,6 +112,10 @@
             android:exported="true"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".activity_10buzon"
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts"

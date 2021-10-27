@@ -30,6 +30,11 @@ class activity_7_3_3pedidos : AppCompatActivity() {
 
         initViews()
         initObjects()
+
+        imgv_7_3atras.setOnClickListener() {
+            val i = Intent(this, activity_7admin::class.java)
+            startActivity(i)
+        }
     }
 
     /**
