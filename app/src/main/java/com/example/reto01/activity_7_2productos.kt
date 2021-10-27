@@ -21,11 +21,14 @@ import kotlinx.android.synthetic.main.activity_7_2productos.*
 
 class activity_7_2productos : AppCompatActivity() {
     private val activity = this
+
     private lateinit var recyclerViewProducts: RecyclerView
     private lateinit var listProducts: MutableList<Producto>
     private lateinit var productsRecyclerAdapter: ProductsRecyclerAdapter
     private lateinit var databaseHelper: DatabaseHelper
+
     private lateinit var context:Context
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_7_2productos)
@@ -85,7 +88,8 @@ class activity_7_2productos : AppCompatActivity() {
             listProducts.addAll(result!!)
 
             //Cargar el adapter después de llamar a la bbdd
-            val adapter = ProductsRecyclerAdapter(listProducts)
+            val adapter = ProductsRecyclerAdapter(listProducts, context)
+
             recyclerViewProducts.layoutManager = LinearLayoutManager(context)
             recyclerViewProducts.adapter = adapter
 

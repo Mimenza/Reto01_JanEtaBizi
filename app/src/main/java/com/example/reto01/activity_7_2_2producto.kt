@@ -44,7 +44,7 @@ class activity_7_2_2producto : AppCompatActivity() {
 
         product = gsonFile.fromJson(prefs.getString("product", null), Producto::class.java)
 
-        txtv_7_2_2nombreProducto.setText(product.name_product)
+        txtv_7_2_2nombreProducto.setText(resources.getString(product.name_product!!.toInt()))
         imgv_7_2_2producto.setImageResource(product.img)
         var id_product= product.id_product
 

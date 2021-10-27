@@ -4,9 +4,15 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.AsyncTask
 import android.os.Bundle
+import android.util.Log
+import android.view.GestureDetector
+import android.view.MotionEvent
+import android.view.View
 import android.widget.ImageView
 import android.widget.TableRow
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.MotionEventCompat
 import androidx.core.view.isVisible
 import com.example.reto01.Model.Producto
 import com.example.reto01.Model.User
@@ -14,6 +20,7 @@ import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_3principal.*
 import kotlinx.android.synthetic.main.activity_4producto.*
 import java.io.File
+import kotlin.math.abs
 
 class activity_3principal : AppCompatActivity() {
     lateinit private var listProducts: MutableList<Producto>
@@ -58,6 +65,8 @@ class activity_3principal : AppCompatActivity() {
                 else -> false
             }
         }
+
+
 
         /* var user0 = User()
          user0.id=R.drawable.polvobatido
@@ -119,6 +128,7 @@ class activity_3principal : AppCompatActivity() {
             loadTable("huevo")
         }
     }
+
 
 
     fun navegacion(activity: String) {
@@ -380,5 +390,6 @@ class activity_3principal : AppCompatActivity() {
             badge.number = prefss.getString("length",null).toString().toInt()
         }
     }
+
 
 }

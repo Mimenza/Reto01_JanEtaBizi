@@ -4,8 +4,11 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.GestureDetector
+import android.view.MotionEvent
 import android.widget.ImageView
 import android.widget.TableRow
+import android.widget.Toast
 import com.example.reto01.Model.Likes
 import com.example.reto01.Model.Producto
 import com.example.reto01.Model.User
@@ -15,17 +18,26 @@ import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_8likes.*
 import java.io.File
 import java.util.ArrayList
+import kotlin.math.abs
 
-class activity_8likes : AppCompatActivity() {
+class activity_8likes : AppCompatActivity(),GestureDetector.OnGestureListener {
     lateinit private var user: User
     lateinit var databaseHelper: DatabaseHelper
     private val activity = this
+
+    lateinit var  gestureDetector: GestureDetector
+    var x2:Float= 0.0f
+    var x1:Float= 0.0f
+
+    companion object{
+        const val  MIN_DISTANCE = 150
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_8likes)
-
+        gestureDetector = GestureDetector(this, this)
         initObjects()
         loadCarritoNumber()
 
@@ -244,4 +256,83 @@ class activity_8likes : AppCompatActivity() {
             badge.number = prefss.getString("length",null).toString().toInt()
         }
     }
-}
+
+    override fun onTouchEvent(event: MotionEvent?): Boolean {
+
+        gestureDetector.onTouchEvent(event)
+
+        when (event?.action){
+            //cuando empezamos a swipear
+            0->{
+
+                x1 = event.x
+
+            }
+            //cuando terminamos de swipear
+            1->{
+
+                x2 = event.x
+
+                //Compara la distacia que hemos hecho
+                val valueX:Float = x2-x1
+
+                println(valueX)
+
+                if(abs(valueX) > MIN_DISTANCE){
+
+                    if(x2>x1){
+                        println("DERECHA")
+                        Toast.makeText(this, "Right swipe", Toast.LENGTH_LONG).show()
+                    }
+                    else{
+                        println("IZQUIERDA")
+                        Toast.makeText(this, "Left swipe", Toast.LENGTH_LONG).show()
+                    }
+                }
+
+
+            }
+
+
+        }
+
+        return super.onTouchEvent(event)
+    }
+
+    override fun onDown(e: MotionEvent?): Boolean {
+        //TODO("Not yet implemented")
+        return false
+    }
+
+    override fun onShowPress(e: MotionEvent?) {
+        //TODO("Not yet implemented")
+    }
+
+    override fun onSingleTapUp(e: MotionEvent?): Boolean {
+        // TODO("Not yet implemented")
+        return false
+    }
+
+    override fun onScroll(
+        e1: MotionEvent?,
+        e2: MotionEvent?,
+        distanceX: Float,
+        distanceY: Float
+    ): Boolean {
+        // TODO("Not yet implemented")
+        return false
+    }
+
+    override fun onLongPress(e: MotionEvent?) {
+        //TODO("Not yet implemented")
+    }
+
+    override fun onFling(
+        e1: MotionEvent?,
+        e2: MotionEvent?,
+        velocityX: Float,
+        velocityY: Float
+    ): Boolean {
+        // TODO("Not yet implemented")
+        return false
+    }}

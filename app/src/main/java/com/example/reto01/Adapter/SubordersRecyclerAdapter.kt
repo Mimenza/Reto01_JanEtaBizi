@@ -41,7 +41,9 @@ class SubordersRecyclerAdapter(private val listSuborders: List<Pedido_producto>,
         var suborder = listSuborders[i]
         var producto = suborder.id_product?.let { databaseHelper.getProduct(it)}
 
-        holder.textViewName.text = (producto?.name_product).toString()
+        if (producto != null) {
+            holder.textViewName.text = contexto.getResources().getString(producto.name_product!!.toInt())
+        }
         producto?.img?.let { holder.textImg.setImageResource(it) }
         holder.textViewAmount.text = suborder.quantity.toString()
 

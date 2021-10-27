@@ -43,14 +43,10 @@ class OrdersRecyclerAdapter(private val listOrders: List<Order>, contexto: Conte
 
         var order = listOrders[i]
         holder.textViewName.text = ((order.id_user?.let { databaseHelper.getUserId(it) })?.name).toString()
-
-
-
-
-
         holder.textViewOrder.text= order.id_order.toString()
         holder.textViewPrecio.text= order.total.toString()
         holder.itemView.setOnClickListener { onclick(order,holder.itemView.context )}
+        holder.textViewDate.text = order.date
 
     }
 
