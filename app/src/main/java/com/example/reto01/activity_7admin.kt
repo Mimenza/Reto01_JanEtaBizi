@@ -3,6 +3,7 @@ package com.example.reto01
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_7admin.*
 
@@ -11,7 +12,7 @@ class activity_7admin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_7admin)
-
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
         bottomNavV_7bottomMenu.setSelectedItemId(R.id.navigation_perfil)
 
         bottomNavV_7bottomMenu.setOnNavigationItemSelectedListener { menuItem ->

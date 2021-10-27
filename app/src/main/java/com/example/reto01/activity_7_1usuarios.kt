@@ -26,7 +26,6 @@ class activity_7_1usuarios : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_7_1usuarios)
         getSupportActionBar()?.hide()
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         initViews()
         initObjects()
     }
