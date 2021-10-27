@@ -254,5 +254,9 @@
     <string name="price">Precio</string>
     <string name="descriptionproduct">Descripción</string>
 
-
+    <!-- DUDAS-->
+    <string name="dudas">Contacto</string>
+    <string name="dudastexto">Tienes una duda? escribenos y te contestaremos lo antes posible</string>
+    <string name="dudasredes">No te olvides de seguirnos en las redes!!</string>
+    <string name="enviar">Enviar</string>
 </resources>

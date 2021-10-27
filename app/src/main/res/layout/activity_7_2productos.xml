@@ -13,12 +13,26 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <ImageView
+            android:id="@+id/imgv_7_2atras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="-165dp"
+            android:layout_marginTop="10dp"
+
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_back" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Productos"
             android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginTop="-50dp"/>
 
 
     </LinearLayout>
@@ -27,7 +41,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewProductos"
         android:layout_width="417dp"
-        android:layout_height="633dp" />
+        android:layout_height="633dp"
+        tools:listitem="@layout/gproduct_card"
+        />
 
 
 </LinearLayout>

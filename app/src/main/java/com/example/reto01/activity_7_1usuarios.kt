@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.reto01.Adapter.UsersRecyclerAdapter
 import com.example.reto01.Model.User
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_7_1_1usuario.*
 import kotlinx.android.synthetic.main.activity_7_1usuarios.*
 
 class activity_7_1usuarios : AppCompatActivity() {
@@ -28,6 +29,11 @@ class activity_7_1usuarios : AppCompatActivity() {
         getSupportActionBar()?.hide()
         initViews()
         initObjects()
+
+        imgv_7_1atras.setOnClickListener() {
+            val i = Intent(this, activity_7admin::class.java)
+            startActivity(i)
+        }
     }
 
     /**

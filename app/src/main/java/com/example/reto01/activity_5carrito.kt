@@ -88,10 +88,16 @@ class activity_5carrito : AppCompatActivity() {
         }
 
         btn_5carrito.setOnClickListener() {
+
+            if (carritoSize == 0){
+                //SI EL CARRITO ESTA VACIO
+                Toast.makeText(this, "El carrito no puede estar vacio!", Toast.LENGTH_LONG).show()
+            }else{
+                //SI TIENE ALGO EL CARRITO SEGUIMOS CON EL PROCESO
             val i = Intent(this@activity_5carrito, activity_5_1address::class.java)
             i.putExtra("total",total)
             startActivity(i)
-            this.overridePendingTransition(0, 0)
+            this.overridePendingTransition(0, 0)}
         }
 
         btn_5borrarcarrito.setOnClickListener(){

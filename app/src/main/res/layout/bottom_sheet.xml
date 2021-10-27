@@ -49,6 +49,31 @@
             android:textSize="16sp" />
 
     </LinearLayout>
+<<<<<<< HEAD
+=======
+
+    <LinearLayout
+        android:id="@+id/layoutBuzon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_email" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="Buzon"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+>>>>>>> dea0f73eb82fda60bf3528f314d61e7b0349752f
 
     <LinearLayout
         android:id="@+id/logoutLayout"
