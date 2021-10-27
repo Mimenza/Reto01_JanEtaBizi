@@ -20,6 +20,7 @@ import kotlinx.android.synthetic.main.activity_7_2_2producto.imgv_7_2_2producto
 class activity_7_2_2producto : AppCompatActivity() {
 
     lateinit private var product : Producto
+    lateinit private var producto : Producto
     lateinit var databaseHelper:DatabaseHelper
     private val activity = this
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +47,7 @@ class activity_7_2_2producto : AppCompatActivity() {
         val gsonFile = Gson()
 
         product = gsonFile.fromJson(prefs.getString("product", null), Producto::class.java)
-
+        println(product)
 
 
         txtv_7_2_2_descripcionproducto.setText(resources.getString(product.description!!.toInt()))
@@ -86,21 +87,22 @@ class activity_7_2_2producto : AppCompatActivity() {
     }
 
     fun updateProduct(id_product:Int?) {
-        product = Producto()
+        producto = Producto()
 
-        product.name_product= txtv_7_2_2nombreProducto.text.toString()
-        product.description=txtv_7_2_2_descripcionproducto.text.toString()
-        product.category=txtv_7_2_2_categoriaproducto.text.toString()
-        product.price=txtv_7_2_2_precioproducto.text.toString().toDouble()
+        producto.name_product= txtv_7_2_2nombreProducto.text.toString()
+        producto.description=txtv_7_2_2_descripcionproducto.text.toString()
+        producto.category=txtv_7_2_2_categoriaproducto.text.toString()
+        producto.price=txtv_7_2_2_precioproducto.text.toString().toDouble()
 
-        product.id_product= id_product
+        producto.id_product= id_product
 
 
         //------------------------------------------------------------
 
 
-        databaseHelper.updateProduct(product)
-        println(product)
+        Toast.makeText(this,"Actualizando el producto...",Toast.LENGTH_LONG).show()
+        databaseHelper.updateProduct(producto)
+        println(producto)
 
     }
     fun initObjects(){
