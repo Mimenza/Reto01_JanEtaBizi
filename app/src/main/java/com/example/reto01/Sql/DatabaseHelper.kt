@@ -256,7 +256,7 @@ class DatabaseHelper(
     fun updateProduct(product: Producto) {
         // Gets the data repository in write mode
         val db = this.writableDatabase
-
+        println("DB"+ product)
         // Create a new map of values, where column names are the keys
         val values = ContentValues().apply {
             put("product_id", product.id_product)
@@ -588,7 +588,7 @@ class DatabaseHelper(
             response.likes = res.getInt(res.getColumnIndex(COLUMN_PRODUCT_LIKES))
             response.img = res.getInt(res.getColumnIndex(COLUMN_PRODUCT_IMG))
             response.stock = res.getInt(res.getColumnIndex(COLUMN_PRODUCT_STOCK))
-
+            response.description = res.getString(res.getColumnIndex(COLUMN_PRODUCT_DESCRIPTION))
             // rest of columns
             return response
         }

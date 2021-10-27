@@ -89,20 +89,24 @@ class activity_7_2_2producto : AppCompatActivity() {
     fun updateProduct(id_product:Int?) {
         producto = Producto()
 
-        producto.name_product= txtv_7_2_2nombreProducto.text.toString()
-        producto.description=txtv_7_2_2_descripcionproducto.text.toString()
-        producto.category=txtv_7_2_2_categoriaproducto.text.toString()
-        producto.price=txtv_7_2_2_precioproducto.text.toString().toDouble()
-
         producto.id_product= id_product
-
+        //producto.name_product= txtv_7_2_2nombreProducto.text.toString()
+        producto.name_product= product.name_product
+        producto.price=txtv_7_2_2_precioproducto.text.toString().toDouble()
+        producto.category=txtv_7_2_2_categoriaproducto.text.toString()
+        producto.stock = product.stock
+        producto.img = product.img
+        producto.likes = product.likes
+        //producto.description=txtv_7_2_2_descripcionproducto.text.toString()
+        producto.description = product.description
 
         //------------------------------------------------------------
 
-
+        println("FUN"+producto)
         Toast.makeText(this,"Actualizando el producto...",Toast.LENGTH_LONG).show()
+
         databaseHelper.updateProduct(producto)
-        println(producto)
+
 
     }
     fun initObjects(){
