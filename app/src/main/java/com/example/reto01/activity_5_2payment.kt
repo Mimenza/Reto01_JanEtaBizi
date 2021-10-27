@@ -56,7 +56,7 @@ class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
             Color.parseColor("#E2C2B9"), android.graphics.PorterDuff.Mode.SRC_IN);
 
         //Datepicker campo caducidad
-        txt_5_2caducidadtarjeta.setOnClickListener { showDatePickerDialog() }
+        imgv_5_2datepicker.setOnClickListener { showDatePickerDialog() }
 
         bottomNavV_5_2bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {

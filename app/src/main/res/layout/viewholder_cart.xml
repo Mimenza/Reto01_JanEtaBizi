@@ -13,8 +13,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_carrito"
-        android:layout_width="155dp"
-        android:layout_height="111dp"
+        android:layout_width="128dp"
+        android:layout_height="107dp"
         app:cardCornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
