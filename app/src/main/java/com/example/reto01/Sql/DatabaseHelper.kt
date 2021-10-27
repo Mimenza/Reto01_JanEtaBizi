@@ -260,18 +260,18 @@ class DatabaseHelper(
         // Create a new map of values, where column names are the keys
         val values = ContentValues().apply {
             put("product_id", product.id_product)
-            put("name_product", product.name_product)
+            put("product_name", product.name_product)
             put("product_category", product.category)
+            put("product_price", product.price)
             put("product_img", product.img)
             put("product_likes", product.likes)
-            put("product_price", product.price)
             put("product_stock", product.stock)
             put("product_description", product.description)
 
         }
         // update según el id de usuario
         db.update(
-            TBL_USERS, values, "${COLUMN_PRODUCT_ID} = ?",
+            TBL_PRODUCTS, values, "${COLUMN_PRODUCT_ID} = ?",
             arrayOf(product.id_product.toString())
         )
         db.close()

@@ -57,17 +57,35 @@ class activity_7_2_2producto : AppCompatActivity() {
         imgv_7_2_2producto.setImageResource(product.img)
         var id_product= product.id_product
 
+
+
+        btn_7_2_2delete.setOnTouchListener { v, event ->
+            btn_7_2_2delete.setBackgroundResource(R.drawable.my_button_border_clickgreen)
+            Handler().postDelayed({
+                btn_7_2_2delete.setBackgroundResource(R.drawable.my_button_border)
+            }, 100)
+            false
+        }
+
+        btn_7_2_2update.setOnTouchListener { v, event ->
+            btn_7_2_2update.setBackgroundResource(R.drawable.my_button_border_clickgreen)
+            Handler().postDelayed({
+                btn_7_2_2update.setBackgroundResource(R.drawable.my_button_border)
+            }, 100)
+            false
+        }
         btn_7_2_2delete.setOnClickListener() {
             showDeleteDialog(id_product)
         }
         btn_7_2_2update.setOnClickListener(){
-            updateProduct()
+            updateProduct(id_product)
+
 
         }
 
     }
 
-    fun updateProduct() {
+    fun updateProduct(id_product:Int?) {
         product = Producto()
 
         product.name_product= txtv_7_2_2nombreProducto.text.toString()
@@ -75,10 +93,14 @@ class activity_7_2_2producto : AppCompatActivity() {
         product.category=txtv_7_2_2_categoriaproducto.text.toString()
         product.price=txtv_7_2_2_precioproducto.text.toString().toDouble()
 
+        product.id_product= id_product
+
+
         //------------------------------------------------------------
 
-        product.likes= product.likes?.let { intent.getIntExtra("likes", it) }
+
         databaseHelper.updateProduct(product)
+        println(product)
 
     }
     fun initObjects(){

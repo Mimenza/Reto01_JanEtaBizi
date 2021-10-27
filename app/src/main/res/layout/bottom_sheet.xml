@@ -49,8 +49,7 @@
             android:textSize="16sp" />
 
     </LinearLayout>
-<<<<<<< HEAD
-=======
+
 
     <LinearLayout
         android:id="@+id/layoutBuzon"
@@ -69,11 +68,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:text="Buzon"
+            android:text="@string/Buzon"
             android:textSize="16sp" />
 
     </LinearLayout>
->>>>>>> dea0f73eb82fda60bf3528f314d61e7b0349752f
+
 
     <LinearLayout
         android:id="@+id/logoutLayout"
