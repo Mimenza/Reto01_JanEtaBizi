@@ -1,5 +1,6 @@
 package com.example.reto01
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -81,6 +82,17 @@ class activity_5carrito : AppCompatActivity() {
             i.putExtra("total",total)
             startActivity(i)
             this.overridePendingTransition(0, 0)
+        }
+
+        btn_5borrarcarrito.setOnClickListener(){
+        //Borramos los shared preferences del carrito
+            val settings: SharedPreferences = this.getSharedPreferences("carrito", MODE_PRIVATE)
+            settings.edit().clear().commit()
+            val settings1: SharedPreferences = this.getSharedPreferences("carritoProductos", MODE_PRIVATE)
+            settings1.edit().clear().commit()
+            //Recargamos la activity
+            finish();
+            startActivity(getIntent());
         }
 
     }
