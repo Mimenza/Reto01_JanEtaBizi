@@ -65,6 +65,7 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
         ViewHolder.itemImage.setImageResource(item.img)
         ViewHolder.itemPrecioProducto.text = item.price.toString()+ euro
         ViewHolder.itemCategoria.text = item.category
+        ViewHolder.itemTitle.text = item.name_product
         ViewHolder.itemSpiner.adapter = adaptador
 
             //Recoger datos de Shared Preferences

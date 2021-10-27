@@ -131,11 +131,11 @@ class activity_4producto : AppCompatActivity() {
             loadCarritoNumber()
         }
 
-        btn_4buy.setOnTouchListener { v, event ->
-            btn_4buy.setBackgroundResource(R.drawable.my_button_border_clickgreen)
+        btn_7_2_2update.setOnTouchListener { v, event ->
+            btn_7_2_2update.setBackgroundResource(R.drawable.my_button_border_clickgreen)
 
             Handler().postDelayed({
-                btn_4buy.setBackgroundResource(R.drawable.my_button_border)
+                btn_7_2_2update.setBackgroundResource(R.drawable.my_button_border)
             }, 100)
         }
 
@@ -168,7 +168,7 @@ class activity_4producto : AppCompatActivity() {
         }
 
         //Producto  descripción scroll
-        txtv_7_1_1descripcionproducto.movementMethod = ScrollingMovementMethod()
+        txtv_4_descripcionproducto.movementMethod = ScrollingMovementMethod()
 
 
     }
@@ -180,7 +180,8 @@ class activity_4producto : AppCompatActivity() {
         product = gsonFile.fromJson(prefs.getString("product", null), Producto::class.java)
 
 
-        txtv_7_2_2nombreProducto.setText(resources.getString(product.name_product!!.toInt()))
+        txtv_4nombreProducto.setText(resources.getString(product.name_product!!.toInt()))
+        txtv_4_descripcionproducto.setText(resources.getString(product.description!!.toInt()))
 
         imgv_7_2_2producto.setImageResource(product.img)
     }

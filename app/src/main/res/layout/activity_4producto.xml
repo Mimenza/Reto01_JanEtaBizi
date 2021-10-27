@@ -8,24 +8,23 @@
 
 
     <TextView
-        android:id="@+id/txtv_7_2_2nombreProducto"
+        android:id="@+id/txtv_4nombreProducto"
         android:layout_width="234dp"
-        android:layout_height="48dp"
+        android:layout_height="70dp"
         android:text="Nombre Producto"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.065" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <TextView
-        android:id="@+id/txtv_7_1_1descripcionproducto"
+        android:id="@+id/txtv_4_descripcionproducto"
         android:layout_width="322dp"
         android:layout_height="171dp"
-        android:text="@string/lorem"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -60,7 +59,7 @@
 
 
     <Button
-        android:id="@+id/btn_4buy"
+        android:id="@+id/btn_7_2_2update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/my_button_border"
@@ -101,7 +100,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintTop_toBottomOf="@+id/btn_4buy"
+        app:layout_constraintTop_toBottomOf="@+id/btn_7_2_2update"
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/navigation">
 

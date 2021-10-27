@@ -50,6 +50,8 @@ class DatabaseHelper(
         private val COLUMN_PRODUCT_LIKES = "product_likes"
         private val COLUMN_PRODUCT_IMG = "product_img"
         private val COLUMN_PRODUCT_STOCK = "product_stock"
+        private val COLUMN_PRODUCT_DESCRIPTION = "product_description"
+
 
         // Orders Table Columns names
         private val COLUMN_ORDER_ID = "order_id"
@@ -62,6 +64,7 @@ class DatabaseHelper(
         private val COLUMN_ORDER_PRODUCTS_ORDER_ID = "product_order_id"
         private val COLUMN_ORDER_PRODUCTS_PRODUCT_ID = "product_product_id"
         private val COLUMN_ORDER_PRODUCTS_QUANTITY = "product_product_quantity"
+
 
         // Likes Table Columns names
         private val COLUMN_LIKES_USER_ID = "likes_user_id"
@@ -96,7 +99,8 @@ class DatabaseHelper(
                 "${COLUMN_PRODUCT_CATEGORY} TEXT," +
                 "${COLUMN_PRODUCT_LIKES} INTEGER," +
                 "${COLUMN_PRODUCT_IMG} INTEGER," +
-                "${COLUMN_PRODUCT_STOCK} INTEGER)"
+                "${COLUMN_PRODUCT_STOCK} INTEGER," +
+                "${COLUMN_PRODUCT_DESCRIPTION} TEXT)"
 
     // Create orders table sql query
     private val CREATE_ORDERS_TABLE =
@@ -134,32 +138,32 @@ class DatabaseHelper(
     private  val LOAD_PRODUCTS =
         "INSERT INTO ${TBL_PRODUCTS}  VALUES " +
                 //ALERGIA HUEVO
-                "( 0 ,"+R.string.mayonesa+", 3.54 ,'huevo', 12,"+R.drawable.alergeno_huevo1+", 10), " +
-                "( 1 ,"+R.string.harinatrigo+", 2.39 , 'huevo', 12, "+R.drawable.alergeno_huevo2+", 10), " +
-                "( 2 ,"+R.string.pepitaschoco+", 3.49 , 'huevo', 12, "+R.drawable.alergeno_huevo3+", 10), " +
+                "( 0 ,"+R.string.mayonesa+", 3.54 ,'huevo', 12,"+R.drawable.alergeno_huevo1+", 10, "+R.string.mayonesadescripcion+"), " +
+                "( 1 ,"+R.string.harinatrigo+", 2.39 , 'huevo', 12, "+R.drawable.alergeno_huevo2+", 10, "+R.string.harinatrigodescripcion+"), " +
+                "( 2 ,"+R.string.pepitaschoco+", 3.49 , 'huevo', 12, "+R.drawable.alergeno_huevo3+", 10, "+R.string.pepitaschocodescripcion+"), " +
                 //ALERGIA LECHE
-                "( 3 ,"+R.string.aceitecoco+", 4.63 , 'lacteo', 12,"+R.drawable.alergeno_leche1+", 10), " +
-                "( 4 ,"+R.string.biscotesespelta+", 3.70 , 'lacteo', 12,"+R.drawable.alergeno_leche2+", 10) ," +
-                "( 5 ,"+R.string.cafeleche+", 3.60 ,  'lacteo', 12,"+R.drawable.alergeno_leche3+", 10), " +
+                "( 3 ,"+R.string.aceitecoco+", 4.63 , 'lacteo', 12,"+R.drawable.alergeno_leche1+", 10, "+R.string.aceitecocodescripcion+"), " +
+                "( 4 ,"+R.string.biscotesespelta+", 3.70 , 'lacteo', 12,"+R.drawable.alergeno_leche2+", 10, "+R.string.bicotesdescripcion+") ," +
+                "( 5 ,"+R.string.cafeleche+", 3.60 ,  'lacteo', 12,"+R.drawable.alergeno_leche3+", 10, "+R.string.lechecafedescripcion+"), " +
                 //CELIACO
-                "( 6 ,"+R.string.macarrones+", 1.85 , 'celiaco', 12, "+R.drawable.celiaco1+", 10), " +
+                "( 6 ,"+R.string.macarrones+", 1.85 , 'celiaco', 12, "+R.drawable.celiaco1+", 10, "+R.string.macarronesdescripcion+"), " +
                 //KM0
-                "( 7 ,"+R.string.brocoli+", 2.40 , 'KM0', 12,"+R.drawable.km01+" , 10), " +
-                "( 8 ,"+R.string.puerro+", 2.99 , 'KM0', 12,"+R.drawable.km02+" , 10) ," +
-                "( 9 ,"+R.string.pimientorojo+", 3.50 , 'KM0', 12,"+R.drawable.km03+", 10), " +
-                "( 10 ,"+R.string.tomate+", 3.70 , 'KM0', 12,"+R.drawable.km04+" , 10), " +
+                "( 7 ,"+R.string.brocoli+", 2.40 , 'KM0', 12,"+R.drawable.km01+" , 10, "+R.string.brocolidescripcion+"), " +
+                "( 8 ,"+R.string.puerro+", 2.99 , 'KM0', 12,"+R.drawable.km02+" , 10, "+R.string.puerrodescripcion+") ," +
+                "( 9 ,"+R.string.pimientorojo+", 3.50 , 'KM0', 12,"+R.drawable.km03+", 10, "+R.string.pimientorojodescripcion+"), " +
+                "( 10 ,"+R.string.tomate+", 3.70 , 'KM0', 12,"+R.drawable.km04+" , 10, "+R.string.tomatedescripcion+"), " +
                 //DEPORTISTAS
-                "( 13 ,"+R.string.proteinaplatano+", 23.30 , 'deporte', 12,"+R.drawable.deportistas1+", 10), " +
-                "( 14 ,"+R.string.citratomagnesio+", 23.49 , 'deporte', 12,"+R.drawable.deportistas2+", 10) ," +
-                "( 15 ,"+R.string.impactwheyprotein+", 25.99 , 'deporte', 12,"+R.drawable.deportistas3+", 10), " +
-                "( 16 ,"+R.string.omegavegano+", 29.99 , 'deporte', 12, "+R.drawable.deportistas4+", 10), " +
-                "( 17 ,"+R.string.musclepack+", 49.99 , 'deporte', 12, "+R.drawable.deportistas5+", 10), " +
+                "( 13 ,"+R.string.proteinaplatano+", 23.30 , 'deporte', 12,"+R.drawable.deportistas1+", 10, "+R.string.proteinaplatanoadescripcion+"), " +
+                "( 14 ,"+R.string.citratomagnesio+", 23.49 , 'deporte', 12,"+R.drawable.deportistas2+", 10, "+R.string.citratomagnesiodescripcion+") ," +
+                "( 15 ,"+R.string.impactwheyprotein+", 25.99 , 'deporte', 12,"+R.drawable.deportistas3+", 10, "+R.string.impactwheydescripcion+"), " +
+                "( 16 ,"+R.string.omegavegano+", 29.99 , 'deporte', 12, "+R.drawable.deportistas4+", 10, "+R.string.mayonesadescripcion+"), " +
+                "( 17 ,"+R.string.musclepack+", 49.99 , 'deporte', 12, "+R.drawable.deportistas5+", 10, "+R.string.musclepackdescripcion+"), " +
                 //VEGANOS
-                "( 18 ,"+R.string.macarronesveganos+", 2.10 ,'vegan', 12, "+R.drawable.vegano1+", 10), " +
-                "( 19 ,"+R.string.hamburguesavegana+", 3.99 , 'vegan', 12,"+R.drawable.vegano2+", 10) ," +
-                "( 20 ,"+R.string.albondigasvegano+", 3.99 , 'vegan', 12,"+R.drawable.vegano3+", 10), " +
-                "( 21 ,"+R.string.alcachofas+", 3.70 , 'vegan', 12, "+R.drawable.vegano4+", 10), " +
-                "( 22 ,"+R.string.judiasypatatas+", 2.75 , 'vegan', 12, "+R.drawable.vegano5+", 10) "
+                "( 18 ,"+R.string.macarronesveganos+", 2.10 ,'vegan', 12, "+R.drawable.vegano1+", 10, "+R.string.macarronesdescripcion+"), " +
+                "( 19 ,"+R.string.hamburguesavegana+", 3.99 , 'vegan', 12,"+R.drawable.vegano2+", 10, "+R.string.hamburguesadescripcion+") ," +
+                "( 20 ,"+R.string.albondigasvegano+", 3.99 , 'vegan', 12,"+R.drawable.vegano3+", 10, "+R.string.albondigasdescripcion+"), " +
+                "( 21 ,"+R.string.alcachofas+", 3.70 , 'vegan', 12, "+R.drawable.vegano4+", 10, "+R.string.alcachofasdescripcion+"), " +
+                "( 22 ,"+R.string.judiasypatatas+", 2.75 , 'vegan', 12, "+R.drawable.vegano5+", 10, "+R.string.judiasypatatasdescripcion+") "
 
 
 
@@ -248,6 +252,30 @@ class DatabaseHelper(
         db.close()
     }
 
+    //Actualizar usuario
+    fun updateProduct(product: Producto) {
+        // Gets the data repository in write mode
+        val db = this.writableDatabase
+
+        // Create a new map of values, where column names are the keys
+        val values = ContentValues().apply {
+            put("product_id", product.id_product)
+            put("name_product", product.name_product)
+            put("product_category", product.category)
+            put("product_img", product.img)
+            put("product_likes", product.likes)
+            put("product_price", product.price)
+            put("product_stock", product.stock)
+            put("product_description", product.description)
+
+        }
+        // update según el id de usuario
+        db.update(
+            TBL_USERS, values, "${COLUMN_PRODUCT_ID} = ?",
+            arrayOf(product.id_product.toString())
+        )
+        db.close()
+    }
     //Eliminar usuario por correo
     fun deleteUser(correo: String?) {
         val db = this.writableDatabase
@@ -463,8 +491,7 @@ class DatabaseHelper(
         // array of columns to fetch
         val columns = arrayOf(
             COLUMN_PRODUCT_ID, COLUMN_PRODUCT_NAME, COLUMN_PRODUCT_CATEGORY, COLUMN_PRODUCT_LIKES,
-            COLUMN_PRODUCT_PRICE, COLUMN_PRODUCT_IMG, COLUMN_PRODUCT_STOCK
-        )
+            COLUMN_PRODUCT_PRICE, COLUMN_PRODUCT_IMG, COLUMN_PRODUCT_STOCK, COLUMN_PRODUCT_DESCRIPTION)
         //val columns = arrayOf(COLUMN_PRODUCT_ID, COLUMN_PRODUCT_NAME, COLUMN_PRODUCT_CATEGORY, COLUMN_PRODUCT_LIKES
         //   COLUMN_PRODUCT_PRICE, COLUMN_PRODUCT_IMG, COLUMN_PRODUCT_STOCK )
         // sorting orders
@@ -490,8 +517,10 @@ class DatabaseHelper(
                     category = cursor.getString(cursor.getColumnIndex(COLUMN_PRODUCT_CATEGORY)),
                     stock = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_STOCK)),
                     img = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_IMG)),
-                    likes = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_LIKES))
-                )
+                    likes = cursor.getInt(cursor.getColumnIndex(COLUMN_PRODUCT_LIKES)),
+                    description = cursor.getString(cursor.getColumnIndex(COLUMN_PRODUCT_DESCRIPTION)),
+
+                    )
                 productList.add(producto)
             } while (cursor.moveToNext())
         }

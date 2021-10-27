@@ -7,5 +7,6 @@ data class Producto(
     var category: String? = null,
     var stock: Int? = null,
     var img: Int = 1,
-    var likes: Int? = null
+    var likes: Int? = null,
+    var description: String? = null
 )

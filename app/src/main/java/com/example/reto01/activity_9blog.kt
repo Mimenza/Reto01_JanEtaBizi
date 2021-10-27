@@ -99,8 +99,6 @@ class activity_9blog : AppCompatActivity() {
             }
         }
 
-
-
     }
 
     fun loadCarritoNumber(){

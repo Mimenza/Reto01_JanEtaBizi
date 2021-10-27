@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_4producto.*
+import kotlinx.android.synthetic.main.activity_6usuario.*
 
 import kotlinx.android.synthetic.main.activity_7_2_2producto.*
 import kotlinx.android.synthetic.main.activity_9blog.*
@@ -19,7 +20,7 @@ class activity_9_receta01 : AppCompatActivity() {
             val i = Intent(this, activity_9blog::class.java)
             startActivity(i)
         }
-        //loadCarritoNumber()
+        loadCarritoNumber()
 
 
         fun navegacion_principal() {
@@ -57,7 +58,9 @@ class activity_9_receta01 : AppCompatActivity() {
 
         }
 
-        /*bottomNavV_9bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
+        bottomNavV_9_1bottomMenu.setSelectedItemId(R.id.navigation_blog)
+
+        bottomNavV_9_1bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_principal -> {
                     navegacion_principal()
@@ -81,14 +84,14 @@ class activity_9_receta01 : AppCompatActivity() {
                 }
                 else -> false
             }
-        }*/
+        }
 
 
 
 
     }
     fun loadCarritoNumber(){
-        var badge = bottomNavV_4bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
+        var badge = bottomNavV_9_1bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
 
         val prefss: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
 

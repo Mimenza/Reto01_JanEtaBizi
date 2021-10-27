@@ -9,10 +9,13 @@ import android.widget.Toast
 import com.example.reto01.Model.Producto
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_4producto.*
+import kotlinx.android.synthetic.main.activity_7_1_1usuario.*
 import kotlinx.android.synthetic.main.activity_7_2_2producto.*
+import kotlinx.android.synthetic.main.activity_7_2_2producto.btn_7_2_2update
 import kotlinx.android.synthetic.main.activity_7_2_2producto.imgv_7_2_2atras
 import kotlinx.android.synthetic.main.activity_7_2_2producto.imgv_7_2_2producto
-import kotlinx.android.synthetic.main.activity_7_2_2producto.txtv_7_2_2nombreProducto
+
 
 class activity_7_2_2producto : AppCompatActivity() {
 
@@ -44,14 +47,35 @@ class activity_7_2_2producto : AppCompatActivity() {
 
         product = gsonFile.fromJson(prefs.getString("product", null), Producto::class.java)
 
-        txtv_7_2_2nombreProducto.setText(product.name_product)
+        txtv_4nombreProducto.setText(resources.getString(product.name_product!!.toInt()))
+        txtv_7_2_2_descripcionproducto.setText(resources.getString(product.name_product!!.toInt()))
+
+
         imgv_7_2_2producto.setImageResource(product.img)
         var id_product= product.id_product
 
         btn_7_2_2delete.setOnClickListener() {
             showDeleteDialog(id_product)
         }
+        btn_7_2_2update.setOnClickListener(){
+            updateProduct()
 
+        }
+
+    }
+
+    fun updateProduct() {
+        product = Producto()
+
+        product.name_product= txtv_7_2_2nombreProducto.text.toString()
+        product.description=txtv_7_2_2_descripcionproducto.text.toString()
+        product.category=txtv_7_2_2_categoriaproducto.text.toString()
+        product.price=txtv_7_2_2_precioproducto.text.toString().toDouble()
+
+        //------------------------------------------------------------
+
+        product.likes= product.likes?.let { intent.getIntExtra("likes", it) }
+        databaseHelper.updateProduct(product)
 
     }
     fun initObjects(){

@@ -11,34 +11,37 @@
     <EditText
         android:id="@+id/txtv_7_2_2nombreProducto"
         android:layout_width="234dp"
-        android:layout_height="48dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="286dp"
         android:text="Nombre Producto"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/txtv_7_2_2_precioproducto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.065" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <EditText
-        android:id="@+id/txtv_7_1_1descripcionproducto"
-        android:layout_width="322dp"
-        android:layout_height="171dp"
-        android:text="@string/lorem"
+        android:id="@+id/txtv_7_2_2_descripcionproducto"
+        android:layout_width="309dp"
+        android:layout_height="106dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.675" />
+        app:layout_constraintVertical_bias="0.72"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
         android:id="@+id/imgv_7_2_2atras"
         android:layout_width="34dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="306dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtv_7_2_2_categoriaproducto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +51,7 @@
 
 
     <Button
-        android:id="@+id/btn_4buy"
+        android:id="@+id/btn_7_2_2update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/my_button_border"
@@ -88,5 +91,33 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.215"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <EditText
+        android:id="@+id/txtv_7_2_2_categoriaproducto"
+        android:layout_width="140dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.188"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtv_7_2_2nombreProducto"
+        app:layout_constraintVertical_bias="0.494"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/txtv_7_2_2_precioproducto"
+        android:layout_width="140dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.811"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgv_7_2_2producto"
+        app:layout_constraintVertical_bias="0.487"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

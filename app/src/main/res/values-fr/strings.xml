@@ -224,6 +224,25 @@
     <string name="cafeleche">Lait de café sans lactose </string>
     <string name="harinatrigo">Farine de sarrasin</string>
     <string name="macarrones">Macaroni</string>
+    <string name="mayonesadescripcion">"Mayonegran de El granero es la forma más saludable de disfrutar de la salsa mayonesa acompañando a tus comidas. Elaborada a partir de ingredientes de primera calidad procedentes de la agricultura ecologica "</string>
+    <string name="harinatrigodescripcion">"Harina de Trigo Sarraceno de molienda propia y de cultivo ecológico. "</string>
+    <string name="pepitaschocodescripcion">"Crujientes y deliciosas cookies de chocolate y pepitas de chocolate, elaboradas con ingredientes 100% ecológicos y pensadas para los amantes del chocolate más puro. Preparadas sin aceite de palma y sin huevo se presentan en un formato monodosis para llevarlas donde quieras y disfrutar de su sabor en cualquier momento del día. Fuente de fibra. "</string>
+    <string name="aceitecocodescripcion">"Aceite de coco ecológico desodorizado de la marca Vegetalia.  Saludable para cocinar, sin aportar sabor. "</string>
+    <string name="bicotesdescripcion">Biscotes de espelta con aceite de oliva virgen extra, para consumir tostados en cualquier momento del día.</string>
+    <string name="lechecafedescripcion">"Cápsulas de Café con Leche, sin lactosa. Unas cápsulas de café con leche 100% naturales, sin E-s artificiales, tendrás una deliciosa taza de sabor intenso y gran cuerpo con un solo click. "</string>
+    <string name="macarronesdescripcion">STELLINE RUMMO Estrellitas sin gluten perfectas para tus sopas y caldos.</string>
+    <string name="brocolidescripcion">Brocoli Km0</string>
+    <string name="puerrodescripcion">Puerro km0</string>
+    <string name="pimientorojodescripcion">Pimiento rojo Km0</string>
+    <string name="tomatedescripcion">Tomate km0</string>
+    <string name="impactwheydescripcion">Myprotein te presenta Impact Whey Protein, una proteína de suero de máxima calidad.</string>
+    <string name="musclepackdescripcion">Es el kit perfecto para entrenar. Con un refuerzo pre-entreno para aumentar tus niveles de energía, una bebida refrescante post-entreno y mucha proteína para asegurar que tus músculos obtengan todo lo que necesitan</string>
+    <string name="hamburguesadescripcion">Nuestra hamburguesa vegetal contiene una sabrosa mezcla de proteínas vegetales de soja y seitán, junto con la perfecta combinación de especias para dotarla del máximo sabor.</string>
+    <string name="albondigasdescripcion">"Nuestras albóndigas vegetales contienen una mezcla de proteínas de soja y seitán, junto con las mejores especias. Sus ingredientes lo convierten en un plato muy versátil. "</string>
+    <string name="alcachofasdescripcion">"Alcachofas y nada más. Alcachofas recolectadas y cocinadas en el momento idóneo para que ahora tú puedas disfrutarlas como comida o como el acompañante perfecto para todos tus platos. "</string>
+    <string name="judiasypatatasdescripcion">"Las judías con patatas son uno de esos platos clásicos que nunca fallan. Disfrútalas ahora en un formato mucho más cómodo y tenlas a mano siempre que lo necesites. "</string>
+    <string name="citratomagnesiodescripcion">Potente combinación de magnesio que ofrece numerosos beneficios para la salud</string>
+    <string name="proteinaplatanoadescripcion">Proteína de suero de leche de vacas de pasto</string>
 
 
 </resources>

@@ -9,7 +9,6 @@ import android.widget.TableRow
 import com.example.reto01.Model.Likes
 import com.example.reto01.Model.Producto
 import com.example.reto01.Model.User
-import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_3principal.*
 import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_8likes.*
@@ -40,9 +39,9 @@ class activity_8likes : AppCompatActivity() {
 
         loadTable(user)
 
-        bottomNavV_8bottomMenu.setSelectedItemId(R.id.navigation_likes)
+        bottomNavV_9_1bottomMenu.setSelectedItemId(R.id.navigation_likes)
 
-        bottomNavV_8bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
+        bottomNavV_9_1bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_principal -> {
                     navegacion("navigation_principal")
@@ -238,7 +237,7 @@ class activity_8likes : AppCompatActivity() {
     }
     fun loadCarritoNumber(){
         if ( File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml").exists()){
-            var badge = bottomNavV_8bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
+            var badge = bottomNavV_9_1bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
             val prefss: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
             // An icon only badge will be displayed unless a number is set:
             badge.number = prefss.getString("length",null).toString().toInt()

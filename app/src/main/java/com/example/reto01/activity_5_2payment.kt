@@ -55,6 +55,9 @@ class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
         progressBar_5_2.getProgressDrawable().setColorFilter(
             Color.parseColor("#E2C2B9"), android.graphics.PorterDuff.Mode.SRC_IN);
 
+        //Datepicker campo caducidad
+        txt_5_2caducidadtarjeta.setOnClickListener { showDatePickerDialog() }
+
         bottomNavV_5_2bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_principal -> {
@@ -135,7 +138,14 @@ class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
         this.overridePendingTransition(0, 0)
     }
 
+    fun showDatePickerDialog(){
 
+        val datePicker = DatePickerFragment { day, month, year -> onDateSelected(day, month, year) }
+        datePicker.show(supportFragmentManager, "datePicker")
+    }
+    private fun onDateSelected(day: Int, month: Int, year: Int) {
+        txt_5_2caducidadtarjeta.setText("$day/$month/$year")
+    }
     private fun initViews(){
 
         buttonPayment = btn_5_2payment as Button
@@ -222,6 +232,8 @@ class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
 
     }
 
+
+
     fun rellenarCampos(){
 
         txt_5_2cardnumber.setText(user.num_tarjeta)
@@ -279,7 +291,7 @@ class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
         val total= prefs.getString("total",null).toString().toDouble()
 
         //Conseguimos la hora local
-        order.date = LocalTime.now().toString() //Rellenamos le objeto de order
+       // order.date = LocalTime.now().toString() //Rellenamos le objeto de order
         order.total = total
         order.address = user.address
         order.id_user = user.id

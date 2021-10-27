@@ -6,9 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_7_2_2producto.*
+import kotlinx.android.synthetic.main.activity_9_receta01.*
+import kotlinx.android.synthetic.main.activity_9_receta02.*
 
 import kotlinx.android.synthetic.main.activity_9blog.*
 import kotlinx.android.synthetic.main.activity_9_receta03.*
+import kotlinx.android.synthetic.main.activity_9_receta03.imgv9_03_atras
 
 class activity_9_receta03 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +23,7 @@ class activity_9_receta03 : AppCompatActivity() {
             startActivity(i)
         }
 
-       // loadCarritoNumber()
+        loadCarritoNumber()
 
         fun navegacion_principal() {
             val navegacion_compra = Intent(this, activity_3principal::class.java)
@@ -57,7 +60,9 @@ class activity_9_receta03 : AppCompatActivity() {
 
         }
 
-        /*bottomNavV_9bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
+         bottomNavV_9_3bottomMenu.setSelectedItemId(R.id.navigation_blog)
+
+        bottomNavV_9_3bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_principal -> {
                     navegacion_principal()
@@ -81,14 +86,12 @@ class activity_9_receta03 : AppCompatActivity() {
                 }
                 else -> false
             }
-        }*/
-
-
+        }
 
 
     }
     fun loadCarritoNumber(){
-        var badge = bottomNavV_4bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
+        var badge = bottomNavV_9_3bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
 
         val prefss: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
 
