@@ -2,18 +2,14 @@ package com.example.reto01
 
 import android.content.Intent
 import android.content.SharedPreferences
-import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.widget.Toast
-import com.example.reto01.Model.Producto
 import com.example.reto01.Model.User
-import com.example.reto01.activity_5_2payment.GetDataFromSQLite
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_7_1_1usuario.*
-import kotlinx.android.synthetic.main.activity_7_2_2producto.*
 
 
 class activity_7_1_1usuario : AppCompatActivity() {
@@ -27,8 +23,8 @@ class activity_7_1_1usuario : AppCompatActivity() {
         getSupportActionBar()?.hide()
 
         initObjects()
-        imgv7_01_atras.setOnClickListener() {
-            val i = Intent(this, activity_7admin::class.java)
+        imgv7_1_1atras.setOnClickListener() {
+            val i = Intent(this, activity_7_1usuarios::class.java)
             startActivity(i)
         }
 

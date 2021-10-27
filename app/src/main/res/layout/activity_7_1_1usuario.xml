@@ -254,7 +254,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/imgv7_01_atras"
+        android:id="@+id/imgv7_1_1atras"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 

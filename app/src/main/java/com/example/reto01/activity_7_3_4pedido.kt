@@ -1,6 +1,7 @@
 package com.example.reto01
 
 import android.content.Context
+import android.content.Intent
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.reto01.Adapter.SubordersRecyclerAdapter
 import com.example.reto01.Model.Pedido_producto
+import kotlinx.android.synthetic.main.activity_7_1_1usuario.*
 import kotlinx.android.synthetic.main.activity_7_3_4pedido.*
 import kotlinx.android.synthetic.main.activity_7_3_4pedido.recyclerViewPedidosProductos
 
@@ -39,6 +41,11 @@ class activity_7_3_4pedido: AppCompatActivity() {
         id_OrderLate = id_Order
 
         txt_id_order.setText("Pedido numero: "+id_Order).toString()
+
+        imgv_7_3_4atras.setOnClickListener() {
+            val i = Intent(this, activity_7admin::class.java)
+            startActivity(i)
+        }
     }
 
     private fun initViews() {
