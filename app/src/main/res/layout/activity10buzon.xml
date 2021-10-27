@@ -7,7 +7,7 @@
     tools:context=".activity_10buzon">
 
     <ImageView
-        android:id="@+id/imgv_9atras"
+        android:id="@+id/imgv_10atras"
         android:layout_width="34dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -85,10 +85,10 @@
         android:id="@+id/imgBtn_9red1"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:minHeight="48dp"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
         android:background="@color/white"
+        android:minHeight="48dp"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.151"
@@ -96,8 +96,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.762"
         app:srcCompat="@drawable/insta"
-        tools:ignore="SpeakableTextPresentCheck"
-        />
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/imgBtn_9red2"
@@ -143,17 +142,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:ignore="SpeakableTextPresentCheck">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
 
     <EditText
         android:id="@+id/txtv_9dudasinput"

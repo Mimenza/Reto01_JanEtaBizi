@@ -16,7 +16,7 @@ class activity_10buzon : AppCompatActivity() {
         getSupportActionBar()?.hide()
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
 
-        imgv_9atras.setOnClickListener(){
+        imgv_10atras.setOnClickListener(){
 
             val i = Intent(this, activity_6usuario::class.java)
             startActivity(i)
