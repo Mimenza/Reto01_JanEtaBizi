@@ -26,6 +26,7 @@ import java.io.File
 import java.text.SimpleDateFormat
 import java.time.LocalTime
 import java.util.*
+import kotlin.collections.ArrayList
 
 class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
     lateinit private var user :  User
@@ -216,7 +217,6 @@ class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
 
             super.onPostExecute(result)
             user = result
-            println(user)
             rellenarCampos()
         }
 
@@ -271,13 +271,12 @@ class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
     }
 
     fun createOrder(){
+        //Funcion para crear un ORDER
         var order = Order()
 
-        //Recogemos el total de shared preference
+        //Recogemos el precio total de shared preference
         val prefs: SharedPreferences = this.getSharedPreferences("totalCarrito", 0)
         val total= prefs.getString("total",null).toString().toDouble()
-
-        val sizeCarrito=prefs.getString("size",null).toString().toInt()
 
         //Conseguimos la hora local
         order.date = LocalTime.now().toString() //Rellenamos le objeto de order
@@ -287,50 +286,69 @@ class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
 
         var createdOrder =databaseHelper.addOrder(order)
 
-        println(createdOrder)
-        createPedidoProducto(sizeCarrito)
+        createPedidoProducto()
     }
 
-    fun createPedidoProducto(sizeCarrito: Int){
+    fun createPedidoProducto(){
+        // Funcion para crear los PRODUCTOS DEL  ORDER
 
-        //Recoger datos de Shared Preferences
+        //Recogemos el numero de productos que tenemos en el carrito
+        val prefs1: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
+        val sizeCarrito= prefs1.getString("length",null).toString().toInt()
+
+        //Recogemos el carrito
         val prefs: SharedPreferences = this.getSharedPreferences("carrito", 0)
 
-        //Recoger el ultimo order de db
+        //Recoger el ultimo order de DB, para usar su ID
         var lastOrder =databaseHelper.lastOrder()
 
+        var idProducto:Int = 0
+        var cantidad:Int=0
 
-        for(x in 0..sizeCarrito-1){
+        var keys = mutableListOf<String>()
+        var prefsAll: MutableMap<String,Carrito_item>? = prefs.all as MutableMap<String, Carrito_item>?
 
-            val carrito = prefs.getString("item"+ x,null)
 
-
-            //Parsear datos a objeto carrito_item
-            val gsonFile = Gson()
-
-            val carritoJson: Carrito_item = gsonFile.fromJson(carrito, Carrito_item::class.java)
-
-            val cantidad:Int = carritoJson.cantidad!!.toInt()
-            val id:Int? = carritoJson.id
-
-            //===================================================================================
-            //Rellenamos el pedidoProducto con los datos que tenemos en el sharedPreferences del carrito
-
-            var pedidoProducto =Pedido_producto()
-
-            if (lastOrder != null) {
-                pedidoProducto.id_order = lastOrder.id_order
-            }
-            pedidoProducto.id_product = id
-            pedidoProducto.quantity = cantidad
-
-            databaseHelper.addOrder_product(pedidoProducto)
+        prefsAll?.forEach {
+            keys.add(it.key)
         }
-        //Borramos los shared preferences del carrito
+        println(keys)
+        var clave : String? = null
+
+        for(x in 0..keys.size-1){
+            //Recoger linea de producto
+            var carrito = prefs.getString(keys[x],"{}")
+
+            if(carrito!="{}"){
+
+                //Parsear datos a objeto carrito_item
+                var gsonFile = Gson()
+                var carritoJson: Carrito_item = gsonFile.fromJson(carrito, Carrito_item::class.java)
+
+                cantidad = carritoJson.cantidad!!.toInt()
+                idProducto = carritoJson.id!!
+
+                //===================================================================================
+                //Rellenamos el pedidoProducto con los datos que tenemos en el sharedPreferences del carrito
+
+                var pedidoProducto =Pedido_producto()
+
+                if (lastOrder != null) {
+                    pedidoProducto.id_order = lastOrder.id_order
+                }
+                pedidoProducto.id_product = idProducto
+                pedidoProducto.quantity = cantidad
+
+                databaseHelper.addOrder_product(pedidoProducto)
+            }
+
+        }
+
+       /* //Borramos los shared preferences del carrito
         val f = File("/data/data/com.example.reto01/shared_prefs/carrito.xml")
         f.delete()
         val f2 = File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml")
-        f2.delete()
+        f2.delete()*/
 
     }
     fun loadCarritoNumber(){

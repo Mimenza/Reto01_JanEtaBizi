@@ -106,9 +106,9 @@ class activity_5carrito : AppCompatActivity() {
             f2.delete()
 
             //Recargamos la activity
-
             navegacion("navigation_carrito")
             this.overridePendingTransition(0, 0)
+            this.recreate();
             finish()
 
         }
@@ -166,7 +166,7 @@ class activity_5carrito : AppCompatActivity() {
             }
         }
 
-       /* carritoSize = productos.size*/
+        carritoSize = productos.size
 
         //Adaptador RecyclerView Carrito de la compra
         val adapter = MyCardsCartAdapter(productos, this)
@@ -182,9 +182,10 @@ class activity_5carrito : AppCompatActivity() {
 
 
         for(x in productos){
-            val carrito = prefs.getString("item" + x.id_product.toString(),null)
+            val carrito = prefs.getString(x.id_product.toString(),null)
 
-            if(carrito != null){
+            if(carrito != null ){
+
                 //Parsear datos a objeto carrito_item
                 val gsonFile = Gson()
                 val carritoJson: Carrito_item = gsonFile.fromJson(carrito, Carrito_item::class.java)
