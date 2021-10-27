@@ -14,6 +14,7 @@ import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_3principal.*
 import kotlinx.android.synthetic.main.activity_4producto.*
 import java.io.File
+import java.util.ArrayList
 
 class activity_4producto : AppCompatActivity() {
     var product: Producto = Producto()
@@ -82,17 +83,43 @@ class activity_4producto : AppCompatActivity() {
             val gson = Gson()
 
             val itemJson = gson.toJson(product)
+            var productos: ArrayList<Producto> = arrayListOf()
 
             var length = prefs.getString("length", null)
-            if (length != null) {
-                length = (length.toInt() + 1).toString()
-                editor.putString("length", length)
-            } else {
-                length = "1"
-                editor.putString("length", length)
+
+            if(length != null){
+                for(i in 0..length.toInt()-1){
+                    val productJson = prefs.getString(i.toString(),null)
+                    val product: Producto = gson.fromJson(productJson, Producto::class.java)
+                    productos.add(product)
+                }
             }
 
-            editor.putString((length.toInt() - 1).toString(), itemJson.toString())
+            if(!productos.isEmpty()){
+                var found = false
+                for (i in productos){
+                    if (i.id_product == product.id_product){
+                        found = true
+                        break
+                    }
+                }
+
+                if(!found){
+                    length = (length!!.toInt() + 1).toString()
+                    editor.putString("length", length)
+                    editor.putString((length!!.toInt() - 1).toString(), itemJson.toString())
+                }
+            }else{
+                if (length != null) {
+                    length = (length.toInt() + 1).toString()
+                    editor.putString("length", length)
+                } else {
+                    length = "1"
+                    editor.putString("length", length)
+                }
+                editor.putString((length!!.toInt() - 1).toString(), itemJson.toString())
+            }
+
             editor.commit()
 
             btn_4addtocart.setBackgroundResource(R.drawable.my_button_border_clickgreen)
