@@ -77,6 +77,14 @@ class activity_5carrito : AppCompatActivity() {
             false
         }
 
+        btn_5borrarcarrito.setOnTouchListener { v, event ->
+            btn_5borrarcarrito.setBackgroundResource(R.drawable.my_button_border_clickgreen);
+            Handler().postDelayed({
+                btn_5borrarcarrito.setBackgroundResource(R.drawable.my_button_border);
+            }, 100)
+            false
+        }
+
         btn_5carrito.setOnClickListener() {
             val i = Intent(this@activity_5carrito, activity_5_1address::class.java)
             i.putExtra("total",total)
@@ -90,9 +98,11 @@ class activity_5carrito : AppCompatActivity() {
             settings.edit().clear().commit()
             val settings1: SharedPreferences = this.getSharedPreferences("carritoProductos", MODE_PRIVATE)
             settings1.edit().clear().commit()
+
             //Recargamos la activity
-            finish();
-            startActivity(getIntent());
+            finish()
+            startActivity(getIntent())
+            this.overridePendingTransition(0, 0)
         }
 
     }
