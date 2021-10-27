@@ -205,6 +205,32 @@
     <string name="update_product">Actualizar</string>
     <string name="delete">Eliminar</string>
     <string name="txt5_eliminarproducto">¿Eliminar producto?</string>
+    <string name="judiasypatatas">Judías y patatas</string>
+    <string name="alcachofas">Alcachofas cocidas</string>
+    <string name="albondigasvegano">Albóndigas vegetales</string>
+    <string name="hamburguesavegana">Hamburguesa vegana</string>
+    <string name="macarronesveganos">Macarrones veganos</string>
+    <string name="veganocategory">Veganos</string>
+    <string name="deportistascategory">Deportistas</string>
+    <string name="celiacocategory">Celíacos</string>
+    <string name="alergialechecategory">Alergia leche</string>
+    <string name="alergiahuevocategory">Alergia huevo</string>
+    <string name="brocoli">Brocoli</string>
+    <string name="tomate">Tomate</string>
+    <string name="puerro">Puerro</string>
+    <string name="impactwheyprotein">Impact Whey Protein</string>
+    <string name="citratomagnesio">Citrato de magnesio en polvo</string>
+    <string name="proteinaplatano">Proteína en polvo sabor plátano/mango</string>
+    <string name="pimientorojo">Pimiento rojo</string>
+    <string name="musclepack">Muscle pack small</string>
+    <string name="omegavegano">Omega vegano cápsulas blandas</string>
+    <string name="mayonesa">Mayonesa</string>
+    <string name="biscotesespelta">Biscotes</string>
+    <string name="pepitaschoco">Pepitas de chocolate</string>
+    <string name="aceitecoco">Aceite de coco</string>
+    <string name="cafeleche">"Leche de café sin lactosa "</string>
+    <string name="harinatrigo">Harina de trigo sarraceno</string>
+    <string name="macarrones">Macarrones</string>
 
 
 </resources>

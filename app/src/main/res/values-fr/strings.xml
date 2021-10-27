@@ -49,14 +49,15 @@
 
     <!--Principal-->
 
-    <string name="filtrobusquedacomida">Cherche un aliment</string>
-    <string name ="vegano">Végétalien</string>
-    <string name ="vegetariano">Végétarien</string>
-    <string name ="km0">KM0</string>
-    <string name ="gluten">Sans gluten</string>
-    <string name ="lactosa">Sans lactose</string>
-    <string name ="proteina">Riche en protéines</string>
-    <string name ="aceite">Sans huile de palme</string>
+    <string name="filtrobusquedacomida">Rechercher une catégoriea</string>
+    <string name="vegano">VÉGÉTALIEN</string>
+    <string name="km0">KM0</string>
+    <string name="lactosa">SANS LACTOSE</string>
+    <string name="deporte">LES ATHLÈTES</string>
+    <string name="celiaco">COELIAQUES</string>
+    <string name="huevo">PAS D´OEUF</string>
+    <string name="aceite">SANS HUILE DE PALME</string>
+
 
     <!--Carrito-->
     <string name="carrito">Chariot</string>
@@ -182,21 +183,47 @@
     <string name="error_message_address">Entrez une adresse s\'il vous plait</string>
     <string name="email">E-mail</string>
     <string name="contraseña">Mot de passe</string>
-    <string name="cardnumberinput">Número de la tarjeta</string>
-    <string name="caducidad_title">Caducidad</string>
+    <string name="cardnumberinput">Numéro de la carte</string>
+    <string name="caducidad_title">Expiration de la carte</string>
 
 
-    <string name="error_message_numerotarjeta">Ingrese su número de tarjeta</string>
-    <string name="error_message_caducidadtarjeta">Ingrese la caducidad de su tarjeta</string>
-    <string name="error_message_cvv">Ingrese el cvv de su tarjeta</string>
-    <string name="error_message_direccion">Ingrese una dirección</string>
-    <string name="error_message_ciudad">Ingrese una ciudad</string>
-    <string name="Productos">Todos los productos</string>
-    <string name="filtrobusquedaproductos">Busqueda productos</string>
-    <string name="eliminar">Eliminar producto</string>
-    <string name="update_product">Actualizar producto</string>
+    <string name="error_message_numerotarjeta">Entrez votre numéro de carte</string>
+    <string name="error_message_caducidadtarjeta">Entrez votre numéro de carte</string>
+    <string name="error_message_cvv">Saisissez le CV de votre carte</string>
+    <string name="error_message_direccion">Entrez une adresse il vous plaitn</string>
+    <string name="error_message_ciudad">Veuillez saisir une ville</string>
+    <string name="Productos">Tous les produits</string>
+    <string name="filtrobusquedaproductos">Recherche de produit</string>
+    <string name="eliminar">Supprimer le produit</string>
+    <string name="update_product">Mettre à jour le produit</string>
     <string name="delete">Eliminar</string>
-    <string name="txt5_eliminarproducto">¿Eliminar producto?</string>
+    <string name="txt5_eliminarproducto">Supprimer le produit?</string>
+    <string name="judiasypatatas">Haricots et pommes de terre</string>
+    <string name="alcachofas">Artichauts cuits</string>
+    <string name="albondigasvegano">Boulettes de légumes</string>
+    <string name="hamburguesavegana">Burger végétalien</string>
+    <string name="macarronesveganos">macaroni végétalien</string>
+    <string name="veganocategory">Végétalien</string>
+    <string name="deportistascategory">Les athlètes</string>
+    <string name="celiacocategory">Coeliaque</string>
+    <string name="alergialechecategory">Allergie au lait</string>
+    <string name="alergiahuevocategory">allergie aux œufs</string>
+    <string name="brocoli">Brocoli</string>
+    <string name="tomate">Tomate</string>
+    <string name="puerro">Poireau</string>
+    <string name="impactwheyprotein">Impact Whey Protein</string>
+    <string name="citratomagnesio">Citrate de magnésium en poudre</string>
+    <string name="proteinaplatano">Poudre de protéine saveur banane/mangue</string>
+    <string name="pimientorojo">Piment rouge</string>
+    <string name="musclepack">Muscle pack small</string>
+    <string name="omegavegano">Gélules Oméga végétaliennes</string>
+    <string name="mayonesa">Mayonnaise</string>
+    <string name="biscotesespelta">Biscottes</string>
+    <string name="pepitaschoco">Pépites de chocolat</string>
+    <string name="aceitecoco">Huile de noix de coco</string>
+    <string name="cafeleche">Lait de café sans lactose </string>
+    <string name="harinatrigo">Farine de sarrasin</string>
+    <string name="macarrones">Macaroni</string>
 
 
 </resources>

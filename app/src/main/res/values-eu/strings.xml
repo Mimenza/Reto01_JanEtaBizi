@@ -45,14 +45,15 @@
 
     <!--Principal-->
 
-    <string name="filtrobusquedacomida">Aurkitu janaria</string>
-    <string name ="vegano">Beganoa</string>
-    <string name ="vegetariano">Begetarianoa</string>
-    <string name ="km0">0KM</string>
-    <string name ="gluten">Gluten gabe</string>
-    <string name ="lactosa">Lactosa gabe</string>
-    <string name ="proteina">Proteina gabe</string>
-    <string name ="aceite">Palma oliorik gabe</string>
+
+    <string name="filtrobusquedacomida">Bilatu kategoria bat</string>
+    <string name="vegano">Begano</string>
+    <string name="km0">KM0</string>
+    <string name="lactosa">LAKTOSARIK GABE</string>
+    <string name="deporte">KIROLARIAK</string>
+    <string name="celiaco">CELIACOS</string>
+    <string name="huevo">ARRAUTZARIK GABE</string>
+    <string name="aceite">PALMAKO OLIORIK GABE</string>
 
     <!--Carrito-->
     <string name="carrito">Erosketako orga</string>
@@ -168,31 +169,107 @@
     <string name="descreceta03">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
     <string name="filtrobusquedausuarios">Erabiltzaileen bilaketa</string>
     <string name="todaslascuentas">Erabiltzaile guztiak</string>
-    <string name="error_message_apellido">Ingrese su apellido</string>
-    <string name="error_message_description">Ingrese al menos una descripción breve</string>
+    <string name="error_message_apellido">Sartu zure abizena</string>
+    <string name="error_message_description">Sartu gutxienez deskribapen labur bat</string>
 
-    <string name="error_message_city">Ingrese una ciudad</string>
-    <string name="error_message_cp">Ingrese un código postal</string>
-    <string name="description">Introduzca una breve descripción (Opcional)</string>
-    <string name="error_message_address">Ingrese una dirección</string>
+    <string name="error_message_city">Sartu hiri bat</string>
+    <string name="error_message_cp">
+Sartu posta-kode bat
+</string>
+    <string name="description">
+Sartu deskribapen labur bat (aukerakoa)
+)</string>
+    <string name="error_message_address">
+Sartu helbide bat
+</string>
     <string name="email">Email</string>
-    <string name="contraseña">Contraseña</string>
-    <string name="cardnumberinput">Número de la tarjeta</string>
-    <string name="caducidad_title">Caducidad</string>
+    <string name="contraseña">Pasahitza</string>
+    <string name="cardnumberinput">
+Txartelaren zenbakia
+</string>
+    <string name="caducidad_title">Iraungipena</string>
 
 
-    <string name="error_message_numerotarjeta">Ingrese su número de tarjeta</string>
-    <string name="error_message_caducidadtarjeta">Ingrese la caducidad de su tarjeta</string>
+    <string name="error_message_numerotarjeta">
 
-    <string name="error_message_cvv">Ingrese el cvv de su tarjeta</string>
-    <string name="error_message_direccion">Ingrese una dirección</string>
-    <string name="error_message_ciudad">Ingrese una ciudad</string>
-    <string name="Productos">Todos los productos</string>
-    <string name="filtrobusquedaproductos">Busqueda productos</string>
-    <string name="eliminar">Eliminar producto</string>
-    <string name="update_product">Actualizar producto</string>
-    <string name="delete">Eliminar</string>
-    <string name="txt5_eliminarproducto">¿Eliminar producto?</string>
+Txartelaren zenbakia
+</string>
+    <string name="error_message_caducidadtarjeta">
+
+Sartu zure txartelaren iraungipena
+</string>
+
+    <string name="error_message_cvv">
+Sartu zure txartelaren cvv-a
+</string>
+    <string name="error_message_direccion">
+Sartu helbide bat
+</string>
+    <string name="error_message_ciudad">Sartu hiri bat</string>
+    <string name="Productos">Produktu guztiak</string>
+    <string name="filtrobusquedaproductos">Aurkitu produktua</string>
+    <string name="eliminar">
+Ezabatu produktua
+</string>
+    <string name="update_product">
+Eguneratu produktua
+</string>
+    <string name="delete">Ezabatu</string>
+    <string name="txt5_eliminarproducto">¿Ezabatu produktua?</string>
+    <string name="judiasypatatas">
+Babarrunak eta patatak
+</string>
+    <string name="alcachofas">
+Orburu egosiak
+</string>
+    <string name="albondigasvegano">
+Landare-albondigak
+</string>
+    <string name="hamburguesavegana">
+Hanburgesa beganoa
+</string>
+    <string name="macarronesveganos">
+Makarroi beganoak
+s</string>
+    <string name="veganocategory">
+Beganoak
+</string>
+    <string name="deportistascategory">Kirolariak</string>
+    <string name="celiacocategory">Zeliakoak</string>
+    <string name="alergialechecategory">
+Esne-alergia
+</string>
+    <string name="alergiahuevocategory">
+Alergia arrautza
+</string>
+    <string name="brocoli">Brocoli</string>
+    <string name="tomate">Tomatea</string>
+    <string name="puerro">Porrua</string>
+    <string name="impactwheyprotein">Impact Whey Protein</string>
+    <string name="citratomagnesio">
+Magnesio hautsezko zitratoa
+</string>
+    <string name="proteinaplatano">
+Proteina hautsa platano zaporea/heldulekua
+</string>
+    <string name="pimientorojo">Piper gorria</string>
+    <string name="musclepack">Muscle pack small</string>
+    <string name="omegavegano">
+Omega beganoa kapsula bigunak
+</string>
+    <string name="mayonesa">Mahonesa</string>
+    <string name="biscotesespelta">Biskoteak</string>
+    <string name="pepitaschoco">
+Txokolatezko pipitak
+</string>
+    <string name="aceitecoco">Koko-olioa</string>
+    <string name="cafeleche">
+Laktosarik gabeko kafesnea
+</string>
+    <string name="harinatrigo">
+Gari-irin sarrazenoa
+</string>
+    <string name="macarrones">Makarroiak</string>
 
 
 </resources>

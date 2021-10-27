@@ -45,14 +45,16 @@
 
 
     <!--Principal-->
-    <string name="filtrobusquedacomida">Find a product</string>
-    <string name ="vegano">Vegan</string>
-    <string name ="vegetariano">Vegetarian</string>
-    <string name ="km0">KM0</string>
-    <string name ="gluten">Gluten Free</string>
-    <string name ="lactosa">Lactose Free</string>
-    <string name ="proteina">High Protein</string>
-    <string name ="aceite">Palm Oil Free</string>
+
+
+    <string name="filtrobusquedacomida">Find a category</string>
+    <string name="vegano">VEGAN</string>
+    <string name="km0">KM0</string>
+    <string name="lactosa">NO ACTOSE</string>
+    <string name="deporte">ATHLETES</string>
+    <string name="celiaco">CELIACS</string>
+    <string name="huevo">NO EGG</string>
+    <string name="aceite">NO PALM OIL</string>
 
     <!--Carrito-->
     <string name="carrito">Cart</string>
@@ -124,7 +126,7 @@
     <string name="light">Light theme</string>
     <string name="cancel">Cancel</string>
     <string name="accept">Acept</string>
-    <string name="title_dialog">you want to delete the account?</string>
+    <string name="title_dialog">You want to delete the account?</string>
     <string name="dark">Dark Theme</string>
     <string name="filtrobusquedausuarios">Search Users</string>
 
@@ -171,31 +173,57 @@
 
     <string name="tituloreceta03">Vegetable gyozas (Chinese dumplings)</string>
     <string name="descreceta03">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string><string name="todaslascuentas">Todos los usuarios</string>
-    <string name="error_message_apellido">Ingrese su apellido</string>
-    <string name="error_message_description">Ingrese al menos una descripción breve</string>
+    <string name="error_message_apellido">Enter your surname</string>
+    <string name="error_message_description">Enter at least a short description</string>
 
-    <string name="error_message_city">Ingrese una ciudad</string>
+    <string name="error_message_city">Enter a city</string>
     <string name="error_message_cp">Ingrese un código postal</string>
     <string name="description">Introduzca una breve descripción (Opcional)</string>
-    <string name="error_message_address">Ingrese una dirección</string>
+    <string name="error_message_address">Enter a address</string>
     <string name="email">Email</string>
-    <string name="contraseña">Contraseña</string>
-    <string name="cardnumberinput">Número de la tarjeta</string>
-    <string name="caducidad_title">Caducidad</string>
+    <string name="contraseña">Password</string>
+    <string name="cardnumberinput">Card number</string>
+    <string name="caducidad_title">Card expiration</string>
 
 
-    <string name="error_message_numerotarjeta">Ingrese su número de tarjeta</string>
-    <string name="error_message_caducidadtarjeta">Ingrese la caducidad de su tarjeta</string>
+    <string name="error_message_numerotarjeta">Enter your card number</string>
+    <string name="error_message_caducidadtarjeta">Enter your card expiration date</string>
 
-    <string name="error_message_cvv">Ingrese el cvv de su tarjeta</string>
-    <string name="error_message_direccion">Ingrese una dirección</string>
-    <string name="error_message_ciudad">Ingrese una ciudad</string>
-    <string name="Productos">Todos los productos</string>
-    <string name="filtrobusquedaproductos">Busqueda productos</string>
-    <string name="eliminar">Eliminar producto</string>
-    <string name="update_product">Actualizar producto</string>
-    <string name="delete">Eliminar</string>
-    <string name="txt5_eliminarproducto">¿Eliminar producto?</string>
+    <string name="error_message_cvv">Enter the CV of your card</string>
+    <string name="error_message_direccion">Enter an address</string>
+    <string name="error_message_ciudad">Enter a city</string>
+    <string name="Productos">All the products</string>
+    <string name="filtrobusquedaproductos">Find products</string>
+    <string name="eliminar">Delete product</string>
+    <string name="update_product">Update product</string>
+    <string name="delete">Delete</string>
+    <string name="txt5_eliminarproducto">¿Delete product?</string>
+    <string name="judiasypatatas">Beans and potatoes</string>
+    <string name="alcachofas">Alcachofas cocidas</string>
+    <string name="albondigasvegano">Cooked artichokes</string>
+    <string name="hamburguesavegana">Vegan burger</string>
+    <string name="macarronesveganos">vegan macaroni</string>
+    <string name="veganocategory">Vegano</string>
+    <string name="deportistascategory">Athletes</string>
+    <string name="celiacocategory">Celiac</string>
+    <string name="alergialechecategory">Milk allergy</string>
+    <string name="alergiahuevocategory">Egg allergy</string>
+    <string name="brocoli">Broccoli</string>
+    <string name="tomate">Tomato</string>
+    <string name="puerro">Leek</string>
+    <string name="impactwheyprotein">Impact Whey Protein</string>
+    <string name="citratomagnesio">Magnesium citrate powder</string>
+    <string name="proteinaplatano">Banana / mango flavor protein powder</string>
+    <string name="pimientorojo">Red pepper</string>
+    <string name="musclepack">Muscle pack small</string>
+    <string name="omegavegano">Vegan Omega Softgels</string>
+    <string name="mayonesa">Mayonnaise</string>
+    <string name="biscotesespelta">Rusks</string>
+    <string name="pepitaschoco">Chocolat nuggets</string>
+    <string name="aceitecoco">Coconut oil</string>
+    <string name="cafeleche">Lactose-free coffee milksa</string>
+    <string name="harinatrigo">Buckwheat flour</string>
+    <string name="macarrones">Macaroni</string>
 
 
 </resources>
