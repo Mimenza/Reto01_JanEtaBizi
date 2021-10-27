@@ -59,7 +59,6 @@ class activity_7_3_4pedidoo: AppCompatActivity() {
 
         override fun doInBackground(vararg p0: Void?): List<Pedido_producto>? {
 
-
             println("ID ORDER LATE " + id_OrderLate)
             return databaseHelper.getPedidoProducto1(id_OrderLate)
 

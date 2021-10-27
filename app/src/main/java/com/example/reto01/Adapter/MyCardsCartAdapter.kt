@@ -21,6 +21,8 @@ import java.io.File
 class MyCardsCartAdapter(private val productos: List<Producto> , val context: Context) :
     RecyclerView.Adapter<MyCardsCartAdapter.ViewHolder>() {
 
+    //var listaitemCarrito:MutableList<Carrito_item> = arrayListOf()
+
     override fun onCreateViewHolder(ViewGroup: ViewGroup, i: Int): ViewHolder {
         val v = LayoutInflater.from(ViewGroup.context)
             .inflate(R.layout.viewholder_cart, ViewGroup, false)
@@ -41,13 +43,15 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
             for (x in 0..productos.size-1) {
                 //Crear un json y una clase para los items del carrito
                 val gson = Gson()
-                val item_Carrito = Carrito_item(productos[x].id_product, 1, productos[x].price )
+                val item_Carrito = Carrito_item(productos[x].id_product, 2, productos[x].price )
                 val itemJson = gson.toJson(item_Carrito)
-                val itemname = "item" + productos[x].id_product
+                val itemname = productos[x].id_product.toString()
 
                 //Subir datos
                 editor.putString(itemname, itemJson.toString())
                 editor.commit()
+
+
             }
 
         }
@@ -57,7 +61,7 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
     override fun onBindViewHolder(ViewHolder: ViewHolder, i: Int) {
         var item = productos[i]
         var euro = "€"
-        var adaptador = ArrayAdapter(context, android.R.layout.simple_spinner_item, arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
+        var adaptador = ArrayAdapter(context, android.R.layout.simple_spinner_item, arrayOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
         ViewHolder.itemImage.setImageResource(item.img)
         ViewHolder.itemPrecioProducto.text = item.price.toString()+ euro
         ViewHolder.itemCategoria.text = item.category
@@ -66,7 +70,7 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
             //Recoger datos de Shared Preferences
             var prefs: SharedPreferences = context.getSharedPreferences("carrito", 0)
 
-            val carrito = prefs.getString("item"+ item.id_product.toString(),null)
+            val carrito = prefs.getString(item.id_product.toString(),null)
 
             //Parsear datos a objeto carrito_item
             val gsonFile = Gson()
@@ -90,23 +94,27 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
                 //Crear un json y una clase para los items del carrito
                 val gson = Gson()
 
-                val item_Carrito = Carrito_item(item.id_product, parent.getItemAtPosition(position).toString().toInt(),item.price)
-                val itemJson = gson.toJson(item_Carrito)
+                if(position == 0){
+                    //Borrar datos extra
+                    preferences.edit().remove(item.id_product.toString()).commit();
+                }else {
+                    val item_Carrito = Carrito_item(
+                        item.id_product,
+                        parent.getItemAtPosition(position).toString().toInt(),
+                        item.price
+                    )
+                    val itemJson = gson.toJson(item_Carrito)
 
-                val itemname = "item" + item.id_product.toString()
-
-                //Subir datos
-                editor.putString(itemname, itemJson.toString())
-                editor.commit()
-
-                //Borrar datos extra
-                //preferences.edit().remove("item").commit();
+                    val itemname = item.id_product.toString()
 
 
-                if (context is activity_5carrito) {
-                   // context.calcularTotal()
+                    //listaitemCarrito.add(item_Carrito)
+
+                    //Subir datos
+                    editor.putString(itemname, itemJson.toString())
+                    editor.commit()
+
                 }
-
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
