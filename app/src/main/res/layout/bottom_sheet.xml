@@ -73,28 +73,6 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/layoutPedidos"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp">
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_card"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:text="@string/pedidos"
-            android:textSize="16sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/logoutLayout"
         android:orientation="horizontal"
         android:layout_width="match_parent"

@@ -110,6 +110,11 @@ class activity_8likes : AppCompatActivity(),GestureDetector.OnGestureListener {
                 val navegacion_compra = Intent(this, activity_9blog::class.java)
                 startActivity(navegacion_compra)
             }
+
+            "navigation_producto" -> {
+                val navegacion_compra = Intent(this, activity_4producto::class.java)
+                startActivity(navegacion_compra)
+            }
         }
         this.overridePendingTransition(0, 0)
     }
@@ -174,6 +179,36 @@ class activity_8likes : AppCompatActivity(),GestureDetector.OnGestureListener {
                 newCol2.setScaleType(ImageView.ScaleType.FIT_XY)
                 newCol3.setScaleType(ImageView.ScaleType.FIT_XY)
 
+                val sharedPreferences = getSharedPreferences("product", 0)
+                val sharedPreferencesEditor: SharedPreferences.Editor = sharedPreferences.edit()
+                val gson = Gson()
+
+                val number = j
+
+                newCol1.setOnClickListener() {
+                    val productJson = gson.toJson(listProducts[number])
+                    sharedPreferencesEditor.putString("product", productJson)
+                    sharedPreferencesEditor.commit()
+
+                    navegacion("navigation_producto")
+                }
+
+                newCol2.setOnClickListener() {
+                    val productJson = gson.toJson(listProducts[number + 1])
+                    sharedPreferencesEditor.putString("product", productJson)
+                    sharedPreferencesEditor.commit()
+
+                    navegacion("navigation_producto")
+                }
+
+                newCol3.setOnClickListener() {
+                    val productJson = gson.toJson(listProducts[number + 2])
+                    sharedPreferencesEditor.putString("product", productJson)
+                    sharedPreferencesEditor.commit()
+
+                    navegacion("navigation_producto")
+                }
+
                 i++
                 itemsLength = itemsLength - 3
                 j = j + 3
@@ -208,6 +243,27 @@ class activity_8likes : AppCompatActivity(),GestureDetector.OnGestureListener {
                 newCol2.setScaleType(ImageView.ScaleType.FIT_XY)
                 newCol3.setScaleType(ImageView.ScaleType.FIT_XY)
 
+                val sharedPreferences = getSharedPreferences("product", 0)
+                val sharedPreferencesEditor: SharedPreferences.Editor = sharedPreferences.edit()
+                val gson = Gson()
+
+                val number = j
+
+                newCol1.setOnClickListener() {
+                    val productJson = gson.toJson(listProducts[number])
+                    sharedPreferencesEditor.putString("product", productJson)
+                    sharedPreferencesEditor.commit()
+
+                    navegacion("navigation_producto")
+                }
+
+                newCol2.setOnClickListener() {
+                    val productJson = gson.toJson(listProducts[number + 1])
+                    sharedPreferencesEditor.putString("product", productJson)
+                    sharedPreferencesEditor.commit()
+
+                    navegacion("navigation_producto")
+                }
 
                 i++
             } else {
@@ -239,6 +295,20 @@ class activity_8likes : AppCompatActivity(),GestureDetector.OnGestureListener {
                 newCol1.setScaleType(ImageView.ScaleType.FIT_XY)
                 newCol2.setScaleType(ImageView.ScaleType.FIT_XY)
                 newCol3.setScaleType(ImageView.ScaleType.FIT_XY)
+
+                val sharedPreferences = getSharedPreferences("product", 0)
+                val sharedPreferencesEditor: SharedPreferences.Editor = sharedPreferences.edit()
+                val gson = Gson()
+
+                val number = j
+
+                newCol1.setOnClickListener() {
+                    val productJson = gson.toJson(listProducts[number])
+                    sharedPreferencesEditor.putString("product", productJson)
+                    sharedPreferencesEditor.commit()
+
+                    navegacion("navigation_producto")
+                }
 
                 i++
             }
