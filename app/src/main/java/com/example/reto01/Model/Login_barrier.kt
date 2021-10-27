@@ -10,8 +10,8 @@ class Login_barrier {
         var sharedPreferences = context.getSharedPreferences("loggedUser", 0)
         var editor = sharedPreferences.edit()
 
-        if (sharedPreferences.contains("user")) {
-            var user = sharedPreferences.getString("user", "")
+        if (sharedPreferences.contains("correo")) {
+            var user = sharedPreferences.getString("correo", "")
             if (user != "noLoggedUser") {
                 val intent = Intent(context, activity_3principal::class.java)
 
@@ -19,7 +19,7 @@ class Login_barrier {
                 (context as Activity).finish()
             }
         } else {
-            editor.putString("user", "noLoggedUser").apply()
+            editor.putString("correo", "noLoggedUser").apply()
         }
     }
 }
