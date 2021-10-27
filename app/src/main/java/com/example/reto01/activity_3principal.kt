@@ -14,8 +14,8 @@ import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_3principal.*
 
 class activity_3principal : AppCompatActivity() {
-    lateinit private var listProducts : MutableList<Producto>
-    lateinit var databaseHelper:DatabaseHelper
+    lateinit private var listProducts: MutableList<Producto>
+    lateinit var databaseHelper: DatabaseHelper
     private val activity = this
 
     override fun onBackPressed() {
@@ -57,44 +57,44 @@ class activity_3principal : AppCompatActivity() {
             }
         }
 
-       /* var user0 = User()
-        user0.id=R.drawable.polvobatido
-        var user1 = User()
-        user1.id=R.drawable.barrita
-        var user2 = User()
-        user2.id=R.drawable.cremablanca
-        var user3 = User()
-        user3.id=R.drawable.glucosport
-        var user4 = User()
-        user4.id=R.drawable.colnatur
+        /* var user0 = User()
+         user0.id=R.drawable.polvobatido
+         var user1 = User()
+         user1.id=R.drawable.barrita
+         var user2 = User()
+         user2.id=R.drawable.cremablanca
+         var user3 = User()
+         user3.id=R.drawable.glucosport
+         var user4 = User()
+         user4.id=R.drawable.colnatur
 
-        println("U S U A R I O "+ user0)
-        println("U S U A R I O "+ user1)
-        println("U S U A R I O "+ user2)
-        println("U S U A R I O "+ user3)
-        println("U S U A R I O "+ user4)*/
+         println("U S U A R I O "+ user0)
+         println("U S U A R I O "+ user1)
+         println("U S U A R I O "+ user2)
+         println("U S U A R I O "+ user3)
+         println("U S U A R I O "+ user4)*/
 
         //COMIDA VEGANA
-        tv_3vegan.setOnClickListener(){
-            sv_3scrollView.isVisible= true
+        tv_3vegan.setOnClickListener() {
+            sv_3scrollView.isVisible = true
             sv_3scrollViewFiltro.isVisible = false
             loadTable("vegan")
         }
         //COMIDA DEPORTE
-        tv_3deporte.setOnClickListener(){
-            sv_3scrollView.isVisible= true
+        tv_3deporte.setOnClickListener() {
+            sv_3scrollView.isVisible = true
             sv_3scrollViewFiltro.isVisible = false
             loadTable("deporte")
         }
         //COMIDA SIN LACTEOS
-        tv_3leche.setOnClickListener(){
-            sv_3scrollView.isVisible= true
+        tv_3leche.setOnClickListener() {
+            sv_3scrollView.isVisible = true
             sv_3scrollViewFiltro.isVisible = false
             loadTable("lacteo")
         }
         //COMIDA CELIACOS
-        tv_3lceliaco.setOnClickListener(){
-            sv_3scrollView.isVisible= true
+        tv_3lceliaco.setOnClickListener() {
+            sv_3scrollView.isVisible = true
             sv_3scrollViewFiltro.isVisible = false
             loadTable("celiaco")
         }
@@ -105,14 +105,14 @@ class activity_3principal : AppCompatActivity() {
             loadTable("palmOilFree")
         }*/
         //COMIDA KM0
-        tv_3km0.setOnClickListener(){
-            sv_3scrollView.isVisible= true
+        tv_3km0.setOnClickListener() {
+            sv_3scrollView.isVisible = true
             sv_3scrollViewFiltro.isVisible = false
             loadTable("KM0")
         }
         //COMIDA SIN HUEVO
-        tv_3huevo.setOnClickListener(){
-            sv_3scrollView.isVisible= true
+        tv_3huevo.setOnClickListener() {
+            sv_3scrollView.isVisible = true
             sv_3scrollViewFiltro.isVisible = false
             loadTable("huevo")
         }
@@ -155,10 +155,10 @@ class activity_3principal : AppCompatActivity() {
     }
 
     fun loadTable(category: String) {
-        var filteredItems:ArrayList<Producto> = ArrayList()
+        var filteredItems: ArrayList<Producto> = ArrayList()
 
-        for(i in 0..listProducts.size-1){
-            if(listProducts[i].category == category){
+        for (i in 0..listProducts.size - 1) {
+            if (listProducts[i].category == category) {
                 filteredItems.add(listProducts[i])
             }
         }
@@ -182,8 +182,8 @@ class activity_3principal : AppCompatActivity() {
                 var newCol3 = ImageView(this)
 
                 newCol1.setImageResource(filteredItems[j].img)
-                newCol2.setImageResource(filteredItems[j+1].img)
-                newCol3.setImageResource(filteredItems[j+2].img)
+                newCol2.setImageResource(filteredItems[j + 1].img)
+                newCol3.setImageResource(filteredItems[j + 2].img)
 
                 newRow.addView(newCol1, layoutParams)
                 newRow.addView(newCol2, layoutParams)
@@ -211,29 +211,26 @@ class activity_3principal : AppCompatActivity() {
                 val sharedPreferencesEditor: SharedPreferences.Editor = sharedPreferences.edit()
                 val gson = Gson()
 
-                val productJson = gson.toJson(filteredItems[i])
+                val number = j
 
-                sharedPreferencesEditor.putString("product", productJson)
-                sharedPreferencesEditor.commit()
-
-                newCol1.setOnClickListener(){
-                    val productJson = gson.toJson(filteredItems[i-1])
+                newCol1.setOnClickListener() {
+                    val productJson = gson.toJson(filteredItems[number])
                     sharedPreferencesEditor.putString("product", productJson)
                     sharedPreferencesEditor.commit()
 
                     navegacion("navigation_producto")
                 }
 
-                newCol2.setOnClickListener(){
-                    val productJson = gson.toJson(filteredItems[i])
+                newCol2.setOnClickListener() {
+                    val productJson = gson.toJson(filteredItems[number + 1])
                     sharedPreferencesEditor.putString("product", productJson)
                     sharedPreferencesEditor.commit()
 
                     navegacion("navigation_producto")
                 }
 
-                newCol3.setOnClickListener(){
-                    val productJson = gson.toJson(filteredItems[i+1])
+                newCol3.setOnClickListener() {
+                    val productJson = gson.toJson(filteredItems[number + 2])
                     sharedPreferencesEditor.putString("product", productJson)
                     sharedPreferencesEditor.commit()
 
@@ -250,7 +247,7 @@ class activity_3principal : AppCompatActivity() {
                 var newCol3 = ImageView(this)
 
                 newCol1.setImageResource(filteredItems[j].img)
-                newCol2.setImageResource(filteredItems[j+1].img)
+                newCol2.setImageResource(filteredItems[j + 1].img)
 
                 newRow.addView(newCol1, layoutParams)
                 newRow.addView(newCol2, layoutParams)
@@ -274,26 +271,22 @@ class activity_3principal : AppCompatActivity() {
                 newCol2.setScaleType(ImageView.ScaleType.FIT_XY)
                 newCol3.setScaleType(ImageView.ScaleType.FIT_XY)
 
-
                 val sharedPreferences = getSharedPreferences("product", 0)
                 val sharedPreferencesEditor: SharedPreferences.Editor = sharedPreferences.edit()
                 val gson = Gson()
 
-                val productJson = gson.toJson(filteredItems[i])
+                val number = j
 
-                sharedPreferencesEditor.putString("product", productJson)
-                sharedPreferencesEditor.commit()
-
-                newCol1.setOnClickListener(){
-                    val productJson = gson.toJson(filteredItems[j-1])
+                newCol1.setOnClickListener() {
+                    val productJson = gson.toJson(filteredItems[number])
                     sharedPreferencesEditor.putString("product", productJson)
                     sharedPreferencesEditor.commit()
 
                     navegacion("navigation_producto")
                 }
 
-                newCol2.setOnClickListener(){
-                    val productJson = gson.toJson(filteredItems[i])
+                newCol2.setOnClickListener() {
+                    val productJson = gson.toJson(filteredItems[number + 1])
                     sharedPreferencesEditor.putString("product", productJson)
                     sharedPreferencesEditor.commit()
 
@@ -335,13 +328,10 @@ class activity_3principal : AppCompatActivity() {
                 val sharedPreferencesEditor: SharedPreferences.Editor = sharedPreferences.edit()
                 val gson = Gson()
 
-                val productJson = gson.toJson(filteredItems[i])
+                val number = j
 
-                sharedPreferencesEditor.putString("product", productJson)
-                sharedPreferencesEditor.commit()
-
-                newCol1.setOnClickListener(){
-                    val productJson = gson.toJson(filteredItems[i-1])
+                newCol1.setOnClickListener() {
+                    val productJson = gson.toJson(filteredItems[number])
                     sharedPreferencesEditor.putString("product", productJson)
                     sharedPreferencesEditor.commit()
 
@@ -354,7 +344,7 @@ class activity_3principal : AppCompatActivity() {
     }
 
     private fun initObjects() {
-        listProducts= ArrayList()
+        listProducts = ArrayList()
 
         databaseHelper = DatabaseHelper(activity, "janEtaBizi", null, 1)
 
