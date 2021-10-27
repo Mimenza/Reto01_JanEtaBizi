@@ -13,7 +13,7 @@ import com.example.reto01.DatabaseHelper
 import com.example.reto01.Model.Order
 
 import com.example.reto01.R
-import com.example.reto01.activity_7_3_4pedidoo
+import com.example.reto01.activity_7_3_4pedido
 import kotlinx.android.synthetic.main.itemorderrecycler.view.*
 import kotlinx.android.synthetic.main.itemorderrecycler.view.textViewNameProductPedido
 import java.text.ParseException
@@ -52,7 +52,7 @@ class OrdersRecyclerAdapter(private val listOrders: List<Order>, contexto: Conte
 
     private fun onclick(order: Order, context: Context) {
 
-       val intent = Intent( context, activity_7_3_4pedidoo::class.java)
+       val intent = Intent( context, activity_7_3_4pedido::class.java)
         intent.putExtra("idOrder",order.id_order)
         context.startActivity(intent)
     }

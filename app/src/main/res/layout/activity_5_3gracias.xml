@@ -135,16 +135,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.405" />
 
-    <ImageView
-        android:id="@+id/imageView4"
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/giv_5_3confetti"
         android:layout_width="174dp"
         android:layout_height="141dp"
-        app:layout_constraintBottom_toBottomOf="@+id/bottomNavV_5_3bottomMenu"
+        android:src="@drawable/confetti"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.614"
-       />
+        app:layout_constraintVertical_bias="0.63" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

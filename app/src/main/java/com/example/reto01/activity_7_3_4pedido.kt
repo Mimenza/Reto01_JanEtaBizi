@@ -13,7 +13,7 @@ import com.example.reto01.Model.Pedido_producto
 import kotlinx.android.synthetic.main.activity_7_3_4pedido.*
 import kotlinx.android.synthetic.main.activity_7_3_4pedido.recyclerViewPedidosProductos
 
-class activity_7_3_4pedidoo: AppCompatActivity() {
+class activity_7_3_4pedido: AppCompatActivity() {
     private val activity = this
     private lateinit var recyclerViewSuborders: RecyclerView
     private lateinit var listSuborders : MutableList<Pedido_producto>
