@@ -243,6 +243,9 @@
     <string name="judiasypatatasdescripcion">"Las judías con patatas son uno de esos platos clásicos que nunca fallan. Disfrútalas ahora en un formato mucho más cómodo y tenlas a mano siempre que lo necesites. "</string>
     <string name="citratomagnesiodescripcion">Potente combinación de magnesio que ofrece numerosos beneficios para la salud</string>
     <string name="proteinaplatanoadescripcion">Proteína de suero de leche de vacas de pasto</string>
+    <string name="category">Categoría</string>
+    <string name="price">Precio</string>
+    <string name="descriptionproduct">Description</string>
 
 
 </resources>

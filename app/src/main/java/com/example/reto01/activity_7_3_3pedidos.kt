@@ -22,7 +22,7 @@ class activity_7_3_3pedidos : AppCompatActivity() {
     private lateinit var listOrders : MutableList<Order>
     private lateinit var ordersRecyclerAdapter: OrdersRecyclerAdapter
     private lateinit var databaseHelper: DatabaseHelper
-
+    lateinit var context: Context
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_7_3pedidos)
@@ -42,7 +42,7 @@ class activity_7_3_3pedidos : AppCompatActivity() {
     /**
      * This method is to initialize objects to be used
      */
-    lateinit var context: Context
+
 
     private fun initObjects() {
         listOrders = ArrayList()
@@ -70,6 +70,7 @@ class activity_7_3_3pedidos : AppCompatActivity() {
 
             println(listOrders)
             val adapter = OrdersRecyclerAdapter(listOrders, context)
+
             recyclerViewOrders.layoutManager = LinearLayoutManager(context)
             recyclerViewOrders.adapter = adapter
         }

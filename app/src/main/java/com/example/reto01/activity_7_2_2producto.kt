@@ -47,9 +47,12 @@ class activity_7_2_2producto : AppCompatActivity() {
 
         product = gsonFile.fromJson(prefs.getString("product", null), Producto::class.java)
 
-        txtv_4nombreProducto.setText(resources.getString(product.name_product!!.toInt()))
-        txtv_7_2_2_descripcionproducto.setText(resources.getString(product.name_product!!.toInt()))
 
+
+        txtv_7_2_2_descripcionproducto.setText(resources.getString(product.description!!.toInt()))
+        txtv_7_2_2nombreProducto.setText(resources.getString(product.name_product!!.toInt()))
+        txtv_7_2_2_categoriaproducto.setText(product.category)
+        txtv_7_2_2_precioproducto.setText(product.price.toString())
 
         imgv_7_2_2producto.setImageResource(product.img)
         var id_product= product.id_product

@@ -67,6 +67,14 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
         ViewHolder.itemCategoria.text = item.category
         ViewHolder.itemTitle.text = item.name_product
         ViewHolder.itemSpiner.adapter = adaptador
+        //ViewHolder.itemTitle.text = item.name_product.toString()
+
+        ViewHolder.itemTitle.text= context.getResources().getString(item.name_product!!.toInt())
+
+        //ViewHolder.itemTitle.setText(resources.getString(item.name_product!!.toInt()))
+
+
+        println(item)
 
             //Recoger datos de Shared Preferences
             var prefs: SharedPreferences = context.getSharedPreferences("carrito", 0)
