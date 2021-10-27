@@ -72,7 +72,11 @@
             android:textSize="16sp" />
 
     </LinearLayout>
+<<<<<<< HEAD
 
+=======
+f
+>>>>>>> 1eaf9fa3682feb47a35912bfe70c66591bf308e6
 
     <LinearLayout
         android:id="@+id/logoutLayout"
