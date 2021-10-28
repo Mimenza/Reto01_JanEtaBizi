@@ -21,40 +21,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-
-    <ImageView
-        android:id="@+id/imgv_3Logo"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+    <TextView
+        android:id="@+id/txtv_3appName"
+        android:layout_width="180dp"
+        android:layout_height="49dp"
+        android:text="@string/app_name"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.060000002"
-        app:srcCompat="@drawable/logo" />
-
-    <EditText
-        android:id="@+id/txt_3busqueda"
-        android:layout_width="308dp"
-        android:layout_height="48dp"
-        android:background="@drawable/search_bg"
-        android:drawableStart="@drawable/ic_search"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="@string/filtrobusquedacomida"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:paddingStart="20dp"
-        android:textSize="14sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.060000002" />
-
+        app:layout_constraintVertical_bias="0.06" />
 
     <ScrollView
         android:id="@+id/sv_3scrollView"
@@ -81,7 +60,6 @@
         android:id="@+id/sv_3scrollViewFiltro"
         android:layout_width="match_parent"
         android:layout_height="632dp"
-        android:layout_marginTop="15dp"
         android:fillViewport="true"
         android:scrollbarStyle="insideInset"
         android:scrollbars="vertical"
@@ -96,7 +74,8 @@
             android:id="@+id/ll_3vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -104,8 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:paddingStart="5dp">
+                android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_3vegan"
@@ -119,7 +97,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:adjustViewBounds="true"
-                        android:alpha="0.8"
+                        android:alpha="0.7"
                         android:scaleType="centerCrop"
                         android:src="@drawable/pastatempeh" />
 
@@ -148,7 +126,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:adjustViewBounds="true"
-                        android:alpha="0.8"
+                        android:alpha="0.7"
                         android:scaleType="centerCrop"
                         android:src="@drawable/pate" />
 
@@ -169,9 +147,9 @@
             <LinearLayout
                 android:id="@+id/ll_3horizontal2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingStart="5dp">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_3km0"
@@ -185,7 +163,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:adjustViewBounds="true"
-                        android:alpha="0.8"
+                        android:alpha="0.7"
                         android:scaleType="centerCrop"
                         android:src="@drawable/hummus" />
 
@@ -213,9 +191,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:adjustViewBounds="true"
-                        android:alpha="0.8"
+                        android:alpha="0.7"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/barrita" />
+                        android:src="@drawable/deportistas" />
 
                     <TextView
                         android:id="@+id/tv_3deporte"
@@ -228,14 +206,15 @@
                         android:textSize="12pt"
                         android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
+
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/ll_3horizontal3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingStart="5dp">
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_3lactose"
@@ -249,7 +228,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:adjustViewBounds="true"
-                        android:alpha="0.8"
+                        android:alpha="0.7"
                         android:scaleType="centerCrop"
                         android:src="@drawable/codorniz" />
 
@@ -263,6 +242,7 @@
                         android:textColor="#CC000000"
                         android:textSize="12pt"
                         android:textStyle="bold" />
+
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -277,7 +257,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:adjustViewBounds="true"
-                        android:alpha="0.8"
+                        android:alpha="0.7"
                         android:scaleType="centerCrop"
                         android:src="@drawable/km0" />
 
@@ -294,26 +274,6 @@
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/ll_3horizontal4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingStart="5dp"
-                android:visibility="invisible">
-
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cv_3palm"
-                    android:layout_width="180dp"
-                    android:layout_height="60dp"
-                    android:layout_margin="4dp"
-                    android:visibility="invisible"
-                    app:cardCornerRadius="15dp">
-
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

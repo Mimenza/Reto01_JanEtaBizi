@@ -21,25 +21,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <EditText
-        android:id="@+id/txt_8busqueda"
-        android:layout_width="337dp"
-        android:layout_height="48dp"
-        android:background="@drawable/search_bg"
-        android:drawableStart="@drawable/ic_search"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="@string/filtrobusquedacomida"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:paddingStart="20dp"
-        android:textSize="14sp"
-        android:textStyle="italic"
+    <TextView
+        android:id="@+id/txtv_4appName"
+        android:layout_width="180dp"
+        android:layout_height="49dp"
+        android:text="@string/app_name"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.060000002" />
+        app:layout_constraintVertical_bias="0.06" />
 
     <ScrollView
         android:id="@+id/sv_8scrollView"

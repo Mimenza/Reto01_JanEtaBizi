@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="106dp"
+        android:layout_height="112dp"
         android:background="@color/mainGreen"
         android:gravity="center"
         android:orientation="vertical">
@@ -18,11 +18,8 @@
             android:id="@+id/imgv_7_1atras"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_marginStart="-165dp"
             android:layout_marginTop="10dp"
-
-
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_arrow_back" />

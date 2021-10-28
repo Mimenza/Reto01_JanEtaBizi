@@ -18,7 +18,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity_7_3_4pedidoo"
+            android:name=".activity_7_3_4pedido"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
