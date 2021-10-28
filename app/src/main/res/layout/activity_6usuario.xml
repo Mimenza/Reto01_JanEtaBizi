@@ -46,10 +46,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.30" />
+        app:layout_constraintVertical_bias="0.281" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgv_6perfil"
@@ -64,72 +64,6 @@
         app:layout_constraintVertical_bias="0.09" />
 
 
-    <ImageView
-        android:id="@+id/imgv_6nombre"
-        android:layout_width="30dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="24dp"
-
-        android:src="@drawable/ic_person"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.081"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgv6_admin"
-        app:layout_constraintVertical_bias="0.342" />
-
-    <ImageView
-        android:id="@+id/imgv_6correo"
-        android:layout_width="30dp"
-        android:layout_height="62dp"
-        android:src="@drawable/ic_email"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.081"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.535" />
-
-    <ImageView
-        android:id="@+id/imgv_6contraseña"
-        android:layout_width="30dp"
-        android:layout_height="62dp"
-        android:src="@drawable/ic_password"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.081"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.627" />
-
-    <ImageView
-        android:id="@+id/imgv_6descripcion"
-        android:layout_width="30dp"
-        android:layout_height="62dp"
-
-        android:src="@drawable/ic_baseline_description_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.081"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.738" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtinput_6nombre"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/roundedgrey"
-        android:hint="@string/txt1_nombreusuario"
-        android:minHeight="48dp"
-        android:paddingLeft="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.298"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.434" />
-
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtinput_6apellido"
         android:layout_width="130dp"
@@ -140,25 +74,10 @@
         android:paddingLeft="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.868"
+        app:layout_constraintHorizontal_bias="0.871"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.436" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/txtinput_6correo"
-        android:layout_width="290dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/roundedgrey"
-        android:hint="@string/txt2_correo2"
-        android:minHeight="48dp"
-        android:paddingLeft="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.702"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtinput_6nombre"
-        app:layout_constraintVertical_bias="0.08" />
+        app:layout_constraintVertical_bias="0.387" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtinput_6contrasena"
@@ -170,10 +89,10 @@
         android:paddingLeft="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.694"
+        app:layout_constraintHorizontal_bias="0.702"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtinput_6correo"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintVertical_bias="0.093" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtinput_6descripcion"
@@ -185,10 +104,91 @@
         android:paddingLeft="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.694"
+        app:layout_constraintHorizontal_bias="0.702"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtinput_6contrasena"
-        app:layout_constraintVertical_bias="0.138" />
+        app:layout_constraintVertical_bias="0.125" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtinput_6correo"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedgrey"
+        android:hint="@string/txt2_correo2"
+        android:minHeight="48dp"
+        android:paddingLeft="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtinput_6nombre"
+        app:layout_constraintVertical_bias="0.072" />
+
+    <ImageView
+        android:id="@+id/imgv_6nombre"
+        android:layout_width="30dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="24dp"
+
+        android:src="@drawable/ic_person"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgv6_admin"
+        app:layout_constraintVertical_bias="0.285" />
+
+    <ImageView
+        android:id="@+id/imgv_6contraseña"
+        android:layout_width="30dp"
+        android:layout_height="62dp"
+        android:src="@drawable/ic_password"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.579" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txtinput_6nombre"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedgrey"
+        android:hint="@string/txt1_nombreusuario"
+        android:minHeight="48dp"
+        android:paddingLeft="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.387" />
+
+    <ImageView
+        android:id="@+id/imgv_6correo"
+        android:layout_width="30dp"
+        android:layout_height="62dp"
+        android:src="@drawable/ic_email"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.487" />
+
+    <ImageView
+        android:id="@+id/imgv_6descripcion"
+        android:layout_width="30dp"
+        android:layout_height="62dp"
+
+        android:src="@drawable/ic_baseline_description_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.69" />
 
     <Button
         android:id="@+id/btn_6reset"
@@ -203,7 +203,7 @@
         app:layout_constraintHorizontal_bias="0.279"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.871" />
+        app:layout_constraintVertical_bias="0.833" />
 
     <Button
         android:id="@+id/btn_6save"
@@ -215,10 +215,10 @@
         android:textColor="@color/mainGreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.794"
+        app:layout_constraintHorizontal_bias="0.797"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.871" />
+        app:layout_constraintVertical_bias="0.833" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:background="#FAEBE0"
