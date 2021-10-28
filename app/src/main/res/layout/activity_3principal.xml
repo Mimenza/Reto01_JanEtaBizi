@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    tools:context=".activity_3principal"
-   >
+    tools:context=".activity_3principal">
 
     <TextView
         android:id="@+id/txtv_3topbarColor"
@@ -38,15 +37,14 @@
     <ScrollView
         android:id="@+id/sv_3scrollView"
         android:layout_width="match_parent"
-        android:layout_height="632dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="47dp"
         android:fillViewport="true"
         android:scrollbarStyle="insideInset"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.52"
         tools:ignore="SpeakableTextPresentCheck">
 
         <TableLayout
@@ -278,10 +276,10 @@
     </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:background="#FAEBE0"
         android:id="@+id/bottomNavV_3bottomMenu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="#FAEBE0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/navigation" />
