@@ -30,6 +30,11 @@ class activity_2registrar : AppCompatActivity(), View.OnClickListener {
     private lateinit var inputValidation: InputValidation
     private lateinit var databaseHelper: DatabaseHelper
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        this.overridePendingTransition(0,0)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
@@ -91,7 +96,7 @@ class activity_2registrar : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v) {
             appCompatButtonRegister -> postDataToSQLite()
-            textViewLinkLogin -> finish()
+            textViewLinkLogin -> {finish(); this.overridePendingTransition(0,0)}
         }
     }
 

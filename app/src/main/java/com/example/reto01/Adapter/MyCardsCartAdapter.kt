@@ -1,5 +1,6 @@
 package com.example.reto01.Adapter
 
+import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.view.LayoutInflater
@@ -20,7 +21,9 @@ import java.io.File
 
 class MyCardsCartAdapter(private val productos: List<Producto> , val context: Context) :
     RecyclerView.Adapter<MyCardsCartAdapter.ViewHolder>() {
+    private var listData: MutableList<Producto> = productos as MutableList<Producto>
 
+    var out =0
     //var listaitemCarrito:MutableList<Carrito_item> = arrayListOf()
 
     override fun onCreateViewHolder(ViewGroup: ViewGroup, i: Int): ViewHolder {
@@ -28,10 +31,13 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
             .inflate(R.layout.viewholder_cart, ViewGroup, false)
 
 
+
+        println("LIST DATA" +listData)
         //Comprobamos si el carrito existe o no
         val f = File("/data/data/com.example.reto01/shared_prefs/carrito.xml")
         if (f.exists()){
             //Si ya existe no hacer nada, ya que leerea los datos ya guardados previamente
+
         }
         else{
             //Si no existe poner cantidad predeterminada, creando un carrito con los mismos items y seteando cantidad a 1
@@ -68,13 +74,12 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
         ViewHolder.itemTitle.text = item.name_product
         ViewHolder.itemSpiner.adapter = adaptador
         //ViewHolder.itemTitle.text = item.name_product.toString()
+        var index = ViewHolder.adapterPosition
 
         ViewHolder.itemTitle.text= context.getResources().getString(item.name_product!!.toInt())
 
         //ViewHolder.itemTitle.setText(resources.getString(item.name_product!!.toInt()))
 
-
-        println(item)
 
             //Recoger datos de Shared Preferences
             var prefs: SharedPreferences = context.getSharedPreferences("carrito", 0)
@@ -100,12 +105,24 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
                 val preferences = view.getContext().getSharedPreferences("carrito", 0)
                 val editor : SharedPreferences.Editor= preferences.edit()
 
+
                 //Crear un json y una clase para los items del carrito
                 val gson = Gson()
 
-                if(position == 0){
-                    //Borrar datos extra
-                    preferences.edit().remove(item.id_product.toString()).commit();
+                if(position == 0 && out == 0){
+
+                    //Borrar item de recycler
+                    listData.removeAt(index)
+                    notifyDataSetChanged()
+
+                    //Borrar datos en el shared
+                    editor.remove(item.id_product.toString())
+                    editor.commit()
+
+
+                    out = 1
+
+
                 }else {
                     val item_Carrito = Carrito_item(
                         item.id_product,
@@ -122,6 +139,7 @@ class MyCardsCartAdapter(private val productos: List<Producto> , val context: Co
                     //Subir datos
                     editor.putString(itemname, itemJson.toString())
                     editor.commit()
+
 
                 }
             }

@@ -33,6 +33,16 @@ class activity_8likes : AppCompatActivity(),GestureDetector.OnGestureListener {
         const val  MIN_DISTANCE = 150
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        this.overridePendingTransition(0,0)
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        bottomNavV_8bottomMenu.setSelectedItemId(R.id.navigation_likes)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
@@ -52,9 +62,9 @@ class activity_8likes : AppCompatActivity(),GestureDetector.OnGestureListener {
 
         loadTable(user)
 
-        bottomNavV_9_1bottomMenu.setSelectedItemId(R.id.navigation_likes)
+        bottomNavV_8bottomMenu.setSelectedItemId(R.id.navigation_likes)
 
-        bottomNavV_9_1bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
+        bottomNavV_8bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_principal -> {
                     navegacion("navigation_principal")
@@ -147,37 +157,31 @@ class activity_8likes : AppCompatActivity(),GestureDetector.OnGestureListener {
         var i = 0
         var j = 0
         while (i <= rowsLength) {
-            if (itemsLength >= 3) {
+            if (itemsLength >= 2) {
                 var newRow = TableRow(this)
                 var newCol1 = ImageView(this)
                 var newCol2 = ImageView(this)
-                var newCol3 = ImageView(this)
 
                 newCol1.setImageResource(listProducts[j].img)
-                newCol2.setImageResource(listProducts[j+1].img)
-                newCol3.setImageResource(listProducts[j+2].img)
+                newCol2.setImageResource(listProducts[j + 1].img)
 
                 newRow.addView(newCol1, layoutParams)
                 newRow.addView(newCol2, layoutParams)
-                newRow.addView(newCol3, layoutParams)
 
                 tb_8tablaProductos.addView(newRow)
 
                 newCol1.requestLayout()
                 newCol2.requestLayout()
-                newCol3.requestLayout()
 
-                newCol1.getLayoutParams().height = 262
-                newCol2.getLayoutParams().height = 262
-                newCol3.getLayoutParams().height = 262
+                newCol1.getLayoutParams().height = 562
+                newCol2.getLayoutParams().height = 562
 
                 newCol1.getLayoutParams().width = 262
                 newCol2.getLayoutParams().width = 262
-                newCol3.getLayoutParams().width = 262
 
                 newCol1.setScaleType(ImageView.ScaleType.FIT_XY)
                 newCol2.setScaleType(ImageView.ScaleType.FIT_XY)
-                newCol3.setScaleType(ImageView.ScaleType.FIT_XY)
+
 
                 val sharedPreferences = getSharedPreferences("product", 0)
                 val sharedPreferencesEditor: SharedPreferences.Editor = sharedPreferences.edit()
@@ -195,14 +199,6 @@ class activity_8likes : AppCompatActivity(),GestureDetector.OnGestureListener {
 
                 newCol2.setOnClickListener() {
                     val productJson = gson.toJson(listProducts[number + 1])
-                    sharedPreferencesEditor.putString("product", productJson)
-                    sharedPreferencesEditor.commit()
-
-                    navegacion("navigation_producto")
-                }
-
-                newCol3.setOnClickListener() {
-                    val productJson = gson.toJson(listProducts[number + 2])
                     sharedPreferencesEditor.putString("product", productJson)
                     sharedPreferencesEditor.commit()
 
@@ -211,90 +207,30 @@ class activity_8likes : AppCompatActivity(),GestureDetector.OnGestureListener {
 
                 i++
                 itemsLength = itemsLength - 3
-                j = j + 3
-            } else if (itemsLength == 2) {
-                var newRow = TableRow(this)
-                var newCol1 = ImageView(this)
-                var newCol2 = ImageView(this)
-                var newCol3 = ImageView(this)
-
-                newCol1.setImageResource(listProducts[j].img)
-                newCol2.setImageResource(listProducts[j+1].img)
-
-                newRow.addView(newCol1, layoutParams)
-                newRow.addView(newCol2, layoutParams)
-                newRow.addView(newCol3, layoutParams)
-
-                tb_8tablaProductos.addView(newRow)
-
-                newCol1.requestLayout()
-                newCol2.requestLayout()
-                newCol3.requestLayout()
-
-                newCol1.getLayoutParams().height = 262
-                newCol2.getLayoutParams().height = 262
-                newCol3.getLayoutParams().height = 262
-
-                newCol1.getLayoutParams().width = 262
-                newCol2.getLayoutParams().width = 262
-                newCol3.getLayoutParams().width = 262
-
-                newCol1.setScaleType(ImageView.ScaleType.FIT_XY)
-                newCol2.setScaleType(ImageView.ScaleType.FIT_XY)
-                newCol3.setScaleType(ImageView.ScaleType.FIT_XY)
-
-                val sharedPreferences = getSharedPreferences("product", 0)
-                val sharedPreferencesEditor: SharedPreferences.Editor = sharedPreferences.edit()
-                val gson = Gson()
-
-                val number = j
-
-                newCol1.setOnClickListener() {
-                    val productJson = gson.toJson(listProducts[number])
-                    sharedPreferencesEditor.putString("product", productJson)
-                    sharedPreferencesEditor.commit()
-
-                    navegacion("navigation_producto")
-                }
-
-                newCol2.setOnClickListener() {
-                    val productJson = gson.toJson(listProducts[number + 1])
-                    sharedPreferencesEditor.putString("product", productJson)
-                    sharedPreferencesEditor.commit()
-
-                    navegacion("navigation_producto")
-                }
-
-                i++
+                j = j + 2
             } else {
                 var newRow = TableRow(this)
                 var newCol1 = ImageView(this)
                 var newCol2 = ImageView(this)
-                var newCol3 = ImageView(this)
 
                 newCol1.setImageResource(listProducts[j].img)
 
                 newRow.addView(newCol1, layoutParams)
                 newRow.addView(newCol2, layoutParams)
-                newRow.addView(newCol3, layoutParams)
 
                 tb_8tablaProductos.addView(newRow)
 
                 newCol1.requestLayout()
-                newCol2.requestLayout()
-                newCol3.requestLayout()
 
-                newCol1.getLayoutParams().height = 262
-                newCol2.getLayoutParams().height = 262
-                newCol3.getLayoutParams().height = 262
+                newCol1.getLayoutParams().height = 562
+                newCol2.getLayoutParams().height = 562
 
                 newCol1.getLayoutParams().width = 262
                 newCol2.getLayoutParams().width = 262
-                newCol3.getLayoutParams().width = 262
 
                 newCol1.setScaleType(ImageView.ScaleType.FIT_XY)
                 newCol2.setScaleType(ImageView.ScaleType.FIT_XY)
-                newCol3.setScaleType(ImageView.ScaleType.FIT_XY)
+
 
                 val sharedPreferences = getSharedPreferences("product", 0)
                 val sharedPreferencesEditor: SharedPreferences.Editor = sharedPreferences.edit()
@@ -320,7 +256,7 @@ class activity_8likes : AppCompatActivity(),GestureDetector.OnGestureListener {
     }
     fun loadCarritoNumber(){
         if ( File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml").exists()){
-            var badge = bottomNavV_9_1bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
+            var badge = bottomNavV_8bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
             val prefss: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
             // An icon only badge will be displayed unless a number is set:
             badge.number = prefss.getString("length",null).toString().toInt()

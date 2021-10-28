@@ -1,6 +1,5 @@
 package com.example.reto01
 
-import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -18,6 +17,7 @@ import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_5_2payment.*
 import kotlinx.android.synthetic.main.activity_5carrito.*
 import kotlinx.android.synthetic.main.activity_6usuario.*
+import kotlinx.android.synthetic.main.activity_8likes.*
 import kotlinx.android.synthetic.main.viewholder_cart.*
 import java.io.File
 import java.util.*
@@ -26,6 +26,11 @@ class activity_5carrito : AppCompatActivity() {
     var total:Double?=0.00
     var carritoSize:Int = 0
     var productos: ArrayList<Producto> = arrayListOf()
+
+    override fun onRestart() {
+        super.onRestart()
+        bottomNavV_5bottomMenu.setSelectedItemId(R.id.navigation_carrito)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

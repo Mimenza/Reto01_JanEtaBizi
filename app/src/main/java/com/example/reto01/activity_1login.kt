@@ -27,6 +27,13 @@ class activity_1login : AppCompatActivity(), View.OnClickListener {
     private lateinit var inputValidation: InputValidation
     private lateinit var databaseHelper: DatabaseHelper
 
+
+    override fun onBackPressed() {
+        val navegacion_login = Intent(this, activity_1login::class.java)
+        startActivity(navegacion_login)
+        this.overridePendingTransition(0,0)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
@@ -88,6 +95,7 @@ class activity_1login : AppCompatActivity(), View.OnClickListener {
                 // Navigate to RegisterActivity
                 val i = Intent(this@activity_1login, activity_2registrar::class.java)
                 startActivity(i)
+                this.overridePendingTransition(0,0)
             }
         }
     }

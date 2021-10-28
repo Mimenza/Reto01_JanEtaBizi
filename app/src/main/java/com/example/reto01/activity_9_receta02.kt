@@ -4,13 +4,10 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_4producto.*
+import kotlinx.android.synthetic.main.activity_3principal.*
 
-import kotlinx.android.synthetic.main.activity_7_2_2producto.*
-import kotlinx.android.synthetic.main.activity_9_receta01.*
-import kotlinx.android.synthetic.main.activity_9blog.*
 import kotlinx.android.synthetic.main.activity_9_receta02.*
-import kotlinx.android.synthetic.main.activity_9_receta02.imgv9_03_atras
+import java.io.File
 
 
 class activity_9_receta02 : AppCompatActivity() {
@@ -18,11 +15,13 @@ class activity_9_receta02 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_9_receta02)
         getSupportActionBar()?.hide()
-        imgv9_03_atras.setOnClickListener() {
+        imgv_9_02atras.setOnClickListener() {
             val i = Intent(this, activity_9blog::class.java)
             startActivity(i)
         }
         loadCarritoNumber()
+
+        sv_9_02scrollView.setVerticalScrollBarEnabled(false)
 
         fun navegacion_principal() {
             val navegacion_compra = Intent(this, activity_3principal::class.java)
@@ -90,12 +89,14 @@ class activity_9_receta02 : AppCompatActivity() {
 
 
     }
-    fun loadCarritoNumber(){
-        var badge = bottomNavV_9_2bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
 
-        val prefss: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
+    fun loadCarritoNumber() {
+        if (File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml").exists()) {
+            var badge = bottomNavV_3bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
+            val prefss: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
 
-        // An icon only badge will be displayed unless a number is set:
-        badge.number = prefss.getString("length",null).toString().toInt()
+            // An icon only badge will be displayed unless a number is set:
+            badge.number = prefss.getString("length", null).toString().toInt()
+        }
     }
 }
