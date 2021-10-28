@@ -356,11 +356,12 @@ class activity_5_2payment : AppCompatActivity(), View.OnClickListener {
 
         }
 
-       /* //Borramos los shared preferences del carrito
+        //Borramos los shared preferences del carrito
         val f = File("/data/data/com.example.reto01/shared_prefs/carrito.xml")
         f.delete()
+
         val f2 = File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml")
-        f2.delete()*/
+        f2.delete()
 
     }
     fun loadCarritoNumber(){
