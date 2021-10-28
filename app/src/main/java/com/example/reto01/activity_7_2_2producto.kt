@@ -18,11 +18,16 @@ import kotlinx.android.synthetic.main.activity_7_2_2producto.imgv_7_2_2producto
 
 
 class activity_7_2_2producto : AppCompatActivity() {
-
     lateinit private var product : Producto
     lateinit private var producto : Producto
     lateinit var databaseHelper:DatabaseHelper
     private val activity = this
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        this.overridePendingTransition(0,0)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_7_2_2producto)

@@ -25,6 +25,10 @@ class activity_7_3_4pedido: AppCompatActivity() {
     lateinit var context: Context
     var id_OrderLate:Int = 0
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        this.overridePendingTransition(0,0)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

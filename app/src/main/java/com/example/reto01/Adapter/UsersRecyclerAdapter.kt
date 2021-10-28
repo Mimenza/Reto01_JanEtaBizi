@@ -1,6 +1,7 @@
 package com.example.reto01.Adapter
 
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -60,6 +61,7 @@ class UsersRecyclerAdapter(private val listUsers: List<User>) : RecyclerView.Ada
         intent.putExtra("ccv",usuario.ccv)
 
         context.startActivity(intent)
+        (context as Activity).overridePendingTransition(0,0)
 
         if(context is activity_7_1usuarios){
 

@@ -17,6 +17,11 @@ class activity_7_1_1usuario : AppCompatActivity() {
     lateinit var databaseHelper:DatabaseHelper
     private val activity = this
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        this.overridePendingTransition(0,0)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_7_1_1usuario)

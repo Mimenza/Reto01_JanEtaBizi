@@ -87,12 +87,6 @@ class activity_3principal : AppCompatActivity() {
             sv_3scrollViewFiltro.isVisible = false
             loadTable("celiaco")
         }
-        //COMIDA SIN ACEITE DE PALMA
-        /*tv_3palm.setOnClickListener(){
-            sv_3scrollView.isVisible= true
-            sv_3scrollViewFiltro.isVisible = false
-            loadTable("palmOilFree")
-        }*/
         //COMIDA KM0
         tv_3km0.setOnClickListener() {
             sv_3scrollView.isVisible = true

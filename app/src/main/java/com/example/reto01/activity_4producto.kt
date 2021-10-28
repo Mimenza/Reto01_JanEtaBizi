@@ -146,32 +146,22 @@ class activity_4producto : AppCompatActivity() {
         }
 
         imgv_4favorite.setOnClickListener() {
-
             if(databaseHelper.checkLike(product.id_product, user.id)){
-                //Este usuario  le ha dado like al producto
-                    println("BORRANDO")
                 //Borramos el producto de like
                 databaseHelper.deletelike(product.id_product)
                 //Cambiamos la imagen
                 imgv_4favorite.setImageResource(R.drawable.ic_favorite)
 
             } else{
-                //Este usuario no le ha dado like al producto
-
-                println("GUARDANDO")
                 //Añadimos el producto a like
                 databaseHelper.generatelike(product.id_product, user. id)
                 //Cambiamos la imagen
                 imgv_4favorite.setImageResource(R.drawable.ic_favoritered)
-
             }
-
         }
 
         //Producto  descripción scroll
         txtv_4_descripcionproducto.movementMethod = ScrollingMovementMethod()
-
-
     }
 
     fun loadProductData() {
@@ -179,7 +169,6 @@ class activity_4producto : AppCompatActivity() {
         val gsonFile = Gson()
 
         product = gsonFile.fromJson(prefs.getString("product", null), Producto::class.java)
-
 
         txtv_4nombreProducto.setText(resources.getString(product.name_product!!.toInt()))
         txtv_4_descripcionproducto.setText(resources.getString(product.description!!.toInt()))
