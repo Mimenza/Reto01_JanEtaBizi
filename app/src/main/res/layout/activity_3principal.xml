@@ -37,14 +37,15 @@
     <ScrollView
         android:id="@+id/sv_3scrollView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="47dp"
+        android:layout_height="632dp"
         android:fillViewport="true"
         android:scrollbarStyle="insideInset"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.515"
         tools:ignore="SpeakableTextPresentCheck">
 
         <TableLayout

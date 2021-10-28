@@ -20,6 +20,7 @@ class activity_9blog : AppCompatActivity() {
         getSupportActionBar()?.hide()
 
         loadCarritoNumber()
+        scrollView_9.setVerticalScrollBarEnabled(false)
 
         linearLayout_901.setOnClickListener(){
             val navegacion_receta01 = Intent(this, activity_9_receta01::class.java)
