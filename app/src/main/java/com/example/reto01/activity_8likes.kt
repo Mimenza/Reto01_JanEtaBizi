@@ -145,7 +145,7 @@ class activity_8likes : AppCompatActivity(),GestureDetector.OnGestureListener {
 
         println(listProducts)
 
-        var rowsLength = (((listProducts.size + 3) - 1) / 3) - 1
+        var rowsLength = ((listProducts.size + 1) / 2) - 1
         var itemsLength = listProducts.size
         var layoutParams = TableRow.LayoutParams(
             TableRow.LayoutParams.WRAP_CONTENT,
@@ -206,7 +206,7 @@ class activity_8likes : AppCompatActivity(),GestureDetector.OnGestureListener {
                 }
 
                 i++
-                itemsLength = itemsLength - 3
+                itemsLength = itemsLength - 2
                 j = j + 2
             } else {
                 var newRow = TableRow(this)
@@ -221,6 +221,7 @@ class activity_8likes : AppCompatActivity(),GestureDetector.OnGestureListener {
                 tb_8tablaProductos.addView(newRow)
 
                 newCol1.requestLayout()
+                newCol2.requestLayout()
 
                 newCol1.getLayoutParams().height = 562
                 newCol2.getLayoutParams().height = 562

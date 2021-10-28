@@ -39,6 +39,7 @@ class activity_2registrar : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_2registrar)
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
 
         // inicializar las vistas
         initViews()

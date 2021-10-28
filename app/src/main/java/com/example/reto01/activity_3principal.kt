@@ -146,7 +146,7 @@ class activity_3principal : AppCompatActivity() {
             }
         }
 
-        var rowsLength = (((filteredItems.size + 2) - 1) / 2) - 1
+        var rowsLength = ((filteredItems.size + 1) / 2) - 1
         var itemsLength = filteredItems.size
         var layoutParams = TableRow.LayoutParams(
             TableRow.LayoutParams.WRAP_CONTENT,
@@ -207,7 +207,7 @@ class activity_3principal : AppCompatActivity() {
                 }
 
                 i++
-                itemsLength = itemsLength - 3
+                itemsLength = itemsLength - 2
                 j = j + 2
             } else {
                 var newRow = TableRow(this)
@@ -222,6 +222,7 @@ class activity_3principal : AppCompatActivity() {
                 tb_3tablaProductos.addView(newRow)
 
                 newCol1.requestLayout()
+                newCol2.requestLayout()
 
                 newCol1.getLayoutParams().height = 562
                 newCol2.getLayoutParams().height = 562

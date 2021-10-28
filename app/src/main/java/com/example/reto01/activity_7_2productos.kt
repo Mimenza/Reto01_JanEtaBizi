@@ -42,6 +42,7 @@ class activity_7_2productos : AppCompatActivity() {
         imgv_7_2atras.setOnClickListener() {
             val i = Intent(this, activity_7admin::class.java)
             startActivity(i)
+            this.overridePendingTransition(0,0)
         }
     }
 

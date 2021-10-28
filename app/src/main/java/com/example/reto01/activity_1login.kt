@@ -38,6 +38,7 @@ class activity_1login : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_1login)
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
 
         val login_barrier = Login_barrier()
         login_barrier.checkLoggedUser(this)

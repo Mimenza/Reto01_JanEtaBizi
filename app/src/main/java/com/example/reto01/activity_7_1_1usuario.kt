@@ -31,6 +31,7 @@ class activity_7_1_1usuario : AppCompatActivity() {
         imgv7_1_1atras.setOnClickListener() {
             val i = Intent(this, activity_7_1usuarios::class.java)
             startActivity(i)
+            this.overridePendingTransition(0,0)
         }
 
         btn_7_01Eliminar.setOnTouchListener { v, event ->

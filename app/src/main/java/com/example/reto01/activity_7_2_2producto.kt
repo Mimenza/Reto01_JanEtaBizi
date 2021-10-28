@@ -38,6 +38,7 @@ class activity_7_2_2producto : AppCompatActivity() {
         imgv_7_2_2atras.setOnClickListener() {
             val i = Intent(this, activity_7_2productos::class.java)
             startActivity(i)
+            this.overridePendingTransition(0,0)
         }
 
          //Rellenar con los datos del input

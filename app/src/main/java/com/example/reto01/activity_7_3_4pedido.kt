@@ -34,7 +34,6 @@ class activity_7_3_4pedido: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_7_3_4pedido)
         getSupportActionBar()?.hide()
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
         initViews()
         initObjects()
@@ -49,6 +48,7 @@ class activity_7_3_4pedido: AppCompatActivity() {
         imgv_7_3_4atras.setOnClickListener() {
             val i = Intent(this, activity_7admin::class.java)
             startActivity(i)
+            this.overridePendingTransition(0,0)
         }
     }
 
