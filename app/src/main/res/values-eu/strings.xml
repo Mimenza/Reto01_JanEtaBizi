@@ -45,14 +45,15 @@
 
     <!--Principal-->
 
-    <string name="filtrobusquedacomida">Aurkitu janaria</string>
-    <string name ="vegano">Beganoa</string>
-    <string name ="vegetariano">Begetarianoa</string>
-    <string name ="km0">0KM</string>
-    <string name ="gluten">Gluten gabe</string>
-    <string name ="lactosa">Lactosa gabe</string>
-    <string name ="proteina">Proteina gabe</string>
-    <string name ="aceite">Palma oliorik gabe</string>
+
+    <string name="filtrobusquedacomida">Bilatu kategoria bat</string>
+    <string name="vegano">Begano</string>
+    <string name="km0">KM0</string>
+    <string name="lactosa">LAKTOSARIK GABE</string>
+    <string name="deporte">KIROLARIAK</string>
+    <string name="celiaco">CELIACOS</string>
+    <string name="huevo">ARRAUTZARIK GABE</string>
+    <string name="aceite">PALMAKO OLIORIK GABE</string>
 
     <!--Carrito-->
     <string name="carrito">Erosketako orga</string>
@@ -128,14 +129,170 @@
     <string name="dark">Gai iluna</string>
     <!--Blog-->
     <string name="blogtitulo">Blog</string>
-    <string name="tituloreceta01">Errezeta01</string>
-    <string name="descreceta01">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
+    <string name="tituloreceta01">Aza gorria eta madari krema</string>
+    <string name="descreceta01">Gabonetako menuetan plater hau oso presente dagoen arren, ezerk ez digu eragotzi behar urteko beste edozein unetan gure ospakizunetan sartzea. Hasiberri dotorea eta koloretsua da, gure gonbidatuen urdailak irabazteko dena duena. De-li-cio-sa delako.</string>
+    <string name="fechareceta01">2021eko urriaren 24a</string>
 
-    <string name="tituloreceta02">Errezeta02</string>
+    <string name="ingredientes">OSAGAIAK</string>
+    <string name="ingredientes01">1/2 aza gorri \n
+        2 tipula \n
+        1 madari \n
+        Etxeko barazki salda 500 ml \n
+        200 ml esne edo krema likido \n
+        3-4 koilarakada oliba olio birjina estra \n
+        Gatza \n
+        Mahaspasak \n
+        Piñuak \n
+        Aneta</string>
+    <string name="preparacion">PRESTAKETA</string>
+    <string name="preparacion011">1.Kendu aza gorriari enbor gogorra eta bota. Gainerakoa juliana lodietan moztu labana zorrotz baten laguntzaz. Ur hotz askorekin garbitzen dugu eta xukatzen dugu. \n
+
+    2.Tipula zuritu eta erditik moztu. Ondoren, erdi bakoitza laurdenetan mozten dugu. \n
+
+    3. Udarea zuritu, luzera moztu, haziak kendu eta bospasei zatitan moztu \n
+
+    4.Berotu olioa lapiko azkar batean, WMF Perfect adibidez, gehitu tipula eta erregosi minutu pare batez. Gehitu aza gorria eta udarea eta frijitu minutu pare batez. \n</string>
+
+    <string name="preparacion012"> 5.Gehitu salda eta ondu dastatzeko (hobe labur geratu eta egosketaren amaieran puntua doitzea). Tapa itxi eta su bizian berotzen dugu. Balbula azaleratzen den unean, lehen lerroa besterik ez, beroa ertain-baxura jaisten dugu eta zortzi minutuz zenbatzen dugu. \n
+
+    6. Behin egosteko denbora igarota, sua itzali eta lapikoari bere burua despresurizatzen utziko dugu. Behin lurrun guztia atera eta balbula berriro ezkutatuta irekitzen dugu. \n
+
+    7. Esnegaina birrindu beso-nahastagailuarekin edo elikagai-prozesadorearen laguntzaz. Gehitu krema likidoa eta irabiatu berriro. Zapore-puntua probatu eta doitzen dugu beharrezkoa ikusten badugu. \n
+
+    8 Zupiroetan zerbitzatzen dugu eta mahaira eramaten dugu, zati bakoitza mahaspasekin, pinuekin eta aneta adarrez apainduz.</string>
+
+
+    <string name="tituloreceta02">Mini Dutch Pancakes</string>
     <string name="descreceta02">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
 
-    <string name="tituloreceta03">Errezeta03</string>
+    <string name="tituloreceta03">Barazki gyozas (Txinako dumplings)</string>
     <string name="descreceta03">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
     <string name="filtrobusquedausuarios">Erabiltzaileen bilaketa</string>
     <string name="todaslascuentas">Erabiltzaile guztiak</string>
+    <string name="error_message_apellido">Sartu zure abizena</string>
+    <string name="error_message_description">Sartu gutxienez deskribapen labur bat</string>
+
+    <string name="error_message_city">Sartu hiri bat</string>
+    <string name="error_message_cp">
+Sartu posta-kode bat
+</string>
+    <string name="description">
+Sartu deskribapen labur bat (aukerakoa)
+)</string>
+    <string name="error_message_address">
+Sartu helbide bat
+</string>
+    <string name="email">Email</string>
+    <string name="contraseña">Pasahitza</string>
+    <string name="cardnumberinput">
+Txartelaren zenbakia
+</string>
+    <string name="caducidad_title">Iraungipena</string>
+
+
+    <string name="error_message_numerotarjeta">
+
+Txartelaren zenbakia
+</string>
+    <string name="error_message_caducidadtarjeta">
+
+Sartu zure txartelaren iraungipena
+</string>
+
+    <string name="error_message_cvv">
+Sartu zure txartelaren cvv-a
+</string>
+    <string name="error_message_direccion">
+Sartu helbide bat
+</string>
+    <string name="error_message_ciudad">Sartu hiri bat</string>
+    <string name="Productos">Produktu guztiak</string>
+    <string name="filtrobusquedaproductos">Aurkitu produktua</string>
+    <string name="eliminar">
+Ezabatu produktua
+</string>
+    <string name="update_product">
+Eguneratu produktua
+</string>
+    <string name="delete">Ezabatu</string>
+    <string name="txt5_eliminarproducto">¿Ezabatu produktua?</string>
+    <string name="judiasypatatas">
+Babarrunak eta patatak
+</string>
+    <string name="alcachofas">
+Orburu egosiak
+</string>
+    <string name="albondigasvegano">
+Landare-albondigak
+</string>
+    <string name="hamburguesavegana">
+Hanburgesa beganoa
+</string>
+    <string name="macarronesveganos">
+Makarroi beganoak
+s</string>
+    <string name="veganocategory">
+Beganoak
+</string>
+    <string name="deportistascategory">Kirolariak</string>
+    <string name="celiacocategory">Zeliakoak</string>
+    <string name="alergialechecategory">
+Esne-alergia
+</string>
+    <string name="alergiahuevocategory">
+Alergia arrautza
+</string>
+    <string name="brocoli">Brocoli</string>
+    <string name="tomate">Tomatea</string>
+    <string name="puerro">Porrua</string>
+    <string name="impactwheyprotein">Impact Whey Protein</string>
+    <string name="citratomagnesio">
+Magnesio hautsezko zitratoa
+</string>
+    <string name="proteinaplatano">
+Proteina hautsa platano zaporea/heldulekua
+</string>
+    <string name="pimientorojo">Piper gorria</string>
+    <string name="musclepack">Muscle pack small</string>
+    <string name="omegavegano">
+Omega beganoa kapsula bigunak
+</string>
+    <string name="mayonesa">Mahonesa</string>
+    <string name="biscotesespelta">Biskoteak</string>
+    <string name="pepitaschoco">
+Txokolatezko pipitak
+</string>
+    <string name="aceitecoco">Koko-olioa</string>
+    <string name="cafeleche">
+Laktosarik gabeko kafesnea
+</string>
+    <string name="harinatrigo">
+Gari-irin sarrazenoa
+</string>
+    <string name="macarrones">Makarroiak</string>
+    <string name="mayonesadescripcion">"Mayonegran de El granero es la forma más saludable de disfrutar de la salsa mayonesa acompañando a tus comidas. Elaborada a partir de ingredientes de primera calidad procedentes de la agricultura ecologica "</string>
+    <string name="harinatrigodescripcion">"Harina de Trigo Sarraceno de molienda propia y de cultivo ecológico. "</string>
+    <string name="pepitaschocodescripcion">"Crujientes y deliciosas cookies de chocolate y pepitas de chocolate, elaboradas con ingredientes 100% ecológicos y pensadas para los amantes del chocolate más puro. Preparadas sin aceite de palma y sin huevo se presentan en un formato monodosis para llevarlas donde quieras y disfrutar de su sabor en cualquier momento del día. Fuente de fibra. "</string>
+    <string name="aceitecocodescripcion">"Aceite de coco ecológico desodorizado de la marca Vegetalia.  Saludable para cocinar, sin aportar sabor. "</string>
+    <string name="bicotesdescripcion">Biscotes de espelta con aceite de oliva virgen extra, para consumir tostados en cualquier momento del día.</string>
+    <string name="lechecafedescripcion">"Cápsulas de Café con Leche, sin lactosa. Unas cápsulas de café con leche 100% naturales, sin E-s artificiales, tendrás una deliciosa taza de sabor intenso y gran cuerpo con un solo click. "</string>
+    <string name="macarronesdescripcion">STELLINE RUMMO Estrellitas sin gluten perfectas para tus sopas y caldos.</string>
+    <string name="brocolidescripcion">Brocoli Km0</string>
+    <string name="puerrodescripcion">Puerro km0</string>
+    <string name="pimientorojodescripcion">Pimiento rojo Km0</string>
+    <string name="tomatedescripcion">Tomate km0</string>
+    <string name="impactwheydescripcion">Myprotein te presenta Impact Whey Protein, una proteína de suero de máxima calidad.</string>
+    <string name="musclepackdescripcion">Es el kit perfecto para entrenar. Con un refuerzo pre-entreno para aumentar tus niveles de energía, una bebida refrescante post-entreno y mucha proteína para asegurar que tus músculos obtengan todo lo que necesitan</string>
+    <string name="hamburguesadescripcion">Nuestra hamburguesa vegetal contiene una sabrosa mezcla de proteínas vegetales de soja y seitán, junto con la perfecta combinación de especias para dotarla del máximo sabor.</string>
+    <string name="albondigasdescripcion">"Nuestras albóndigas vegetales contienen una mezcla de proteínas de soja y seitán, junto con las mejores especias. Sus ingredientes lo convierten en un plato muy versátil. "</string>
+    <string name="alcachofasdescripcion">"Alcachofas y nada más. Alcachofas recolectadas y cocinadas en el momento idóneo para que ahora tú puedas disfrutarlas como comida o como el acompañante perfecto para todos tus platos. "</string>
+    <string name="judiasypatatasdescripcion">"Las judías con patatas son uno de esos platos clásicos que nunca fallan. Disfrútalas ahora en un formato mucho más cómodo y tenlas a mano siempre que lo necesites. "</string>
+    <string name="citratomagnesiodescripcion">Potente combinación de magnesio que ofrece numerosos beneficios para la salud</string>
+    <string name="proteinaplatanoadescripcion">Proteína de suero de leche de vacas de pasto</string>
+    <string name="category">Categoría</string>
+    <string name="price">Precio</string>
+    <string name="descriptionproduct">Description</string>
+    <string name="Buzon">Buzón</string>
+
+
 </resources>

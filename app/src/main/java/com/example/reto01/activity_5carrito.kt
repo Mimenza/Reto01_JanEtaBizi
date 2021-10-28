@@ -2,32 +2,46 @@ package com.example.reto01
 
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reto01.Adapter.MyCardsCartAdapter
 import com.example.reto01.Model.Carrito_item
 import com.example.reto01.Model.Producto
+import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_3principal.*
 import kotlinx.android.synthetic.main.activity_4producto.*
-import kotlinx.android.synthetic.main.activity_5carrito.*
-import kotlinx.android.synthetic.main.activity_5carrito.imgv_5atras
-import kotlinx.android.synthetic.main.activity_6usuario.*
-import kotlinx.android.synthetic.main.viewholder_cart.*
 import kotlinx.android.synthetic.main.activity_5_2payment.*
+import kotlinx.android.synthetic.main.activity_5carrito.*
+import kotlinx.android.synthetic.main.activity_6usuario.*
+import kotlinx.android.synthetic.main.activity_8likes.*
+import kotlinx.android.synthetic.main.viewholder_cart.*
+import java.io.File
 import java.util.*
-import kotlin.collections.ArrayList
-
 
 class activity_5carrito : AppCompatActivity() {
     var total:Double?=0.00
+    var carritoSize:Int = 0
+    var productos: ArrayList<Producto> = arrayListOf()
+
+    override fun onRestart() {
+        super.onRestart()
+        bottomNavV_5bottomMenu.setSelectedItemId(R.id.navigation_carrito)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         setContentView(R.layout.activity_5carrito)
+        calcularTotal()
+        loadCarritoNumber()
 
+        //Llamar funcion para cargar los datos
+        loadProductos()
 
         bottomNavV_5bottomMenu.setSelectedItemId(R.id.navigation_carrito)
 
@@ -70,34 +84,45 @@ class activity_5carrito : AppCompatActivity() {
             false
         }
 
+        btn_5borrarcarrito.setOnTouchListener { v, event ->
+            btn_5borrarcarrito.setBackgroundResource(R.drawable.my_button_border_clickgreen);
+            Handler().postDelayed({
+                btn_5borrarcarrito.setBackgroundResource(R.drawable.my_button_border);
+            }, 100)
+            false
+        }
+
         btn_5carrito.setOnClickListener() {
+
+            if (carritoSize == 0){
+                //SI EL CARRITO ESTA VACIO
+                Toast.makeText(this, "El carrito no puede estar vacio!", Toast.LENGTH_LONG).show()
+            }else{
+                //SI TIENE ALGO EL CARRITO SEGUIMOS CON EL PROCESO
             val i = Intent(this@activity_5carrito, activity_5_1address::class.java)
             i.putExtra("total",total)
             startActivity(i)
-            this.overridePendingTransition(0, 0)
+            this.overridePendingTransition(0, 0)}
         }
 
-
-        //Crear array list de los productos de carrito
-        val productos: ArrayList<Producto>
-
-        var producto01 = Producto(0, "Pasteles", 10.0, "postres", 10, R.drawable.dessert)
-        var producto02 = Producto(1, "Omega", 12.0, "suplemento", 10, R.drawable.aceite3)
-        var producto03 = Producto(2, "Fresas", 17.0, "fruta", 10, R.drawable.fresa)
-        var producto04 = Producto(3, "Arandano", 1.0, "fruta", 10, R.drawable.blueberries)
-        var producto05 = Producto(0, "Pasteles", 10.0, "postres", 10, R.drawable.dessert)
-        var producto06 = Producto(1, "Omega", 12.0, "suplemento", 10, R.drawable.aceite3)
-        var producto07 = Producto(2, "Fresas", 17.0, "fruta", 10, R.drawable.fresa)
-        var producto08 = Producto(3, "Arandano", 1.0, "fruta", 10, R.drawable.blueberries)
-
-        //rellenar el array con los productos
-        productos = arrayListOf(producto01, producto02, producto03, producto04, producto05, producto06, producto07, producto08)
+        btn_5borrarcarrito.setOnClickListener(){
 
 
-        //Adaptador RecyclerView Carrito de la compra
-        val adapter = MyCardsCartAdapter(productos, this)
-        reciclerView_carrito.layoutManager = LinearLayoutManager(this)
-        reciclerView_carrito.adapter = adapter
+
+            //Borramos los shared preferences del carrito
+            val f = File("/data/data/com.example.reto01/shared_prefs/carrito.xml")
+            f.delete()
+
+            val f2 = File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml")
+            f2.delete()
+
+            //Recargamos la activity
+            navegacion("navigation_carrito")
+            this.overridePendingTransition(0, 0)
+            this.recreate();
+            finish()
+
+        }
 
     }
 
@@ -131,20 +156,82 @@ class activity_5carrito : AppCompatActivity() {
         this.overridePendingTransition(0, 0)
     }
 
+    fun loadProductos(){
 
-    fun calcularTotal( item:Carrito_item){
-        //Funcion para calcular el precio total del carrito
+        val prefs: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
+        val editor : SharedPreferences.Editor = prefs.edit()
+        val gson = Gson()
 
-        //Recoger datos que nos interesan
+        val f = File("/data/data/com.example.reto01/shared_prefs/carrito.xml")
+        if (f.exists()){
+            f.delete()
+        }
 
-            val cantidad:Double? = item.cantidad!!.toDouble()
-            val precio:Double? = item.precio!!.toDouble()
-            val totalItem:Double? = cantidad!! * precio!!
-            total = total!! + totalItem!!
+        var length = prefs.getString("length", null)
 
-        txtv_5preciototal.text = total.toString()
+        if(length !=  null){
+            for(i in 0..length.toInt()-1){
+                val productJson = prefs.getString(i.toString(),null)
+                val product: Producto = gson.fromJson(productJson, Producto::class.java)
+                productos.add(product)
+            }
+        }
 
+        carritoSize = productos.size
+
+        //Adaptador RecyclerView Carrito de la compra
+        val adapter = MyCardsCartAdapter(productos, this)
+        reciclerView_carrito.layoutManager = LinearLayoutManager(this)
+        reciclerView_carrito.adapter = adapter
+    }
+
+    fun calcularTotal() {
+        var total:Double?=0.00
+
+        //Recoger datos de Shared Preferences
+        val prefs: SharedPreferences = this.getSharedPreferences("carrito", 0)
+
+
+        for(x in productos){
+            val carrito = prefs.getString(x.id_product.toString(),null)
+
+            if(carrito != null ){
+
+                //Parsear datos a objeto carrito_item
+                val gsonFile = Gson()
+                val carritoJson: Carrito_item = gsonFile.fromJson(carrito, Carrito_item::class.java)
+
+                val cantidad:Double? = carritoJson.cantidad!!.toDouble()
+                val precio:Double? = carritoJson.precio!!.toDouble()
+                val totalItem:Double? = cantidad!! * precio!!
+                total = total!! + totalItem!!
+            }
+        }
+        var euro= "€"
+        txtv_5preciototal.text = total.toString()+euro
+
+        //Poner nombre al fichero
+        val preferences = this.getSharedPreferences("totalCarrito", 0)
+        val editor : SharedPreferences.Editor= preferences.edit()
+
+        //Subir datos
+        editor.putString("total", total?.toString())
+        editor.putString("size", carritoSize.toString())
+        editor.commit()
+
+        Handler().postDelayed({
+            calcularTotal()
+        }, 1000)
 
     }
 
+
+    fun loadCarritoNumber(){
+        if ( File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml").exists()){
+            var badge = bottomNavV_5bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
+            val prefss: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
+            // An icon only badge will be displayed unless a number is set:
+            badge.number = prefss.getString("length",null).toString().toInt()
+        }
+    }
 }

@@ -92,6 +92,7 @@
                 android:textStyle="bold" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -178,7 +179,7 @@
             app:layout_constraintHorizontal_bias="0.195"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.836"/>
+            app:layout_constraintVertical_bias="0.836" />
 
     </LinearLayout>
 
@@ -189,6 +190,7 @@
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
+        android:background="#FAEBE0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -218,34 +220,35 @@
         android:background="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.06999999" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/txt_5_2ccv"
         android:layout_width="171dp"
         android:layout_height="48dp"
+        android:layout_marginEnd="30dp"
         android:background="@drawable/roundedgrey"
         android:ems="10"
-        android:hint="ccv"
-        android:inputType="textPersonName"
+        android:hint="@string/ccv"
+        android:inputType="number|textPersonName"
+        android:maxLength="3"
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.146"
-        app:layout_constraintStart_toEndOf="@+id/txt_5_caducidadtarjeta"
+        app:layout_constraintStart_toEndOf="@+id/txt_5_2caducidadtarjeta"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.461" />
 
     <EditText
-        android:id="@+id/txt_5_caducidadtarjeta"
+        android:id="@+id/txt_5_2caducidadtarjeta"
         android:layout_width="171dp"
         android:layout_height="48dp"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="24dp"
         android:background="@drawable/roundedgrey"
         android:ems="10"
         android:hint="@string/caducidad"
-        android:inputType="textPersonName"
+        android:inputType="date"
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -269,9 +272,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="@string/caducidad"
+        android:text="@string/caducidad_title"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/txt_5_caducidadtarjeta"
+        app:layout_constraintBottom_toTopOf="@+id/txt_5_2caducidadtarjeta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.18"
         app:layout_constraintStart_toStartOf="parent" />
@@ -279,11 +282,14 @@
     <EditText
         android:id="@+id/txt_5_2cardnumber"
         android:layout_width="342dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:background="@drawable/roundedgrey"
         android:ems="10"
+        android:maxLength="16"
         android:hint="@string/cardnumber"
-        android:inputType="textPersonName"
+        android:inputType="number|textPersonName"
         android:minHeight="48dp"
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toTopOf="@+id/view_5_2"
@@ -298,11 +304,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="@string/cardnumber"
+        android:text="@string/cardnumberinput"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/txt_5_2cardnumber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.161"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgv_5_2datepicker"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.463"
+        app:srcCompat="@drawable/ic_date" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

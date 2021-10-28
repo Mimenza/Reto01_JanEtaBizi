@@ -4,7 +4,9 @@ import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.res.Configuration
+import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Handler
 import android.preference.PreferenceManager
@@ -13,20 +15,34 @@ import android.view.Window
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.view.isVisible
+import com.example.reto01.Model.User
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.textfield.TextInputEditText
+import kotlinx.android.synthetic.main.activity_3principal.*
+import kotlinx.android.synthetic.main.activity_4producto.*
+import kotlinx.android.synthetic.main.activity_5_1adress.*
+import kotlinx.android.synthetic.main.activity_5_2payment.*
 import kotlinx.android.synthetic.main.activity_6usuario.*
+import kotlinx.android.synthetic.main.activity_8likes.*
+import kotlinx.android.synthetic.main.bottom_sheet.*
+import java.io.File
 import java.util.*
 
 class activity_6usuario : AppCompatActivity() {
-    internal val admin= DatabaseHelper(this, "reto1", null, 1)
+    lateinit private var user :  User
+    lateinit var databaseHelper:DatabaseHelper
+    private val activity = this
 
     lateinit var bottomsheet: ImageView
     //Inputs
 
-     lateinit  var emailText: TextInputEditText
+    override fun onRestart() {
+        super.onRestart()
+        bottomNavV_6bottomMenu.setSelectedItemId(R.id.navigation_perfil)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,12 +51,9 @@ class activity_6usuario : AppCompatActivity() {
 
         var sharedPreferences= getSharedPreferences("data", 0)
 
-        val email: String? = sharedPreferences.getString("loggedUser", "")
 
-
-         txtinput_6correo.setText(email)
-
-
+        loadCarritoNumber()
+        initObjects()
 
         bottomsheet = findViewById(R.id.imgv6_bottomsheet)
 
@@ -79,6 +92,7 @@ class activity_6usuario : AppCompatActivity() {
         imgv6_admin.setOnClickListener() {
             val i = Intent(this, activity_7admin::class.java)
             startActivity(i)
+            this.overridePendingTransition(0,0)
         }
 
         btn_6reset.setOnTouchListener { v, event ->
@@ -91,6 +105,22 @@ class activity_6usuario : AppCompatActivity() {
 
         }
 
+        btn_6save.setOnTouchListener { v, event ->
+            btn_6save.setBackgroundResource(R.drawable.my_button_border_clickgreen);
+            Handler().postDelayed({
+                btn_6save.setBackgroundResource(R.drawable.my_button_border);
+            }, 100)
+
+            false
+
+        }
+
+        btn_6save.setOnClickListener(){
+            updateUser()
+        }
+        btn_6reset.setOnClickListener(){
+            rellenarCampos()
+        }
 
     }
 
@@ -103,6 +133,7 @@ class activity_6usuario : AppCompatActivity() {
         val fondoLayout = dialog.findViewById<LinearLayout>(R.id.layoutTema)
         val logoutLayout = dialog.findViewById<LinearLayout>(R.id.logoutLayout)
         val temaLayout = dialog.findViewById<LinearLayout>(R.id.layoutTema)
+        val seebuzon= dialog.findViewById<LinearLayout>(R.id.layoutBuzon)
         var deleteaccount= dialog.findViewById<TextView>(R.id.txtv_deleteaccount)
 
         languageLayout.setOnClickListener {
@@ -119,7 +150,7 @@ class activity_6usuario : AppCompatActivity() {
             var sharedPreferences = getSharedPreferences("loggedUser", 0)
             var editor = sharedPreferences.edit()
 
-            editor.putString("user", "noLoggedUser").apply()
+            editor.putString("correo", "noLoggedUser").apply()
 
             val i = Intent(this, activity_1login::class.java)
             startActivity(i)
@@ -129,8 +160,12 @@ class activity_6usuario : AppCompatActivity() {
             chooseThemeDialog()
         }
 
-        deleteaccount.setOnClickListener{
+        seebuzon.setOnClickListener(){
+            val i = Intent(this, activity_10buzon::class.java)
+            startActivity(i)
+        }
 
+        deleteaccount.setOnClickListener{
 
             showDeleteDialog()
 
@@ -209,7 +244,6 @@ class activity_6usuario : AppCompatActivity() {
     }
 
 
-
     //TEMAS DIALOG
     fun chooseThemeDialog() {
 
@@ -267,7 +301,6 @@ class activity_6usuario : AppCompatActivity() {
             set(value) = preferences.edit().putInt(LANGUAGE, value).apply()
     }
 
-
     //Delete dialog
 
     fun showDeleteDialog(){
@@ -279,6 +312,30 @@ class activity_6usuario : AppCompatActivity() {
 
             }
             .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
+
+
+                //Recoger datos del usuario loggeado
+                val prefs: SharedPreferences = this.getSharedPreferences("loggedUser", 0)
+                val correo = prefs.getString("correo",null)
+                //Llamar a la función deleteuser pasándole el correo que hemos guardado en SharedPreferences
+
+
+
+                Toast.makeText(this, "Cuenta eliminada correctamente!", Toast.LENGTH_SHORT).show()
+                databaseHelper.deleteUser(correo)
+                Handler().postDelayed({
+
+                   /*Nos redirecciona al activity login poniendo al usuario que no está logeado, después de eliminar
+                    la cuenta*/
+
+                    var sharedPreferences = getSharedPreferences("loggedUser", 0)
+                    var editor = sharedPreferences.edit()
+
+                    editor.putString("user", "noLoggedUser").apply()
+
+                    val i = Intent(this, activity_1login::class.java)
+                    startActivity(i)
+                }, 1000)
 
             }
             .show()
@@ -312,6 +369,112 @@ class activity_6usuario : AppCompatActivity() {
             }
         }
         this.overridePendingTransition(0, 0)
+    }
+
+    private fun initObjects() {
+        user= User()
+
+        databaseHelper = DatabaseHelper(activity, "janEtaBizi", null, 1)
+
+        var getDataFromSQLite = GetDataFromSQLite()
+        getDataFromSQLite.execute()
+
+
+
+    }
+
+    inner class GetDataFromSQLite : AsyncTask<Void, Void, User>() {
+
+        //Recoger datos del usuario
+        override fun doInBackground(vararg p0: Void?): User? {
+
+
+            //Recoger datos del usuario loggeado
+            val prefs: SharedPreferences = this@activity_6usuario.getSharedPreferences("loggedUser", 0)
+            val correo = prefs.getString("correo",null)
+            //Llamar a la función getUser pasándole el correo que hemos guardado en SharedPreferences
+            return databaseHelper.getUser(correo.toString())!!
+        }
+
+        override fun onPostExecute(result: User) {
+
+
+            super.onPostExecute(result)
+            user = result
+            rellenarCampos()
+            administrador()
+        }
+
+    }
+
+      fun administrador() {
+        //Si no es admin oculta botón admin
+
+            if(user.admin==0){
+                imgv6_admin.isVisible= false
+               }else{
+                imgv6_admin.isVisible= true
+            }
+    }
+
+
+    //Rellenar los campos de dirección con los datos del usuario
+    fun rellenarCampos(){
+        println(user)
+
+        txt_6nombreuser.setText(user.name)
+        txtinput_6apellido.setText(user.surname)
+        txtinput_6nombre.setText(user.name)
+        txtinput_6correo.setText(user.email)
+        txtinput_6contrasena.setText(user.password)
+        txtinput_6descripcion.setText(user.description)
+
+    }
+
+    fun updateUser(){
+
+        var usuario =User()
+        //Recogemos los datos de los inputs
+
+         var nombre = txtinput_6nombre.text.toString()
+         var apellido = txtinput_6apellido.text.toString()
+         var correo = txtinput_6correo.text.toString()
+         var pass = txtinput_6contrasena.text.toString()
+         var description = txtinput_6descripcion.text.toString()
+
+        //Rellenamo el objeto de user con los datos
+
+        usuario.id = user.id
+        usuario.name = nombre
+        usuario.surname = apellido
+        usuario.email = correo
+        usuario.password = pass
+        usuario.address = user.address
+        usuario.city = user.city
+        usuario.cp = user.cp
+        usuario.description=description
+        usuario.admin=user.admin
+        usuario.tlf = user.tlf
+        usuario.ccv = user.ccv
+        usuario.caducidad = user.caducidad
+        usuario.num_tarjeta= user.num_tarjeta
+
+        databaseHelper.updateUser(usuario)
+
+        finish();
+        overridePendingTransition(0, 0);
+        startActivity(getIntent());
+        overridePendingTransition(0, 0);
+
+    }
+
+    fun loadCarritoNumber(){
+        if ( File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml").exists()){
+            var badge = bottomNavV_6bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
+            val prefss: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
+            // An icon only badge will be displayed unless a number is set:
+            badge.number = prefss.getString("length",null).toString().toInt()
+        }
     }
 }
 

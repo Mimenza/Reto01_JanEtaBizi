@@ -10,14 +10,17 @@
     <TextView
         android:id="@+id/txtv_9topcolor"
         android:layout_width="fill_parent"
-        android:layout_height="96dp"
+        android:layout_height="112dp"
         android:background="@color/mainGreen"
-        app:layout_constraintBottom_toBottomOf="@+id/txtv_9titulo"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:background="#FAEBE0"
         android:id="@+id/bottomNavV_9bottomMenu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -46,28 +49,30 @@
         app:layout_constraintVertical_bias="0.06" />
 
     <ScrollView
-        android:id="@+id/scrollView_901"
-        android:layout_width="412dp"
-        android:layout_height="630dp"
+        android:id="@+id/scrollView_9"
+        android:layout_width="wrap_content"
+        android:layout_height="634dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavV_9bottomMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95">
+        app:layout_constraintVertical_bias="1">
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
 
             <LinearLayout
                 android:id="@+id/linearLayout_901"
-                android:layout_width="409dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="@color/claro"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -79,24 +84,34 @@
                     android:id="@+id/txtv_9nombrereceta01"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:text="@string/tituloreceta01"
                     android:textAlignment="center"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold|italic" />
 
-                <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-                    android:id="@+id/third_party_player_view"
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_margin="@dimen/fab_margin"
+
+                    app:srcCompat="@drawable/crema_de_lombarda_y_pera_portada" />
+
+                <TextView
+                    android:id="@+id/txtv_9fecha01"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="30dp">
-
-                </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
+                    android:layout_margin="@dimen/fab_margin"
+                    android:text="@string/fechareceta01"
+                    android:textStyle="italic" />
 
                 <TextView
                     android:id="@+id/txtv_9descreceta01"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|end"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/fab_margin"
                     android:layout_marginBottom="50dp"
                     android:paddingHorizontal="25dp"
                     android:text="@string/descreceta01" />
@@ -105,9 +120,14 @@
 
             <LinearLayout
                 android:id="@+id/linearLayout_902"
-                android:layout_width="409dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="@color/claro"
                 android:orientation="vertical"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -118,35 +138,51 @@
                     android:id="@+id/txtv_9nombrereceta02"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:text="@string/tituloreceta02"
                     android:textAlignment="center"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold|italic" />
 
-                <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-                    android:id="@+id/third_party_player_view02"
+                <ImageView
+                    android:id="@+id/imagereceta02"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_margin="@dimen/fab_margin"
+
+                    app:srcCompat="@drawable/receta02portada" />
+
+                <TextView
+                    android:id="@+id/txtv_9fecha02"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="30dp">
-
-                </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
+                    android:layout_margin="@dimen/fab_margin"
+                    android:text="@string/fechareceta01"
+                    android:textStyle="italic" />
 
                 <TextView
                     android:id="@+id/txtv_9descreceta02"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|end"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/fab_margin"
                     android:layout_marginBottom="50dp"
                     android:paddingHorizontal="25dp"
-                    android:text="@string/descreceta02" />
+                    android:text="@string/descreceta01" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/linearLayout_903"
-                android:layout_width="409dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="@color/claro"
                 android:orientation="vertical"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -157,27 +193,37 @@
                     android:id="@+id/txtv_9nombrereceta03"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:text="@string/tituloreceta03"
                     android:textAlignment="center"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold|italic" />
 
-                <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-                    android:id="@+id/third_party_player_view03"
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_margin="@dimen/fab_margin"
+
+                    app:srcCompat="@drawable/receta03portada" />
+
+                <TextView
+                    android:id="@+id/txtv_9fecha03"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="30dp">
-
-                </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
+                    android:layout_margin="@dimen/fab_margin"
+                    android:text="@string/fechareceta01"
+                    android:textStyle="italic" />
 
                 <TextView
                     android:id="@+id/txtv_9descreceta03"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|end"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/fab_margin"
                     android:layout_marginBottom="50dp"
                     android:paddingHorizontal="25dp"
-                    android:text="@string/descreceta03" />
+                    android:text="@string/descreceta01" />
 
             </LinearLayout>
         </LinearLayout>

@@ -1,179 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/my_gradient_drawable"
-    tools:context=".activity_7_3_3pedido">
+    android:orientation="vertical">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="106dp"
+      android:background="@color/mainGreen"
+      android:gravity="center"
+      android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imgv_7_3atras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="-165dp"
+        android:layout_marginTop="10dp"
 
 
-  <ImageView
-      android:id="@+id/imgv7_02_atras"
-      android:layout_width="34dp"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="16dp"
-      android:layout_marginBottom="50dp"
-      app:layout_constraintBottom_toTopOf="@+id/tableLayout"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.042"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.0"
-      app:srcCompat="@drawable/ic_arrow_back" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back" />
 
-  <TextView
-      android:id="@+id/txtv_7_03pedidos"
-      android:layout_width="234dp"
-      android:layout_height="48dp"
-      android:text="@string/totalpedidos"
-      android:textAlignment="center"
-      android:textSize="24sp"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.497"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.058" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Todos los pedidos"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginTop="-50dp"/>
 
 
-  <TableLayout
-      android:id="@+id/tableLayout"
-      android:layout_width="0dp"
-      android:layout_height="0dp"
-      android:layout_marginLeft="12dp"
-      android:layout_marginRight="12dp"
-      android:stretchColumns="1"
-
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/imgv7_02_atras">
-
-    <TableRow>
-
-      <TextView
-          android:layout_column="1"
-          android:padding="3dip"
-          android:text="@string/numeropedido" />
-
-      <TextView
-          android:gravity="right"
-          android:padding="3dip"
-          android:text="@string/usuario" />
-      <TextView
-          android:gravity="right"
-          android:padding="3dip"
-          android:text="@string/fecha" />
-      <TextView
-          android:gravity="right"
-          android:padding="3dip"
-          android:text="@string/estado" />
-      <TextView
-          android:gravity="right"
-          android:padding="3dip"
-          android:text="@string/importe" />
-    </TableRow>
-
-    <TableRow>
-
-      <TextView
-          android:layout_column="1"
-          android:padding="3dip"
-          android:text="P01" />
-
-      <TextView
-          android:gravity="right"
-          android:padding="3dip"
-          android:text="Galder" />
-      <TextView
-          android:gravity="right"
-          android:padding="3dip"
-          android:text="10/09/2021" />
-      <TextView
-          android:gravity="right"
-          android:padding="3dip"
-          android:text="Entregado" />
-      <TextView
-          android:gravity="right"
-          android:padding="3dip"
-          android:text="23€" />
-    </TableRow>
-
-    <TableRow>
-
-      <TextView
-          android:layout_column="1"
-          android:padding="3dip"
-          android:text="P02" />
-
-      <TextView
-          android:gravity="right"
-          android:padding="3dip"
-          android:text="Julen" />
-      <TextView
-          android:gravity="right"
-          android:padding="3dip"
-          android:text="12/09/2021" />
-      <TextView
-          android:gravity="right"
-          android:padding="3dip"
-          android:text="Entregado" />
-      <TextView
-          android:gravity="right"
-          android:padding="3dip"
-          android:text="16€" />
-    </TableRow>
-    <TableRow>
-
-      <TextView
-          android:layout_column="1"
-          android:padding="3dip"
-          android:text="P03" />
-
-      <TextView
-          android:gravity="right"
-          android:padding="3dip"
-          android:text="Endika" />
-      <TextView
-          android:gravity="right"
-          android:padding="3dip"
-          android:text="14/09/2021" />
-      <TextView
-          android:gravity="right"
-          android:padding="3dip"
-          android:text="Entregado" />
-      <TextView
-          android:gravity="right"
-          android:padding="3dip"
-          android:text="13€" />
-    </TableRow>
-    <TableRow>
-
-      <TextView
-          android:layout_column="1"
-          android:padding="3dip"
-          android:text="P04" />
-
-      <TextView
-          android:gravity="right"
-          android:padding="3dip"
-          android:text="Alba" />
-      <TextView
-          android:gravity="right"
-          android:padding="3dip"
-          android:text="13/10/2021" />
-      <TextView
-          android:gravity="right"
-          android:padding="3dip"
-          android:text="Pendiente" />
-      <TextView
-          android:gravity="right"
-          android:padding="3dip"
-          android:text="32€" />
-    </TableRow>
+  </LinearLayout>
 
 
-  </TableLayout>
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/recyclerViewPedidos"
+      android:layout_width="417dp"
+      android:layout_height="624dp"
+      tools:listitem="@layout/itemorderrecycler" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

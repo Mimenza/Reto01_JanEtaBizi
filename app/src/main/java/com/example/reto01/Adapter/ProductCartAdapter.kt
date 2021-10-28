@@ -1,22 +1,15 @@
 package com.example.reto01.Adapter
 
-import android.app.Activity
 import android.content.Context
-import android.content.SharedPreferences
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.reto01.Model.Carrito_item
 import com.example.reto01.Model.Producto
 import com.example.reto01.R
-import com.example.reto01.activity_5carrito
-import com.google.gson.Gson
 import kotlinx.android.synthetic.main.viewholder_cart.view.*
-import com.example.reto01.MainActivity
-
-
 
 
 
@@ -26,7 +19,6 @@ class ProductCartAdapter(private val productos: List<Producto>, val context: Con
     override fun onCreateViewHolder(ViewGroup: ViewGroup, i: Int): ViewHolder {
         val v = LayoutInflater.from(ViewGroup.context)
             .inflate(R.layout.gproduct_card, ViewGroup, false)
-
 
         return ViewHolder(v)
     }
@@ -38,14 +30,6 @@ class ProductCartAdapter(private val productos: List<Producto>, val context: Con
         ViewHolder.itemTitle.text = item.name_product
         ViewHolder.itemPrecioProducto.text = item.price.toString()
         ViewHolder.itemCategoria.text = item.category
-
-
-
-
-
-
-
-
 
 
 

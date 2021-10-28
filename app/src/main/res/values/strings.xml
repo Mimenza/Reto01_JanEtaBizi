@@ -7,17 +7,17 @@
     <string name="txt2_correo2">Correo</string>
     <string name="txt3_contraseña">Contraseña</string>
     <string name="txt4_guardar">Guardar</string>
-    <string name="txt5_eliminar">Eliminar</string>
+    <string name="txt5_eliminar">¿Eliminar cuenta?</string>
     <string name="title_activity_login">Inicio de sesión</string>
 
 
     <!-- Strings related to login and register -->
-    <string name="promt_user_mail">Email</string>
-    <string name="prompt_user_Name">Nombre</string>
-    <string name="prompt_user_Surname">Apellido</string>
+    <string name="promt_user_mail">Email   <font color='#FF0000'>*</font></string>
+    <string name="prompt_user_Name">Nombre   <font color='#FF0000'>*</font></string>
+    <string name="prompt_user_Surname">Apellido   <font color='#FF0000'>*</font></string>
     <string name="prompt_user_Description">Descripción</string>
-    <string name="prompt_password">Contraseña</string>
-    <string name="prompt_password_verify">Repite la Contraseña</string>
+    <string name="prompt_password">Contraseña   <font color='#FF0000'>*</font></string>
+    <string name="prompt_password_verify">Repite la Contraseña   <font color='#FF0000'>*</font></string>
     <string name="action_sign_in">Iniciar sesión</string>
     <string name="action_register">Registrarte</string>
     <string name="error_message_email">Ingrese el email</string>
@@ -48,14 +48,14 @@
 
     <!--Principal-->
 
-    <string name="filtrobusquedacomida">Busca un alimento</string>
-    <string name="vegano">Vegano</string>
-    <string name="vegetariano">Vegetariano</string>
+    <string name="filtrobusquedacomida">Busca una categoría</string>
+    <string name="vegano">VEGANO</string>
     <string name="km0">KM0</string>
-    <string name="gluten">Sin gluten</string>
-    <string name="lactosa">Sin lactosa</string>
-    <string name="proteina">Alto en proteina</string>
-    <string name="aceite">Sin Aceite Palma</string>
+    <string name="lactosa">SIN LACTOSA</string>
+    <string name="deporte">DEPORTISTAS</string>
+    <string name="celiaco">CELIACOS</string>
+    <string name="huevo">SIN HUEVO</string>
+    <string name="aceite">SIN ACEITE PALMA</string>
 
     <!--Carrito-->
     <string name="carrito">Carrito</string>
@@ -72,15 +72,16 @@
     <string name="envioGratis">Gratis</string>
     <string name="nombre">Nombre</string>
     <string name="apellido">Apellido</string>
-    <string name="direccion">Dirección</string>
-    <string name="ciudad">Ciudad</string>
+    <string name="direccion">Dirección   <font color='#FF0000'>*</font></string>
+    <string name="ciudad">Ciudad   <font color='#FF0000'>*</font></string>
     <string name="provincia">Provincia</string>
     <string name="telefono">Teléfono</string>
-    <string name="cp">Cp</string>
+    <string name="cp">Cp   <font color='#FF0000'>*</font></string>
 
-    <string name="cardnumber">Numero de la tarjeta</string>
-    <string name="caducidad">Caducidad</string>
-    <string name="ccv">Ccv</string>
+    <string name="cardnumber">Numero de la tarjeta    <font color='#FF0000'>*</font></string>
+
+    <string name="caducidad">Caducidad    <font color='#FF0000'>*</font></string>
+    <string name="ccv">Ccv   <font color='#FF0000'>*</font></string>
     <string name="placeorder">Realizar pedido</string>
     <string name="envio">Envio</string>
     <string name="subtotal">SubTotal</string>
@@ -109,6 +110,12 @@
     <string name="estado">Estado</string>
     <string name="importe">Importe</string>
     <string name="gestion">Gestión</string>
+    <string name="ciudadgestion" tools:ignore="MissingTranslation">Ciudad</string>
+    <string name="cpgestion" tools:ignore="MissingTranslation">Cp</string>
+    <string name="direcciongestion" tools:ignore="MissingTranslation">Direccion</string>
+    <string name="tarjetagestion" tools:ignore="MissingTranslation">Tarjeta</string>
+    <string name="descripciongestion" tools:ignore="MissingTranslation">Descripcion</string>
+    <string name="tlfngestion" tools:ignore="MissingTranslation">Tlfn</string>
 
     <!--Producto-->
     <string name="lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
@@ -133,14 +140,124 @@
 
     <!--Blog-->
     <string name="blogtitulo">Blog</string>
-    <string name="tituloreceta01">Receta01</string>
-    <string name="descreceta01">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
+    <string name="tituloreceta01">Crema de lombarda y pera</string>
+    <string name="descreceta01">Aunque este es un plato muy presente en los menús navideños, nada nos
+        debería impedir incorporarlo a nuestras celebraciones en cualquier otro momento del año.
+        Es un entrante elegante, vistoso y que tiene todas las de ganarse los estómagos de nuestros comensales. Porque está de-li-cio-sa.</string>
+    <string name="fechareceta01">octubre 24, 2021</string>
+    <string name="ingredientes">INGREDIENTES</string>
+    <string name="ingredientes01">1/2 lombarda \n
+    2 cebollas\n
+    1 pera\n
+    500 ml de caldo de verduras casero\n
+    200 ml de leche o nata líquida\n
+    3-4 cucharadas de aceite de oliva virgen extra\n
+    Sal\n
+    Uvas pasas\n
+    Piñones\n
+    Eneldo</string>
+    <string name="preparacion">PREPARACIÓN</string>
+    <string name="preparacion011">1.Retiramos el tronco duro de la lombarda y lo desechamos. Cortamos el resto en juliana gruesa con ayuda de un cuchillo bien afilado. Lavamos con abundante agua fría y escurrimos.\n
 
-    <string name="tituloreceta02">Receta02</string>
+2.Pelamos las cebollas y las cortamos por la mitad. Después cortamos cada mitad en cuartos.\n
+
+3.Pelamos la pera, cortamos a lo largo, retiramos las semillas y cortamos en cinco o seis trozos.\n
+
+4.Calentamos el aceite en una olla rápida, como la WMF Perfect, echamos la cebolla y rehogamos un par de minutos. Incorporamos la lombarda y la pera y sofreímos un par de minutos más.\n</string>
+
+    <string name="preparacion012"> 5.Agregamos el caldo y sazonamos al gusto (mejor quedarnos cortos y ajustar el punto al final de la cocción). Cerramos la tapa y calentamos a fuego alto. En el momento en que asome la válvula, solo la primera raya, bajamos el fuego a medio bajo y contamos ocho minutos.\n
+
+6.Transcurrido el tiempo de cocción apagamos el fuego y dejamos que la olla se despresurice sola. Abrimos una vez ha salido todo el vapor y la válvula está escondida de nuevo.\n
+
+7.Trituramos la crema con una batidora de brazo o con ayuda de un robot de cocina. Agregamos la nata líquida y batimos de nuevo. Probamos y ajustamos el punto de sabor sí lo consideramos necesario.\n
+
+8.Servimos en soperas y llevamos a la mesa, decorando cada ración con uvas pasas, piñones y ramas de eneldo.</string>
+
+
+    <string name="tituloreceta02">Mini Dutch Pancakes</string>
     <string name="descreceta02">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
 
-    <string name="tituloreceta03">Receta03</string>
+    <string name="tituloreceta03">Gyozas vegetales (empanadillas chinas)</string>
     <string name="descreceta03">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat at libero varius vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam in neque ultrices, fermentum mi tristique, molestie nibh. Duis eu nisl ultrices, euismod felis ut, mollis ipsum. Vestibulum ac elit mi. Pellentesque suscipit leo tortor, eu sollicitudin orci condimentum eget. Morbi elit magna, accumsan et sagittis in, efficitur vitae dolor. Duis nec sagittis lacus. Nulla fringilla imperdiet pulvinar. </string>
     <string name="filtrobusquedausuarios">Busqueda usuarios</string>
     <string name="todaslascuentas">Todos los usuarios</string>
+    <string name="error_message_apellido">Ingrese su apellido</string>
+    <string name="error_message_description">Ingrese al menos una descripción   <font color='#FF0000'>*</font></string>
+    <string name="error_message_city">Ingrese una ciudad   <font color='#FF0000'>*</font></string>
+    <string name="error_message_cp">Ingrese un código postal   <font color='#FF0000'>*</font></string>
+    <string name="description">Introduzca una descripción</string>
+    <string name="error_message_address">Ingrese una dirección</string>
+    <string name="email">Email</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="cardnumberinput">Número de la tarjeta</string>
+    <string name="caducidad_title">Caducidad</string>
+
+
+    <string name="error_message_numerotarjeta">Ingrese su número de tarjeta</string>
+    <string name="error_message_caducidadtarjeta">Ingrese la caducidad de su tarjeta</string>
+
+    <string name="error_message_cvv">Ingrese el cvv de su tarjeta</string>
+    <string name="error_message_direccion">Ingrese una dirección</string>
+    <string name="error_message_ciudad">Ingrese una ciudad</string>
+    <string name="Productos">Todos los productos</string>
+    <string name="filtrobusquedaproductos">Busqueda productos</string>
+    <string name="eliminar">Eliminar producto</string>
+    <string name="update_product">Actualizar</string>
+    <string name="delete">Eliminar</string>
+    <string name="txt5_eliminarproducto">¿Eliminar producto?</string>
+    <string name="judiasypatatas">Judías y patatas</string>
+    <string name="alcachofas">Alcachofas cocidas</string>
+    <string name="albondigasvegano">Albóndigas vegetales</string>
+    <string name="hamburguesavegana">Hamburguesa vegana</string>
+    <string name="macarronesveganos">Macarrones veganos</string>
+    <string name="veganocategory">Veganos</string>
+    <string name="deportistascategory">Deportistas</string>
+    <string name="celiacocategory">Celíacos</string>
+    <string name="alergialechecategory">Alergia leche</string>
+    <string name="alergiahuevocategory">Alergia huevo</string>
+    <string name="brocoli">Brocoli</string>
+    <string name="tomate">Tomate</string>
+    <string name="puerro">Puerro</string>
+    <string name="impactwheyprotein">Impact Whey Protein</string>
+    <string name="citratomagnesio">Citrato de magnesio en polvo</string>
+    <string name="proteinaplatano">Proteína en polvo sabor plátano/mango</string>
+    <string name="pimientorojo">Pimiento rojo</string>
+    <string name="musclepack">Muscle pack small</string>
+    <string name="omegavegano">Omega vegano cápsulas blandas</string>
+    <string name="mayonesa">Mayonesa</string>
+    <string name="biscotesespelta">Biscotes</string>
+    <string name="pepitaschoco">Pepitas de chocolate</string>
+    <string name="aceitecoco">Aceite de coco</string>
+    <string name="cafeleche">"Leche de café sin lactosa "</string>
+    <string name="harinatrigo">Harina de trigo sarraceno</string>
+    <string name="macarrones">Macarrones</string>
+    <string name="mayonesadescripcion">"Mayonegran de El granero es la forma más saludable de disfrutar de la salsa mayonesa acompañando a tus comidas. Elaborada a partir de ingredientes de primera calidad procedentes de la agricultura ecologica "</string>
+    <string name="harinatrigodescripcion">"Harina de Trigo Sarraceno de molienda propia y de cultivo ecológico. "</string>
+    <string name="pepitaschocodescripcion">"Crujientes y deliciosas cookies de chocolate y pepitas de chocolate, elaboradas con ingredientes 100% ecológicos y pensadas para los amantes del chocolate más puro. Preparadas sin aceite de palma y sin huevo se presentan en un formato monodosis para llevarlas donde quieras y disfrutar de su sabor en cualquier momento del día. Fuente de fibra. "</string>
+    <string name="aceitecocodescripcion">"Aceite de coco ecológico desodorizado de la marca Vegetalia.  Saludable para cocinar, sin aportar sabor. "</string>
+    <string name="bicotesdescripcion">Biscotes de espelta con aceite de oliva virgen extra, para consumir tostados en cualquier momento del día.</string>
+    <string name="lechecafedescripcion">"Cápsulas de Café con Leche, sin lactosa. Unas cápsulas de café con leche 100% naturales, sin E-s artificiales, tendrás una deliciosa taza de sabor intenso y gran cuerpo con un solo click. "</string>
+    <string name="macarronesdescripcion">STELLINE RUMMO Estrellitas sin gluten perfectas para tus sopas y caldos.</string>
+    <string name="brocolidescripcion">Brocoli Km0</string>
+    <string name="puerrodescripcion">Puerro km0</string>
+    <string name="pimientorojodescripcion">Pimiento rojo Km0</string>
+    <string name="tomatedescripcion">Tomate km0</string>
+    <string name="impactwheydescripcion">Myprotein te presenta Impact Whey Protein, una proteína de suero de máxima calidad.</string>
+    <string name="musclepackdescripcion">Es el kit perfecto para entrenar. Con un refuerzo pre-entreno para aumentar tus niveles de energía, una bebida refrescante post-entreno y mucha proteína para asegurar que tus músculos obtengan todo lo que necesitan</string>
+    <string name="hamburguesadescripcion">Nuestra hamburguesa vegetal contiene una sabrosa mezcla de proteínas vegetales de soja y seitán, junto con la perfecta combinación de especias para dotarla del máximo sabor.</string>
+    <string name="albondigasdescripcion">"Nuestras albóndigas vegetales contienen una mezcla de proteínas de soja y seitán, junto con las mejores especias. Sus ingredientes lo convierten en un plato muy versátil. "</string>
+    <string name="alcachofasdescripcion">"Alcachofas y nada más. Alcachofas recolectadas y cocinadas en el momento idóneo para que ahora tú puedas disfrutarlas como comida o como el acompañante perfecto para todos tus platos. "</string>
+    <string name="judiasypatatasdescripcion">"Las judías con patatas son uno de esos platos clásicos que nunca fallan. Disfrútalas ahora en un formato mucho más cómodo y tenlas a mano siempre que lo necesites. "</string>
+    <string name="citratomagnesiodescripcion">Potente combinación de magnesio que ofrece numerosos beneficios para la salud</string>
+    <string name="proteinaplatanoadescripcion">Proteína de suero de leche de vacas de pasto</string>
+    <string name="category">Categoría</string>
+    <string name="price">Precio</string>
+    <string name="descriptionproduct">Descripción</string>
+
+    <!-- DUDAS-->
+    <string name="dudas">Contacto</string>
+    <string name="dudastexto">Tienes una duda? escribenos y te contestaremos lo antes posible</string>
+    <string name="dudasredes">No te olvides de seguirnos en las redes!!</string>
+    <string name="enviar">Enviar</string>
+    <string name="Buzon">Buzón</string>
 </resources>

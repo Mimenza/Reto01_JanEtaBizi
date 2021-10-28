@@ -7,6 +7,7 @@ import android.content.Context
 import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import androidx.appcompat.widget.AppCompatEditText
 import com.google.android.material.textfield.TextInputEditText
 
@@ -25,7 +26,7 @@ class InputValidation
      * @param message
      * @return
      */
-    fun isInputEditTextFilled(textInputEditText: AppCompatEditText, message: String): Boolean {
+    fun isInputEditTextFilled(textInputEditText:EditText, message: String): Boolean {
         val value = textInputEditText.text.toString().trim()
         if (value.isEmpty()) {
             textInputEditText.error = message
@@ -80,4 +81,6 @@ class InputValidation
         val imm = context.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(view.windowToken, WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
     }
+
+
 }

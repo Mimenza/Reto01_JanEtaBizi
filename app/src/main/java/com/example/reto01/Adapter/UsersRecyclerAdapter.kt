@@ -1,31 +1,76 @@
 package com.example.reto01.Adapter
 
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.reto01.Model.User
 import com.example.reto01.R
+import com.example.reto01.activity_7_1_1usuario
+import com.example.reto01.activity_7_1usuarios
+import com.example.reto01.activity_7_2productos
+import kotlinx.android.synthetic.main.itemuserrecycler.view.*
 
 
-class UsersRecyclerAdapter(private val listUsers: List<User>,val context: Context) : RecyclerView.Adapter<UsersRecyclerAdapter.UserViewHolder>() {
+class UsersRecyclerAdapter(private val listUsers: List<User>) : RecyclerView.Adapter<UsersRecyclerAdapter.UserViewHolder>(){
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder{
+    override fun onCreateViewHolder(parent: ViewGroup, position: Int): UserViewHolder {
         // inflating recycler item view
+
         val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.itemuserrecycler, parent, false)
-
         return UserViewHolder(itemView)
     }
+    override fun onBindViewHolder(holder: UserViewHolder, i: Int) {
 
-    override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        holder.textViewName.text = listUsers[position].name
-        holder.textViewEmail.text = listUsers[position].email
-        holder.textViewPassword.text = listUsers[position].password
+        var usuario = listUsers[i]
+        println(usuario)
+        holder.textViewImg.setImageResource(R.drawable.ic_person)
+        holder.textViewName.text = "Nombre: "+usuario.name
+        holder.textViewSurname.text = "Apellido: "+ usuario.surname
+        holder.textViewEmail.text = "Email: "+usuario.email
+        holder.itemView.setOnClickListener { onclick(usuario,holder.itemView.context ) }
+
     }
+
+    private fun onclick(usuario: User, context: Context) {
+
+        val intent = Intent( context, activity_7_1_1usuario::class.java)
+        intent.putExtra("name",usuario.name)
+        intent.putExtra("surname",usuario.surname)
+        intent.putExtra("correo",usuario.email)
+        intent.putExtra("pass",usuario.password)
+        intent.putExtra("ciudad",usuario.city)
+        intent.putExtra("cp",usuario.cp)
+        intent.putExtra("direccion",usuario.address)
+        intent.putExtra("tarjeta",usuario.num_tarjeta)
+        intent.putExtra("tlfn",usuario.tlf)
+        intent.putExtra("desc",usuario.description)
+        //----------------------------------------------
+        //enviamos todos los datos para futuro update
+
+        intent.putExtra("id",usuario.id)
+        intent.putExtra("admin",usuario.admin)
+        intent.putExtra("caducidad",usuario.caducidad)
+        intent.putExtra("ccv",usuario.ccv)
+
+        context.startActivity(intent)
+        (context as Activity).overridePendingTransition(0,0)
+
+        if(context is activity_7_1usuarios){
+
+            (context).deleteUser(usuario)
+        }
+
+
+
+   }
 
     override fun getItemCount(): Int {
         return listUsers.size
@@ -36,17 +81,17 @@ class UsersRecyclerAdapter(private val listUsers: List<User>,val context: Contex
      * ViewHolder class
      */
     inner class UserViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
+        var textViewImg:ImageView
         var textViewName: TextView
         var textViewEmail: TextView
-        var textViewPassword: TextView
+        var textViewSurname: TextView
 
         init {
-            textViewName = view.findViewById<View>(R.id.textViewName) as TextView
-            textViewEmail = view.findViewById<View>(R.id.textViewEmail) as TextView
-            textViewPassword = view.findViewById<View>(R.id.textViewSurname) as TextView
+            textViewImg = view.imageViewImg
+            textViewName = view.textViewNameProductPedido
+            textViewEmail = view.textViewEmail
+            textViewSurname = view.textViewSurname
         }
     }
-
-
 }
+

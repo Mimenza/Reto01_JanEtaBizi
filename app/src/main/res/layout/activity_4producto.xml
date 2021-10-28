@@ -10,22 +10,21 @@
     <TextView
         android:id="@+id/txtv_4nombreProducto"
         android:layout_width="234dp"
-        android:layout_height="48dp"
+        android:layout_height="70dp"
         android:text="Nombre Producto"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.065" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <TextView
-        android:id="@+id/txtv_4descripcionproducto"
+        android:id="@+id/txtv_4_descripcionproducto"
         android:layout_width="322dp"
         android:layout_height="171dp"
-        android:text="@string/lorem"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -34,7 +33,7 @@
         app:layout_constraintVertical_bias="0.675" />
 
     <ImageView
-        android:id="@+id/imgv_4atras"
+        android:id="@+id/imgv_7_2_2atras"
         android:layout_width="34dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,97 +45,21 @@
         app:srcCompat="@drawable/ic_arrow_back" />
 
     <ImageView
-        android:id="@+id/imgv4_favorite"
+        android:id="@+id/imgv_4favorite"
         style="c"
         android:layout_width="39dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgv_4atras"
+        app:layout_constraintBottom_toBottomOf="@+id/imgv_7_2_2atras"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.956"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgv_4atras"
+        app:layout_constraintTop_toTopOf="@+id/imgv_7_2_2atras"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_favorite" />
 
-    <TextView
-        android:id="@+id/txt_4cantidad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginBottom="8dp"
-        android:orientation="horizontal"
-        android:text="@string/zero"
-        android:textColor="@android:color/black"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtv_4descripcionproducto"
-        app:layout_constraintStart_toStartOf="@+id/txtv_4descripcionproducto" />
-
-    <ImageView
-        android:id="@+id/imgv_4menos"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtv_4descripcionproducto"
-        app:layout_constraintEnd_toStartOf="@+id/txt_4cantidad"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txt_4cantidad"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_minus" />
-
-    <ImageView
-        android:id="@+id/imgv_4mas"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgv_4menos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txt_4cantidad"
-        app:layout_constraintTop_toTopOf="@+id/imgv_4menos"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_plus" />
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="423dp"
-        android:layout_height="248dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="364dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavV_4bottomMenu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
-        <com.smarteist.autoimageslider.SliderView
-            android:id="@+id/imageSlider"
-            android:layout_width="432dp"
-            android:layout_height="220dp"
-            android:layout_marginTop="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.555"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:sliderAnimationDuration="600"
-            app:sliderAutoCycleDirection="back_and_forth"
-            app:sliderIndicatorAnimationDuration="600"
-            app:sliderIndicatorEnabled="true"
-            app:sliderIndicatorGravity="center_horizontal|bottom"
-            app:sliderIndicatorMargin="15dp"
-            app:sliderIndicatorOrientation="horizontal"
-            app:sliderIndicatorPadding="3dp"
-            app:sliderIndicatorRadius="2dp"
-            app:sliderIndicatorSelectedColor="#5A5A5A"
-            app:sliderIndicatorUnselectedColor="#FFF"
-            app:sliderScrollTimeInSec="1"
-            tools:ignore="MissingConstraints" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/btn_4comprar"
+        android:id="@+id/btn_7_2_2update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/my_button_border"
@@ -151,7 +74,7 @@
         app:layout_constraintVertical_bias="0.836" />
 
     <Button
-        android:id="@+id/btn_4añadircarrito"
+        android:id="@+id/btn_4addtocart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/my_button_border"
@@ -166,6 +89,7 @@
         app:layout_constraintVertical_bias="0.836" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:background="#FAEBE0"
         android:id="@+id/bottomNavV_4bottomMenu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -176,10 +100,22 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintTop_toBottomOf="@+id/btn_4comprar"
+        app:layout_constraintTop_toBottomOf="@+id/btn_7_2_2update"
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/navigation">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <ImageView
+        android:id="@+id/imgv_7_2_2producto"
+        android:layout_width="272dp"
+        android:layout_height="271dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.215"
+        tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

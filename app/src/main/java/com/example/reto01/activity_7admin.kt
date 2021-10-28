@@ -2,17 +2,29 @@ package com.example.reto01
 
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_3principal.*
+import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_7admin.*
+import java.io.File
 
 class activity_7admin : AppCompatActivity() {
+    override fun onBackPressed() {
+        super.onBackPressed()
+        this.overridePendingTransition(0,0)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
         setContentView(R.layout.activity_7admin)
-
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
         bottomNavV_7bottomMenu.setSelectedItemId(R.id.navigation_perfil)
+
+        loadCarritoNumber()
 
         bottomNavV_7bottomMenu.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -41,16 +53,19 @@ class activity_7admin : AppCompatActivity() {
         }
 
         btn_7usuarios.setOnClickListener() {
-            val i = Intent(this, activity_7_0_1usuarios::class.java)
+            val i = Intent(this, activity_7_1usuarios::class.java)
             startActivity(i)
+            this.overridePendingTransition(0,0)
         }
         btn_7productos.setOnClickListener() {
-            val i = Intent(this, activity_7_2_1producto::class.java)
+            val i = Intent(this, activity_7_2productos::class.java)
             startActivity(i)
+            this.overridePendingTransition(0,0)
         }
         btn_7pedidos.setOnClickListener() {
-            val i = Intent(this, activity_7_3_3pedido::class.java)
+            val i = Intent(this, activity_7_3_3pedidos::class.java)
             startActivity(i)
+            this.overridePendingTransition(0,0)
         }
     }
 
@@ -82,5 +97,13 @@ class activity_7admin : AppCompatActivity() {
             }
         }
         this.overridePendingTransition(0, 0)
+    }
+    fun loadCarritoNumber(){
+        if ( File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml").exists()){
+            var badge = bottomNavV_7bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
+            val prefss: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
+            // An icon only badge will be displayed unless a number is set:
+            badge.number = prefss.getString("length",null).toString().toInt()
+        }
     }
 }
