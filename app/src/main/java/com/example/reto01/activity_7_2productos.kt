@@ -21,13 +21,16 @@ import kotlinx.android.synthetic.main.activity_7_2productos.*
 
 class activity_7_2productos : AppCompatActivity() {
     private val activity = this
-
     private lateinit var recyclerViewProducts: RecyclerView
     private lateinit var listProducts: MutableList<Producto>
     private lateinit var productsRecyclerAdapter: ProductsRecyclerAdapter
     private lateinit var databaseHelper: DatabaseHelper
-
     private lateinit var context:Context
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        this.overridePendingTransition(0,0)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,11 +43,7 @@ class activity_7_2productos : AppCompatActivity() {
             val i = Intent(this, activity_7admin::class.java)
             startActivity(i)
         }
-
-
     }
-
-
 
     private fun initViews(){
         recyclerViewProducts =recyclerViewProductos as RecyclerView

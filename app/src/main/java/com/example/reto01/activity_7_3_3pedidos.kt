@@ -5,16 +5,11 @@ import android.content.Intent
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.reto01.Adapter.OrdersRecyclerAdapter
-import com.example.reto01.Adapter.UsersRecyclerAdapter
 import com.example.reto01.Model.Order
-import com.example.reto01.Model.User
-import kotlinx.android.synthetic.main.activity_7_1usuarios.*
 import kotlinx.android.synthetic.main.activity_7_3pedidos.*
-import kotlinx.android.synthetic.main.activity_7_3pedidos.recyclerViewPedidos
 
 class activity_7_3_3pedidos : AppCompatActivity() {
     private val activity = this
@@ -23,6 +18,12 @@ class activity_7_3_3pedidos : AppCompatActivity() {
     private lateinit var ordersRecyclerAdapter: OrdersRecyclerAdapter
     private lateinit var databaseHelper: DatabaseHelper
     lateinit var context: Context
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        this.overridePendingTransition(0,0)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_7_3pedidos)

@@ -92,6 +92,7 @@ class activity_6usuario : AppCompatActivity() {
         imgv6_admin.setOnClickListener() {
             val i = Intent(this, activity_7admin::class.java)
             startActivity(i)
+            this.overridePendingTransition(0,0)
         }
 
         btn_6reset.setOnTouchListener { v, event ->

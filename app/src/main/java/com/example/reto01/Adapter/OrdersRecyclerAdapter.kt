@@ -2,6 +2,7 @@
 package com.example.reto01.Adapter
 
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -55,6 +56,7 @@ class OrdersRecyclerAdapter(private val listOrders: List<Order>, contexto: Conte
        val intent = Intent( context, activity_7_3_4pedido::class.java)
         intent.putExtra("idOrder",order.id_order)
         context.startActivity(intent)
+        (context as Activity).overridePendingTransition(0,0)
     }
 
     override fun getItemCount(): Int {

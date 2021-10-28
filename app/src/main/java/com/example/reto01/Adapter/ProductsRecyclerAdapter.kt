@@ -1,6 +1,7 @@
 package com.example.reto01.Adapter
 
 
+import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -46,6 +47,7 @@ class ProductsRecyclerAdapter(private val listProducts: List<Producto>, val cont
         if(this.context is activity_7_2productos){
 
             (this.context).loadproducto(producto)
+            (context as Activity).overridePendingTransition(0,0)
         }
 
 

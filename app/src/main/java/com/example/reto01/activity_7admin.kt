@@ -12,6 +12,11 @@ import kotlinx.android.synthetic.main.activity_7admin.*
 import java.io.File
 
 class activity_7admin : AppCompatActivity() {
+    override fun onBackPressed() {
+        super.onBackPressed()
+        this.overridePendingTransition(0,0)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getSupportActionBar()?.hide()
@@ -50,14 +55,17 @@ class activity_7admin : AppCompatActivity() {
         btn_7usuarios.setOnClickListener() {
             val i = Intent(this, activity_7_1usuarios::class.java)
             startActivity(i)
+            this.overridePendingTransition(0,0)
         }
         btn_7productos.setOnClickListener() {
             val i = Intent(this, activity_7_2productos::class.java)
             startActivity(i)
+            this.overridePendingTransition(0,0)
         }
         btn_7pedidos.setOnClickListener() {
             val i = Intent(this, activity_7_3_3pedidos::class.java)
             startActivity(i)
+            this.overridePendingTransition(0,0)
         }
     }
 
