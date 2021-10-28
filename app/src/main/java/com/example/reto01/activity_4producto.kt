@@ -142,6 +142,7 @@ class activity_4producto : AppCompatActivity() {
         imgv_7_2_2atras.setOnClickListener() {
             val i = Intent(this, activity_3principal::class.java)
             startActivity(i)
+            this.overridePendingTransition(0, 0)
         }
 
         imgv_4favorite.setOnClickListener() {

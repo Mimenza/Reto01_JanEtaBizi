@@ -10,10 +10,16 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import kotlinx.android.synthetic.main.activity_3principal.*
 import kotlinx.android.synthetic.main.activity_4producto.*
+import kotlinx.android.synthetic.main.activity_8likes.*
 import kotlinx.android.synthetic.main.activity_9blog.*
 import java.io.File
 
 class activity_9blog : AppCompatActivity() {
+    override fun onRestart() {
+        super.onRestart()
+        bottomNavV_9bottomMenu.setSelectedItemId(R.id.navigation_blog)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_9blog)

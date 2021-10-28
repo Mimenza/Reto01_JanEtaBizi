@@ -7,12 +7,12 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity10buzon.*
+import kotlinx.android.synthetic.main.activity_10buzon.*
 
 class activity_10buzon : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity10buzon)
+        setContentView(R.layout.activity_10buzon)
         getSupportActionBar()?.hide()
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
 

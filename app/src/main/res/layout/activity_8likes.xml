@@ -60,7 +60,7 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:background="#FAEBE0"
-        android:id="@+id/bottomNavV_9_1bottomMenu"
+        android:id="@+id/bottomNavV_8bottomMenu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"

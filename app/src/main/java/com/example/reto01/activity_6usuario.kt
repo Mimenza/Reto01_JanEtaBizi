@@ -26,6 +26,7 @@ import kotlinx.android.synthetic.main.activity_4producto.*
 import kotlinx.android.synthetic.main.activity_5_1adress.*
 import kotlinx.android.synthetic.main.activity_5_2payment.*
 import kotlinx.android.synthetic.main.activity_6usuario.*
+import kotlinx.android.synthetic.main.activity_8likes.*
 import kotlinx.android.synthetic.main.bottom_sheet.*
 import java.io.File
 import java.util.*
@@ -38,7 +39,10 @@ class activity_6usuario : AppCompatActivity() {
     lateinit var bottomsheet: ImageView
     //Inputs
 
-
+    override fun onRestart() {
+        super.onRestart()
+        bottomNavV_6bottomMenu.setSelectedItemId(R.id.navigation_perfil)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,8 +54,6 @@ class activity_6usuario : AppCompatActivity() {
 
         loadCarritoNumber()
         initObjects()
-
-
 
         bottomsheet = findViewById(R.id.imgv6_bottomsheet)
 
@@ -147,7 +149,7 @@ class activity_6usuario : AppCompatActivity() {
             var sharedPreferences = getSharedPreferences("loggedUser", 0)
             var editor = sharedPreferences.edit()
 
-            editor.putString("user", "noLoggedUser").apply()
+            editor.putString("correo", "noLoggedUser").apply()
 
             val i = Intent(this, activity_1login::class.java)
             startActivity(i)

@@ -4,23 +4,14 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.AsyncTask
 import android.os.Bundle
-import android.util.Log
-import android.view.GestureDetector
-import android.view.MotionEvent
-import android.view.View
 import android.widget.ImageView
 import android.widget.TableRow
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.MotionEventCompat
 import androidx.core.view.isVisible
 import com.example.reto01.Model.Producto
-import com.example.reto01.Model.User
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_3principal.*
-import kotlinx.android.synthetic.main.activity_4producto.*
 import java.io.File
-import kotlin.math.abs
 
 class activity_3principal : AppCompatActivity() {
     lateinit private var listProducts: MutableList<Producto>
@@ -29,6 +20,11 @@ class activity_3principal : AppCompatActivity() {
 
     override fun onBackPressed() {
         navegacion("navigation_principal")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        bottomNavV_3bottomMenu.setSelectedItemId(R.id.navigation_principal)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,24 +62,6 @@ class activity_3principal : AppCompatActivity() {
             }
         }
 
-
-
-        /* var user0 = User()
-         user0.id=R.drawable.polvobatido
-         var user1 = User()
-         user1.id=R.drawable.barrita
-         var user2 = User()
-         user2.id=R.drawable.cremablanca
-         var user3 = User()
-         user3.id=R.drawable.glucosport
-         var user4 = User()
-         user4.id=R.drawable.colnatur
-
-         println("U S U A R I O "+ user0)
-         println("U S U A R I O "+ user1)
-         println("U S U A R I O "+ user2)
-         println("U S U A R I O "+ user3)
-         println("U S U A R I O "+ user4)*/
 
         //COMIDA VEGANA
         tv_3vegan.setOnClickListener() {
@@ -130,7 +108,6 @@ class activity_3principal : AppCompatActivity() {
     }
 
 
-
     fun navegacion(activity: String) {
         when (activity) {
             "navigation_principal" -> {
@@ -175,49 +152,43 @@ class activity_3principal : AppCompatActivity() {
             }
         }
 
-        var rowsLength = (((filteredItems.size + 3) - 1) / 3) - 1
+        var rowsLength = (((filteredItems.size + 2) - 1) / 2) - 1
         var itemsLength = filteredItems.size
         var layoutParams = TableRow.LayoutParams(
             TableRow.LayoutParams.WRAP_CONTENT,
             TableRow.LayoutParams.WRAP_CONTENT
         )
 
-        layoutParams.setMargins(2, 2, 2, 2)
+        layoutParams.setMargins(5, 5, 5, 0)
 
         var i = 0
         var j = 0
         while (i <= rowsLength) {
-            if (itemsLength >= 3) {
+            if (itemsLength >= 2) {
                 var newRow = TableRow(this)
                 var newCol1 = ImageView(this)
                 var newCol2 = ImageView(this)
-                var newCol3 = ImageView(this)
 
                 newCol1.setImageResource(filteredItems[j].img)
                 newCol2.setImageResource(filteredItems[j + 1].img)
-                newCol3.setImageResource(filteredItems[j + 2].img)
 
                 newRow.addView(newCol1, layoutParams)
                 newRow.addView(newCol2, layoutParams)
-                newRow.addView(newCol3, layoutParams)
 
                 tb_3tablaProductos.addView(newRow)
 
                 newCol1.requestLayout()
                 newCol2.requestLayout()
-                newCol3.requestLayout()
 
-                newCol1.getLayoutParams().height = 262
-                newCol2.getLayoutParams().height = 262
-                newCol3.getLayoutParams().height = 262
+                newCol1.getLayoutParams().height = 562
+                newCol2.getLayoutParams().height = 562
 
                 newCol1.getLayoutParams().width = 262
                 newCol2.getLayoutParams().width = 262
-                newCol3.getLayoutParams().width = 262
 
                 newCol1.setScaleType(ImageView.ScaleType.FIT_XY)
                 newCol2.setScaleType(ImageView.ScaleType.FIT_XY)
-                newCol3.setScaleType(ImageView.ScaleType.FIT_XY)
+
 
                 val sharedPreferences = getSharedPreferences("product", 0)
                 val sharedPreferencesEditor: SharedPreferences.Editor = sharedPreferences.edit()
@@ -235,14 +206,6 @@ class activity_3principal : AppCompatActivity() {
 
                 newCol2.setOnClickListener() {
                     val productJson = gson.toJson(filteredItems[number + 1])
-                    sharedPreferencesEditor.putString("product", productJson)
-                    sharedPreferencesEditor.commit()
-
-                    navegacion("navigation_producto")
-                }
-
-                newCol3.setOnClickListener() {
-                    val productJson = gson.toJson(filteredItems[number + 2])
                     sharedPreferencesEditor.putString("product", productJson)
                     sharedPreferencesEditor.commit()
 
@@ -251,90 +214,30 @@ class activity_3principal : AppCompatActivity() {
 
                 i++
                 itemsLength = itemsLength - 3
-                j = j + 3
-            } else if (itemsLength == 2) {
-                var newRow = TableRow(this)
-                var newCol1 = ImageView(this)
-                var newCol2 = ImageView(this)
-                var newCol3 = ImageView(this)
-
-                newCol1.setImageResource(filteredItems[j].img)
-                newCol2.setImageResource(filteredItems[j + 1].img)
-
-                newRow.addView(newCol1, layoutParams)
-                newRow.addView(newCol2, layoutParams)
-                newRow.addView(newCol3, layoutParams)
-
-                tb_3tablaProductos.addView(newRow)
-
-                newCol1.requestLayout()
-                newCol2.requestLayout()
-                newCol3.requestLayout()
-
-                newCol1.getLayoutParams().height = 262
-                newCol2.getLayoutParams().height = 262
-                newCol3.getLayoutParams().height = 262
-
-                newCol1.getLayoutParams().width = 262
-                newCol2.getLayoutParams().width = 262
-                newCol3.getLayoutParams().width = 262
-
-                newCol1.setScaleType(ImageView.ScaleType.FIT_XY)
-                newCol2.setScaleType(ImageView.ScaleType.FIT_XY)
-                newCol3.setScaleType(ImageView.ScaleType.FIT_XY)
-
-                val sharedPreferences = getSharedPreferences("product", 0)
-                val sharedPreferencesEditor: SharedPreferences.Editor = sharedPreferences.edit()
-                val gson = Gson()
-
-                val number = j
-
-                newCol1.setOnClickListener() {
-                    val productJson = gson.toJson(filteredItems[number])
-                    sharedPreferencesEditor.putString("product", productJson)
-                    sharedPreferencesEditor.commit()
-
-                    navegacion("navigation_producto")
-                }
-
-                newCol2.setOnClickListener() {
-                    val productJson = gson.toJson(filteredItems[number + 1])
-                    sharedPreferencesEditor.putString("product", productJson)
-                    sharedPreferencesEditor.commit()
-
-                    navegacion("navigation_producto")
-                }
-
-                i++
+                j = j + 2
             } else {
                 var newRow = TableRow(this)
                 var newCol1 = ImageView(this)
                 var newCol2 = ImageView(this)
-                var newCol3 = ImageView(this)
 
-                newCol1.setImageResource(filteredItems[i].img)
+                newCol1.setImageResource(filteredItems[j].img)
 
                 newRow.addView(newCol1, layoutParams)
                 newRow.addView(newCol2, layoutParams)
-                newRow.addView(newCol3, layoutParams)
 
                 tb_3tablaProductos.addView(newRow)
 
                 newCol1.requestLayout()
-                newCol2.requestLayout()
-                newCol3.requestLayout()
 
-                newCol1.getLayoutParams().height = 262
-                newCol2.getLayoutParams().height = 262
-                newCol3.getLayoutParams().height = 262
+                newCol1.getLayoutParams().height = 562
+                newCol2.getLayoutParams().height = 562
 
                 newCol1.getLayoutParams().width = 262
                 newCol2.getLayoutParams().width = 262
-                newCol3.getLayoutParams().width = 262
 
                 newCol1.setScaleType(ImageView.ScaleType.FIT_XY)
                 newCol2.setScaleType(ImageView.ScaleType.FIT_XY)
-                newCol3.setScaleType(ImageView.ScaleType.FIT_XY)
+
 
                 val sharedPreferences = getSharedPreferences("product", 0)
                 val sharedPreferencesEditor: SharedPreferences.Editor = sharedPreferences.edit()
@@ -380,16 +283,13 @@ class activity_3principal : AppCompatActivity() {
         }
     }
 
-    fun loadCarritoNumber(){
-
-        if ( File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml").exists()){
+    fun loadCarritoNumber() {
+        if (File("/data/data/com.example.reto01/shared_prefs/carritoProductos.xml").exists()) {
             var badge = bottomNavV_3bottomMenu.getOrCreateBadge(R.id.navigation_carrito)
             val prefss: SharedPreferences = this.getSharedPreferences("carritoProductos", 0)
 
             // An icon only badge will be displayed unless a number is set:
-            badge.number = prefss.getString("length",null).toString().toInt()
+            badge.number = prefss.getString("length", null).toString().toInt()
         }
     }
-
-
 }
